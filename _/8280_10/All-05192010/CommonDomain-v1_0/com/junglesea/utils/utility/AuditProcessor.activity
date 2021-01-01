@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.wbit.activity:CustomActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="AuditProcessor" category="utility" targetNamespace="http://CommonDomain-v1_0/com/junglesea/utils/utility/">
+  <parameters name="AuditMessage">
+    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+  </parameters>
+  <parameters name="AuditAction">
+    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+  </parameters>
+  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="current date and time" description="The current date and time" category="date" template="&lt;%return%> new java.util.Date();">
+    <result name="dateTimeNow" displayName="date time now">
+      <dataOutputs target="//@executableElements.2/@parameters.0"/>
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.util.Date"/>
+    </result>
+  </executableElements>
+  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;yyyy-dd-mm HH:mm:ss&quot;" assignable="false">
+    <dataOutputs target="//@executableElements.2/@parameters.1"/>
+    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+  </executableElements>
+  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="format locale date to string using pattern" description="Format a locale Date object from a given pattern to a string" category="date" template="java.util.Locale locale = java.util.Locale.getDefault();&#xA;java.text.SimpleDateFormat df2 = new java.text.SimpleDateFormat(&lt;%pattern%>,locale);&#xA;&lt;%return%> df2.format(&lt;%date%>);">
+    <parameters name="date" dataInputs="//@executableElements.0/@result/@dataOutputs.0" displayName="locale date">
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.util.Date"/>
+    </parameters>
+    <parameters name="pattern" dataInputs="//@executableElements.1/@dataOutputs.0" displayName="pattern">
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+    </parameters>
+    <result name="dateString" displayName="locale date string">
+      <dataOutputs target="//@executableElements.4/@parameters.0"/>
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+    </result>
+  </executableElements>
+  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="AuditMessage" variable="true" assignable="false" input="true">
+    <dataOutputs target="//@executableElements.4/@parameters.1"/>
+    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+  </executableElements>
+  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="append text" description="Combine the text of two words into one word" category="text" template="&lt;%return%> &lt;%input1%>.concat(&lt;%input2%>);">
+    <parameters name="input1" dataInputs="//@executableElements.2/@result/@dataOutputs.0" displayName="input 1">
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+    </parameters>
+    <parameters name="input2" dataInputs="//@executableElements.3/@dataOutputs.0" displayName="input 2">
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+    </parameters>
+    <result name="combined text" displayName="combined text">
+      <dataOutputs target="//@executableElements.6/@parameters.0"/>
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+    </result>
+  </executableElements>
+  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="AuditAction" variable="true" assignable="false" input="true">
+    <dataOutputs target="//@executableElements.6/@parameters.1"/>
+    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+  </executableElements>
+  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="append text" description="Combine the text of two words into one word" category="text" template="&lt;%return%> &lt;%input1%>.concat(&lt;%input2%>);">
+    <parameters name="input1" dataInputs="//@executableElements.4/@result/@dataOutputs.0" displayName="input 1">
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+    </parameters>
+    <parameters name="input2" dataInputs="//@executableElements.5/@dataOutputs.0" displayName="input 2">
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+    </parameters>
+    <result name="combined text" displayName="combined text">
+      <dataOutputs target="//@executableElements.7/@parameters.0"/>
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+    </result>
+  </executableElements>
+  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="print to log" description="Print a text representation of the input to System.out" category="utility" template="System.out.println(&lt;%object%>);">
+    <parameters name="object" dataInputs="//@executableElements.6/@result/@dataOutputs.0" displayName="object">
+      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+    </parameters>
+  </executableElements>
+  <executableGroups executableElements="//@executableElements.0 //@executableElements.1 //@executableElements.2 //@executableElements.3 //@executableElements.4 //@executableElements.5 //@executableElements.6 //@executableElements.7"/>
+</com.ibm.wbit.activity:CustomActivity>

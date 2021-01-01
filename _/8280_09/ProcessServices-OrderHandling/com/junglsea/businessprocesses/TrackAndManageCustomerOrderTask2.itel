@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ##[lineageStampBegin]##
+ ##[generatedBy:/ProcessServices-OrderHandling/com/junglsea/businessprocesses/TrackAndManageCustomerOrder.bpel]##
+ ##[lineageStampEnd]##
+-->
+<tel:task xmlns:tel="http://www.ibm.com/xmlns/prod/websphere/human-task/6.0.0/" xmlns:wsdl="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation" allowClaimWhenSuspended="no" autoClaim="yes" businessRelevance="no" calendarName="Simple" contextAuthorizationForOwner="none" defaultLocale="en-US" jndiNameStaffPluginProvider="bpe/staff/samplevmmconfiguration" kind="pTask" name="TrackAndManageCustomerOrderTask2" priorityDefinition="5" supportsDelegation="yes" supportsFollowOnTask="yes" supportsSubTask="yes" targetNamespace="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/Task2">
+  <tel:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/CustomerCreditInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation"/>
+  <tel:interface kind="inbound" operation="getCustomerCredit" portType="wsdl:CustomerCreditInformation"/>
+  <tel:staffSettings>
+    <tel:administrator>
+      <tel:verb>
+        <tel:name>Everybody</tel:name>
+      </tel:verb>
+    </tel:administrator>
+  </tel:staffSettings>
+  <tel:uiSettings/>
+  <tel:escalationSettings/>
+</tel:task>

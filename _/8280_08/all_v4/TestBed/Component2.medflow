@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Component2.medflow="Component2.medflow" xmlns:Input.mednode="mednode://mednodes/Input.mednode/Input" xmlns:InputResponse.mednode="mednode://mednodes/InputResponse.mednode/InputResponse" xmlns:XSLTransformation.mednode="mednode://mednodes/XSLTransformation.mednode/XSLTransformation" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow2="http://www.ibm.com/2006/eflow" xmlns:type="http://www.ibm.com/2006/eflow/type" xmlns:utility="http://www.ibm.com/2006/eflow/utility" name="root" nsURI="Component2.medflow" nsPrefix="Component2.medflow">
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_2">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_1">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation}queryCustomerRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_2">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation}queryCustomerResponseMsg"/>
+        </elements>
+      </type>
+      <nodes xmi:type="Input.mednode:Input" xmi:id="Input_1" name="RetrieveCustomerInformation_queryCustomer_Input">
+        <location x="10" y="20"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="queryCustomer : RetrieveCustomerInformation"/>
+      </nodes>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_1" name="RetrieveCustomerInformation_queryCustomer_InputResponse">
+        <location x="400" y="20"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_2"/>
+        <translation xmi:type="utility:ConstantString" string="queryCustomer : RetrieveCustomerInformation"/>
+      </nodes>
+      <nodes xmi:type="XSLTransformation.mednode:XSLTransformation" xmi:id="XSLTransformation_1" name="XSLTransformation1" root="/body" XSLTransform="xslt/XSLTransformation1_req_2.xsl" XMXMap="xslt/XSLTransformation1_req_2.map" SMOVersion="SMO61">
+        <location x="268" y="20"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_2"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_1"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="XSLTransformation1"/>
+      </nodes>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_1" targetNode="XSLTransformation_1" sourceNode="Input_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_2" targetNode="InputResponse_1" sourceNode="XSLTransformation_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_3">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition/>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <composition>
+      <nodes xmi:type="Component2.medflow:root_I_2" xmi:id="root_I_2_1" name="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation}RetrieveCustomerInformation:queryCustomer::request"/>
+      <nodes xmi:type="Component2.medflow:root_I_3" xmi:id="root_I_3_1" name="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation}RetrieveCustomerInformation:searchCustomer::request"/>
+    </composition>
+    <propertyOrganizer/>
+  </eClassifiers>
+</ecore:EPackage>

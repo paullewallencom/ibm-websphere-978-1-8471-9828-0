@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/TrackAndManageCustomerOrderArtifacts" xmlns:ns0="http://CustomerDomain-v1_0/com/junglesea/bo/msg" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder" xmlns:ns10="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders" xmlns:ns11="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" xmlns:ns12="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments" xmlns:ns13="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/internalInterface/ShipPackage" xmlns:ns14="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact" xmlns:ns2="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation" xmlns:ns3="http://ProductDomain-v1_0/com/junglesea/bo/msg" xmlns:ns4="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation" xmlns:ns5="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:ns6="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation" xmlns:ns7="http://CustomerDomain-v1_0/com/junglesea/bo" xmlns:ns8="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments" xmlns:ns9="http://BillingDomain-v1_0/com/junglesea/bo/msg" xmlns:tel="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/Task1" xmlns:tel0="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/Task2" xmlns:tel1="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/Task3" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="TrackAndManageCustomerOrder" suppressJoinFailure="yes" targetNamespace="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses" wpc:autoDelete="no" wpc:autonomy="peer" wpc:compensationSphere="supports" wpc:continueOnError="no" wpc:displayName="TrackAndManageCustomerOrder" wpc:executionMode="longRunning" wpc:id="1" wpc:validFrom="2010-01-15T22:03:24" wpc:version="IBM_7.0.100">
+  <wpc:activityAdminTask name="tel:HandleOrderFallout"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/ProcessCustomerOrder.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="TrackAndManageCustomerOrderArtifacts.wsdl" namespace="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/TrackAndManageCustomerOrderArtifacts"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/CustomerOrderStatusMSG.xsd" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/CustomerOrderMSG.xsd" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/BillingDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments.wsdl" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/BillingDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders.wsdl" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/BillingDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/RetrieveInventoryInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/InventoryItemMSG.xsd" namespace="http://ProductDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/MaintainInventoryInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/Acknowledgement.xsd" namespace="http://CommonDomain-v1_0/com/junglesea/bo"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/CustomerCreditInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/CustomerCreditMSG.xsd" namespace="http://CustomerDomain-v1_0/com/junglesea/bo"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/ProcessCustomerPayments.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/PaymentMSG.xsd" namespace="http://BillingDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/PaymentAcknowledgementMSG.xsd" namespace="http://BillingDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/ProcessSPOrders.wsdl" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/SupplierPartnerOrderMSG.xsd" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/ManageShipments.wsdl" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/ShipmentMSG.xsd" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="internalInterface/ShipPackage.wsdl" namespace="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/internalInterface/ShipPackage"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/HandleCustomerContact.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/CustomerCommunucationMSG.xsd" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/BusinessException.xsd" namespace="http://CommonDomain-v1_0/com/junglesea/bo"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="ProcessCustomerOrder" partnerLinkType="ns:ProcessCustomerOrderPLT" wpc:id="2"/>
+    <bpws:partnerLink name="RetrieveInventoryInformationPartner" partnerLinkType="ns:RetrieveInventoryInformationPLT" partnerRole="Interface" wpc:id="19"/>
+    <bpws:partnerLink name="ProcessCustomerPaymentsPartner" partnerLinkType="ns:ProcessCustomerPaymentsPLT" partnerRole="Interface" wpc:id="20"/>
+    <bpws:partnerLink name="ManageShipmentsPartner" partnerLinkType="ns:ManageShipmentsPLT" partnerRole="Interface" wpc:id="21"/>
+    <bpws:partnerLink name="CustomerCreditInformationPartner" partnerLinkType="ns:CustomerCreditInformationPLT" partnerRole="Interface" wpc:id="22"/>
+    <bpws:partnerLink name="ProcessSPOrdersPartner" partnerLinkType="ns:ProcessSPOrdersPLT" partnerRole="Interface" wpc:id="23"/>
+    <bpws:partnerLink name="CustomerCreditInformationPartner1" partnerLinkType="ns:CustomerCreditInformationPLT1" partnerRole="Interface" wpc:id="24"/>
+    <bpws:partnerLink name="MaintainInventoryInformationPartner" partnerLinkType="ns:MaintainInventoryInformationPLT" partnerRole="Interface" wpc:id="45"/>
+    <bpws:partnerLink name="ProcessCustomerOrderPartner" partnerLinkType="ns:ProcessCustomerOrderPLT1" partnerRole="Interface" wpc:id="51"/>
+    <bpws:partnerLink name="HandleCustomerContactPartner" partnerLinkType="ns:HandleCustomerContactPLT" partnerRole="Interface" wpc:id="106"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="submitInputParam" type="ns0:CustomerOrderMSG" wpc:id="13"/>
+    <bpws:variable name="submitOutputParam" type="ns0:CustomerOrderMSG" wpc:id="14"/>
+    <bpws:variable name="inputParam1" type="ns0:CustomerOrderMSG" wpc:id="15"/>
+    <bpws:variable name="outputParam1" type="ns0:CustomerOrderStatusMSG" wpc:id="16"/>
+    <bpws:variable name="inputParam2" type="ns0:CustomerOrderMSG" wpc:id="17"/>
+    <bpws:variable name="outputParam2" type="ns0:CustomerOrderMSG" wpc:id="18"/>
+    <bpws:variable name="inventoryCheckIn" type="ns3:InventoryItemMSG" wpc:id="35"/>
+    <bpws:variable name="inventoryCheckOut" type="ns3:InventoryItemMSG" wpc:id="40"/>
+    <bpws:variable name="acknowledgement" type="ns5:Acknowledgement" wpc:id="47"/>
+    <bpws:variable name="customerCredit" type="ns7:CustomerCreditMSG" wpc:id="62"/>
+    <bpws:variable name="paymentRefund" type="ns9:PaymentMSG" wpc:id="73"/>
+    <bpws:variable name="paymentRequest" type="ns9:PaymentMSG" wpc:id="74"/>
+    <bpws:variable name="paymentAck" type="ns9:PaymentAcknowledgementMSG" wpc:id="75"/>
+    <bpws:variable name="supplierOrderInput" type="ns11:SupplierPartnerOrderMSG" wpc:id="99"/>
+    <bpws:variable name="supplierOrderOutput" type="ns11:SupplierPartnerOrderMSG" wpc:id="100"/>
+    <bpws:variable name="orderShipment" type="ns11:ShipmentMSG" wpc:id="104"/>
+    <bpws:variable name="orderShipmentComm" type="ns0:CustomerCommunucationMSG" wpc:id="108"/>
+    <bpws:variable name="RuntimeException" type="ns5:BusinessException" wpc:id="113"/>
+    <bpws:variable name="TimeoutException" type="ns5:BusinessException" wpc:id="116"/>
+  </bpws:variables>
+  <bpws:correlationSets>
+    <bpws:correlationSet name="OrderProcessingReference" properties="ns:custOrderIdCorrelation" wpc:id="117"/>
+  </bpws:correlationSets>
+  <bpws:faultHandlers>
+    <bpws:catch faultName="wpc:runtimeFailure" wpc:displayName="RuntimeFailureExcpetion" wpc:id="111">
+      <bpws:throw faultName="RuntimeFailureExcpetion" faultVariable="RuntimeException" name="ThrowRuntimeFailureExcpetion" wpc:displayName="ThrowRuntimeFailureExcpetion" wpc:id="112"/>
+    </bpws:catch>
+    <bpws:catch faultName="wpc:timeout" wpc:displayName="TimeoutException" wpc:id="114">
+      <bpws:throw faultName="TimeoutException" faultVariable="TimeoutException" name="ThrowTimeoutException" wpc:displayName="ThrowTimeoutException" wpc:id="115"/>
+    </bpws:catch>
+  </bpws:faultHandlers>
+  <bpws:pick createInstance="yes" name="ReceiveChoice" wpc:displayName="Receive Choice" wpc:id="3" wpc:transactionalBehavior="commitAfter">
+    <bpws:onMessage operation="submitCustomerOrder" partnerLink="ProcessCustomerOrder" portType="ns1:ProcessCustomerOrder" wpc:id="4">
+      <wpc:output>
+        <wpc:parameter name="inputParam" variable="submitInputParam"/>
+      </wpc:output>
+      <bpws:correlations>
+        <bpws:correlation initiate="yes" set="OrderProcessingReference"/>
+      </bpws:correlations>
+      <bpws:sequence name="HiddenSequence" wpc:id="1073741829">
+        <bpws:invoke name="Snippet" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="AuditNewOrderReceived" wpc:id="25">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[java.lang.String __result__2 = submitInputParam.getDataObject("CustomerOrder").getDataObject("BuyerInfo").getString("CustomerStatus");
+java.lang.String __result__1 = "Customer Status is: ";
+java.lang.String __result__3;
+{// append text
+	__result__3 = __result__1.concat(__result__2);
+}
+{// print to log
+	System.out.println(__result__3);
+}
+java.lang.String __result__6 = submitInputParam.getDataObject("CustomerOrder").getString("OrderId");
+java.lang.String __result__5 = "Received Order with ID : ";
+java.lang.String __result__7;
+{// append text
+	__result__7 = __result__5.concat(__result__6);
+}
+{// print to log
+	System.out.println(__result__7);
+}
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;Customer Status is: &quot;" assignable="false">
+//    <dataOutputs target="//@executableElements.2/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="submitInputParam.CustomerOrder.BuyerInfo.CustomerStatus" field="true">
+//    <dataOutputs target="//@executableElements.2/@parameters.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="append text" description="Combine the text of two words into one word" category="text" template="&lt;%return%> &lt;%input1%>.concat(&lt;%input2%>);">
+//    <parameters name="input1" dataInputs="//@executableElements.0/@dataOutputs.0" displayName="input 1">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <parameters name="input2" dataInputs="//@executableElements.1/@dataOutputs.0" displayName="input 2">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <result name="combined text" displayName="combined text">
+//      <dataOutputs target="//@executableElements.3/@parameters.0"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </result>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="print to log" description="Print a text representation of the input to System.out" category="utility" template="System.out.println(&lt;%object%>);">
+//    <parameters name="object" dataInputs="//@executableElements.2/@result/@dataOutputs.0" displayName="object">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+//    </parameters>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;Received Order with ID : &quot;" assignable="false">
+//    <dataOutputs target="//@executableElements.6/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="submitInputParam.CustomerOrder.OrderId" field="true">
+//    <dataOutputs target="//@executableElements.6/@parameters.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="append text" description="Combine the text of two words into one word" category="text" template="&lt;%return%> &lt;%input1%>.concat(&lt;%input2%>);">
+//    <parameters name="input1" dataInputs="//@executableElements.4/@dataOutputs.0" displayName="input 1">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <parameters name="input2" dataInputs="//@executableElements.5/@dataOutputs.0" displayName="input 2">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <result name="combined text" displayName="combined text">
+//      <dataOutputs target="//@executableElements.7/@parameters.0"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </result>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="print to log" description="Print a text representation of the input to System.out" category="utility" template="System.out.println(&lt;%object%>);">
+//    <parameters name="object" dataInputs="//@executableElements.6/@result/@dataOutputs.0" displayName="object">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+//    </parameters>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1 //@executableElements.2 //@executableElements.3"/>
+//  <executableGroups executableElements="//@executableElements.4 //@executableElements.5 //@executableElements.6 //@executableElements.7"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:2,1
+//!SMAP!2:1,1
+//!SMAP!3:3,4
+//!SMAP!4:7,3
+//!SMAP!5:11,1
+//!SMAP!6:10,1
+//!SMAP!7:12,4
+//!SMAP!8:16,3
+//!SMAP!1000000:91,1]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+        <bpws:switch name="Choice" wpc:displayName="CustomerStatusCheck" wpc:id="26">
+          <bpws:case wpc:displayName="BuyerNewOrProspect" wpc:id="27">
+            <bpws:condition><![CDATA[boolean __result__1 = submitInputParam.getDataObject("CustomerOrder").getDataObject("BuyerInfo").getString("CustomerStatus").equals("New");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="submitInputParam.CustomerOrder.BuyerInfo.CustomerStatus.equals(&quot;New&quot;)" assignable="false">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+            <bpws:sequence name="HiddenSequence3" wpc:id="1073741854">
+              <bpws:invoke name="Snippet1" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="InvalidCustomerStatus" wpc:id="29">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[submitOutputParam = submitInputParam;
+java.lang.String __result__1 = "FAILURE";
+submitOutputParam.getDataObject("MessageHeader").setString("ResponseStatus", __result__1);
+java.lang.String __result__5 = "ERROR";
+submitOutputParam.getDataObject("MessageHeader").setString("MessageType", __result__5);
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;FAILURE&quot;" assignable="false">
+//    <dataOutputs target="//@executableElements.3"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="submitInputParam" variable="true">
+//    <dataOutputs target="//@executableElements.2"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="CustomerOrderMSG" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.1/@dataOutputs.0" value="submitOutputParam" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="CustomerOrderMSG" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.0/@dataOutputs.0" value="submitOutputParam.MessageHeader.ResponseStatus" field="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;ERROR&quot;" assignable="false">
+//    <dataOutputs target="//@executableElements.5"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.4/@dataOutputs.0" value="submitOutputParam.MessageHeader.MessageType" field="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.1 //@executableElements.2"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.3"/>
+//  <executableGroups executableElements="//@executableElements.4 //@executableElements.5"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:2,1
+//!SMAP!3:1,1
+//!SMAP!4:3,1
+//!SMAP!5:4,1
+//!SMAP!6:5,1
+//!SMAP!1000000:47,1]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:throw faultName="InvalidCustomerStatus" faultVariable="submitOutputParam" name="Throw" wpc:displayName="Throw" wpc:id="31"/>
+            </bpws:sequence>
+          </bpws:case>
+          <bpws:otherwise wpc:id="28">
+            <bpws:sequence name="HiddenSequence5" wpc:id="1073741873">
+              <bpws:invoke name="Snippet3" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="BuyerHasExistingProfile" wpc:id="50">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[java.lang.String __result__1 = "The buyer has an existing customer profile created. All fine and we are proceeding with the order now.";
+{// print to log
+	System.out.println(__result__1);
+}
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;The buyer has an existing customer profile created. All fine and we are proceeding with the order now.&quot;" assignable="false">
+//    <dataOutputs target="//@executableElements.1/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="print to log" description="Print a text representation of the input to System.out" category="utility" template="System.out.println(&lt;%object%>);">
+//    <parameters name="object" dataInputs="//@executableElements.0/@dataOutputs.0" displayName="object">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+//    </parameters>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,3
+//!SMAP!1000000:29,1]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:forEach counterName="OrderItemCount" name="ForEachProductItemInOrder" parallel="no" wpc:counterVariableId="52" wpc:displayName="ForEachProductItemInOrder" wpc:id="36">
+                <bpws:startCounterValue expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[1]]></bpws:startCounterValue>
+                <bpws:finalCounterValue expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[count($submitInputParam/CustomerOrder/OrderItems)]]></bpws:finalCounterValue>
+                <bpws:scope name="Scope" wpc:id="38">
+                  <bpws:sequence name="HiddenSequence4" wpc:id="1073741863">
+                    <bpws:assign name="Assign" wpc:displayName="CreateMessageForInventoryCheck" wpc:id="34">
+                      <bpws:copy>
+                        <bpws:from variable="submitInputParam">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerOrder/OrderItems[bpws:getVariableData('OrderItemCount')]/PurchasedItem/SKU]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="inventoryCheckIn">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[InventoryItem/SKU]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="submitInputParam">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerOrder/OrderItems[bpws:getVariableData('OrderItemCount')]/PurchasedItem/ProductDetails/ItemName]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="inventoryCheckIn">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[InventoryItem/ProductDetails/ItemName]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="submitInputParam">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerOrder/OrderItems[bpws:getVariableData('OrderItemCount')]/PurchasedItem/ProductDetails/ItemQuantity]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="inventoryCheckIn">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[InventoryItem/ProductDetails/ItemQuantity]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                    </bpws:assign>
+                    <bpws:invoke name="Invoke" operation="queryItemAvailability" partnerLink="RetrieveInventoryInformationPartner" portType="ns2:RetrieveInventoryInformation" wpc:displayName="CheckItemAvailability" wpc:id="32">
+                      <wpc:input>
+                        <wpc:parameter name="inputParams" variable="inventoryCheckIn"/>
+                      </wpc:input>
+                      <wpc:output>
+                        <wpc:parameter name="outputParams" variable="inventoryCheckOut"/>
+                      </wpc:output>
+                    </bpws:invoke>
+                    <bpws:switch name="Choice1" wpc:displayName="ItemNotAvailable" wpc:id="41">
+                      <bpws:case wpc:displayName="Available" wpc:id="42">
+                        <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[$inventoryCheckOut/AvailableCurrently]]></bpws:condition>
+                        <bpws:invoke name="Snippet2" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="ItemAvailable" wpc:id="48">
+                          <wpc:script>
+                            <wpc:javaCode><![CDATA[//@generated:com.ibm.wbit.activity.ui]]></wpc:javaCode>
+                          </wpc:script>
+                        </bpws:invoke>
+                      </bpws:case>
+                      <bpws:otherwise wpc:id="43">
+                        <bpws:invoke name="Invoke1" operation="backkOrderItem" partnerLink="MaintainInventoryInformationPartner" portType="ns4:MaintainInventoryInformation" wpc:displayName="BackOrderItem" wpc:id="46">
+                          <wpc:input>
+                            <wpc:parameter name="inputParams" variable="inventoryCheckIn"/>
+                          </wpc:input>
+                          <wpc:output>
+                            <wpc:parameter name="outputParams" variable="acknowledgement"/>
+                          </wpc:output>
+                        </bpws:invoke>
+                      </bpws:otherwise>
+                    </bpws:switch>
+                  </bpws:sequence>
+                </bpws:scope>
+              </bpws:forEach>
+              <bpws:invoke name="Invoke2" operation="submitCustomerOrder" partnerLink="ProcessCustomerOrderPartner" portType="ns1:ProcessCustomerOrder" wpc:displayName="CheckIfCreditCheckNeeded" wpc:id="54">
+                <wpc:input>
+                  <wpc:parameter name="inputParam" variable="submitInputParam"/>
+                </wpc:input>
+                <wpc:output>
+                  <wpc:parameter name="outputParam" variable="submitOutputParam"/>
+                </wpc:output>
+              </bpws:invoke>
+              <bpws:switch name="Choice2" wpc:displayName="CreditApprovalNeeded" wpc:id="55">
+                <bpws:case wpc:displayName="Case" wpc:id="58">
+                  <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[$submitOutputParam/CustomerOrder/CreditCheckNeeded]]></bpws:condition>
+                  <bpws:sequence name="HiddenSequence6" wpc:id="1073741887">
+                    <bpws:invoke name="Invoke3" operation="getCustomerCredit" partnerLink="CustomerCreditInformationPartner1" portType="ns6:CustomerCreditInformation" wpc:displayName="GetCustomerCredit" wpc:id="61">
+                      <wpc:input>
+                        <wpc:parameter name="InputParams" variable="submitInputParam"/>
+                      </wpc:input>
+                      <wpc:output>
+                        <wpc:parameter name="outputParams" variable="customerCredit"/>
+                      </wpc:output>
+                    </bpws:invoke>
+                    <bpws:invoke name="ManagerToApproveOrderManually" operation="getCustomerCredit" partnerLink="null" portType="ns6:CustomerCreditInformation" wpc:continueOnError="inherit" wpc:displayName="ManagerToApproveOrderManually" wpc:id="64" wpc:transactionalBehavior="participates">
+                      <wpc:task name="tel0:TrackAndManageCustomerOrderTask2"/>
+                      <wpc:input>
+                        <wpc:parameter name="InputParams" variable="submitInputParam"/>
+                      </wpc:input>
+                      <wpc:output>
+                        <wpc:parameter name="outputParams" variable="customerCredit"/>
+                      </wpc:output>
+                    </bpws:invoke>
+                    <bpws:switch name="Choice3" wpc:displayName="ProccedWithOrder" wpc:id="65">
+                      <bpws:case wpc:displayName="Proceed" wpc:id="66">
+                        <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[$customerCredit/CustomerCredit/CreditApproved]]></bpws:condition>
+                        <bpws:invoke name="Snippet5" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="OrderCreditAppproved" wpc:id="69">
+                          <wpc:script>
+                            <wpc:javaCode><![CDATA[//@generated:com.ibm.wbit.activity.ui]]></wpc:javaCode>
+                          </wpc:script>
+                        </bpws:invoke>
+                      </bpws:case>
+                      <bpws:otherwise wpc:id="67">
+                        <bpws:sequence name="HiddenSequence7" wpc:id="1073741894">
+                          <bpws:invoke name="Snippet6" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="NotifyCustomerOrderRejection" wpc:id="71">
+                            <wpc:script>
+                              <wpc:javaCode><![CDATA[//@generated:com.ibm.wbit.activity.ui]]></wpc:javaCode>
+                            </wpc:script>
+                          </bpws:invoke>
+                          <bpws:terminate name="Terminate" wpc:displayName="TerminateOrder" wpc:id="68"/>
+                        </bpws:sequence>
+                      </bpws:otherwise>
+                    </bpws:switch>
+                  </bpws:sequence>
+                </bpws:case>
+                <bpws:otherwise wpc:id="59">
+                  <bpws:invoke name="Snippet4" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="NoApprovalNeeded" wpc:id="60">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[//@generated:com.ibm.wbit.activity.ui]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:otherwise>
+              </bpws:switch>
+              <bpws:assign name="AssignValuesforPayment" wpc:displayName="AssignValuesforPayment" wpc:id="82">
+                <bpws:copy>
+                  <bpws:from variable="submitInputParam">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerOrder/TotalAmount]]></bpws:query>
+                  </bpws:from>
+                  <bpws:to variable="paymentRequest">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[Payment/Amount]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from variable="submitInputParam">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerOrder/PaymentInformation[1]]]></bpws:query>
+                  </bpws:from>
+                  <bpws:to variable="paymentRequest">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[Payment/PaymentMethod/CreditCardDetails/CardType]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from variable="submitInputParam">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerOrder/PaymentInformation[2]]]></bpws:query>
+                  </bpws:from>
+                  <bpws:to variable="paymentRequest">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[Payment/PaymentMethod/CreditCardDetails/CardNumber]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from variable="submitInputParam">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerOrder/PaymentInformation[3]]]></bpws:query>
+                  </bpws:from>
+                  <bpws:to variable="paymentRequest">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[Payment/PaymentMethod/CreditCardDetails/ExpiryMonth]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from variable="submitInputParam">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerOrder/PaymentInformation[4]]]></bpws:query>
+                  </bpws:from>
+                  <bpws:to variable="paymentRequest">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[Payment/PaymentMethod/CreditCardDetails/ExpiryYear]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+              </bpws:assign>
+              <bpws:scope name="PaymentCompensationScope" wpc:displayName="PaymentCompensationScope" wpc:id="89">
+                <bpws:faultHandlers>
+                  <bpws:catchAll wpc:id="91">
+                    <bpws:compensate name="Compensate" wpc:displayName="Compensate" wpc:id="84"/>
+                  </bpws:catchAll>
+                </bpws:faultHandlers>
+                <bpws:compensationHandler>
+                  <bpws:sequence name="HiddenSequence8" wpc:id="1073741914">
+                    <bpws:assign name="Assign2" wpc:displayName="AssignValuesForPaymentRefund" wpc:id="86">
+                      <bpws:copy>
+                        <bpws:from variable="paymentRequest"/>
+                        <bpws:to variable="paymentRefund"/>
+                      </bpws:copy>
+                    </bpws:assign>
+                    <bpws:invoke name="RefundPayment" operation="refundPayment" partnerLink="ProcessCustomerPaymentsPartner" portType="ns8:ProcessCustomerPayments" wpc:displayName="RefundPayment" wpc:id="87">
+                      <wpc:input>
+                        <wpc:parameter name="inputParams" variable="paymentRefund"/>
+                      </wpc:input>
+                      <wpc:output>
+                        <wpc:parameter name="outputParams" variable="paymentAck"/>
+                      </wpc:output>
+                    </bpws:invoke>
+                  </bpws:sequence>
+                </bpws:compensationHandler>
+                <bpws:invoke name="ProcessPaymentForOrder" operation="processPayment" partnerLink="ProcessCustomerPaymentsPartner" portType="ns8:ProcessCustomerPayments" wpc:displayName="ProcessPaymentForOrder" wpc:id="72">
+                  <wpc:expiration>
+                    <wpc:timeout duration="10seconds"/>
+                  </wpc:expiration>
+                  <wpc:input>
+                    <wpc:parameter name="inputParams" variable="paymentRequest"/>
+                  </wpc:input>
+                  <wpc:output>
+                    <wpc:parameter name="outputParams" variable="paymentAck"/>
+                  </wpc:output>
+                </bpws:invoke>
+              </bpws:scope>
+            </bpws:sequence>
+          </bpws:otherwise>
+        </bpws:switch>
+        <bpws:switch name="Choice4" wpc:displayName="CheckIfSupplerPartnerOrder" wpc:id="92">
+          <bpws:case wpc:displayName="SupplierPartner" wpc:id="93">
+            <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[$submitInputParam/CustomerOrder/OrderItems/SupplierOrder = 'true']]></bpws:condition>
+            <bpws:sequence name="HiddenSequence9" wpc:id="1073741921">
+              <bpws:assign name="AssignValuesforSupplierOrder" wpc:displayName="AssignValuesforSupplierOrder" wpc:id="98">
+                <bpws:copy>
+                  <bpws:from variable="submitInputParam">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerOrder]]></bpws:query>
+                  </bpws:from>
+                  <bpws:to variable="supplierOrderInput">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[SupplierPartnerOrder]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+              </bpws:assign>
+              <bpws:invoke name="Invoke4" operation="submitSupplierOrder" partnerLink="ProcessSPOrdersPartner" portType="ns10:ProcessSPOrders" wpc:displayName="SubmitSupplierPartnerOrder" wpc:id="96">
+                <wpc:input>
+                  <wpc:parameter name="inputParams" variable="supplierOrderInput"/>
+                </wpc:input>
+                <wpc:output>
+                  <wpc:parameter name="outputParams" variable="supplierOrderOutput"/>
+                </wpc:output>
+              </bpws:invoke>
+              <bpws:assign name="AssignSupplierOrderResponseToCustomerOrder" wpc:displayName="AssignSupplierOrderResponseToCustomerOrder" wpc:id="101">
+                <bpws:copy>
+                  <bpws:from variable="supplierOrderOutput">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[SupplierPartnerOrder]]></bpws:query>
+                  </bpws:from>
+                  <bpws:to variable="submitOutputParam">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerOrder]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+              </bpws:assign>
+            </bpws:sequence>
+          </bpws:case>
+          <bpws:otherwise wpc:id="94">
+            <bpws:sequence name="HiddenSequence10" wpc:id="1073741926">
+              <bpws:invoke name="Invoke5" operation="createShippingLabel" partnerLink="ManageShipmentsPartner" portType="ns12:ManageShipments" wpc:displayName="CreateShippingLabel" wpc:id="103">
+                <wpc:expiration>
+                  <wpc:timeout duration="5seconds"/>
+                </wpc:expiration>
+                <wpc:input>
+                  <wpc:parameter name="inputParams" variable="submitInputParam"/>
+                </wpc:input>
+                <wpc:output>
+                  <wpc:parameter name="outputParams" variable="orderShipment"/>
+                </wpc:output>
+              </bpws:invoke>
+              <bpws:invoke name="ShipPackage" operation="shipPackage" partnerLink="null" portType="ns13:ShipPackage" wpc:continueOnError="inherit" wpc:displayName="ShipPackage" wpc:id="105" wpc:transactionalBehavior="participates">
+                <wpc:task name="tel1:TrackAndManageCustomerOrderTask3"/>
+                <wpc:input>
+                  <wpc:parameter name="input1" variable="orderShipment"/>
+                </wpc:input>
+                <wpc:output>
+                  <wpc:parameter name="output1" variable="acknowledgement"/>
+                </wpc:output>
+              </bpws:invoke>
+              <bpws:invoke name="DataMap" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="SetCustomerOrderShipmentCommunicationMsg" wpc:id="119">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[commonj.sdo.DataObject __result__3;
+{// create CustomerCommunucationMSG
+	com.ibm.websphere.bo.BOFactory factory = 
+	   (com.ibm.websphere.bo.BOFactory) new com.ibm.websphere.sca.ServiceManager().locateService("com/ibm/websphere/bo/BOFactory");
+	 __result__3 = factory.create("http://CustomerDomain-v1_0/com/junglesea/bo/msg","CustomerCommunucationMSG");
+}
+orderShipmentComm = __result__3;
+java.lang.Object __result__5 = null;
+try {
+	{// SetCustomerOrderShipmentCommunicationMsg
+		java.util.HashMap inputMap = new java.util.HashMap();
+		java.util.HashMap outputMap = new java.util.HashMap();
+		inputMap.put("CustomerOrderMSG", submitInputParam);
+		inputMap.put("ShipmentMSG", orderShipment);
+		outputMap.put("CustomerCommunucationMSG", orderShipmentComm);
+		com.ibm.wbiserver.map.MapService _serv = 
+			(com.ibm.wbiserver.map.MapService)new com.ibm.websphere.sca.ServiceManager().locateService("com/ibm/wbiserver/map/MapService");
+		_serv.transform("http://ProcessServices-OrderHandling/com/junglsea/maps/bo", "SetCustomerOrderShipmentCommunicationMsg", inputMap, outputMap, ((com.ibm.wbiserver.relationshipservice.common.ExecutionContext)__result__5));
+	}
+}
+catch(com.ibm.wbiserver.map.exceptions.WBIMapFailureException ex){
+	com.ibm.wbiserver.map.exceptions.WBIMapFailureException __result__8;
+	ex.printStackTrace();
+}
+catch(com.ibm.wbiserver.map.exceptions.WBIMapNotFoundException ex){
+	com.ibm.wbiserver.map.exceptions.WBIMapNotFoundException __result__11;
+	ex.printStackTrace();
+}
+catch(com.ibm.wbiserver.map.exceptions.WBIMapServiceException ex){
+	com.ibm.wbiserver.map.exceptions.WBIMapServiceException __result__14;
+	ex.printStackTrace();
+}
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="void"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="submitInputParam" variable="true">
+//    <dataOutputs target="//@executableElements.5/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="CustomerOrderMSG" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="orderShipment" variable="true">
+//    <dataOutputs target="//@executableElements.5/@parameters.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="ShipmentMSG" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="create CustomerCommunucationMSG" description="create a new CustomerCommunucationMSG {http://CustomerDomain-v1_0/com/junglesea/bo/msg}" template="com.ibm.websphere.bo.BOFactory factory = &#xA;   (com.ibm.websphere.bo.BOFactory) new com.ibm.websphere.sca.ServiceManager().locateService(&quot;com/ibm/websphere/bo/BOFactory&quot;);&#xA; &lt;%return%> factory.create(&quot;http://CustomerDomain-v1_0/com/junglesea/bo/msg&quot;,&quot;CustomerCommunucationMSG&quot;);">
+//    <result>
+//      <dataOutputs target="//@executableElements.3"/>
+//      <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="CustomerCommunucationMSG" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+//    </result>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.2/@result/@dataOutputs.0" value="orderShipmentComm" variable="true">
+//    <dataOutputs target="//@executableElements.5/@parameters.2"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="CustomerCommunucationMSG" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="null" assignable="false">
+//    <dataOutputs target="//@executableElements.5/@parameters.3"/>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="SetCustomerOrderShipmentCommunicationMsg" description="perform mapping {0}SetCustomerOrderShipmentCommunicationMsg {http://ProcessServices-OrderHandling/com/junglsea/maps/bo}" template="java.util.HashMap inputMap = new java.util.HashMap();&#xA;java.util.HashMap outputMap = new java.util.HashMap();&#xA;inputMap.put(&quot;CustomerOrderMSG&quot;, &lt;%CustomerOrderMSG%>);&#xA;inputMap.put(&quot;ShipmentMSG&quot;, &lt;%ShipmentMSG%>);&#xA;outputMap.put(&quot;CustomerCommunucationMSG&quot;, &lt;%CustomerCommunucationMSG%>);&#xA;com.ibm.wbiserver.map.MapService _serv = &#xA;&#x9;(com.ibm.wbiserver.map.MapService)new com.ibm.websphere.sca.ServiceManager().locateService(&quot;com/ibm/wbiserver/map/MapService&quot;);&#xA;_serv.transform(&quot;http://ProcessServices-OrderHandling/com/junglsea/maps/bo&quot;, &quot;SetCustomerOrderShipmentCommunicationMsg&quot;, inputMap, outputMap, &lt;%executionContext%>);">
+//    <parameters name="CustomerOrderMSG" dataInputs="//@executableElements.0/@dataOutputs.0">
+//      <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="CustomerOrderMSG" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+//    </parameters>
+//    <parameters name="ShipmentMSG" dataInputs="//@executableElements.1/@dataOutputs.0">
+//      <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="ShipmentMSG" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg"/>
+//    </parameters>
+//    <parameters name="CustomerCommunucationMSG" dataInputs="//@executableElements.3/@dataOutputs.0">
+//      <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="CustomerCommunucationMSG" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+//    </parameters>
+//    <parameters name="executionContext" dataInputs="//@executableElements.4/@dataOutputs.0">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.wbiserver.relationshipservice.common.ExecutionContext"/>
+//    </parameters>
+//    <exceptions>
+//      <dataOutputs target="//@executableElements.6/@parameters.0"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.wbiserver.map.exceptions.WBIMapFailureException"/>
+//    </exceptions>
+//    <exceptions>
+//      <dataOutputs target="//@executableElements.7/@parameters.0"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.wbiserver.map.exceptions.WBIMapNotFoundException"/>
+//    </exceptions>
+//    <exceptions>
+//      <dataOutputs target="//@executableElements.8/@parameters.0"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.wbiserver.map.exceptions.WBIMapServiceException"/>
+//    </exceptions>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ExceptionHandler" name="Exception Handler" collapsed="true">
+//    <parameters name="ex" dataInputs="//@executableElements.5/@exceptions.0/@dataOutputs.0">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.wbiserver.map.exceptions.WBIMapFailureException"/>
+//    </parameters>
+//    <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="ex" input="true">
+//      <dataOutputs target="//@executableElements.6/@executableElements.1/@parameters.0"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.wbiserver.map.exceptions.WBIMapFailureException"/>
+//    </executableElements>
+//    <executableElements xsi:type="com.ibm.wbit.activity:JavaActivity" name="printStackTrace" category="java.lang.Throwable" className="java.lang.Throwable" memberName="printStackTrace">
+//      <parameters name="Throwable" dataInputs="//@executableElements.6/@executableElements.0/@dataOutputs.0">
+//        <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Throwable"/>
+//      </parameters>
+//    </executableElements>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ExceptionHandler" name="Exception Handler" collapsed="true">
+//    <parameters name="ex" dataInputs="//@executableElements.5/@exceptions.1/@dataOutputs.0">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.wbiserver.map.exceptions.WBIMapNotFoundException"/>
+//    </parameters>
+//    <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="ex" input="true">
+//      <dataOutputs target="//@executableElements.7/@executableElements.1/@parameters.0"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.wbiserver.map.exceptions.WBIMapNotFoundException"/>
+//    </executableElements>
+//    <executableElements xsi:type="com.ibm.wbit.activity:JavaActivity" name="printStackTrace" category="java.lang.Throwable" className="java.lang.Throwable" memberName="printStackTrace">
+//      <parameters name="Throwable" dataInputs="//@executableElements.7/@executableElements.0/@dataOutputs.0">
+//        <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Throwable"/>
+//      </parameters>
+//    </executableElements>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ExceptionHandler" name="Exception Handler" collapsed="true">
+//    <parameters name="ex" dataInputs="//@executableElements.5/@exceptions.2/@dataOutputs.0">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.wbiserver.map.exceptions.WBIMapServiceException"/>
+//    </parameters>
+//    <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="ex" input="true">
+//      <dataOutputs target="//@executableElements.8/@executableElements.1/@parameters.0"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.wbiserver.map.exceptions.WBIMapServiceException"/>
+//    </executableElements>
+//    <executableElements xsi:type="com.ibm.wbit.activity:JavaActivity" name="printStackTrace" category="java.lang.Throwable" className="java.lang.Throwable" memberName="printStackTrace">
+//      <parameters name="Throwable" dataInputs="//@executableElements.8/@executableElements.0/@dataOutputs.0">
+//        <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Throwable"/>
+//      </parameters>
+//    </executableElements>
+//  </executableElements>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!3:1,6
+//!SMAP!4:7,1
+//!SMAP!5:8,1
+//!SMAP!6:10,10
+//!SMAP!8:22,1
+//!SMAP!9:23,1
+//!SMAP!11:26,1
+//!SMAP!12:27,1
+//!SMAP!14:30,1
+//!SMAP!15:31,1
+//!SMAP!1000000:148,1]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="SendStandardCommunucationToCustomer" operation="sendStandardCommunication" partnerLink="HandleCustomerContactPartner" portType="ns14:HandleCustomerContact" wpc:displayName="SendStandardCommunucationToCustomer" wpc:id="107">
+                <wpc:input>
+                  <wpc:parameter name="inputParams" variable="orderShipmentComm"/>
+                </wpc:input>
+              </bpws:invoke>
+              <bpws:invoke name="Snippet7" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="InternalOrder" wpc:id="95">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[//@generated:com.ibm.wbit.activity.ui]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:sequence>
+          </bpws:otherwise>
+        </bpws:switch>
+        <bpws:invoke name="AuditNewOrderCompletedSucessfully" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="AuditNewOrderCompletedSucessfully" wpc:id="110">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[java.lang.String __result__2 = submitInputParam.getDataObject("CustomerOrder").getString("OrderId");
+java.lang.String __result__1 = "Successfully Completed Order with ID: ";
+java.lang.String __result__3;
+{// append text
+	__result__3 = __result__1.concat(__result__2);
+}
+{// print to log
+	System.out.println(__result__3);
+}
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;Successfully Completed Order with ID: &quot;" assignable="false">
+//    <dataOutputs target="//@executableElements.2/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="submitInputParam.CustomerOrder.OrderId" field="true">
+//    <dataOutputs target="//@executableElements.2/@parameters.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="append text" description="Combine the text of two words into one word" category="text" template="&lt;%return%> &lt;%input1%>.concat(&lt;%input2%>);">
+//    <parameters name="input1" dataInputs="//@executableElements.0/@dataOutputs.0" displayName="input 1">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <parameters name="input2" dataInputs="//@executableElements.1/@dataOutputs.0" displayName="input 2">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <result name="combined text" displayName="combined text">
+//      <dataOutputs target="//@executableElements.3/@parameters.0"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </result>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="print to log" description="Print a text representation of the input to System.out" category="utility" template="System.out.println(&lt;%object%>);">
+//    <parameters name="object" dataInputs="//@executableElements.2/@result/@dataOutputs.0" displayName="object">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+//    </parameters>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1 //@executableElements.2 //@executableElements.3"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:2,1
+//!SMAP!2:1,1
+//!SMAP!3:3,4
+//!SMAP!4:7,3
+//!SMAP!1000000:52,1]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+        <bpws:reply name="Reply_submitCustomerOrder" operation="submitCustomerOrder" partnerLink="ProcessCustomerOrder" portType="ns1:ProcessCustomerOrder" wpc:displayName="Reply-submitCustomerOrder" wpc:id="6">
+          <wpc:input>
+            <wpc:parameter name="outputParam" variable="submitOutputParam"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+    <bpws:onMessage operation="queryOrderStatus" partnerLink="ProcessCustomerOrder" portType="ns1:ProcessCustomerOrder" wpc:id="7">
+      <wpc:output>
+        <wpc:parameter name="inputParam" variable="inputParam1"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence1" wpc:id="1073741832">
+        <bpws:reply name="Reply_queryOrderStatus" operation="queryOrderStatus" partnerLink="ProcessCustomerOrder" portType="ns1:ProcessCustomerOrder" wpc:displayName="Reply-queryOrderStatus" wpc:id="9">
+          <wpc:input>
+            <wpc:parameter name="outputParam" variable="outputParam1"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+    <bpws:onMessage operation="cancelCustomerOrder" partnerLink="ProcessCustomerOrder" portType="ns1:ProcessCustomerOrder" wpc:id="10">
+      <wpc:output>
+        <wpc:parameter name="inputParam" variable="inputParam2"/>
+      </wpc:output>
+      <bpws:correlations>
+        <bpws:correlation initiate="no" set="OrderProcessingReference"/>
+      </bpws:correlations>
+      <bpws:sequence name="HiddenSequence2" wpc:id="1073741835">
+        <bpws:reply name="Reply_cancelCustomerOrder" operation="cancelCustomerOrder" partnerLink="ProcessCustomerOrder" portType="ns1:ProcessCustomerOrder" wpc:displayName="Reply-cancelCustomerOrder" wpc:id="12">
+          <wpc:input>
+            <wpc:parameter name="outputParam" variable="outputParam2"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+  </bpws:pick>
+</bpws:process>

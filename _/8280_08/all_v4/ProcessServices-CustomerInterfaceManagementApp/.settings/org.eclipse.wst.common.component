@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ProcessServices-CustomerInterfaceManagementApp">
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+        <dependent-module archiveName="ProcessServices-CustomerInterfaceManagement.jar" deploy-path="/" handle="module:/resource/ProcessServices-CustomerInterfaceManagement/ProcessServices-CustomerInterfaceManagement">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/ProcessServices-CustomerInterfaceManagementWeb/ProcessServices-CustomerInterfaceManagementWeb">
+            <dependent-object>WebModule_1169158408425</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CustomerDomain-v1_0.jar" deploy-path="/" handle="module:/resource/CustomerDomain-v1_0/CustomerDomain-v1_0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="SupplierPartnerDomain-v1_0.jar" deploy-path="/" handle="module:/resource/SupplierPartnerDomain-v1_0/SupplierPartnerDomain-v1_0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CommonDomain-v1_0.jar" deploy-path="/" handle="module:/resource/CommonDomain-v1_0/CommonDomain-v1_0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="BillingDomain-v1_0.jar" deploy-path="/" handle="module:/resource/BillingDomain-v1_0/BillingDomain-v1_0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ProductDomain-v1_0.jar" deploy-path="/" handle="module:/resource/ProductDomain-v1_0/ProductDomain-v1_0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

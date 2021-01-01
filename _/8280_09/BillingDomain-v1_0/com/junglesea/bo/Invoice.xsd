@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://BillingDomain-Msg/com/junglesea/bo"
+	xmlns:bons3="http://ProductDomain-v1_0/com/junglesea/bo"
+	xmlns:bons4="http://BillingDomain-Msg/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="InvoiceCharges.xsd" />
+	<xsd:import namespace="http://ProductDomain-v1_0/com/junglesea/bo"
+		schemaLocation="Product.xsd">
+	</xsd:import>
+
+
+	<xsd:complexType name="Invoice">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="InvoiceNumber"
+				type="xsd:string">
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="CustomerReference"
+				type="xsd:string">
+			</xsd:element>
+
+
+			<xsd:element maxOccurs="unbounded" minOccurs="0"
+				name="BilledItems" type="bons3:Product">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Charges"
+				type="bons4:InvoiceCharges">
+			</xsd:element>
+
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

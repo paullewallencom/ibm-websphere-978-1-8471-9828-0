@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://CustomerDomain-Msg/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://CommonDomain-v1_0/com/junglesea/bo">
+	<xsd:import schemaLocation="Contact.xsd"
+		namespace="http://CommonDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:import schemaLocation="GeographicAddress.xsd"
+		namespace="http://CommonDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:complexType name="CustomerAccount">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Id" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="AccountAddress"
+				type="bons0:GeographicAddress">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="AccountContact"
+				type="bons0:Contact">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="AccountStatus"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

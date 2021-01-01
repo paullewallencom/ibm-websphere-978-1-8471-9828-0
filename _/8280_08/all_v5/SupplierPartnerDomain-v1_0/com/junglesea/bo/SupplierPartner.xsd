@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://CommonDomain-v1_0/com/junglesea/bo">
+	<xsd:import schemaLocation="Organization.xsd"
+		namespace="http://CommonDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:complexType name="SupplierPartner">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="SupplierId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="SupplierName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="SupplierDetails"
+				type="bons0:Organization">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

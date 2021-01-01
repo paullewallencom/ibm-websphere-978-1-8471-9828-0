@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="MaintainProductInformation" targetNamespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainProductInformation" xmlns:bons1="http://ProductDomain-v1_0/com/junglesea/bo" xmlns:tns="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainProductInformation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainProductInformation">
+      <xsd:import namespace="http://ProductDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/ProductOffering.xsd"/>
+      <xsd:element name="createProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="retireProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="retireProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="createProductRequestMsg">
+    <wsdl:part element="tns:createProduct" name="createProductParameters"/>
+  </wsdl:message>
+    <wsdl:message name="createProductResponseMsg">
+    <wsdl:part element="tns:createProductResponse" name="createProductResult"/>
+  </wsdl:message>
+    <wsdl:message name="updateProductRequestMsg">
+    <wsdl:part element="tns:updateProduct" name="updateProductParameters"/>
+  </wsdl:message>
+    <wsdl:message name="updateProductResponseMsg">
+    <wsdl:part element="tns:updateProductResponse" name="updateProductResult"/>
+  </wsdl:message>
+    <wsdl:message name="retireProductRequestMsg">
+    <wsdl:part element="tns:retireProduct" name="retireProductParameters"/>
+  </wsdl:message>
+    <wsdl:message name="retireProductResponseMsg">
+    <wsdl:part element="tns:retireProductResponse" name="retireProductResult"/>
+  </wsdl:message>
+    <wsdl:portType name="MaintainProductInformation">
+    <wsdl:operation name="createProduct">
+      <wsdl:input message="tns:createProductRequestMsg" name="createProductRequest"/>
+      <wsdl:output message="tns:createProductResponseMsg" name="createProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <wsdl:input message="tns:updateProductRequestMsg" name="updateProductRequest"/>
+      <wsdl:output message="tns:updateProductResponseMsg" name="updateProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="retireProduct">
+      <wsdl:input message="tns:retireProductRequestMsg" name="retireProductRequest"/>
+      <wsdl:output message="tns:retireProductResponseMsg" name="retireProductResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

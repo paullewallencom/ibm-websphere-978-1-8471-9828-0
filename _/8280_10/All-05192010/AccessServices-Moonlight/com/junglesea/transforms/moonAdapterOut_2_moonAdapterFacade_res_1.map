@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" targetNamespace="http://AccessServices-Moonlight2/com/junglesea/transforms/moonAdapterOut_2_moonAdapterFacade_res_1" version="7.0.101" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://AccessServices-Moonlight2/com/junglesea/transforms/moonAdapterOut_2_moonAdapterFacade_res_1">
+    <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FAccessServices-Moonlight2%252FMoonlightJDBCAdapterImport%257DcreateDb2adminSupplierordersBGResponseMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FMoonlightLibrary%252Fcom%252Fjunglesea%252Fapps%252Fmoonlight%252FProcessPurchaseOrder%257DprocessOrderResponseMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <imports>
+        <import kind="xml" location="moonAdapterOut_2_moonAdapterFacade_res_1.xml"/>
+    </imports>
+    <mappingDeclaration name="moonAdapterOut_2_moonAdapterFacade_res_1">
+        <input path="body"/>
+        <output path="body"/>
+        <expression>
+            <input path="createDb2adminSupplierordersBGResponse/createDb2adminSupplierordersBGOutput/Db2adminSupplierorders/sp_order_id" var="sp_order_id"/>
+            <output path="processOrderResponse/purchaseOrder"/>
+            <code lang="xpath">concat("Order Successfully Created with the Supplier / Partner. Order reference is : " , $sp_order_id )</code>
+        </expression>
+    </mappingDeclaration>
+</mappingRoot>

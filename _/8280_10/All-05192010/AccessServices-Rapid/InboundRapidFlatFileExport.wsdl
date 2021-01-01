@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="InboundRapidFlatFileExport.wsdl" targetNamespace="http://AccessServices-Rapid/InboundRapidFlatFileExport" xmlns:bons1="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/flatfile" xmlns:tns="http://AccessServices-Rapid/InboundRapidFlatFileExport" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://AccessServices-Rapid/InboundRapidFlatFileExport">
+      <xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/flatfile" schemaLocation="CommonSchemas/FlatFile.xsd"/>
+      <xsd:element name="emitFlatFile">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="emitFlatFileInput" type="bons1:FlatFile"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="emitFlatFileRequestMsg">
+    <wsdl:part element="tns:emitFlatFile" name="emitFlatFileParameters"/>
+  </wsdl:message>
+  <wsdl:portType name="InboundRapidFlatFileExport">
+    <wsdl:operation name="emitFlatFile">
+      <wsdl:input message="tns:emitFlatFileRequestMsg" name="emitFlatFileRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

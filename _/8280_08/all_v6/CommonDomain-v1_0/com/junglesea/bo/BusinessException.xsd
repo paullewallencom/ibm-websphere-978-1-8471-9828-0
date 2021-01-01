@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="BusinessException" mixed="false">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="ExceptionId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ExceptionDescription"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ExceptionType"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Timestamp"
+				type="xsd:dateTime">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="SuggestedAction"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

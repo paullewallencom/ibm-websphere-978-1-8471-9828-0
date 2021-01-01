@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://BizServices-InventoryMgmt/com/junglsea/businessservices/RetrieveInventoryInformationArtifacts" xmlns:ns0="http://ProductDomain-v1_0/com/junglesea/bo/msg" xmlns:ns1="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="RetrieveInventoryInformation" suppressJoinFailure="yes" targetNamespace="http://BizServices-InventoryMgmt/com/junglsea/businessservices" wpc:continueOnError="no" wpc:displayName="RetrieveInventoryInformation" wpc:executionMode="longRunning" wpc:id="1" wpc:validFrom="2010-01-06T17:52:55" wpc:version="IBM_7.0.100">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/InventoryItemMSG.xsd" namespace="http://ProductDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="RetrieveInventoryInformationArtifacts.wsdl" namespace="http://BizServices-InventoryMgmt/com/junglsea/businessservices/RetrieveInventoryInformationArtifacts"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/RetrieveInventoryInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="RetrieveInventoryInformation" partnerLinkType="ns:RetrieveInventoryInformationPLT" wpc:id="2"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="inputParams" type="ns0:InventoryItemMSG" wpc:id="6"/>
+    <bpws:variable name="outputParams" type="ns0:InventoryItemMSG" wpc:id="7"/>
+  </bpws:variables>
+  <bpws:sequence name="HiddenSequence" wpc:id="1073741827">
+    <bpws:receive createInstance="yes" name="Receive" operation="queryItemAvailability" partnerLink="RetrieveInventoryInformation" portType="ns1:RetrieveInventoryInformation" wpc:displayName="Receive" wpc:id="4" wpc:transactionalBehavior="commitAfter">
+      <wpc:output>
+        <wpc:parameter name="inputParams" variable="inputParams"/>
+      </wpc:output>
+    </bpws:receive>
+    <bpws:reply name="Reply" operation="queryItemAvailability" partnerLink="RetrieveInventoryInformation" portType="ns1:RetrieveInventoryInformation" wpc:displayName="Reply" wpc:id="5">
+      <wpc:input>
+        <wpc:parameter name="outputParams" variable="outputParams"/>
+      </wpc:input>
+    </bpws:reply>
+  </bpws:sequence>
+</bpws:process>

@@ -1,0 +1,4 @@
+Name: com/ibm/j2ca/flatfile
+Implementation-Title: "IBM WebSphere Adapter for Flat Files"
+Implementation-Version: 7.0.0.0_IF02
+Implementation-Vendor: "International Business Machines Corporation"

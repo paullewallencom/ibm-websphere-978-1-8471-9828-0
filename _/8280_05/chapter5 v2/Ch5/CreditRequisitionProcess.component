@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CreditManagement="http://Ch5Library/CreditManagement" xmlns:ns1="http://Ch5Library/HelloWorldProcess" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="CreditRequisitionProcess" name="CreditRequisitionProcess">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="async" portType="CreditManagement:CreditManagement1">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="false"/>
+    </interface>
+  </interfaces>
+</scdl:component>

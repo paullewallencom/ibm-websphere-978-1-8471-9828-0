@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Callout.mednode="mednode://mednodes/Callout.mednode/Callout" xmlns:CalloutFault.mednode="mednode://mednodes/CalloutFault.mednode/CalloutFault" xmlns:CalloutResponse.mednode="mednode://mednodes/CalloutResponse.mednode/CalloutResponse" xmlns:CreditManagementMediationFlow.medflow="CreditManagementMediationFlow.medflow" xmlns:CustomMediation.mednode="mednode://mednodes/CustomMediation.mednode/CustomMediation" xmlns:Fail.mednode="mednode://mednodes/Fail.mednode/Fail" xmlns:Input.mednode="mednode://mednodes/Input.mednode/Input" xmlns:InputFault.mednode="mednode://mednodes/InputFault.mednode/InputFault" xmlns:InputResponse.mednode="mednode://mednodes/InputResponse.mednode/InputResponse" xmlns:MessageFilter.mednode="mednode://mednodes/MessageFilter.mednode/MessageFilter" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow2="http://www.ibm.com/2006/eflow" xmlns:type="http://www.ibm.com/2006/eflow/type" xmlns:utility="http://www.ibm.com/2006/eflow/utility" name="root" nsURI="CreditManagementMediationFlow.medflow" nsPrefix="CreditManagementMediationFlow.medflow">
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_2">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_1">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement}requestCreditApprovalRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_2">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement}requestCreditApprovalResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_3">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement}requestCreditApproval_creditApprovalFaultMsg"/>
+        </elements>
+      </type>
+      <nodes xmi:type="Input.mednode:Input" xmi:id="Input_1" name="CreditManagement_requestCreditApproval_Input">
+        <location x="10" y="134"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagement"/>
+      </nodes>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_1" name="CreditManagement_requestCreditApproval_InputResponse">
+        <location x="626" y="254"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_2"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagement"/>
+      </nodes>
+      <nodes xmi:type="InputFault.mednode:InputFault" xmi:id="InputFault_1" name="CreditManagement_requestCreditApproval_InputFault">
+        <location x="626" y="332"/>
+        <inTerminals terminalNodeID="InTerminal.dynamic:in:requestCreditApproval_creditApprovalFaultMsg" dynamic="true" explicitType="true" label="requestCreditApproval_creditApprovalFaultMsg" longDescription="" type="CompositeType_3"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagement"/>
+      </nodes>
+      <nodes xmi:type="Callout.mednode:Callout" xmi:id="Callout_1" name="CreditManagementPartner_requestCreditApproval_Callout" referenceName="CreditManagementPartner" operationName="requestCreditApproval">
+        <location x="626" y="20"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagementPartner"/>
+      </nodes>
+      <nodes xmi:type="Callout.mednode:Callout" xmi:id="Callout_2" name="CreditManagementPartner1_requestCreditApproval_Callout" referenceName="CreditManagementPartner1" operationName="requestCreditApproval">
+        <location x="626" y="98"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagementPartner1"/>
+      </nodes>
+      <nodes xmi:type="Callout.mednode:Callout" xmi:id="Callout_3" name="CreditManagementPartner2_requestCreditApproval_Callout" referenceName="CreditManagementPartner2" operationName="requestCreditApproval">
+        <location x="626" y="176"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagementPartner2"/>
+      </nodes>
+      <nodes xmi:type="MessageFilter.mednode:MessageFilter" xmi:id="MessageFilter_1" name="CreditAgencyFilter" filters.pattern="%2Fbody%2FrequestCreditApproval%2FcustomerCreditRequest%2Faddress%2Fstate+%3D+%27TX%27^%2Fbody%2FrequestCreditApproval%2FcustomerCreditRequest%2Faddress%2Fstate+%3D+%27NY%27^%2Fbody%2FrequestCreditApproval%2FcustomerCreditRequest%2Faddress%2Fstate+%3D+%27CA%27" filters.terminalName="match1^match2^match3">
+        <location x="430" y="114"/>
+        <outTerminals terminalNodeID="OutTerminal.default" type="CompositeType_1"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_1"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:match:match1" dynamic="true" label="match1" longDescription="" type="CompositeType_1"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:match:match2" dynamic="true" label="match2" longDescription="" type="CompositeType_1"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:match:match3" dynamic="true" label="match3" longDescription="" type="CompositeType_1"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="CreditAgencyFilter"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_1" name="Fail1">
+        <location x="545" y="208"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="Fail1"/>
+      </nodes>
+      <nodes xmi:type="MessageFilter.mednode:MessageFilter" xmi:id="MessageFilter_2" name="checkStateCode" filters.pattern="%2Fbody%2FrequestCreditApproval%2FcustomerCreditRequest%2Faddress%2Fstate+%3D%27%27" filters.terminalName="match1">
+        <location x="234" y="134"/>
+        <outTerminals terminalNodeID="OutTerminal.default" type="CompositeType_1"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_1"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:match:match1" dynamic="true" label="match1" longDescription="" type="CompositeType_1"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="checkStateCode"/>
+      </nodes>
+      <nodes xmi:type="CustomMediation.mednode:CustomMediation" xmi:id="CustomMediation_1" name="setStateCode" javaCode="smo.setString(&quot;/body/requestCreditApproval/customerCreditRequest/address/state &quot;, &quot;TX&quot;); &#xA;out.fire(smo);&#xA; // propagate the service message object to the primitive that is wired to the 'out' terminal" javaClass="sca.component.mediation.java.Custom1268288011640" version="6.1.0">
+        <location x="338" y="146"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_1"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:out:out" dynamic="true" label="out" type="CompositeType_1"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="setStateCode"/>
+      </nodes>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_1" targetNode="MessageFilter_2" sourceNode="Input_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_2" targetNode="Callout_1" sourceNode="MessageFilter_1" sourceTerminalName="OutTerminal.dynamic:match:match1" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_3" targetNode="Callout_2" sourceNode="MessageFilter_1" sourceTerminalName="OutTerminal.dynamic:match:match2" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_4" targetNode="Callout_3" sourceNode="MessageFilter_1" sourceTerminalName="OutTerminal.dynamic:match:match3" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_5" targetNode="Fail_1" sourceNode="MessageFilter_1" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_6" targetNode="MessageFilter_1" sourceNode="MessageFilter_2" sourceTerminalName="OutTerminal.default" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_7" targetNode="CustomMediation_1" sourceNode="MessageFilter_2" sourceTerminalName="OutTerminal.dynamic:match:match1" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_8" targetNode="MessageFilter_1" sourceNode="CustomMediation_1" sourceTerminalName="OutTerminal.dynamic:out:out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_9" targetNode="Fail_1" sourceNode="CustomMediation_1" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_3">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_4">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement}requestCreditApprovalResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_5">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement}requestCreditApprovalRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_6">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement}requestCreditApproval_creditApprovalFaultMsg"/>
+        </elements>
+      </type>
+      <nodes xmi:type="CalloutResponse.mednode:CalloutResponse" xmi:id="CalloutResponse_1" name="CreditManagementPartner_requestCreditApproval_CalloutResponse" referenceName="CreditManagementPartner" operationName="requestCreditApproval">
+        <location x="10" y="20"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_4"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" explicitType="true" type="CompositeType_5"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagementPartner"/>
+      </nodes>
+      <nodes xmi:type="CalloutFault.mednode:CalloutFault" xmi:id="CalloutFault_1" name="CreditManagementPartner_requestCreditApproval_CalloutFault" referenceName="CreditManagementPartner" operationName="requestCreditApproval">
+        <location x="10" y="258"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:out:requestCreditApproval_creditApprovalFaultMsg" dynamic="true" explicitType="true" label="requestCreditApproval_creditApprovalFaultMsg" longDescription="" type="CompositeType_6"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagementPartner"/>
+      </nodes>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_2" name="CreditManagement_requestCreditApproval_InputResponse">
+        <location x="400" y="78"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_4"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagement"/>
+      </nodes>
+      <nodes xmi:type="InputFault.mednode:InputFault" xmi:id="InputFault_2" name="CreditManagement_requestCreditApproval_InputFault">
+        <location x="400" y="336"/>
+        <inTerminals terminalNodeID="InTerminal.dynamic:in:requestCreditApproval_creditApprovalFaultMsg" dynamic="true" explicitType="true" label="requestCreditApproval_creditApprovalFaultMsg" longDescription="" type="CompositeType_6"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagement"/>
+      </nodes>
+      <nodes xmi:type="CalloutResponse.mednode:CalloutResponse" xmi:id="CalloutResponse_2" name="CreditManagementPartner1_requestCreditApproval_CalloutResponse" referenceName="CreditManagementPartner1" operationName="requestCreditApproval">
+        <location x="10" y="98"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_4"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" explicitType="true" type="CompositeType_5"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagementPartner1"/>
+      </nodes>
+      <nodes xmi:type="CalloutFault.mednode:CalloutFault" xmi:id="CalloutFault_2" name="CreditManagementPartner1_requestCreditApproval_CalloutFault" referenceName="CreditManagementPartner1" operationName="requestCreditApproval">
+        <location x="10" y="336"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:out:requestCreditApproval_creditApprovalFaultMsg" dynamic="true" explicitType="true" label="requestCreditApproval_creditApprovalFaultMsg" longDescription="" type="CompositeType_6"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagementPartner1"/>
+      </nodes>
+      <nodes xmi:type="CalloutResponse.mednode:CalloutResponse" xmi:id="CalloutResponse_3" name="CreditManagementPartner2_requestCreditApproval_CalloutResponse" referenceName="CreditManagementPartner2" operationName="requestCreditApproval">
+        <location x="10" y="180"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_4"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" explicitType="true" type="CompositeType_5"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagementPartner2"/>
+      </nodes>
+      <nodes xmi:type="CalloutFault.mednode:CalloutFault" xmi:id="CalloutFault_3" name="CreditManagementPartner2_requestCreditApproval_CalloutFault" referenceName="CreditManagementPartner2" operationName="requestCreditApproval">
+        <location x="10" y="414"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:out:requestCreditApproval_creditApprovalFaultMsg" dynamic="true" explicitType="true" label="requestCreditApproval_creditApprovalFaultMsg" longDescription="" type="CompositeType_6"/>
+        <translation xmi:type="utility:ConstantString" string="requestCreditApproval : CreditManagementPartner2"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_2" name="Fail1">
+        <location x="273" y="110"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_5"/>
+        <translation xmi:type="utility:ConstantString" string="Fail1"/>
+      </nodes>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_10" targetNode="InputResponse_2" sourceNode="CalloutResponse_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_11" targetNode="Fail_2" sourceNode="CalloutResponse_1" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_12" targetNode="InputFault_2" sourceNode="CalloutFault_1" sourceTerminalName="OutTerminal.dynamic:out:requestCreditApproval_creditApprovalFaultMsg" targetTerminalName="InTerminal.dynamic:in:requestCreditApproval_creditApprovalFaultMsg"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_13" targetNode="InputResponse_2" sourceNode="CalloutResponse_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_14" targetNode="Fail_2" sourceNode="CalloutResponse_2" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_15" targetNode="InputFault_2" sourceNode="CalloutFault_2" sourceTerminalName="OutTerminal.dynamic:out:requestCreditApproval_creditApprovalFaultMsg" targetTerminalName="InTerminal.dynamic:in:requestCreditApproval_creditApprovalFaultMsg"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_16" targetNode="InputResponse_2" sourceNode="CalloutResponse_3" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_17" targetNode="Fail_2" sourceNode="CalloutResponse_3" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_18" targetNode="InputFault_2" sourceNode="CalloutFault_3" sourceTerminalName="OutTerminal.dynamic:out:requestCreditApproval_creditApprovalFaultMsg" targetTerminalName="InTerminal.dynamic:in:requestCreditApproval_creditApprovalFaultMsg"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <composition>
+      <nodes xmi:type="CreditManagementMediationFlow.medflow:root_I_2" xmi:id="root_I_2_1" name="{http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement}CreditManagement:requestCreditApproval::request"/>
+      <nodes xmi:type="CreditManagementMediationFlow.medflow:root_I_3" xmi:id="root_I_3_1" name="{http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement}CreditManagement:requestCreditApproval::response"/>
+    </composition>
+    <propertyOrganizer/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:webservice="http://www.ibm.com/xmlns/prod/websphere/scdl/webservice/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="PayMeWebServiceImport" name="PayMeWebServiceImport">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns1:CardPaymentServices">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <esbBinding xsi:type="webservice:WebServiceImportBinding" endpoint="http://localhost:9080/AccessServices-MoonlightWeb/services/WSImport1_CardPaymentServicesHttpPort" port="ns1:WSImport1_CardPaymentServicesHttpPort" service="ns1:WSImport1_CardPaymentServicesHttpService"/>
+</scdl:import>

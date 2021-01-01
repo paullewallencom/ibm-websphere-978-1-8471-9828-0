@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://BizServices-CustomerInfoMgmt/com/junglsea/businessservices/HandleCustomerContactArtifacts" xmlns:ns0="http://CustomerDomain-v1_0/com/junglesea/bo/msg" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="HandleCustomerContact" suppressJoinFailure="yes" targetNamespace="http://BizServices-CustomerInfoMgmt/com/junglsea/businessservices" wpc:continueOnError="no" wpc:displayName="HandleCustomerContact" wpc:executionMode="microflow" wpc:id="1" wpc:validFrom="2010-01-06T17:51:30" wpc:version="IBM_7.0.100">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/CustomerCommunucationMSG.xsd" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/HandleCustomerContact.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="HandleCustomerContactArtifacts.wsdl" namespace="http://BizServices-CustomerInfoMgmt/com/junglsea/businessservices/HandleCustomerContactArtifacts"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="HandleCustomerContact" partnerLinkType="ns:HandleCustomerContactPLT" wpc:id="2"/>
+    <bpws:partnerLink name="HandleCustomerContactPartner" partnerLinkType="ns:HandleCustomerContactPLT1" partnerRole="Interface" wpc:id="6"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="inputParams" type="ns0:CustomerCommunucationMSG" wpc:id="5"/>
+  </bpws:variables>
+  <bpws:sequence name="HiddenSequence" wpc:id="1073741827">
+    <bpws:receive createInstance="yes" name="Receive" operation="sendStandardCommunication" partnerLink="HandleCustomerContact" portType="ns1:HandleCustomerContact" wpc:displayName="Receive" wpc:id="4" wpc:transactionalBehavior="commitAfter">
+      <wpc:output>
+        <wpc:parameter name="inputParams" variable="inputParams"/>
+      </wpc:output>
+    </bpws:receive>
+  </bpws:sequence>
+</bpws:process>

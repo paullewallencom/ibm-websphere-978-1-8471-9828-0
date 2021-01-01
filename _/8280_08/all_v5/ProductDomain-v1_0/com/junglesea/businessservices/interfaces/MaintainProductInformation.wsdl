@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="MaintainProductInformation" targetNamespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainProductInformation" xmlns:bons1="http://ProductDomain-v1_0/com/junglesea/bo" xmlns:bons2="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:tns="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainProductInformation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainProductInformation">
+            <xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/BusinessException.xsd"/>
+            <xsd:import namespace="http://ProductDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/ProductOffering.xsd"/>
+      <xsd:element name="createProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="retireProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="retireProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons1:ProductOffering"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="createProductFault1_createProductFault" nillable="true" type="bons2:BusinessException"/>
+            <xsd:element name="updateProductFault1_updateProductFault" nillable="true" type="bons2:BusinessException"/>
+            <xsd:element name="retireProductFault1_retireProductFault" nillable="true" type="bons2:BusinessException"/>
+        </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="createProductRequestMsg">
+    <wsdl:part element="tns:createProduct" name="createProductParameters"/>
+  </wsdl:message>
+    <wsdl:message name="createProductResponseMsg">
+    <wsdl:part element="tns:createProductResponse" name="createProductResult"/>
+  </wsdl:message>
+    <wsdl:message name="updateProductRequestMsg">
+    <wsdl:part element="tns:updateProduct" name="updateProductParameters"/>
+  </wsdl:message>
+    <wsdl:message name="updateProductResponseMsg">
+    <wsdl:part element="tns:updateProductResponse" name="updateProductResult"/>
+  </wsdl:message>
+    <wsdl:message name="retireProductRequestMsg">
+    <wsdl:part element="tns:retireProduct" name="retireProductParameters"/>
+  </wsdl:message>
+    <wsdl:message name="retireProductResponseMsg">
+    <wsdl:part element="tns:retireProductResponse" name="retireProductResult"/>
+  </wsdl:message>
+    <wsdl:message name="createProduct_createProductFaultMsg">
+    <wsdl:part element="tns:createProductFault1_createProductFault" name="createProductFault"/>
+  </wsdl:message>
+    <wsdl:message name="updateProduct_updateProductFaultMsg">
+    <wsdl:part element="tns:updateProductFault1_updateProductFault" name="updateProductFault"/>
+  </wsdl:message>
+    <wsdl:message name="retireProduct_retireProductFaultMsg">
+    <wsdl:part element="tns:retireProductFault1_retireProductFault" name="retireProductFault"/>
+  </wsdl:message>
+    <wsdl:portType name="MaintainProductInformation">
+    <wsdl:operation name="createProduct">
+      <wsdl:input message="tns:createProductRequestMsg" name="createProductRequest"/>
+      <wsdl:output message="tns:createProductResponseMsg" name="createProductResponse"/>
+            <wsdl:fault message="tns:createProduct_createProductFaultMsg" name="createProductFault"/>
+        </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <wsdl:input message="tns:updateProductRequestMsg" name="updateProductRequest"/>
+      <wsdl:output message="tns:updateProductResponseMsg" name="updateProductResponse"/>
+            <wsdl:fault message="tns:updateProduct_updateProductFaultMsg" name="updateProductFault"/>
+        </wsdl:operation>
+    <wsdl:operation name="retireProduct">
+      <wsdl:input message="tns:retireProductRequestMsg" name="retireProductRequest"/>
+      <wsdl:output message="tns:retireProductResponseMsg" name="retireProductResponse"/>
+            <wsdl:fault message="tns:retireProduct_retireProductFaultMsg" name="retireProductFault"/>
+        </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

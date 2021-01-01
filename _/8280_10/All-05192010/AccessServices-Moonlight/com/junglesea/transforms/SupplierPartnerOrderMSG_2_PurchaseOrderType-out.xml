@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><body xmlns:io6="http://www.w3.org/2005/08/addressing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:out2="wsdl.http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder" xmlns:io5="http://www.ibm.com/xmlns/prod/websphere/http/sca/6.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:io4="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:io2="http://www.ibm.com/websphere/sibx/smo/v6.0.1" xmlns:io3="http://www.ibm.com/xmlns/prod/websphere/mq/sca/6.0.0" xmlns:out="http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder" xmlns:io="http://www.w3.org/2003/05/soap-envelope">
+  <out:processOrder>
+    <purchaseOrder orderDate="2001-01-01">
+      <shipTo country="County">
+        <street>LineOneLineTwoLineThreeUnit</street>
+        <city>City</city>
+        <state>StateOrProvince</state>
+        <zip>PostalCode</zip>
+      </shipTo>
+      <comment>Notes</comment>
+      <items>
+        <item partNum="SKU">
+          <productName>ItemName</productName>
+          <quantity>0</quantity>
+          <USPrice>0.0</USPrice>
+          <shipDate>2001-01-01</shipDate>
+        </item>
+      </items>
+    </purchaseOrder>
+  </out:processOrder>
+</body>

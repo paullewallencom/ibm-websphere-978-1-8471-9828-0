@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" targetNamespace="http://AccessServices-Moonlight2/com/junglesea/transforms/SupplierPartnerOrderMSG_2_PurchaseOrderType" version="7.0.101" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://AccessServices-Moonlight2/com/junglesea/transforms/SupplierPartnerOrderMSG_2_PurchaseOrderType">
+    <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FSupplierPartnerDomain-v1_0%252Fcom%252Fjunglesea%252Fbusinessservices%252Finterfaces%252FProcessSPOrders%257DsubmitSupplierOrderRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FMoonlightLibrary%252Fcom%252Fjunglesea%252Fapps%252Fmoonlight%252FProcessPurchaseOrder%257DprocessOrderRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <imports>
+        <import kind="xml" location="SupplierPartnerOrderMSG_2_PurchaseOrderType.xml"/>
+    </imports>
+    <mappingDeclaration name="SupplierPartnerOrderMSG_2_PurchaseOrderType">
+        <input path="body"/>
+        <output path="body"/>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/PurchasedItem/SKU"/>
+            <output path="processOrder/purchaseOrder/items/item/@partNum"/>
+        </move>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/PurchasedItem/ProductDetails/ItemName"/>
+            <output path="processOrder/purchaseOrder/items/item/productName"/>
+        </move>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/PurchasedItem/ProductDetails/ItemQuantity"/>
+            <output path="processOrder/purchaseOrder/items/item/quantity"/>
+        </move>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/PurchasedItem/ProductDetails/ItemUnitPrice"/>
+            <output path="processOrder/purchaseOrder/items/item/USPrice"/>
+        </move>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/ShippingDate"/>
+            <output path="processOrder/purchaseOrder/items/item/shipDate"/>
+        </move>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/Notes"/>
+            <output path="processOrder/purchaseOrder/comment"/>
+        </move>
+        <function ref="concat">
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/ShippingAddress/LineOne" var="LineOne"/>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/ShippingAddress/LineTwo" var="LineTwo"/>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/ShippingAddress/LineThree" var="LineThree"/>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/ShippingAddress/Unit" var="Unit"/>
+            <output path="processOrder/purchaseOrder/shipTo/street"/>
+        </function>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/ShippingAddress/City"/>
+            <output path="processOrder/purchaseOrder/shipTo/city"/>
+        </move>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/ShippingAddress/County"/>
+            <output path="processOrder/purchaseOrder/shipTo/@country"/>
+        </move>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/ShippingAddress/StateOrProvince"/>
+            <output path="processOrder/purchaseOrder/shipTo/state"/>
+        </move>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/ShippingAddress/PostalCode"/>
+            <output path="processOrder/purchaseOrder/shipTo/zip"/>
+        </move>
+        <move>
+            <input path="submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems/DeliveryDate"/>
+            <output path="processOrder/purchaseOrder/@orderDate"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

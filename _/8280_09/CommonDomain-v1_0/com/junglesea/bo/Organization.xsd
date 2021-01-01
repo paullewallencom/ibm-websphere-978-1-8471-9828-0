@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://CommonDomain-v1_0/com/junglesea/bo">
+	<xsd:include schemaLocation="Contact.xsd"></xsd:include>
+	<xsd:include schemaLocation="GeographicAddress.xsd"></xsd:include>
+	<xsd:complexType name="Organization">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Id" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="Name" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="TradingName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="OrgType"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="OrgAddress"
+				type="bons0:GeographicAddress">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Contact"
+				type="bons0:Contact">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Priority" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

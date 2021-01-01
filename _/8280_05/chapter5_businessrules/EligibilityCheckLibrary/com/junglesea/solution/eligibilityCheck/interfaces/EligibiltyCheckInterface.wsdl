@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="EligibiltyCheckInterface" targetNamespace="http://EligibilityCheckLibrary/com/junglesea/solution/eligibilityCheck/interfaces/EligibiltyCheckInterface" xmlns:bons1="http://EligibilityCheck" xmlns:tns="http://EligibilityCheckLibrary/com/junglesea/solution/eligibilityCheck/interfaces/EligibiltyCheckInterface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://EligibilityCheckLibrary/com/junglesea/solution/eligibilityCheck/interfaces/EligibiltyCheckInterface">
+      <xsd:import namespace="http://EligibilityCheck" schemaLocation="../../../../../memberInfo.xsd"/>
+      <xsd:element name="operation1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="memberInfo" nillable="true" type="bons1:memberInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="operation1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validateEligibility" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="operation1RequestMsg">
+    <wsdl:part element="tns:operation1" name="operation1Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="operation1ResponseMsg">
+    <wsdl:part element="tns:operation1Response" name="operation1Result"/>
+  </wsdl:message>
+    <wsdl:portType name="EligibiltyCheckRulesInterface">
+    <wsdl:operation name="operation1">
+      <wsdl:input message="tns:operation1RequestMsg" name="operation1Request"/>
+      <wsdl:output message="tns:operation1ResponseMsg" name="operation1Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

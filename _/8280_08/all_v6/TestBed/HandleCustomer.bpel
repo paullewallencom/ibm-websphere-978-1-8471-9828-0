@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://TestBed/HandleCustomerArtifacts" xmlns:ns0="http://CustomerDomain-v1_0/com/junglesea/bo" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation" xmlns:ns2="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="HandleCustomer" suppressJoinFailure="yes" targetNamespace="http://TestBed" wpc:continueOnError="no" wpc:displayName="HandleCustomer" wpc:executionMode="longRunning" wpc:id="1" wpc:validFrom="2010-01-08T16:58:09" wpc:version="IBM_7.0.100">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="HandleCustomerArtifacts.wsdl" namespace="http://TestBed/HandleCustomerArtifacts"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="com/junglesea/businessservices/interfaces/MaintainCustomerInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="com/junglesea/bo/msg/CustomerMSG.xsd" namespace="http://CustomerDomain-v1_0/com/junglesea/bo"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="com/junglesea/bo/BusinessException.xsd" namespace="http://CommonDomain-v1_0/com/junglesea/bo"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="MaintainCustomerInformation" partnerLinkType="ns:MaintainCustomerInformationPLT" wpc:id="2"/>
+    <bpws:partnerLink name="MaintainCustomerInformationPartner" partnerLinkType="ns:MaintainCustomerInformationPLT1" partnerRole="Interface" wpc:id="3"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="inputParam" type="ns0:CustomerMSG" wpc:id="11"/>
+    <bpws:variable name="outputParam" type="ns0:CustomerMSG" wpc:id="12"/>
+    <bpws:variable name="inputParam1" type="ns0:CustomerMSG" wpc:id="13"/>
+    <bpws:variable name="outputParam1" type="ns0:CustomerMSG" wpc:id="14"/>
+    <bpws:variable name="BusinessException" type="ns2:BusinessException" wpc:id="24"/>
+  </bpws:variables>
+  <bpws:faultHandlers>
+    <bpws:catchAll wpc:id="22">
+      <bpws:reply faultName="ns1:createCustomerFault" name="Reply" operation="createCustomer" partnerLink="MaintainCustomerInformation" portType="ns1:MaintainCustomerInformation" wpc:displayName="ReplyWithException" wpc:id="26">
+        <wpc:input>
+          <wpc:parameter name="createCustomerFault1_createCustomerFault" variable="BusinessException"/>
+        </wpc:input>
+      </bpws:reply>
+    </bpws:catchAll>
+  </bpws:faultHandlers>
+  <bpws:pick createInstance="yes" name="ReceiveChoice" wpc:displayName="Receive Choice" wpc:id="4" wpc:transactionalBehavior="commitAfter">
+    <bpws:onMessage operation="createCustomer" partnerLink="MaintainCustomerInformation" portType="ns1:MaintainCustomerInformation" wpc:id="5">
+      <wpc:output>
+        <wpc:parameter name="inputParam" variable="inputParam"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence" wpc:id="1073741830">
+        <bpws:invoke name="Invoke" operation="createCustomer" partnerLink="MaintainCustomerInformationPartner" portType="ns1:MaintainCustomerInformation" wpc:displayName="InvokeCreateCustomer" wpc:id="15">
+          <wpc:input>
+            <wpc:parameter name="inputParam" variable="inputParam"/>
+          </wpc:input>
+          <wpc:output>
+            <wpc:parameter name="outputParam" variable="outputParam"/>
+          </wpc:output>
+          <bpws:catch faultMessageType="ns1:createCustomer_createCustomerFaultMsg" faultName="ns1:createCustomerFault" faultVariable="createCustomerFaultVariable" wpc:displayName="Catch" wpc:id="19" wpc:variableId="20">
+            <bpws:sequence name="HiddenSequence3" wpc:id="1073741851">
+              <bpws:invoke name="AssignToBusinessException" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="AssignToBusinessException" wpc:id="28">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[BusinessException = createCustomerFaultVariable;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="createCustomerFaultVariable" variable="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="BusinessException" namespace="http://CommonDomain-v1_0/com/junglesea/bo"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.0/@dataOutputs.0" value="BusinessException" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="BusinessException" namespace="http://CommonDomain-v1_0/com/junglesea/bo"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!2:1,1
+//!SMAP!1000000:23,1]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:throw faultName="CreateCustomerFault" faultVariable="createCustomerFaultVariable" name="ThrowCreateCustomerException" wpc:displayName="ThrowCreateCustomerException" wpc:id="21"/>
+            </bpws:sequence>
+          </bpws:catch>
+        </bpws:invoke>
+        <bpws:reply name="Reply_createCustomer" operation="createCustomer" partnerLink="MaintainCustomerInformation" portType="ns1:MaintainCustomerInformation" wpc:displayName="Reply-createCustomer" wpc:id="7">
+          <wpc:input>
+            <wpc:parameter name="outputParam" variable="outputParam"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+    <bpws:onMessage operation="updateCustomer" partnerLink="MaintainCustomerInformation" portType="ns1:MaintainCustomerInformation" wpc:id="8">
+      <wpc:output>
+        <wpc:parameter name="inputParam" variable="inputParam1"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence1" wpc:id="1073741833">
+        <bpws:reply name="Reply_updateCustomer" operation="updateCustomer" partnerLink="MaintainCustomerInformation" portType="ns1:MaintainCustomerInformation" wpc:displayName="Reply-updateCustomer" wpc:id="10">
+          <wpc:input>
+            <wpc:parameter name="outputParam" variable="outputParam1"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+  </bpws:pick>
+</bpws:process>

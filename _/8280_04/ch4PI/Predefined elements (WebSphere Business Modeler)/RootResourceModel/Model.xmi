@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.ibm.btools.bom.model.models="http:///com/ibm/btools/bom/model/models.ecore"
+    xmlns:com.ibm.btools.bom.model.resources="http:///com/ibm/btools/bom/model/resources.ecore"
+    xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1193247340180"/>
+  <com.ibm.btools.bom.model.models:ResourceModel xmi:id="FID-00000000000000000000000000000004"
+      uid="FID-00000000000000000000000000000004" name="RootResourceModel">
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:IndividualResourceType"
+        href="RID-00000000000000000000000000000100.xmi#FID-00000000000000000000000000000100"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:IndividualResourceType"
+        href="RID-00000000000000000000000000000101.xmi#FID-00000000000000000000000000000101"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:IndividualResourceType"
+        href="RID-00000000000000000000000000000102.xmi#FID-00000000000000000000000000000102"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:IndividualResourceType"
+        href="RID-00000000000000000000000000000103.xmi#FID-00000000000000000000000000000103"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:BulkResourceType" href="RID-00000000000000000000000000000106.xmi#FID-00000000000000000000000000000106"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:BulkResourceType" href="RID-00000000000000000000000000000107.xmi#FID-00000000000000000000000000000107"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:BulkResourceType" href="RID-00000000000000000000000000000108.xmi#FID-00000000000000000000000000000108"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:BulkResourceType" href="RID-00000000000000000000000000000109.xmi#FID-00000000000000000000000000000109"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:BulkResourceType" href="RID-00000000000000000000000000000110.xmi#FID-00000000000000000000000000000110"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:BulkResourceType" href="RID-00000000000000000000000000000111.xmi#FID-00000000000000000000000000000111"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.resources:BulkResourceType" href="RID-00000000000000000000000000000112.xmi#FID-00000000000000000000000000000112"/>
+  </com.ibm.btools.bom.model.models:ResourceModel>
+</xmi:XMI>

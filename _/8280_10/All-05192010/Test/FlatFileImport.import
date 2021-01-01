@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EIS="http://www.ibm.com/xmlns/prod/websphere/scdl/eis/6.0.0" xmlns:configuration_6.1.0="http://www.ibm.com/xmlns/prod/websphere/j2ca/configuration/6.1.0" xmlns:ns1="http://Test/FlatFileImport" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="FlatFileImport" name="FlatFileImport">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:FlatFileImport">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="false"/>
+    </interface>
+  </interfaces>
+  <esbBinding xsi:type="EIS:EISImportBinding" faultSelector="com.ibm.j2ca.extension.emd.runtime.WBIFaultSelectorImpl">
+    <resourceAdapter name="TestApp.IBM WebSphere Adapter for Flat Files" type="com.ibm.j2ca.flatfile.FlatFileResourceAdapter" version="7.0.0.0_IF02">
+      <properties>
+        <adapterID>001</adapterID>
+      </properties>
+    </resourceAdapter>
+    <connection type="com.ibm.j2ca.flatfile.FlatFileManagedConnectionFactory" interactionType="com.ibm.j2ca.flatfile.FlatFileInteractionSpec">
+      <properties>
+        <adapterID>001</adapterID>
+        <outputDirectory>C:\tmp\outbound\rapid</outputDirectory>
+        <sequenceFile>C:\tmp\outbound\rapid\ShipmentMSG.seq</sequenceFile>
+      </properties>
+    </connection>
+    <methodBinding method="create" outDataBindingType="com.ibm.j2ca.flatfile.emd.runtime.FlatFileBaseDataBinding">
+      <faultBinding fault="MISSING_DATA" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <faultBinding fault="RECORD_NOT_FOUND" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <faultBinding fault="DUPLICATE_RECORD" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <inputDataBinding>configuration_6.1.0:FlatFileXMLDataBinding</inputDataBinding>
+      <interaction>
+        <properties>
+          <fileContentEncoding>UTF-8</fileContentEncoding>
+          <functionName>Create</functionName>
+          <outputFileName>ShipmentMSG.txt</outputFileName>
+        </properties>
+      </interaction>
+    </methodBinding>
+  </esbBinding>
+</scdl:import>

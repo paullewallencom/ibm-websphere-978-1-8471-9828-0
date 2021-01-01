@@ -1,0 +1,2935 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  CONFIDENTIAL LICENSED MATERIAL
+      © 2004-2005 Pantero Corporation. All rights reserved.	-->
+<!-- Exporter Configuration Options:
+     All package and sub-packages under - com.sid.ResourceDomain
+     Complex Types Only - true			
+     Include Required Rules - false			 
+     Include Reverse Relationships - true	 
+     Export with Weak Typing - false-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ xmlns:SIDBusCm="http://www.tmforum.org/NGOSS/SID/Business/3.1/Common" 
+ xmlns:SIDBusCu="http://www.tmforum.org/NGOSS/SID/Business/3.1/Customer" 
+ xmlns:SIDBusEn="http://www.tmforum.org/NGOSS/SID/Business/3.1/Enterprise" 
+ xmlns:SIDBusMa="http://www.tmforum.org/NGOSS/SID/Business/3.1/MarketSales" 
+ xmlns:SIDBusPr="http://www.tmforum.org/NGOSS/SID/Business/3.1/Product" 
+ xmlns:SIDBusSe="http://www.tmforum.org/NGOSS/SID/Business/3.1/Service" 
+ xmlns:SIDBusRe="http://www.tmforum.org/NGOSS/SID/Business/3.1/Resource" 
+ targetNamespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Resource">
+<xs:import schemaLocation="SIDBusinessViewCommon.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Common"/>
+<xs:import schemaLocation="SIDBusinessViewCustomer.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Customer"/>
+<xs:import schemaLocation="SIDBusinessViewEnterprise.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Enterprise"/>
+<xs:import schemaLocation="SIDBusinessViewMarketSales.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/MarketSales"/>
+<xs:import schemaLocation="SIDBusinessViewProduct.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Product"/>
+<xs:import schemaLocation="SIDBusinessViewService.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Service"/>
+
+<!-- Type name: com.sid.ResourceDomain.LogicalPhysicalResource-->
+   <xs:complexType name="LogicalPhysicalResource">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="typeOfLPDependency" minOccurs="0" type="xs:int"/>
+               <xs:element name="LogicalResource" type="SIDBusRe:LogicalResource" minOccurs="0"/>
+               <xs:element name="PhysicalResourceForLogicalPhysicalResource" type="SIDBusRe:PhysicalResource" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities._5LRFigures.IllustrativeClasses_DASH_donotuse.Device-->
+   <xs:complexType name="Device">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagedEntity">
+            <xs:sequence>
+               <xs:element name="DeviceRole" type="SIDBusRe:DeviceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Software" type="SIDBusRe:Software" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Service" type="SIDBusSe:Service" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ManagementInfo" type="SIDBusCm:ManagementInfo" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Hardware" type="SIDBusRe:Hardware" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Protocol" type="SIDBusRe:Protocol" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities._5LRFigures.IllustrativeClasses_DASH_donotuse.DeviceRole-->
+   <xs:complexType name="DeviceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceRole">
+            <xs:sequence>
+               <xs:element name="Device" type="SIDBusRe:Device" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities._5LRFigures.IllustrativeClasses_DASH_donotuse.Encoder-->
+   <xs:complexType name="Encoder">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities._5LRFigures.IllustrativeClasses_DASH_donotuse.Encryption-->
+   <xs:complexType name="Encryption">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceRole">
+            <xs:sequence>
+               <xs:element name="Firewall" type="SIDBusRe:Firewall" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities._5LRFigures.IllustrativeClasses_DASH_donotuse.Firewall-->
+   <xs:complexType name="Firewall">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceRole">
+            <xs:sequence>
+               <xs:element name="Encryption" type="SIDBusRe:Encryption" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities._5LRFigures.IllustrativeClasses_DASH_donotuse.Router-->
+   <xs:complexType name="Router">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceElement">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities._5LRFigures.IllustrativeClasses_DASH_donotuse.RouterRole-->
+   <xs:complexType name="RouterRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities._5LRFigures.IllustrativeClasses_DASH_donotuse.Switch-->
+   <xs:complexType name="Switch">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.AddressEntities.InterfaceNetworkAddressDetails-->
+   <xs:complexType name="InterfaceNetworkAddressDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="isAutoCreated" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="typeOfNetworkAddress" minOccurs="0" type="xs:string"/>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+               <xs:element name="NetworkAddressForInterfaceNetworkAddressDetails" type="SIDBusRe:NetworkAddress" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.AddressEntities.IPAddress-->
+   <xs:complexType name="IPAddress" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:NetworkAddress">
+            <xs:sequence>
+               <xs:element name="networkNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="hostNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="subnetMask" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.AddressEntities.IPv4Address-->
+   <xs:complexType name="IPv4Address">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:IPAddress">
+            <xs:sequence>
+               <xs:element name="v4Format" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.AddressEntities.NetworkAddress-->
+   <xs:complexType name="NetworkAddress" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="InterfaceNetworkAddressDetails" type="SIDBusRe:InterfaceNetworkAddressDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.CompoundResourceEntities.CompoundAspectCompoundResourceDetails-->
+   <xs:complexType name="CompoundAspectCompoundResourceDetails">
+      <xs:sequence/>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.CompoundResourceEntities.CompoundResource-->
+   <xs:complexType name="CompoundResource" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Resource">
+            <xs:sequence>
+               <xs:element name="CompoundResourceAspectDetails" type="SIDBusRe:CompoundResourceAspectDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="RolesDescribeCompoundResourceDetails" type="SIDBusRe:RolesDescribeCompoundResourceDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceCollection" type="SIDBusRe:ResourceCollection" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.CompoundResourceEntities.CompoundResourceAspectDetails-->
+   <xs:complexType name="CompoundResourceAspectDetails" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="Resource" type="SIDBusRe:Resource" minOccurs="0"/>
+               <xs:element name="CompoundResourceForCompoundResourceAspectDetails" type="SIDBusRe:CompoundResource" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.CompoundResourceEntities.LogicalAspectCompoundResourceDetails-->
+   <xs:complexType name="LogicalAspectCompoundResourceDetails">
+      <xs:sequence/>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.CompoundResourceEntities.PhysicalAspectCompoundResourceDetails-->
+   <xs:complexType name="PhysicalAspectCompoundResourceDetails">
+      <xs:sequence/>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.CompoundResourceEntities.ResourceCollection-->
+   <xs:complexType name="ResourceCollection" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:CompoundResource">
+            <xs:sequence>
+               <xs:element name="CompoundResource" type="SIDBusRe:CompoundResource" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.CompoundResourceEntities.ResourceElement-->
+   <xs:complexType name="ResourceElement" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:CompoundResource">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.CompoundResourceEntities.ResourcePort-->
+   <xs:complexType name="ResourcePort">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceElement">
+            <xs:sequence>
+               <xs:element name="TTPAspectCompoundResourceDetails" type="SIDBusRe:TTPAspectCompoundResourceDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PPortAspectCompoundResourceDetails" type="SIDBusRe:PPortAspectCompoundResourceDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="SubNetwork" type="SIDBusRe:SubNetwork" minOccurs="0"/>
+               <xs:element name="ExcludedPortsDetailForResourcePort" type="SIDBusRe:ExcludedPortsDetail" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.ATMInterface-->
+   <xs:complexType name="ATMInterface">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:MediaInterface">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterface-->
+   <xs:complexType name="DeviceInterface" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagedEntity">
+            <xs:sequence>
+               <xs:element name="customerInterfaceNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="deviceConfigMethod" minOccurs="0" type="xs:int"/>
+               <xs:element name="hasCarrierDetect" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="hasDataLink" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="isInterfaceEnabled" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="vendorInterfaceNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="DeviceInterfaceRole" type="SIDBusRe:DeviceInterfaceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceDeviceInterfaceDetails" type="SIDBusRe:ServiceDeviceInterfaceDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ProtocolDeviceInterfaceDetails" type="SIDBusRe:ProtocolDeviceInterfaceDetails" minOccurs="0"/>
+               <xs:element name="BridgingProtocol" type="SIDBusRe:BridgingProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="HybridRoutingProtocol" type="SIDBusRe:HybridRoutingProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LinkStateRoutingProtocol" type="SIDBusRe:LinkStateRoutingProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="RoutedProtocol" type="SIDBusRe:RoutedProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="SwitchingProtocol" type="SIDBusRe:SwitchingProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="WANProtocol" type="SIDBusRe:WANProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalPort" type="SIDBusRe:PhysicalPort" minOccurs="0"/>
+               <xs:element name="LANProtocol" type="SIDBusRe:LANProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="DeviceInterfaceMgmtDetailsForDeviceInterface" type="SIDBusRe:DeviceInterfaceMgmtDetails" minOccurs="0"/>
+               <xs:element name="InterfaceNetworkAddressDetailsForDeviceInterface" type="SIDBusRe:InterfaceNetworkAddressDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterfaceAssociationClasses.InterfaceBridgingProtocolDetails-->
+   <xs:complexType name="InterfaceBridgingProtocolDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterfaceAssociationClasses.InterfaceHybridRoutingDetails-->
+   <xs:complexType name="InterfaceHybridRoutingDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterfaceAssociationClasses.InterfaceLANProtocolDetails-->
+   <xs:complexType name="InterfaceLANProtocolDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterfaceAssociationClasses.InterfaceLSRoutingDetails-->
+   <xs:complexType name="InterfaceLSRoutingDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterfaceAssociationClasses.InterfaceRoutedProtocolDetails-->
+   <xs:complexType name="InterfaceRoutedProtocolDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterfaceAssociationClasses.InterfaceSwitchingProtocolDetails-->
+   <xs:complexType name="InterfaceSwitchingProtocolDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterfaceAssociationClasses.InterfaceWANProtocolDetails-->
+   <xs:complexType name="InterfaceWANProtocolDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterfaceAssociationClasses.ProtocolDeviceInterfaceDetails-->
+   <xs:complexType name="ProtocolDeviceInterfaceDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="Protocol" type="SIDBusRe:Protocol" minOccurs="0"/>
+               <xs:element name="DeviceInterfaceForProtocolDeviceInterfaceDetails" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterfaceAssociationClasses.ServiceDeviceInterfaceDetails-->
+   <xs:complexType name="ServiceDeviceInterfaceDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagedEntity">
+            <xs:sequence>
+               <xs:element name="ResourceFacingService" type="SIDBusSe:ResourceFacingService" minOccurs="0"/>
+               <xs:element name="DeviceInterfaceForServiceDeviceInterfaceDetails" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceInterfaceMgmtDetails-->
+   <xs:complexType name="DeviceInterfaceMgmtDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="configurationMethodsSupported" minOccurs="0" maxOccurs="unbounded" type="xs:int"/>
+               <xs:element name="operationalMethodsSupported" minOccurs="0" maxOccurs="unbounded" type="xs:int"/>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+               <xs:element name="LogicalDeviceForDeviceInterfaceMgmtDetails" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.DeviceSubInterface-->
+   <xs:complexType name="DeviceSubInterface">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalInterface">
+            <xs:sequence>
+               <xs:element name="numberOfSubInterface" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.EthernetInterface-->
+   <xs:complexType name="EthernetInterface">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:MediaInterface">
+            <xs:sequence>
+               <xs:element name="duplexSetting" minOccurs="0" type="xs:int"/>
+               <xs:element name="ethernetCurrentSpeed" minOccurs="0" type="xs:int"/>
+               <xs:element name="ethernetSpeed" minOccurs="0" type="xs:int"/>
+               <xs:element name="maxEthernetDataSize" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.LogicalInterface-->
+   <xs:complexType name="LogicalInterface" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceInterface">
+            <xs:sequence>
+               <xs:element name="MediaInterface" type="SIDBusRe:MediaInterface" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.LoopbackInterface-->
+   <xs:complexType name="LoopbackInterface">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalInterface">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.MediaInterface-->
+   <xs:complexType name="MediaInterface" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceInterface">
+            <xs:sequence>
+               <xs:element name="mtuSupported" minOccurs="0" type="xs:int"/>
+               <xs:element name="mtuCurrent" minOccurs="0" type="xs:int"/>
+               <xs:element name="supportsMLPPP" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="LogicalInterface" type="SIDBusRe:LogicalInterface" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="MediaInterfaceHas" type="SIDBusRe:MediaInterface" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="MediaInterfaceFor" type="SIDBusRe:MediaInterface" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.NullInterface-->
+   <xs:complexType name="NullInterface">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalInterface">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.SerialInterface-->
+   <xs:complexType name="SerialInterface">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:MediaInterface">
+            <xs:sequence>
+               <xs:element name="bandwidth" minOccurs="0" type="xs:string"/>
+               <xs:element name="clockRate" minOccurs="0" type="xs:string"/>
+               <xs:element name="isDCE" minOccurs="0" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceInterfaceEntities.TokenRingInterface-->
+   <xs:complexType name="TokenRingInterface">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:MediaInterface">
+            <xs:sequence>
+               <xs:element name="ringOpenStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="ringStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="ringState" minOccurs="0" type="xs:int"/>
+               <xs:element name="ringSpeed" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceProtocolAssociationClasses.DeviceBridgingProtocolDetails-->
+   <xs:complexType name="DeviceBridgingProtocolDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceProtocolAssociationClasses.DeviceDVRoutingDetails-->
+   <xs:complexType name="DeviceDVRoutingDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceProtocolAssociationClasses.DeviceHybridRoutingDetails-->
+   <xs:complexType name="DeviceHybridRoutingDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceProtocolAssociationClasses.DeviceLSRoutingDetails-->
+   <xs:complexType name="DeviceLSRoutingDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceProtocolAssociationClasses.DeviceMgmtProtocolDetails-->
+   <xs:complexType name="DeviceMgmtProtocolDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="LogicalDevice" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+               <xs:element name="ManagementProtocolForDeviceMgmtProtocolDetails" type="SIDBusRe:ManagementProtocol" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceProtocolAssociationClasses.DevicePVRoutingDetails-->
+   <xs:complexType name="DevicePVRoutingDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceProtocolAssociationClasses.DeviceRoutedProtocolDetails-->
+   <xs:complexType name="DeviceRoutedProtocolDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.DeviceProtocolAssociationClasses.DeviceSwitchingProtocolDetails-->
+   <xs:complexType name="DeviceSwitchingProtocolDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.LogicalCapacityEntities.LogicalCapacity-->
+   <xs:complexType name="LogicalCapacity" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Capacity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.LogicalDeviceEntities.LogicalDevice-->
+   <xs:complexType name="LogicalDevice" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalResource">
+            <xs:sequence>
+               <xs:element name="configBackupLocation" minOccurs="0" type="xs:int"/>
+               <xs:element name="configRunningLocation" minOccurs="0" type="xs:int"/>
+               <xs:element name="configurationMethod" minOccurs="0" maxOccurs="unbounded" type="xs:int"/>
+               <xs:element name="configurationMode" minOccurs="0" type="xs:int"/>
+               <xs:element name="isLoopbackSet" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="isNullInterfaceSet" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="monitorMethod" minOccurs="0" maxOccurs="unbounded" type="xs:int"/>
+               <xs:element name="numberOfConfigurationsPresent" minOccurs="0" type="xs:int"/>
+               <xs:element name="protocolsRunning" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+               <xs:element name="PolicyDecisionPoint" type="SIDBusCm:PolicyDecisionPoint" minOccurs="0"/>
+               <xs:element name="Software" type="SIDBusRe:Software" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LogicalDeviceOSInteractionDetails" type="SIDBusRe:LogicalDeviceOSInteractionDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="DeviceInterfaceMgmtDetails" type="SIDBusRe:DeviceInterfaceMgmtDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="RoutedProtocol" type="SIDBusRe:RoutedProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="BridgingProtocol" type="SIDBusRe:BridgingProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="DistanceVectorRoutingProtocol" type="SIDBusRe:DistanceVectorRoutingProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="HybridRoutingProtocol" type="SIDBusRe:HybridRoutingProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LinkStateRoutingProtocol" type="SIDBusRe:LinkStateRoutingProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PathVectorRoutingProtocol" type="SIDBusRe:PathVectorRoutingProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="SwitchingProtocol" type="SIDBusRe:SwitchingProtocol" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LogicalDeviceComposite" type="SIDBusRe:LogicalDeviceComposite" minOccurs="0"/>
+               <xs:element name="DeviceMgmtProtocolDetailsForLogicalDevice" type="SIDBusRe:DeviceMgmtProtocolDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.LogicalDeviceEntities.LogicalDeviceAtomic-->
+   <xs:complexType name="LogicalDeviceAtomic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalDevice">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.LogicalDeviceEntities.LogicalDeviceComposite-->
+   <xs:complexType name="LogicalDeviceComposite">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalDevice">
+            <xs:sequence>
+               <xs:element name="LogicalDevice" type="SIDBusRe:LogicalDevice" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.LogicalResource-->
+   <xs:complexType name="LogicalResource" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Resource">
+            <xs:sequence>
+               <xs:element name="lrStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="serviceState" minOccurs="0" type="xs:int"/>
+               <xs:element name="isOperational" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="RolesDescribeLogicalResourceDetails" type="SIDBusRe:RolesDescribeLogicalResourceDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Network" type="SIDBusRe:Network" minOccurs="0"/>
+               <xs:element name="LogicalPhysicalResourceForLogicalResource" type="SIDBusRe:LogicalPhysicalResource" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceLRDependencyForLogicalResource" type="SIDBusSe:ServiceLRDependency" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.LogicalResourceCharacteristic-->
+   <xs:complexType name="LogicalResourceCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceCharacteristic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.Connection-->
+   <xs:complexType name="Connection">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Pipe">
+            <xs:sequence>
+               <xs:element name="Trail" type="SIDBusRe:Trail" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.ManagedTransmissionEntity-->
+   <xs:complexType name="ManagedTransmissionEntity" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalResource">
+            <xs:sequence>
+               <xs:element name="additionalInfo" minOccurs="0" type="xs:string"/>
+               <xs:element name="mteAdministrativeState" minOccurs="0" type="xs:int"/>
+               <xs:element name="logicalAlarmReportingEnabled" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="logicalAlarmStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="isMTEOperational" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="typeOfMTE" minOccurs="0" type="xs:int"/>
+               <xs:element name="operationalState" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.Pipe-->
+   <xs:complexType name="Pipe" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ManagedTransmissionEntity">
+            <xs:sequence>
+               <xs:element name="isUniDirectional" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="operatingLayerRate" minOccurs="0" type="xs:string"/>
+               <xs:element name="TerminationPoint" type="SIDBusRe:TerminationPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.TerminationPointEntities.ConnectionTerminationPoint-->
+   <xs:complexType name="ConnectionTerminationPoint">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:TerminationPoint">
+            <xs:sequence>
+               <xs:element name="mappingMode" minOccurs="0" type="xs:int"/>
+               <xs:element name="ctpState" minOccurs="0" type="xs:int"/>
+               <xs:element name="supportedConnectionRates" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+               <xs:element name="ConnectionTerminationPointHas" type="SIDBusRe:ConnectionTerminationPoint" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ConnectionTerminationPointFor" type="SIDBusRe:ConnectionTerminationPoint" minOccurs="0"/>
+               <xs:element name="PhysicalPort" type="SIDBusRe:PhysicalPort" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.TerminationPointEntities.ConnectionTerminationPointBiDirectional-->
+   <xs:complexType name="ConnectionTerminationPointBiDirectional">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ConnectionTerminationPoint">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.TerminationPointEntities.ConnectionTerminationPointSink-->
+   <xs:complexType name="ConnectionTerminationPointSink">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ConnectionTerminationPoint">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.TerminationPointEntities.ConnectionTerminationPointSource-->
+   <xs:complexType name="ConnectionTerminationPointSource">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ConnectionTerminationPoint">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.TerminationPointEntities.TerminationPoint-->
+   <xs:complexType name="TerminationPoint" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ManagedTransmissionEntity">
+            <xs:sequence>
+               <xs:element name="direction" minOccurs="0" type="xs:int"/>
+               <xs:element name="vendorTPName" minOccurs="0" type="xs:string"/>
+               <xs:element name="Pipe" type="SIDBusRe:Pipe" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.TerminationPointEntities.TrailTerminationPoint-->
+   <xs:complexType name="TrailTerminationPoint" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:TerminationPoint">
+            <xs:sequence>
+               <xs:element name="TTPAspectCompoundResourceDetailsForTrailTerminationPoint" type="SIDBusRe:TTPAspectCompoundResourceDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.TerminationPointEntities.TrailTerminationPointBiDirectional-->
+   <xs:complexType name="TrailTerminationPointBiDirectional">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:TrailTerminationPoint">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.TerminationPointEntities.TrailTerminationPointSink-->
+   <xs:complexType name="TrailTerminationPointSink">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:TrailTerminationPoint">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.TerminationPointEntities.TrailTerminationPointSource-->
+   <xs:complexType name="TrailTerminationPointSource">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:TrailTerminationPoint">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.TerminationPointEntities.TTPAspectCompoundResourceDetails-->
+   <xs:complexType name="TTPAspectCompoundResourceDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalAspectCompoundResourceDetails">
+            <xs:sequence>
+               <xs:element name="TrailTerminationPoint" type="SIDBusRe:TrailTerminationPoint" minOccurs="0"/>
+               <xs:element name="ResourcePortForTTPAspectCompoundResourceDetails" type="SIDBusRe:ResourcePort" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagedTransmissionEntities.Trail-->
+   <xs:complexType name="Trail">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Pipe">
+            <xs:sequence>
+               <xs:element name="Connection" type="SIDBusRe:Connection" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.AccountingEntities.AccountingInfo-->
+   <xs:complexType name="AccountingInfo" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagementInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ConfiguratonEntities.BaseConfiguration-->
+   <xs:complexType name="BaseConfiguration">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ConfigurationInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ConfiguratonEntities.Command-->
+   <xs:complexType name="Command" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ConfigurationInfo">
+            <xs:sequence>
+               <xs:element name="CommandComposite" type="SIDBusRe:CommandComposite" minOccurs="0"/>
+               <xs:element name="CommandConfigDetailsForCommand" type="SIDBusRe:CommandConfigDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ConfiguratonEntities.CommandAtomic-->
+   <xs:complexType name="CommandAtomic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Command">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ConfiguratonEntities.CommandComposite-->
+   <xs:complexType name="CommandComposite">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Command">
+            <xs:sequence>
+               <xs:element name="Command" type="SIDBusRe:Command" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ConfiguratonEntities.CommandConfigDetails-->
+   <xs:complexType name="CommandConfigDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="ccOperationType" minOccurs="0" type="xs:int"/>
+               <xs:element name="ccApplyState" minOccurs="0" type="xs:int"/>
+               <xs:element name="ccAppliedTime" minOccurs="0" type="xs:date"/>
+               <xs:element name="Command" type="SIDBusRe:Command" minOccurs="0"/>
+               <xs:element name="ConfigurationInfoForCommandConfigDetails" type="SIDBusRe:ConfigurationInfo" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ConfiguratonEntities.ConfigurationInfo-->
+   <xs:complexType name="ConfigurationInfo" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagementInfo">
+            <xs:sequence>
+               <xs:element name="CommandConfigDetails" type="SIDBusRe:CommandConfigDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ConfiguratonEntities.CurrentConfiguration-->
+   <xs:complexType name="CurrentConfiguration">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ConfigurationInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ConfiguratonEntities.GlobalConfiguration-->
+   <xs:complexType name="GlobalConfiguration">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ConfigurationInfo">
+            <xs:sequence>
+               <xs:element name="devicePassword" minOccurs="0" type="xs:string"/>
+               <xs:element name="deviceSecretPassword" minOccurs="0" type="xs:string"/>
+               <xs:element name="vtyPassword" minOccurs="0" type="xs:string"/>
+               <xs:element name="snmpPassword" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.FaultEntities.AlarmEntities.Alarms-->
+   <xs:complexType name="Alarms" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:FaultInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.FaultEntities.FaultInfo-->
+   <xs:complexType name="FaultInfo" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagementInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ManagementMethodEntities.CLIMethod-->
+   <xs:complexType name="CLIMethod" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ManagementMethodEntity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ManagementMethodEntities.DescribedMgmtInfoDetails-->
+   <xs:complexType name="DescribedMgmtInfoDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="ManagementInfo" type="SIDBusCm:ManagementInfo" minOccurs="0"/>
+               <xs:element name="ManagedEntityForDescribedMgmtInfoDetails" type="SIDBusCm:ManagedEntity" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ManagementMethodEntities.ManagementMethodEntity-->
+   <xs:complexType name="ManagementMethodEntity" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="SupportedMgmtMethodsDetailForManagementMethodEntity" type="SIDBusRe:SupportedMgmtMethodsDetail" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ManagementMethodEntities.ProprietaryMethod-->
+   <xs:complexType name="ProprietaryMethod" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ManagementMethodEntity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ManagementMethodEntities.RMONMethod-->
+   <xs:complexType name="RMONMethod" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SNMPMethod">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ManagementMethodEntities.SNMPMethod-->
+   <xs:complexType name="SNMPMethod" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ManagementMethodEntity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ManagementMethodEntities.SupportedMgmtMethodsDetail-->
+   <xs:complexType name="SupportedMgmtMethodsDetail">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="supportedMgmtMethods" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+               <xs:element name="preferredConfigMethod" minOccurs="0" type="xs:int"/>
+               <xs:element name="preferredMonitorMethod" minOccurs="0" type="xs:int"/>
+               <xs:element name="ManagementMethodEntity" type="SIDBusRe:ManagementMethodEntity" minOccurs="0"/>
+               <xs:element name="ManagedEntityForSupportedMgmtMethodsDetail" type="SIDBusCm:ManagedEntity" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ManagementMethodEntities.TL1Method-->
+   <xs:complexType name="TL1Method" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ManagementMethodEntity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.PerformanceEntities.PerformanceInfo-->
+   <xs:complexType name="PerformanceInfo" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagementInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ResourceStateInfoEntities.ResourceStateInfo-->
+   <xs:complexType name="ResourceStateInfo" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagementInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ResourceStatisticalInfoEntities.ResourceStatisticalInfo-->
+   <xs:complexType name="ResourceStatisticalInfo" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagementInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.SecurityEntities.AuditingEntity-->
+   <xs:complexType name="AuditingEntity">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SecurityInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.SecurityEntities.AuthenticationEntity-->
+   <xs:complexType name="AuthenticationEntity">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SecurityInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.SecurityEntities.AuthorizationEntity-->
+   <xs:complexType name="AuthorizationEntity">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SecurityInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.SecurityEntities.SecurityInfo-->
+   <xs:complexType name="SecurityInfo" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagementInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ServiceStateInfoEntities.ServiceStateInfo-->
+   <xs:complexType name="ServiceStateInfo">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagementInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ManagementInformationEntities.ServiceStatisticalInfoEntities.ServiceStatisticalInfo-->
+   <xs:complexType name="ServiceStatisticalInfo" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagementInfo">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.NetworkEntities.AutonomousSystem-->
+   <xs:complexType name="AutonomousSystem">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:NetworkDomain">
+            <xs:sequence>
+               <xs:element name="asNumber" minOccurs="0" type="xs:int"/>
+               <xs:element name="isSingleHomed" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="isTransitRouter" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="requiresIGPSync" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="routingUpdateMethod" minOccurs="0" type="xs:int"/>
+               <xs:element name="routeAggregationMethod" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.NetworkEntities.ExcludedPortsDetail-->
+   <xs:complexType name="ExcludedPortsDetail">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="excludedRoleList" minOccurs="0" type="xs:anyType"/><!--Original Type: SequenceOf ResourceRole-->
+               <xs:element name="ResourcePort" type="SIDBusRe:ResourcePort" minOccurs="0"/>
+               <xs:element name="LinkForExcludedPortsDetail" type="SIDBusRe:Link" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.NetworkEntities.IPSubnet-->
+   <xs:complexType name="IPSubnet">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SubNetwork">
+            <xs:sequence>
+               <xs:element name="addressType" minOccurs="0" type="xs:int"/>
+               <xs:element name="addressVersion" minOccurs="0" type="xs:int"/>
+               <xs:element name="addressRange" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.NetworkEntities.LAN-->
+   <xs:complexType name="LAN">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SubNetwork">
+            <xs:sequence>
+               <xs:element name="lanID" minOccurs="0" type="xs:string"/>
+               <xs:element name="lanType" minOccurs="0" type="xs:int"/>
+               <xs:element name="canAutoSense" minOccurs="0" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.NetworkEntities.LayerNetwork-->
+   <xs:complexType name="LayerNetwork">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Network">
+            <xs:sequence>
+               <xs:element name="SubNetwork" type="SIDBusRe:SubNetwork" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.NetworkEntities.Link-->
+   <xs:complexType name="Link">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceElement">
+            <xs:sequence>
+               <xs:element name="ExcludedPortsDetail" type="SIDBusRe:ExcludedPortsDetail" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.NetworkEntities.Network-->
+   <xs:complexType name="Network">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceCollection">
+            <xs:sequence>
+               <xs:element name="networkAdministrativeState" minOccurs="0" type="xs:int"/>
+               <xs:element name="elementAlarmStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="isNetworkOperational" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="layerRates" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+               <xs:element name="LogicalResource" type="SIDBusRe:LogicalResource" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalPort" type="SIDBusRe:PhysicalPort" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.NetworkEntities.NetworkDomain-->
+   <xs:complexType name="NetworkDomain">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Network">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.NetworkEntities.SubNetwork-->
+   <xs:complexType name="SubNetwork">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Network">
+            <xs:sequence>
+               <xs:element name="connectionRates" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+               <xs:element name="subNetworkType" minOccurs="0" type="xs:int"/>
+               <xs:element name="ResourcePort" type="SIDBusRe:ResourcePort" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LayerNetwork" type="SIDBusRe:LayerNetwork" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.OperatingSystemEntities.OperatingSystem-->
+   <xs:complexType name="OperatingSystem">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalResource">
+            <xs:sequence>
+               <xs:element name="categoryOfOS" minOccurs="0" type="xs:int"/>
+               <xs:element name="lastBootTime" minOccurs="0" type="xs:date"/>
+               <xs:element name="dateValue" minOccurs="0" type="xs:date"/>
+               <xs:element name="timeValue" minOccurs="0" type="xs:date"/>
+               <xs:element name="isUTCTime" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="numberProcessActiveTotal" minOccurs="0" type="xs:int"/>
+               <xs:element name="numberProcessesActiveCurrent" minOccurs="0" type="xs:int"/>
+               <xs:element name="swapSpaceAvailableTotal" minOccurs="0" type="xs:int"/>
+               <xs:element name="swapSpaceUsedCurrent" minOccurs="0" type="xs:int"/>
+               <xs:element name="virtualMemorySpaceTotal" minOccurs="0" type="xs:int"/>
+               <xs:element name="virtualMemorySpaceUsedCurrent" minOccurs="0" type="xs:int"/>
+               <xs:element name="physicalMemoryTotal" minOccurs="0" type="xs:int"/>
+               <xs:element name="physicalMemoryAvailableCurrent" minOccurs="0" type="xs:int"/>
+               <xs:element name="pagingFileSizeTotal" minOccurs="0" type="xs:int"/>
+               <xs:element name="pagingFileSizeCurrent" minOccurs="0" type="xs:int"/>
+               <xs:element name="processMemorySizeMax" minOccurs="0" type="xs:int"/>
+               <xs:element name="processMemorySizeCurrent" minOccurs="0" type="xs:int"/>
+               <xs:element name="isDistributable" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="isDistributedCurrent" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="SoftwareOSInteractionDetailsForOperatingSystem" type="SIDBusRe:SoftwareOSInteractionDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LogicalDeviceOSInteractionDetailsForOperatingSystem" type="SIDBusRe:LogicalDeviceOSInteractionDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.OperatingSystemEntities.PartyRoleLicenseOSDetails-->
+   <xs:complexType name="PartyRoleLicenseOSDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="maxNumberOSLicenses" minOccurs="0" type="xs:int"/>
+               <xs:element name="currentNumberOSLicenses" minOccurs="0" type="xs:int"/>
+               <xs:element name="licenseValidityTimePeriod" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.OperatingSystemEntities.PartyRoleUsesProcessesDetails-->
+   <xs:complexType name="PartyRoleUsesProcessesDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="maxNumberProcesses" minOccurs="0" type="xs:int"/>
+               <xs:element name="currentNumberProcesses" minOccurs="0" type="xs:int"/>
+               <xs:element name="processesPerUserMax" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.BridgingProtocols.BridgingProtocol-->
+   <xs:complexType name="BridgingProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Protocol">
+            <xs:sequence>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+               <xs:element name="LogicalDevice" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.BridgingProtocols.RSRBridging-->
+   <xs:complexType name="RSRBridging">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:BridgingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.BridgingProtocols.SRBridging-->
+   <xs:complexType name="SRBridging">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:BridgingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.BridgingProtocols.SRTBridging-->
+   <xs:complexType name="SRTBridging">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:BridgingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.BridgingProtocols.TransparentBridging-->
+   <xs:complexType name="TransparentBridging">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:BridgingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.LANProtocols.Ethernet-->
+   <xs:complexType name="Ethernet">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.LANProtocols.FDDI-->
+   <xs:complexType name="FDDI">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.LANProtocols.LANProtocol-->
+   <xs:complexType name="LANProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Protocol">
+            <xs:sequence>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.LANProtocols.TokenRing-->
+   <xs:complexType name="TokenRing">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.ManagementProtocols.ManagementProtocol-->
+   <xs:complexType name="ManagementProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Protocol">
+            <xs:sequence>
+               <xs:element name="DeviceMgmtProtocolDetails" type="SIDBusRe:DeviceMgmtProtocolDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.ManagementProtocols.ProprietaryVendorProtocol-->
+   <xs:complexType name="ProprietaryVendorProtocol">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ManagementProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.ManagementProtocols.SNMP-->
+   <xs:complexType name="SNMP">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ManagementProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.Protocol-->
+   <xs:complexType name="Protocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagedEntity">
+            <xs:sequence>
+               <xs:element name="Device" type="SIDBusRe:Device" minOccurs="0"/>
+               <xs:element name="ProtocolDeviceInterfaceDetailsForProtocol" type="SIDBusRe:ProtocolDeviceInterfaceDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ProtocolServiceDetailsForProtocol" type="SIDBusSe:ProtocolServiceDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutedProtocols.AppleTalk-->
+   <xs:complexType name="AppleTalk">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:RoutedProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutedProtocols.DecNET-->
+   <xs:complexType name="DecNET">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:RoutedProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutedProtocols.IP-->
+   <xs:complexType name="IP">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:RoutedProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutedProtocols.IPX-->
+   <xs:complexType name="IPX">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:RoutedProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutedProtocols.RoutedProtocol-->
+   <xs:complexType name="RoutedProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Protocol">
+            <xs:sequence>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+               <xs:element name="LogicalDevice" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.BGP-->
+   <xs:complexType name="BGP">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PathVectorRoutingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.DistanceVectorRoutingProtocol-->
+   <xs:complexType name="DistanceVectorRoutingProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:RoutingProtocol">
+            <xs:sequence>
+               <xs:element name="LogicalDevice" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.EIGRP-->
+   <xs:complexType name="EIGRP">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:HybridRoutingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.HybridRoutingProtocol-->
+   <xs:complexType name="HybridRoutingProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:RoutingProtocol">
+            <xs:sequence>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+               <xs:element name="LogicalDevice" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.IGRP-->
+   <xs:complexType name="IGRP">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DistanceVectorRoutingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.IS_DASH_IS-->
+   <xs:complexType name="IS_DASH_IS">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LinkStateRoutingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.LinkStateRoutingProtocol-->
+   <xs:complexType name="LinkStateRoutingProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:RoutingProtocol">
+            <xs:sequence>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+               <xs:element name="LogicalDevice" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.OSPF-->
+   <xs:complexType name="OSPF">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LinkStateRoutingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.PathVectorRoutingProtocol-->
+   <xs:complexType name="PathVectorRoutingProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:RoutingProtocol">
+            <xs:sequence>
+               <xs:element name="LogicalDevice" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.RIP-->
+   <xs:complexType name="RIP">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DistanceVectorRoutingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.RoutingProtocols.RoutingProtocol-->
+   <xs:complexType name="RoutingProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Protocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.SignalingProtocols.COPS-->
+   <xs:complexType name="COPS">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SignalingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.SignalingProtocols.RSVP-->
+   <xs:complexType name="RSVP">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SignalingProtocol">
+            <xs:sequence>
+               <xs:element name="isRSVPEnabled" minOccurs="0" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.SignalingProtocols.SignalingProtocol-->
+   <xs:complexType name="SignalingProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Protocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.SwitchingProtocols.MPLS-->
+   <xs:complexType name="MPLS">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SwitchingProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.SwitchingProtocols.SwitchingProtocol-->
+   <xs:complexType name="SwitchingProtocol">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Protocol">
+            <xs:sequence>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+               <xs:element name="LogicalDevice" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.WANProtocols.ATM-->
+   <xs:complexType name="ATM">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:WANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.WANProtocols.FrameRelay-->
+   <xs:complexType name="FrameRelay">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:WANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.WANProtocols.HDLC-->
+   <xs:complexType name="HDLC">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:WANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.WANProtocols.ISDN-->
+   <xs:complexType name="ISDN">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:WANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.WANProtocols.PPP-->
+   <xs:complexType name="PPP">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:WANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.WANProtocols.SLIP-->
+   <xs:complexType name="SLIP">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:WANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.WANProtocols.SMDS-->
+   <xs:complexType name="SMDS">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:WANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.WANProtocols.WANProtocol-->
+   <xs:complexType name="WANProtocol" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Protocol">
+            <xs:sequence>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ProtocolServiceEntities.WANProtocols.X25-->
+   <xs:complexType name="X25">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:WANProtocol">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.ReplacementSet-->
+   <xs:complexType name="ReplacementSet">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Collection">
+            <xs:sequence>
+               <xs:element name="PhysicalResource" type="SIDBusRe:PhysicalResource" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.SoftwareEntities.LogicalDeviceOSInteractionDetails-->
+   <xs:complexType name="LogicalDeviceOSInteractionDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="logDeviceOSVersionMinReq" minOccurs="0" type="xs:string"/>
+               <xs:element name="numberInstalledOSs" minOccurs="0" type="xs:int"/>
+               <xs:element name="currentlyUsedOS" minOccurs="0" type="xs:string"/>
+               <xs:element name="OperatingSystem" type="SIDBusRe:OperatingSystem" minOccurs="0"/>
+               <xs:element name="LogicalDeviceForLogicalDeviceOSInteractionDetails" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.SoftwareEntities.Software-->
+   <xs:complexType name="Software" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="buildNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="category" minOccurs="0" type="xs:int"/>
+               <xs:element name="isExperimental" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="maintenanceVersion" minOccurs="0" type="xs:string"/>
+               <xs:element name="majorVersion" minOccurs="0" type="xs:string"/>
+               <xs:element name="minorVersion" minOccurs="0" type="xs:string"/>
+               <xs:element name="otherDesignator" minOccurs="0" type="xs:string"/>
+               <xs:element name="targetPlatform" minOccurs="0" type="xs:int"/>
+               <xs:element name="SoftwareOSInteractionDetails" type="SIDBusRe:SoftwareOSInteractionDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="SoftwareComposite" type="SIDBusRe:SoftwareComposite" minOccurs="0"/>
+               <xs:element name="LogicalDevice" type="SIDBusRe:LogicalDevice" minOccurs="0"/>
+               <xs:element name="PhysicalContainer" type="SIDBusRe:PhysicalContainer" minOccurs="0"/>
+               <xs:element name="Device" type="SIDBusRe:Device" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.SoftwareEntities.SoftwareAtomic-->
+   <xs:complexType name="SoftwareAtomic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Software">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.SoftwareEntities.SoftwareCommand-->
+   <xs:complexType name="SoftwareCommand">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SoftwareAtomic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.SoftwareEntities.SoftwareComposite-->
+   <xs:complexType name="SoftwareComposite" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Software">
+            <xs:sequence>
+               <xs:element name="Software" type="SIDBusRe:Software" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.SoftwareEntities.SoftwareFeatureSets-->
+   <xs:complexType name="SoftwareFeatureSets">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SoftwareComposite">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.SoftwareEntities.SoftwareOSInteractionDetails-->
+   <xs:complexType name="SoftwareOSInteractionDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="osVersionMinReq" minOccurs="0" type="xs:string"/>
+               <xs:element name="OperatingSystem" type="SIDBusRe:OperatingSystem" minOccurs="0"/>
+               <xs:element name="SoftwareForSoftwareOSInteractionDetails" type="SIDBusRe:Software" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.LogicalResourceEntities.Statistics.StatisticalEntity-->
+   <xs:complexType name="StatisticalEntity" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities._5PRAddendumFigures.DONOTUSE_DASH_IlustrativeUseOnly.EquipmentComponent-->
+   <xs:complexType name="EquipmentComponent">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalContainer">
+            <xs:sequence>
+               <xs:element name="Equipment" type="SIDBusRe:Equipment" minOccurs="0"/>
+               <xs:element name="EquipmentHolder" type="SIDBusRe:EquipmentHolder" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.AuxiliaryComponentEntities.AuxiliaryComponent-->
+   <xs:complexType name="AuxiliaryComponent" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalContainer">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.AuxiliaryComponentEntities.CoolingDevice-->
+   <xs:complexType name="CoolingDevice">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:AuxiliaryComponent">
+            <xs:sequence>
+               <xs:element name="hasActiveCooling" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="Equipment" type="SIDBusRe:Equipment" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.AuxiliaryComponentEntities.Fan-->
+   <xs:complexType name="Fan">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:CoolingDevice">
+            <xs:sequence>
+               <xs:element name="currentSpeed" minOccurs="0" type="xs:string"/>
+               <xs:element name="isVariableSpeed" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="desiredSpeed" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.AuxiliaryComponentEntities.PowerSupply-->
+   <xs:complexType name="PowerSupply">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:AuxiliaryComponent">
+            <xs:sequence>
+               <xs:element name="acFrequencyLow" minOccurs="0" type="xs:string"/>
+               <xs:element name="acFrequencyHigh" minOccurs="0" type="xs:string"/>
+               <xs:element name="isAC" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="isSwitching" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="inputVoltageLow" minOccurs="0" type="xs:string"/>
+               <xs:element name="inputVoltageHigh" minOccurs="0" type="xs:string"/>
+               <xs:element name="inputCurrentMax" minOccurs="0" type="xs:string"/>
+               <xs:element name="inputCurrentMin" minOccurs="0" type="xs:string"/>
+               <xs:element name="dcOutputPower" minOccurs="0" type="xs:string"/>
+               <xs:element name="isRedundant" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="Equipment" type="SIDBusRe:Equipment" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentEntities.Card-->
+   <xs:complexType name="Card" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Equipment">
+            <xs:sequence>
+               <xs:element name="cardCompatibilityResults" minOccurs="0" type="xs:string"/>
+               <xs:element name="daughterCardInstallStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="daughterCardOperatingStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="daughterCardRequirements" minOccurs="0" type="xs:int"/>
+               <xs:element name="isConfigurablePhysically" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="isMotherBoard" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="isUniquePhysical" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="maxDataWidth" minOccurs="0" type="xs:int"/>
+               <xs:element name="slotLayout" minOccurs="0" type="xs:string"/>
+               <xs:element name="slotsRequired" minOccurs="0" type="xs:int"/>
+               <xs:element name="uniqueRequirementsPhysical" minOccurs="0" type="xs:string"/>
+               <xs:element name="hardwareVersion" minOccurs="0" type="xs:string"/>
+               <xs:element name="PhysicalPort" type="SIDBusRe:PhysicalPort" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CardOnCardDetailsHas" type="SIDBusRe:CardOnCardDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CardOnCardDetailsFor" type="SIDBusRe:CardOnCardDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentEntities.CardOnCardDetails-->
+   <xs:complexType name="CardOnCardDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="connectorName" minOccurs="0" type="xs:anyType"/><!--Original Type:-->
+               <xs:element name="isPluggable" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="slotNumber" minOccurs="0" type="xs:int"/>
+               <xs:element name="CardHas" type="SIDBusRe:Card" minOccurs="0"/>
+               <xs:element name="CardFor" type="SIDBusRe:Card" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentEntities.Equipment-->
+   <xs:complexType name="Equipment" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalContainer">
+            <xs:sequence>
+               <xs:element name="installStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="expectedEquipmentType" minOccurs="0" type="xs:string"/>
+               <xs:element name="installedEquipmentType" minOccurs="0" type="xs:string"/>
+               <xs:element name="installedVersion" minOccurs="0" type="xs:string"/>
+               <xs:element name="redundancy" minOccurs="0" type="xs:int"/>
+               <xs:element name="CoolingDevice" type="SIDBusRe:CoolingDevice" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="EquipmentHas" type="SIDBusRe:Equipment" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PowerSupply" type="SIDBusRe:PowerSupply" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="EquipmentComponent" type="SIDBusRe:EquipmentComponent" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="EquipmentFor" type="SIDBusRe:Equipment" minOccurs="0"/>
+               <xs:element name="EquipmentHolder" type="SIDBusRe:EquipmentHolder" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentEntities.MemoryCard-->
+   <xs:complexType name="MemoryCard" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Card">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentEntities.NetworkCard-->
+   <xs:complexType name="NetworkCard" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Card">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentEntities.SystemCard-->
+   <xs:complexType name="SystemCard" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Card">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentEntities.UnknownCard-->
+   <xs:complexType name="UnknownCard">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Card">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.EquipmentHolder-->
+   <xs:complexType name="EquipmentHolder" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalContainer">
+            <xs:sequence>
+               <xs:element name="acceptableEquipmentList" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+               <xs:element name="typeOfHolder" minOccurs="0" type="xs:int"/>
+               <xs:element name="isSolitaryHolder" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="holderStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="Equipment" type="SIDBusRe:Equipment" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="EquipmentComponent" type="SIDBusRe:EquipmentComponent" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="HolderComposite" type="SIDBusRe:HolderComposite" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.HolderAtomicEntities.AdjacentSlotDetails-->
+   <xs:complexType name="AdjacentSlotDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="sharedSlots" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="slotSpacingMax" minOccurs="0" type="xs:int"/>
+               <xs:element name="slotSpacingMin" minOccurs="0" type="xs:int"/>
+               <xs:element name="SlotHas" type="SIDBusRe:Slot" minOccurs="0"/>
+               <xs:element name="SlotFor" type="SIDBusRe:Slot" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.HolderAtomicEntities.HolderAtomic-->
+   <xs:complexType name="HolderAtomic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:EquipmentHolder">
+            <xs:sequence>
+               <xs:element name="physicalDescription" minOccurs="0" type="xs:string"/>
+               <xs:element name="uniquePhysical" minOccurs="0" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.HolderAtomicEntities.Slot-->
+   <xs:complexType name="Slot">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:HolderAtomic">
+            <xs:sequence>
+               <xs:element name="hasAdapter" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="slotNumber" minOccurs="0" type="xs:int"/>
+               <xs:element name="slotPurpose" minOccurs="0" type="xs:int"/>
+               <xs:element name="purposeDescription" minOccurs="0" type="xs:string"/>
+               <xs:element name="SlotHas" type="SIDBusRe:Slot" minOccurs="0"/>
+               <xs:element name="AdjacentSlotDetailsHas" type="SIDBusRe:AdjacentSlotDetails" minOccurs="0"/>
+               <xs:element name="SlotFor" type="SIDBusRe:Slot" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="AdjacentSlotDetailsFor" type="SIDBusRe:AdjacentSlotDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.HolderCompositeEntities.Bay-->
+   <xs:complexType name="Bay">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:HolderComposite">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.HolderCompositeEntities.Chassis-->
+   <xs:complexType name="Chassis">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SecureHolder">
+            <xs:sequence>
+               <xs:element name="heatGeneration" minOccurs="0" type="xs:int"/>
+               <xs:element name="installationOrder" minOccurs="0" type="xs:string"/>
+               <xs:element name="powerCordNumber" minOccurs="0" type="xs:int"/>
+               <xs:element name="numberOfChassisSlots" minOccurs="0" type="xs:int"/>
+               <xs:element name="chassisType" minOccurs="0" type="xs:int"/>
+               <xs:element name="ChassisHas" type="SIDBusRe:Chassis" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalPort" type="SIDBusRe:PhysicalPort" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ChassisFor" type="SIDBusRe:Chassis" minOccurs="0"/>
+               <xs:element name="ChassisPositionForChassis" type="SIDBusRe:ChassisPosition" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.HolderCompositeEntities.ChassisPosition-->
+   <xs:complexType name="ChassisPosition">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="positionInChassis" minOccurs="0" type="xs:int"/>
+               <xs:element name="locationInChassis" minOccurs="0" type="xs:string"/>
+               <xs:element name="Chassis" type="SIDBusRe:Chassis" minOccurs="0"/>
+               <xs:element name="RackForChassisPosition" type="SIDBusRe:Rack" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.HolderCompositeEntities.HolderComposite-->
+   <xs:complexType name="HolderComposite" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:EquipmentHolder">
+            <xs:sequence>
+               <xs:element name="cableManagementStrategy" minOccurs="0" type="xs:string"/>
+               <xs:element name="mountingOptions" minOccurs="0" type="xs:int"/>
+               <xs:element name="serviceApproach" minOccurs="0" maxOccurs="unbounded" type="xs:int"/>
+               <xs:element name="EquipmentHolder" type="SIDBusRe:EquipmentHolder" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.HolderCompositeEntities.Rack-->
+   <xs:complexType name="Rack">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:SecureHolder">
+            <xs:sequence>
+               <xs:element name="country" minOccurs="0" type="xs:string"/>
+               <xs:element name="heightInUs" minOccurs="0" type="xs:int"/>
+               <xs:element name="typeOfRack" minOccurs="0" type="xs:int"/>
+               <xs:element name="ChassisPosition" type="SIDBusRe:ChassisPosition" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.HolderCompositeEntities.SecureHolder-->
+   <xs:complexType name="SecureHolder" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:HolderComposite">
+            <xs:sequence>
+               <xs:element name="audibleAlarm" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="audibleAlarmDescription" minOccurs="0" type="xs:string"/>
+               <xs:element name="lockPresent" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="securityBreach" minOccurs="0" type="xs:int"/>
+               <xs:element name="securityBreachDescription" minOccurs="0" type="xs:string"/>
+               <xs:element name="visibleAlarm" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="visibleAlarmDescription" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.EquipmentHolderEntities.HolderCompositeEntities.Shelf-->
+   <xs:complexType name="Shelf">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:HolderComposite">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.HardwareEntities.Cable-->
+   <xs:complexType name="Cable">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalLink">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.HardwareEntities.Hardware-->
+   <xs:complexType name="Hardware" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalResource">
+            <xs:sequence>
+               <xs:element name="depth" minOccurs="0" type="xs:string"/>
+               <xs:element name="height" minOccurs="0" type="xs:string"/>
+               <xs:element name="measurementUnits" minOccurs="0" type="xs:int"/>
+               <xs:element name="weight" minOccurs="0" type="xs:string"/>
+               <xs:element name="weightUnits" minOccurs="0" type="xs:int"/>
+               <xs:element name="width" minOccurs="0" type="xs:string"/>
+               <xs:element name="PhysicalConnector" type="SIDBusRe:PhysicalConnector" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="HardwareHas" type="SIDBusRe:Hardware" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="HardwareFor" type="SIDBusRe:Hardware" minOccurs="0"/>
+               <xs:element name="PhysicalDevice" type="SIDBusRe:PhysicalDevice" minOccurs="0"/>
+               <xs:element name="Device" type="SIDBusRe:Device" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.HardwareEntities.ManagedHardware-->
+   <xs:complexType name="ManagedHardware" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Hardware">
+            <xs:sequence>
+               <xs:element name="additionalInfo" minOccurs="0" type="xs:string"/>
+               <xs:element name="administrativeState" minOccurs="0" type="xs:int"/>
+               <xs:element name="physicalAlarmReportingEnabled" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="physicalAlarmStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="coolingRequirements" minOccurs="0" type="xs:string"/>
+               <xs:element name="hardwarePurpose" minOccurs="0" type="xs:int"/>
+               <xs:element name="HardwareRole" type="SIDBusRe:HardwareRole" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.HardwareEntities.PhysicalConnector-->
+   <xs:complexType name="PhysicalConnector">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Hardware">
+            <xs:sequence>
+               <xs:element name="cableType" minOccurs="0" type="xs:int"/>
+               <xs:element name="gender" minOccurs="0" type="xs:int"/>
+               <xs:element name="inUse" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="pinDescription" minOccurs="0" type="xs:string"/>
+               <xs:element name="typeOfConnector" minOccurs="0" type="xs:int"/>
+               <xs:element name="PhysicalConnectorHas" type="SIDBusRe:PhysicalConnector" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalConnectorFor" type="SIDBusRe:PhysicalConnector" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Hardware" type="SIDBusRe:Hardware" minOccurs="0"/>
+               <xs:element name="PhysicalLink" type="SIDBusRe:PhysicalLink" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.HardwareEntities.PhysicalContainer-->
+   <xs:complexType name="PhysicalContainer" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ManagedHardware">
+            <xs:sequence>
+               <xs:element name="hotSwappable" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="removable" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="replaceable" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="Software" type="SIDBusRe:Software" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalCapacityDetailsForPhysicalContainer" type="SIDBusRe:PhysicalCapacityDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.HardwareEntities.PhysicalPort-->
+   <xs:complexType name="PhysicalPort">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ManagedHardware">
+            <xs:sequence>
+               <xs:element name="duplexMode" minOccurs="0" type="xs:int"/>
+               <xs:element name="ifType" minOccurs="0" type="xs:int"/>
+               <xs:element name="portNumber" minOccurs="0" type="xs:int"/>
+               <xs:element name="typeOfPPort" minOccurs="0" type="xs:int"/>
+               <xs:element name="vendorPortName" minOccurs="0" type="xs:string"/>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ConnectionTerminationPoint" type="SIDBusRe:ConnectionTerminationPoint" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Network" type="SIDBusRe:Network" minOccurs="0"/>
+               <xs:element name="Chassis" type="SIDBusRe:Chassis" minOccurs="0"/>
+               <xs:element name="Card" type="SIDBusRe:Card" minOccurs="0"/>
+               <xs:element name="PPortAspectCompoundResourceDetailsForPhysicalPort" type="SIDBusRe:PPortAspectCompoundResourceDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.HardwareEntities.PPortAspectCompoundResourceDetails-->
+   <xs:complexType name="PPortAspectCompoundResourceDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalAspectCompoundResourceDetails">
+            <xs:sequence>
+               <xs:element name="PhysicalPort" type="SIDBusRe:PhysicalPort" minOccurs="0"/>
+               <xs:element name="ResourcePortForPPortAspectCompoundResourceDetails" type="SIDBusRe:ResourcePort" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalCapacityEntities.PhysicalCapacity-->
+   <xs:complexType name="PhysicalCapacity" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Capacity">
+            <xs:sequence>
+               <xs:element name="physicalCapacityStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="PhysicalCapacityDetails" type="SIDBusRe:PhysicalCapacityDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalCapacityEntities.PhysicalCapacityDetails-->
+   <xs:complexType name="PhysicalCapacityDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="isSolitary" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="parentCapacity" minOccurs="0" type="xs:string"/>
+               <xs:element name="PhysicalContainer" type="SIDBusRe:PhysicalContainer" minOccurs="0"/>
+               <xs:element name="PhysicalCapacityForPhysicalCapacityDetails" type="SIDBusRe:PhysicalCapacity" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalCapacityEntities.PhysicalMemoryCapacity-->
+   <xs:complexType name="PhysicalMemoryCapacity">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalCapacity">
+            <xs:sequence>
+               <xs:element name="maximum" minOccurs="0" type="xs:string"/>
+               <xs:element name="memoryType" minOccurs="0" type="xs:int"/>
+               <xs:element name="minimum" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalCapacityEntities.PowerCapacity-->
+   <xs:complexType name="PowerCapacity">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalCapacity">
+            <xs:sequence>
+               <xs:element name="maxPowerSupplies" minOccurs="0" type="xs:int"/>
+               <xs:element name="requirements" minOccurs="0" type="xs:string"/>
+               <xs:element name="typeOfPower" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalComponentEntities.ASIC-->
+   <xs:complexType name="ASIC">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Chip">
+            <xs:sequence>
+               <xs:element name="functionalPurpose" minOccurs="0" type="xs:int"/>
+               <xs:element name="isMandatoryASIC" minOccurs="0" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalComponentEntities.Backplane-->
+   <xs:complexType name="Backplane">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalComponent">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalComponentEntities.Chip-->
+   <xs:complexType name="Chip">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalComponent">
+            <xs:sequence>
+               <xs:element name="formFactor" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalComponentEntities.FlashDisk-->
+   <xs:complexType name="FlashDisk">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalComponent">
+            <xs:sequence>
+               <xs:element name="memorySize" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalComponentEntities.MemoryComponent-->
+   <xs:complexType name="MemoryComponent">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Chip">
+            <xs:sequence>
+               <xs:element name="typeOfMemoryComponent" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalComponentEntities.PhysicalComponent-->
+   <xs:complexType name="PhysicalComponent" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalContainer">
+            <xs:sequence>
+               <xs:element name="isConfigurable" minOccurs="0" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalDeviceEntities.PhysicalDevice-->
+   <xs:complexType name="PhysicalDevice" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalResource">
+            <xs:sequence>
+               <xs:element name="backplaneIndependent" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="backplaneNumber" minOccurs="0" type="xs:int"/>
+               <xs:element name="configurationOrder" minOccurs="0" type="xs:string"/>
+               <xs:element name="deviceGroupID" minOccurs="0" type="xs:string"/>
+               <xs:element name="isComposite" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="canMixPower" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="Hardware" type="SIDBusRe:Hardware" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalDeviceRole" type="SIDBusRe:PhysicalDeviceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalDeviceComposite" type="SIDBusRe:PhysicalDeviceComposite" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalDeviceEntities.PhysicalDeviceAtomic-->
+   <xs:complexType name="PhysicalDeviceAtomic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalDevice">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalDeviceEntities.PhysicalDeviceComposite-->
+   <xs:complexType name="PhysicalDeviceComposite">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalDevice">
+            <xs:sequence>
+               <xs:element name="numberOfDevicesTotal" minOccurs="0" type="xs:int"/>
+               <xs:element name="numberOfDevicesCurrent" minOccurs="0" type="xs:int"/>
+               <xs:element name="PhysicalDevice" type="SIDBusRe:PhysicalDevice" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalLink-->
+   <xs:complexType name="PhysicalLink">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalResource">
+            <xs:sequence>
+               <xs:element name="isWireless" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="currentLength" minOccurs="0" type="xs:string"/>
+               <xs:element name="maximumLength" minOccurs="0" type="xs:string"/>
+               <xs:element name="mediaType" minOccurs="0" type="xs:int"/>
+               <xs:element name="PhysicalConnector" type="SIDBusRe:PhysicalConnector" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalResource-->
+   <xs:complexType name="PhysicalResource" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Resource">
+            <xs:sequence>
+               <xs:element name="manufactureDate" minOccurs="0" type="xs:string"/>
+               <xs:element name="otherIdentifier" minOccurs="0" type="xs:string"/>
+               <xs:element name="powerState" minOccurs="0" type="xs:int"/>
+               <xs:element name="serialNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="versionNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="LocalPlace" type="SIDBusCm:LocalPlace" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Representation" type="SIDBusCm:Representation" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalResourceCharacteristic" type="SIDBusRe:PhysicalResourceCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LogicalPhysicalResource" type="SIDBusRe:LogicalPhysicalResource" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ReplacementSet" type="SIDBusRe:ReplacementSet" minOccurs="0"/>
+               <xs:element name="PlacePhysicalResourceAssocForPhysicalResource" type="SIDBusCm:PlacePhysicalResourceAssoc" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServicePRDependencyForPhysicalResource" type="SIDBusSe:ServicePRDependency" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.PhysicalResourceEntities.PhysicalResourceCharacteristic-->
+   <xs:complexType name="PhysicalResourceCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceCharacteristic">
+            <xs:sequence>
+               <xs:element name="PhysicalResource" type="SIDBusRe:PhysicalResource" minOccurs="0"/>
+               <xs:element name="PhysicalResourceSpecCharacteristic" type="SIDBusRe:PhysicalResourceSpecCharacteristic" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.Resource-->
+   <xs:complexType name="Resource" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagedEntity">
+            <xs:sequence>
+               <xs:element name="usageState" minOccurs="0" type="xs:int"/>
+               <xs:element name="PartyRole" type="SIDBusCm:PartyRole" minOccurs="0"/>
+               <xs:element name="ResourceUsage" type="SIDBusRe:ResourceUsage" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceCharacteristicValue" type="SIDBusRe:ResourceCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceCharacteristic" type="SIDBusRe:ResourceCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceRoleDetails" type="SIDBusRe:ResourceRoleDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="AdministerResourceDetails" type="SIDBusRe:AdministerResourceDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ManagementDomain" type="SIDBusCm:ManagementDomain" minOccurs="0"/>
+               <xs:element name="BusinessInteractionItem" type="SIDBusCm:BusinessInteractionItem" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecification" type="SIDBusRe:ResourceSpecification" minOccurs="0"/>
+               <xs:element name="Product" type="SIDBusPr:Product" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CompoundResourceAspectDetailsForResource" type="SIDBusRe:CompoundResourceAspectDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceCharacteristic-->
+   <xs:complexType name="ResourceCharacteristic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:EntityCharacteristic">
+            <xs:sequence>
+               <xs:element name="ResourceCharacteristicValue" type="SIDBusRe:ResourceCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecCharacteristic" type="SIDBusRe:ResourceSpecCharacteristic" minOccurs="0"/>
+               <xs:element name="Resource" type="SIDBusRe:Resource" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceManagementEntities.AdministerResourceDetails-->
+   <xs:complexType name="AdministerResourceDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="ValueNetworkRole" type="SIDBusCm:ValueNetworkRole" minOccurs="0"/>
+               <xs:element name="ResourceForAdministerResourceDetails" type="SIDBusRe:Resource" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceManagementEntities.OwnsResourceDetails-->
+   <xs:complexType name="OwnsResourceDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.CompoundResourceRole-->
+   <xs:complexType name="CompoundResourceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceRole">
+            <xs:sequence>
+               <xs:element name="ResourceRole" type="SIDBusRe:ResourceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CompoundResourceSpec" type="SIDBusRe:CompoundResourceSpec" minOccurs="0"/>
+               <xs:element name="RolesDescribeCompoundResourceDetailsForCompoundResourceRole" type="SIDBusRe:RolesDescribeCompoundResourceDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.AggregationInterface-->
+   <xs:complexType name="AggregationInterface">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceInterfaceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.CoreInterface-->
+   <xs:complexType name="CoreInterface">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceInterfaceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.CPELogicalDeviceRole-->
+   <xs:complexType name="CPELogicalDeviceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:VPNLogicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.DeviceInterfaceRole-->
+   <xs:complexType name="DeviceInterfaceRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalResourceRole">
+            <xs:sequence>
+               <xs:element name="DeviceInterface" type="SIDBusRe:DeviceInterface" minOccurs="0"/>
+               <xs:element name="LogicalDeviceRole" type="SIDBusRe:LogicalDeviceRole" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.EdgeInterface-->
+   <xs:complexType name="EdgeInterface">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceInterfaceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.FirewallRole-->
+   <xs:complexType name="FirewallRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.LogicalDeviceRole-->
+   <xs:complexType name="LogicalDeviceRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalResourceRole">
+            <xs:sequence>
+               <xs:element name="DeviceInterfaceRole" type="SIDBusRe:DeviceInterfaceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalDeviceRole" type="SIDBusRe:PhysicalDeviceRole" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.LogicalResourceRole-->
+   <xs:complexType name="LogicalResourceRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceRole">
+            <xs:sequence>
+               <xs:element name="LogicalResourceSpec" type="SIDBusRe:LogicalResourceSpec" minOccurs="0"/>
+               <xs:element name="LogicalResourceRoleSpec" type="SIDBusRe:LogicalResourceRoleSpec" minOccurs="0"/>
+               <xs:element name="Service" type="SIDBusSe:Service" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="RolesDescribeLogicalResourceDetailsForLogicalResourceRole" type="SIDBusRe:RolesDescribeLogicalResourceDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.LogicalRoleSystemViewEntities.RolesDescribeLogicalResourceDetails-->
+   <xs:complexType name="RolesDescribeLogicalResourceDetails">
+      <xs:sequence>
+         <xs:element name="LogicalResourceRole" type="SIDBusRe:LogicalResourceRole" minOccurs="0"/>
+         <xs:element name="LogicalResourceForRolesDescribeLogicalResourceDetails" type="SIDBusRe:LogicalResource" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.PELogicalDeviceRole-->
+   <xs:complexType name="PELogicalDeviceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:VPNLogicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.PLogicalDeviceRole-->
+   <xs:complexType name="PLogicalDeviceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:VPNLogicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.RoutingRole-->
+   <xs:complexType name="RoutingRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.SiteInterfaceRole-->
+   <xs:complexType name="SiteInterfaceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:DeviceInterfaceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.SwitchingRole-->
+   <xs:complexType name="SwitchingRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.LogicalRoleEntities.VPNLogicalDeviceRole-->
+   <xs:complexType name="VPNLogicalDeviceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.CPEPhysicalDeviceRole-->
+   <xs:complexType name="CPEPhysicalDeviceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalRouterRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.HardwareRole-->
+   <xs:complexType name="HardwareRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalResourceRole">
+            <xs:sequence>
+               <xs:element name="ManagedHardware" type="SIDBusRe:ManagedHardware" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PEPhysicalDeviceRole-->
+   <xs:complexType name="PEPhysicalDeviceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalRouterRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PhysicalAdapterRole-->
+   <xs:complexType name="PhysicalAdapterRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:HardwareRole">
+            <xs:sequence>
+               <xs:element name="typeOfAdapterRole" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PhysicalDeviceRole-->
+   <xs:complexType name="PhysicalDeviceRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalResourceRole">
+            <xs:sequence>
+               <xs:element name="PhysicalDevice" type="SIDBusRe:PhysicalDevice" minOccurs="0"/>
+               <xs:element name="LogicalDeviceRole" type="SIDBusRe:LogicalDeviceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalDeviceRoleDetailsForPhysicalDeviceRole" type="SIDBusRe:PhysicalDeviceRoleDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PhysicalEncryptionRole-->
+   <xs:complexType name="PhysicalEncryptionRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PhysicalFirewallRole-->
+   <xs:complexType name="PhysicalFirewallRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PhysicalHolderRole-->
+   <xs:complexType name="PhysicalHolderRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:HardwareRole">
+            <xs:sequence>
+               <xs:element name="typeOfHolderRole" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PhysicalResourceRole-->
+   <xs:complexType name="PhysicalResourceRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceRole">
+            <xs:sequence>
+               <xs:element name="PhysicalResourceSpec" type="SIDBusRe:PhysicalResourceSpec" minOccurs="0"/>
+               <xs:element name="Service" type="SIDBusSe:Service" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalResourceRoleDetailsForPhysicalResourceRole" type="SIDBusRe:PhysicalResourceRoleDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PhysicalRoleSystemViewEntities.RolesDescribePhysicalResourceDetails-->
+   <xs:complexType name="RolesDescribePhysicalResourceDetails">
+      <xs:sequence/>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PhysicalRouterRole-->
+   <xs:complexType name="PhysicalRouterRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PhysicalSwitchRole-->
+   <xs:complexType name="PhysicalSwitchRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalDeviceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.PhysicalRoleEntities.PPhysicalDeviceRole-->
+   <xs:complexType name="PPhysicalDeviceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalRouterRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.ResourceRole-->
+   <xs:complexType name="ResourceRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:EntityRole">
+            <xs:sequence>
+               <xs:element name="ResourceInteractionRole" type="SIDBusCm:ResourceInteractionRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CompoundResourceRole" type="SIDBusRe:CompoundResourceRole" minOccurs="0"/>
+               <xs:element name="SpecificationRole" type="SIDBusCm:SpecificationRole" minOccurs="0"/>
+               <xs:element name="ResourceRoleProductInvolvement" type="SIDBusPr:ResourceRoleProductInvolvement" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceRoleDetailsForResourceRole" type="SIDBusRe:ResourceRoleDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.ResourceRolePartyRoleDetails-->
+   <xs:complexType name="ResourceRolePartyRoleDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="requisiteSkillSet" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+               <xs:element name="validForManagingResourceRols" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.ResourceRoleSystemViewEntities.ResourceRoleDetails-->
+   <xs:complexType name="ResourceRoleDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="ResourceRole" type="SIDBusRe:ResourceRole" minOccurs="0"/>
+               <xs:element name="ResourceForResourceRoleDetails" type="SIDBusRe:Resource" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleEntities.ResourceRoleSystemViewEntities.RolesDescribeCompoundResourceDetails-->
+   <xs:complexType name="RolesDescribeCompoundResourceDetails">
+      <xs:sequence>
+         <xs:element name="CompoundResourceRole" type="SIDBusRe:CompoundResourceRole" minOccurs="0"/>
+         <xs:element name="CompoundResourceForRolesDescribeCompoundResourceDetails" type="SIDBusRe:CompoundResource" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleSpecEntities.LogicalRoleSpecificationEntities.LogicalDeviceRoleSpec-->
+   <xs:complexType name="LogicalDeviceRoleSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalResourceRoleSpec">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleSpecEntities.LogicalRoleSpecificationEntities.LogicalResourceRoleSpec-->
+   <xs:complexType name="LogicalResourceRoleSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceRoleSpecification">
+            <xs:sequence>
+               <xs:element name="LogicalResourceRole" type="SIDBusRe:LogicalResourceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceFacingServiceSpecRole" type="SIDBusSe:ResourceFacingServiceSpecRole" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleSpecEntities.PhysicalRoleSpecificationEntities.PhysicalDeviceRoleDetails-->
+   <xs:complexType name="PhysicalDeviceRoleDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="typeOfDevice" minOccurs="0" maxOccurs="unbounded" type="xs:int"/>
+               <xs:element name="PhysicalDeviceRole" type="SIDBusRe:PhysicalDeviceRole" minOccurs="0"/>
+               <xs:element name="PhysicalDeviceRoleSpecForPhysicalDeviceRoleDetails" type="SIDBusRe:PhysicalDeviceRoleSpec" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleSpecEntities.PhysicalRoleSpecificationEntities.PhysicalDeviceRoleSpec-->
+   <xs:complexType name="PhysicalDeviceRoleSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalResourceRoleSpec">
+            <xs:sequence>
+               <xs:element name="PhysicalDeviceRoleDetails" type="SIDBusRe:PhysicalDeviceRoleDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleSpecEntities.PhysicalRoleSpecificationEntities.PhysicalResourceRoleDetails-->
+   <xs:complexType name="PhysicalResourceRoleDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="typeOfResource" minOccurs="0" maxOccurs="unbounded" type="xs:int"/>
+               <xs:element name="PhysicalResourceRole" type="SIDBusRe:PhysicalResourceRole" minOccurs="0"/>
+               <xs:element name="PhysicalResourceRoleSpecForPhysicalResourceRoleDetails" type="SIDBusRe:PhysicalResourceRoleSpec" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleSpecEntities.PhysicalRoleSpecificationEntities.PhysicalResourceRoleSpec-->
+   <xs:complexType name="PhysicalResourceRoleSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceRoleSpecification">
+            <xs:sequence>
+               <xs:element name="PhysicalResourceRoleDetails" type="SIDBusRe:PhysicalResourceRoleDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceFacingServiceSpecRole" type="SIDBusSe:ResourceFacingServiceSpecRole" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceRoleSpecEntities.ResourceRoleSpecification-->
+   <xs:complexType name="ResourceRoleSpecification" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:SpecificationRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.CompoundResourceSpecificationEntities.CompoundResourceSpec-->
+   <xs:complexType name="CompoundResourceSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceSpecification">
+            <xs:sequence>
+               <xs:element name="CompoundResourceRole" type="SIDBusRe:CompoundResourceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CompoundResourceSpecComposite" type="SIDBusRe:CompoundResourceSpecComposite" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.CompoundResourceSpecificationEntities.CompoundResourceSpecAtomic-->
+   <xs:complexType name="CompoundResourceSpecAtomic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:CompoundResourceSpec">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.CompoundResourceSpecificationEntities.CompoundResourceSpecComposite-->
+   <xs:complexType name="CompoundResourceSpecComposite">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:CompoundResourceSpec">
+            <xs:sequence>
+               <xs:element name="CompoundResourceSpec" type="SIDBusRe:CompoundResourceSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.LogicalPhysicalResourceSpec-->
+   <xs:complexType name="LogicalPhysicalResourceSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="lpResSpecBindingValidFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+               <xs:element name="LogicalResourceSpec" type="SIDBusRe:LogicalResourceSpec" minOccurs="0"/>
+               <xs:element name="PhysicalResourceSpecForLogicalPhysicalResourceSpec" type="SIDBusRe:PhysicalResourceSpec" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.LogicalResourceSpecificationEntities.LogicalResourceSpec-->
+   <xs:complexType name="LogicalResourceSpec" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceSpecification">
+            <xs:sequence>
+               <xs:element name="LogicalResourceRole" type="SIDBusRe:LogicalResourceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LogicalResourceSpecComposite" type="SIDBusRe:LogicalResourceSpecComposite" minOccurs="0"/>
+               <xs:element name="LogicalPhysicalResourceSpecForLogicalResourceSpec" type="SIDBusRe:LogicalPhysicalResourceSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.LogicalResourceSpecificationEntities.LogicalResourceSpecCharacteristic-->
+   <xs:complexType name="LogicalResourceSpecCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceSpecCharacteristic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.LogicalResourceSpecificationEntities.LogicalResourceSpecComposite-->
+   <xs:complexType name="LogicalResourceSpecComposite">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:LogicalResourceSpec">
+            <xs:sequence>
+               <xs:element name="LogicalResourceSpec" type="SIDBusRe:LogicalResourceSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.LogicalResourceSpecificationEntities.LogicalResourceSpecVersion-->
+   <xs:complexType name="LogicalResourceSpecVersion">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceSpecVersion">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.PhysicalResourceSpecificationEntities.PhysicalDeviceSpecification-->
+   <xs:complexType name="PhysicalDeviceSpecification">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalResourceSpec">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.PhysicalResourceSpecificationEntities.PhysicalResourceSpec-->
+   <xs:complexType name="PhysicalResourceSpec" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceSpecification">
+            <xs:sequence>
+               <xs:element name="Representation" type="SIDBusCm:Representation" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalResourceRole" type="SIDBusRe:PhysicalResourceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LogicalPhysicalResourceSpec" type="SIDBusRe:LogicalPhysicalResourceSpec" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LocalLocation" type="SIDBusCm:LocalLocation" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalResourceSpecComposite" type="SIDBusRe:PhysicalResourceSpecComposite" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.PhysicalResourceSpecificationEntities.PhysicalResourceSpecAtomic-->
+   <xs:complexType name="PhysicalResourceSpecAtomic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalResourceSpec">
+            <xs:sequence>
+               <xs:element name="modelNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="partNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="skuNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="vendorName" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.PhysicalResourceSpecificationEntities.PhysicalResourceSpecCharacteristic-->
+   <xs:complexType name="PhysicalResourceSpecCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:ResourceSpecCharacteristic">
+            <xs:sequence>
+               <xs:element name="PhysicalResourceCharacteristic" type="SIDBusRe:PhysicalResourceCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.PhysicalResourceSpecificationEntities.PhysicalResourceSpecComposite-->
+   <xs:complexType name="PhysicalResourceSpecComposite">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:PhysicalResourceSpec">
+            <xs:sequence>
+               <xs:element name="PhysicalResourceSpec" type="SIDBusRe:PhysicalResourceSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.ResourceCharacteristicValue-->
+   <xs:complexType name="ResourceCharacteristicValue">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Specification">
+            <xs:sequence>
+               <xs:element name="ResourceCharacteristic" type="SIDBusRe:ResourceCharacteristic" minOccurs="0"/>
+               <xs:element name="Resource" type="SIDBusRe:Resource" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.ResourceSpecCharacteristic-->
+   <xs:complexType name="ResourceSpecCharacteristic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:EntitySpecCharacteristic">
+            <xs:sequence>
+               <xs:element name="ResourceCharacteristic" type="SIDBusRe:ResourceCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecCharacteristicValue" type="SIDBusRe:ResourceSpecCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecification" type="SIDBusRe:ResourceSpecification" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.ResourceSpecCharacteristicValue-->
+   <xs:complexType name="ResourceSpecCharacteristicValue">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Specification">
+            <xs:sequence>
+               <xs:element name="ResourceSpecCharacteristic" type="SIDBusRe:ResourceSpecCharacteristic" minOccurs="0"/>
+               <xs:element name="ResourceSpecification" type="SIDBusRe:ResourceSpecification" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.ResourceSpecification-->
+   <xs:complexType name="ResourceSpecification" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:EntitySpecification">
+            <xs:sequence>
+               <xs:element name="ResourceSpecCharacteristicValue" type="SIDBusRe:ResourceSpecCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecCharacteristic" type="SIDBusRe:ResourceSpecCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecificationHas" type="SIDBusRe:ResourceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Resource" type="SIDBusRe:Resource" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceUsageSpec" type="SIDBusRe:ResourceUsageSpec" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecVersionDetails" type="SIDBusRe:ResourceSpecVersionDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="BusinessInteractionItem" type="SIDBusCm:BusinessInteractionItem" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecificationFor" type="SIDBusRe:ResourceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecType" type="SIDBusRe:ResourceSpecType" minOccurs="0"/>
+               <xs:element name="ResourceFacingServiceSpec" type="SIDBusSe:ResourceFacingServiceSpec" minOccurs="0"/>
+               <xs:element name="ProductSpecification" type="SIDBusPr:ProductSpecification" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.ResourceSpecType-->
+   <xs:complexType name="ResourceSpecType">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="ResourceSpecTypeHas" type="SIDBusRe:ResourceSpecType" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecification" type="SIDBusRe:ResourceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecTypeFor" type="SIDBusRe:ResourceSpecType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.ResourceSpecVersion-->
+   <xs:complexType name="ResourceSpecVersion">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="resSpecRevisionName" minOccurs="0" type="xs:string"/>
+               <xs:element name="resSpecRevisionFormat" minOccurs="0" type="xs:string"/>
+               <xs:element name="resSpecRevisionNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="resSpecRevisionReason" minOccurs="0" type="xs:string"/>
+               <xs:element name="resSpecRevisionSemantics" minOccurs="0" type="xs:string"/>
+               <xs:element name="resSpecRevisionTimestamp" minOccurs="0" type="xs:date"/>
+               <xs:element name="resSpecRevisionValidityPeriod" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+               <xs:element name="ResourceSpecVersionDetailsForResourceSpecVersion" type="SIDBusRe:ResourceSpecVersionDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceSpecificationEntities.ResourceSpecVersionDetails-->
+   <xs:complexType name="ResourceSpecVersionDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="preferredVersionToUse" minOccurs="0" type="xs:string"/>
+               <xs:element name="minVersionForUse" minOccurs="0" type="xs:string"/>
+               <xs:element name="resourceSpecVerValidFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+               <xs:element name="ResourceSpecVersion" type="SIDBusRe:ResourceSpecVersion" minOccurs="0"/>
+               <xs:element name="ResourceSpecificationForResourceSpecVersionDetails" type="SIDBusRe:ResourceSpecification" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceUsageABE.ResourceUsage-->
+   <xs:complexType name="ResourceUsage">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Usage">
+            <xs:sequence>
+               <xs:element name="Resource" type="SIDBusRe:Resource" minOccurs="0"/>
+               <xs:element name="ResourceUsageSpec" type="SIDBusRe:ResourceUsageSpec" minOccurs="0"/>
+               <xs:element name="ProductComponentUsage" type="SIDBusPr:ProductComponentUsage" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ResourceUsageABE.ResourceUsageSpec-->
+   <xs:complexType name="ResourceUsageSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:UsageSpecification">
+            <xs:sequence>
+               <xs:element name="ResourceUsage" type="SIDBusRe:ResourceUsage" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceSpecification" type="SIDBusRe:ResourceSpecification" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ValueNetworkRoleEntities.Administrator-->
+   <xs:complexType name="Administrator" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ValueNetworkRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ValueNetworkRoleEntities.Customer-->
+   <xs:complexType name="Customer">
+      <xs:sequence/>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ValueNetworkRoleEntities.ResourceInstaller-->
+   <xs:complexType name="ResourceInstaller">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Technician">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ValueNetworkRoleEntities.Technician-->
+   <xs:complexType name="Technician" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ValueNetworkRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ResourceDomain.ValueNetworkRoleEntities.TelecomTechnician-->
+   <xs:complexType name="TelecomTechnician">
+      <xs:complexContent>
+         <xs:extension base="SIDBusRe:Technician">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema>

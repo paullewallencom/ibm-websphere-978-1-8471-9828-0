@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Callout.mednode="mednode://mednodes/Callout.mednode/Callout" xmlns:CalloutFault.mednode="mednode://mednodes/CalloutFault.mednode/CalloutFault" xmlns:CalloutResponse.mednode="mednode://mednodes/CalloutResponse.mednode/CalloutResponse" xmlns:Fail.mednode="mednode://mednodes/Fail.mednode/Fail" xmlns:Input.mednode="mednode://mednodes/Input.mednode/Input" xmlns:InputResponse.mednode="mednode://mednodes/InputResponse.mednode/InputResponse" xmlns:MoonlightAdapterFacade.medflow="MoonlightAdapterFacade.medflow" xmlns:XSLTransformation.mednode="mednode://mednodes/XSLTransformation.mednode/XSLTransformation" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow2="http://www.ibm.com/2006/eflow" xmlns:type="http://www.ibm.com/2006/eflow/type" xmlns:utility="http://www.ibm.com/2006/eflow/utility" name="root" nsURI="MoonlightAdapterFacade.medflow" nsPrefix="MoonlightAdapterFacade.medflow">
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_2">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_1">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder}processOrderRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_2">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder}processOrderResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_3">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport}createDb2adminSupplierordersBGRequestMsg"/>
+        </elements>
+      </type>
+      <nodes xmi:type="Input.mednode:Input" xmi:id="Input_1" name="ProcessPurchaseOrder_processOrder_Input">
+        <location x="10" y="40"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="processOrder : ProcessPurchaseOrder"/>
+      </nodes>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_1" name="ProcessPurchaseOrder_processOrder_InputResponse">
+        <location x="519" y="98"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_2"/>
+        <translation xmi:type="utility:ConstantString" string="processOrder : ProcessPurchaseOrder"/>
+      </nodes>
+      <nodes xmi:type="Callout.mednode:Callout" xmi:id="Callout_1" name="MoonlightJDBCAdapterImportPartner_createDb2adminSupplierordersBG_Callout" referenceName="MoonlightJDBCAdapterImportPartner" operationName="createDb2adminSupplierordersBG">
+        <location x="519" y="20"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_3"/>
+        <translation xmi:type="utility:ConstantString" string="createDb2adminSupplierordersBG : MoonlightJDBCAdapterImportPartner"/>
+      </nodes>
+      <nodes xmi:type="XSLTransformation.mednode:XSLTransformation" xmi:id="XSLTransformation_1" name="moonAdapterFacade_2_moonAdapterIn" root="/body" XSLTransform="com/junglesea/transforms/moonAdapterFacade_2_moonAdapterIn.xsl" XMXMap="com/junglesea/transforms/moonAdapterFacade_2_moonAdapterIn.map" SMOVersion="SMO61">
+        <location x="234" y="40"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_3"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_1"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="moonAdapterFacade_2_moonAdapterIn"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_1" name="Exception_in_moonAdapterFacade_2_moonAdapterIn_Transform">
+        <location x="379" y="52"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="Exception in moonAdapterFacade_2_moonAdapterIn Transform"/>
+      </nodes>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_1" targetNode="XSLTransformation_1" sourceNode="Input_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_2" targetNode="Callout_1" sourceNode="XSLTransformation_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_3" targetNode="Fail_1" sourceNode="XSLTransformation_1" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_3">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_4">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport}createDb2adminSupplierordersBGResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_5">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport}createDb2adminSupplierordersBGRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_6">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport}createDb2adminSupplierordersBGMissingDataFaultMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_7">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport}createDb2adminSupplierordersBGUniqueConstraintFaultMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_8">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport}createDb2adminSupplierordersBGIntegrityConstraintFaultMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_9">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport}createDb2adminSupplierordersBGObjectNotFoundFaultMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_10">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder}processOrderResponseMsg"/>
+        </elements>
+      </type>
+      <nodes xmi:type="CalloutResponse.mednode:CalloutResponse" xmi:id="CalloutResponse_1" name="MoonlightJDBCAdapterImportPartner_createDb2adminSupplierordersBG_CalloutResponse" referenceName="MoonlightJDBCAdapterImportPartner" operationName="createDb2adminSupplierordersBG">
+        <location x="10" y="20"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_4"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" explicitType="true" type="CompositeType_5"/>
+        <translation xmi:type="utility:ConstantString" string="createDb2adminSupplierordersBG : MoonlightJDBCAdapterImportPartner"/>
+      </nodes>
+      <nodes xmi:type="CalloutFault.mednode:CalloutFault" xmi:id="CalloutFault_1" name="MoonlightJDBCAdapterImportPartner_createDb2adminSupplierordersBG_CalloutFault" referenceName="MoonlightJDBCAdapterImportPartner" operationName="createDb2adminSupplierordersBG">
+        <location x="10" y="212"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:out:createDb2adminSupplierordersBGMissingDataFaultMsg" dynamic="true" explicitType="true" label="createDb2adminSupplierordersBGMissingDataFaultMsg" longDescription="" type="CompositeType_6"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:out:createDb2adminSupplierordersBGUniqueConstraintFaultMsg" dynamic="true" explicitType="true" label="createDb2adminSupplierordersBGUniqueConstraintFaultMsg" longDescription="" type="CompositeType_7"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:out:createDb2adminSupplierordersBGIntegrityConstraintFaultMsg" dynamic="true" explicitType="true" label="createDb2adminSupplierordersBGIntegrityConstraintFaultMsg" longDescription="" type="CompositeType_8"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:out:createDb2adminSupplierordersBGObjectNotFoundFaultMsg" dynamic="true" explicitType="true" label="createDb2adminSupplierordersBGObjectNotFoundFaultMsg" longDescription="" type="CompositeType_9"/>
+        <translation xmi:type="utility:ConstantString" string="createDb2adminSupplierordersBG : MoonlightJDBCAdapterImportPartner"/>
+      </nodes>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_2" name="ProcessPurchaseOrder_processOrder_InputResponse">
+        <location x="593" y="20"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_10"/>
+        <translation xmi:type="utility:ConstantString" string="processOrder : ProcessPurchaseOrder"/>
+      </nodes>
+      <nodes xmi:type="XSLTransformation.mednode:XSLTransformation" xmi:id="XSLTransformation_2" name="moonAdapterOut_2_moonAdapterFacade" root="/body" XSLTransform="com/junglesea/transforms/moonAdapterOut_2_moonAdapterFacade_res_1.xsl" XMXMap="com/junglesea/transforms/moonAdapterOut_2_moonAdapterFacade_res_1.map" SMOVersion="SMO61">
+        <location x="308" y="20"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_10"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_4"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_4"/>
+        <translation xmi:type="utility:ConstantString" string="moonAdapterOut_2_moonAdapterFacade"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_2" name="moonAdapterOut_2_moonAdapterFacade1">
+        <location x="453" y="52"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_4"/>
+        <translation xmi:type="utility:ConstantString" string="moonAdapterOut_2_moonAdapterFacade"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_3" name="Missing_Data_Exception_from_Moonlight_Adapter">
+        <location x="308" y="122"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_6"/>
+        <translation xmi:type="utility:ConstantString" string="Missing Data Exception from Moonlight Adapter"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_4" name="Unique_Constraint_Violation_Exception_from_Moonlight_Adapter">
+        <location x="308" y="224"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_7"/>
+        <translation xmi:type="utility:ConstantString" string="Unique Constraint Violation Exception from Moonlight Adapter"/>
+      </nodes>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_4" targetNode="XSLTransformation_2" sourceNode="CalloutResponse_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_5" targetNode="Fail_3" sourceNode="CalloutFault_1" sourceTerminalName="OutTerminal.dynamic:out:createDb2adminSupplierordersBGMissingDataFaultMsg" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_6" targetNode="Fail_4" sourceNode="CalloutFault_1" sourceTerminalName="OutTerminal.dynamic:out:createDb2adminSupplierordersBGUniqueConstraintFaultMsg" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_7" targetNode="InputResponse_2" sourceNode="XSLTransformation_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_8" targetNode="Fail_2" sourceNode="XSLTransformation_2" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <composition>
+      <nodes xmi:type="MoonlightAdapterFacade.medflow:root_I_2" xmi:id="root_I_2_1" name="{http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder}ProcessPurchaseOrder:processOrder::request"/>
+      <nodes xmi:type="MoonlightAdapterFacade.medflow:root_I_3" xmi:id="root_I_3_1" name="{http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder}ProcessPurchaseOrder:processOrder::response"/>
+    </composition>
+    <propertyOrganizer/>
+  </eClassifiers>
+</ecore:EPackage>

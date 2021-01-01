@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ IBM Confidential
+ OCO Source Materials
+ 5724L7800
+ (c) Copyright IBM Corporation 2004, 2007
+ The source code for this program is not published or otherwise
+ divested of its trade secrets, irrespective of what has been
+ deposited with the U.S. Copyright Office.
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/datatransformation/databindingmapping" 
+	xmlns:flatfileasi="http://www.ibm.com/xmlns/prod/websphere/j2ca/datatransformation/databindingmapping" 
+	xmlns:tns="http://www.ibm.com/xmlns/prod/websphere/j2ca/datatransformation/databindingmapping">
+	
+<!-- IBMBIDI Append Start -->
+ <simpleType name="OrderingScheme">
+ 	<restriction base="string">
+ 	          <enumeration value=""/>
+              <enumeration value="implicit"/>
+              <enumeration value="visual"/>
+ 	</restriction>
+ </simpleType>
+
+  <simpleType name="Orientation">
+ 	<restriction base="string">
+               <enumeration value=""/>
+               <enumeration value="LTR"/>
+               <enumeration value="RTL"/>
+               <enumeration value="contextual_LTR"/>
+               <enumeration value="contextual_RTL"/>
+ 	</restriction>
+ </simpleType>
+
+  <simpleType name="SpecString">
+ 	<restriction base="string">
+               <enumeration value="NORMAL_STRING"/>
+               <enumeration value="WIN_DIR"/>
+               <enumeration value="WIN_NET_DIR"/>
+               <enumeration value="UNIX_DIR"/>
+               <enumeration value="MVS_DIR"/>
+               <enumeration value="WIN_DIR_LIST"/>
+               <enumeration value="UNIX_DIR_LIST"/>
+               <enumeration value="MVS_DIR_LIST"/>
+ 	</restriction>
+ </simpleType>
+
+
+  <simpleType name="TrueFalse">
+ 	<restriction base="string">
+               <enumeration value=""/>
+               <enumeration value="true"/>
+               <enumeration value="false"/>
+ 	</restriction>
+ </simpleType>
+
+  <simpleType name="NumeralShapes">
+        <restriction base="string">
+               <enumeration value=""/>
+               <enumeration value="nominal"/>
+               <enumeration value="national"/>
+               <enumeration value="contextual"/>
+        </restriction>
+ </simpleType>
+
+  <simpleType name="TextShapes">
+        <restriction base="string">
+               <enumeration value=""/>
+               <enumeration value="nominal"/>
+               <enumeration value="shaped"/>
+               <enumeration value="initial"/>
+               <enumeration value="middle"/>
+               <enumeration value="final"/>
+               <enumeration value="isolated"/>
+        </restriction>
+ </simpleType>
+
+    <complexType name="Bi_DirectionStringTD">
+            <sequence minOccurs="1" maxOccurs="1">
+ 			<element name="orderingScheme" type="flatfileasi:OrderingScheme"/>
+ 			<element name="orientation" type="flatfileasi:Orientation"/> 
+			<element name="symmetricSwapping" type="flatfileasi:TrueFalse"/>
+ 			<element name="numeralShapes" type="flatfileasi:NumeralShapes"/>
+ 			<element name="textShape" type="flatfileasi:TextShapes"/>
+ 		</sequence>
+ </complexType>
+
+ <complexType name="BiDiContext">
+            <sequence minOccurs="0" maxOccurs="1">
+ 			<element name="BiDiEIS" type="flatfileasi:Bi_DirectionStringTD" minOccurs="0"/>
+ 			<element name="BiDiMetadata" type="flatfileasi:Bi_DirectionStringTD" minOccurs="0"/>
+ 			<element name="BiDiSkip" type="flatfileasi:TrueFalse" minOccurs="0"/>
+	        	<element name="BiDiSpecFormat" type="flatfileasi:SpecString" minOccurs="0"/>
+	    </sequence>
+ </complexType>
+ <!-- CR 85160 Append Start -->
+ <complexType name="AttrBiDiContext">
+            <sequence minOccurs="0" maxOccurs="1">
+ 			<element name="BiDiEIS" type="flatfileasi:Bi_DirectionStringTD" minOccurs="0"/>
+ 			<element name="BiDiSkip" type="flatfileasi:TrueFalse" minOccurs="0"/>
+		        <element name="BiDiSpecFormat" type="flatfileasi:SpecString" minOccurs="0"/>
+ 		</sequence>
+ </complexType>
+<!-- CR 85160 Append End -->
+<!-- IBMBIDI Append End -->
+	
+	<complexType name="DataBindingMapping">
+		<sequence>
+			<element name="DataBindingConfig" type="anyType" maxOccurs="unbounded" />
+			<!-- IBMBIDI Append Start -->
+			<element name="BiDiContext" type="flatfileasi:Bi_DirectionStringTD" minOccurs="0"/>
+			<element name="BiDiContextDataTransformationFramework" type="flatfileasi:BiDiContext" minOccurs="0"/>
+			<!-- IBMBIDI Append End -->
+		</sequence>
+	</complexType>
+	
+
+<complexType name="XMLBOSerializerDataBindingMetadata">
+<sequence minOccurs="1" maxOccurs="1">
+	<element name="ContentType" type="string"
+					fixed="text/xml" />
+	<element name="DataBindingClass" type="string" fixed="com.ibm.j2ca.extension.emd.runtime.WBIXMLDataBinding"/>	
+</sequence>
+</complexType>
+	
+<complexType name="DataTransformationMetadata">
+<sequence minOccurs="1" maxOccurs="1">
+	<element name="ContentType" type="string"/>
+	<element name="WrapperName" type="string"/>
+	<element name="Namespace" type="string"/>
+	<element name="PartialNamespace" type="string"/>
+	<element name="Charset" type="string"/>
+	<!-- IBMBIDI Append Start -->
+	<element name="BiDiContext" type="flatfileasi:BiDiContext" minOccurs="0"/>
+	<element name="BiDiContextDataTransformationFramework" type="flatfileasi:BiDiContext" minOccurs="0"/>
+	<!-- IBMBIDI Append End -->
+</sequence>
+</complexType>	
+
+<complexType name="CustomDataBindingMetadata">
+<sequence minOccurs="1" maxOccurs="1">
+	<element name="ContentType" type="string"/>
+	<element name="DataBindingClass" type="string" />
+</sequence>
+</complexType>
+
+<!-- IBMBIDI Append Start -->
+
+<complexType name="FFBusinessObjectTypeMetadata">
+       <sequence minOccurs="1" maxOccurs="1">
+	<element name="BiDiContext" type="flatfileasi:BiDiContext" minOccurs="0"/>
+       </sequence>
+</complexType>
+
+<element name="FFBusinessObjectTypeMetadata" type="flatfileasi:FFBusinessObjectTypeMetadata">
+   <annotation>
+      <appinfo source="commonj.connector.asi">
+	<asi:annotationType xmlns:asi="commonj.connector.asi" annotationKind="complexType" annotationScope="global" />
+      </appinfo>
+   </annotation>
+</element>
+<!-- IBMBIDI Append End -->
+</schema>

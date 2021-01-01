@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EIS="http://www.ibm.com/xmlns/prod/websphere/scdl/eis/6.0.0" xmlns:ns1="http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="MoonlightJDBCAdapterImport" name="MoonlightJDBCAdapterImport">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:MoonlightJDBCAdapterImport">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <esbBinding xsi:type="EIS:EISImportBinding" faultSelector="com.ibm.j2ca.extension.emd.runtime.WBIFaultSelectorImpl" dataBindingType="com.ibm.j2ca.jdbc.emd.databinding.JDBCDataBindingGenerator">
+    <description>Moonlight Application JDBC Adapter</description>
+    <resourceAdapter name="AccessServices-MoonlightApp.IBM WebSphere Adapter for JDBC" type="com.ibm.j2ca.jdbc.JDBCResourceAdapter" version="7.0.0.0_IF02">
+      <properties>
+        <adapterID>001</adapterID>
+      </properties>
+    </resourceAdapter>
+    <connection type="com.ibm.j2ca.jdbc.JDBCManagedConnectionFactory" interactionType="com.ibm.j2ca.jdbc.JDBCInteractionSpec">
+      <properties>
+        <XADataSourceJNDIName>jdbc/moonlgt</XADataSourceJNDIName>
+        <adapterID>001</adapterID>
+        <connectionType>XADataSourceJNDI</connectionType>
+        <databaseURL>jdbc:db2://localhost:50000/MOONLGT</databaseURL>
+        <databaseVendor>DB2</databaseVendor>
+        <jdbcDriverClass>com.ibm.db2.jcc.DB2Driver</jdbcDriverClass>
+        <password>db2admin</password>
+        <returnDummyBOForSP>false</returnDummyBOForSP>
+        <userName>db2admin</userName>
+      </properties>
+    </connection>
+    <methodBinding inDataBindingType="com.ibm.xmlns.prod.websphere.j2ca.jdbc.db2adminsupplierordersbg.Db2adminSupplierordersBGDataBinding" method="createDb2adminSupplierordersBG" outDataBindingType="com.ibm.xmlns.prod.websphere.j2ca.jdbc.db2adminsupplierordersbg.Db2adminSupplierordersBGDataBinding">
+      <faultBinding fault="INTEGRITY_CONSTRAINT_VIOLATION" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <faultBinding fault="MISSING_DATA" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <faultBinding fault="OBJECT_NOTFOUND_EXCEPTION" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <faultBinding fault="UNIQUECONSTRAINT_VIOLATION" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <interaction>
+        <properties>
+          <functionName>Create</functionName>
+        </properties>
+      </interaction>
+    </methodBinding>
+    <methodBinding inDataBindingType="com.ibm.xmlns.prod.websphere.j2ca.jdbc.db2adminsupplierordersbg.Db2adminSupplierordersBGDataBinding" method="updateDb2adminSupplierordersBG" outDataBindingType="com.ibm.xmlns.prod.websphere.j2ca.jdbc.db2adminsupplierordersbg.Db2adminSupplierordersBGDataBinding">
+      <faultBinding fault="MISSING_DATA" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <faultBinding fault="OBJECT_NOTFOUND_EXCEPTION" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <faultBinding fault="RECORD_NOT_FOUND" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <faultBinding fault="MULTIPLE_MATCHING_RECORDS" faultBindingType="com.ibm.j2ca.extension.emd.runtime.MatchingFaultDataBinding"/>
+      <faultBinding fault="UNIQUECONSTRAINT_VIOLATION" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <faultBinding fault="INTEGRITY_CONSTRAINT_VIOLATION" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <interaction>
+        <properties>
+          <functionName>Update</functionName>
+        </properties>
+      </interaction>
+    </methodBinding>
+    <methodBinding inDataBindingType="com.ibm.xmlns.prod.websphere.j2ca.jdbc.db2adminsupplierordersbg.Db2adminSupplierordersBGDataBinding" method="retrieveDb2adminSupplierordersBG" outDataBindingType="com.ibm.xmlns.prod.websphere.j2ca.jdbc.db2adminsupplierordersbg.Db2adminSupplierordersBGDataBinding">
+      <faultBinding fault="MISSING_DATA" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <faultBinding fault="MULTIPLE_MATCHING_RECORDS" faultBindingType="com.ibm.j2ca.extension.emd.runtime.MatchingFaultDataBinding"/>
+      <faultBinding fault="RECORD_NOT_FOUND" faultBindingType="com.ibm.j2ca.extension.emd.runtime.WBIFaultDataBindingImpl"/>
+      <interaction>
+        <properties>
+          <functionName>Retrieve</functionName>
+        </properties>
+      </interaction>
+    </methodBinding>
+    <methodBinding inDataBindingType="com.ibm.xmlns.prod.websphere.j2ca.jdbc.db2adminsupplierordersbg.Db2adminSupplierordersBGDataBinding" method="existsDb2adminSupplierordersBG" outDataBindingType="com.ibm.xmlns.prod.websphere.j2ca.jdbc.existsresult.ExistsResultDataBinding">
+      <interaction>
+        <properties>
+          <functionName>Exists</functionName>
+        </properties>
+      </interaction>
+    </methodBinding>
+  </esbBinding>
+</scdl:import>

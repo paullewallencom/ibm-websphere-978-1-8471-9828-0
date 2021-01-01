@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="EqualCreditPulseSoap" targetNamespace="http://EqualLibrary/com/junglesea/apps/equal/EqualCreditPulseSoap" xmlns:bons1="http://EqualLibrary/com/junglesea/apps/equal" xmlns:tns="http://EqualLibrary/com/junglesea/apps/equal/EqualCreditPulseSoap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://EqualLibrary/com/junglesea/apps/equal/EqualCreditPulseSoap">
+      <xsd:import namespace="http://EqualLibrary/com/junglesea/apps/equal" schemaLocation="personalCreditChkResponse.xsd"/>
+      <xsd:import namespace="http://EqualLibrary/com/junglesea/apps/equal" schemaLocation="personalCreditChkRequest.xsd"/>
+      <xsd:import namespace="http://EqualLibrary/com/junglesea/apps/equal" schemaLocation="companyCreditChkResponse.xsd"/>
+      <xsd:import namespace="http://EqualLibrary/com/junglesea/apps/equal" schemaLocation="companyCreditChkRequest.xsd"/>
+      <xsd:element name="creditPulseByCompany">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="bons1:companyCreditChkRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="creditPulseByCompanyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="bons1:companyCreditChkResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="creditPulseByIndividual">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="bons1:personalCreditChkRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="creditPulseByIndividualResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="bons1:personalCreditChkResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="creditPulseByCompanyRequestMsg">
+    <wsdl:part element="tns:creditPulseByCompany" name="creditPulseByCompanyParameters"/>
+  </wsdl:message>
+    <wsdl:message name="creditPulseByCompanyResponseMsg">
+    <wsdl:part element="tns:creditPulseByCompanyResponse" name="creditPulseByCompanyResult"/>
+  </wsdl:message>
+    <wsdl:message name="creditPulseByIndividualRequestMsg">
+    <wsdl:part element="tns:creditPulseByIndividual" name="creditPulseByIndividualParameters"/>
+  </wsdl:message>
+    <wsdl:message name="creditPulseByIndividualResponseMsg">
+    <wsdl:part element="tns:creditPulseByIndividualResponse" name="creditPulseByIndividualResult"/>
+  </wsdl:message>
+    <wsdl:portType name="EqualCreditPulseSoap">
+    <wsdl:operation name="creditPulseByCompany">
+      <wsdl:input message="tns:creditPulseByCompanyRequestMsg" name="creditPulseByCompanyRequest"/>
+      <wsdl:output message="tns:creditPulseByCompanyResponseMsg" name="creditPulseByCompanyResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="creditPulseByIndividual">
+      <wsdl:input message="tns:creditPulseByIndividualRequestMsg" name="creditPulseByIndividualRequest"/>
+      <wsdl:output message="tns:creditPulseByIndividualResponseMsg" name="creditPulseByIndividualResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

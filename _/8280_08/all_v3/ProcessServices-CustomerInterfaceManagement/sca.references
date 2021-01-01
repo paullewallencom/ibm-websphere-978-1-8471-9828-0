@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:references xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0">
+  <reference name="MaintainCustomerInformationPartner">
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns1:MaintainCustomerInformation"/>
+    <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+    <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+    <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+    <wire target="HandleCustomerContactProfile"/>
+  </reference>
+</scdl:references>

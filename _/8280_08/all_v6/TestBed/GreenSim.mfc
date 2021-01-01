@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mfc:interfaceMediationFlow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CustomerProfile="http://GreenLibrary/com/junglesea/apps/green/CustomerProfile" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/wbiserver/mfc/6.0.0" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" name="GreenSim" targetNamespace="http://TestBed/GreenSim">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns1:MaintainCustomerInformation"/>
+  </interfaces>
+  <references>
+    <reference name="CustomerProfilePartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="CustomerProfile:CustomerProfile"/>
+    </reference>
+  </references>
+  <extendedOperationBinding source="createCustomer" target="createCustomerAccount" sourcePortType="ns1:MaintainCustomerInformation" targetReference="CustomerProfilePartner"/>
+  <operationFlow medflow="GreenSim.medflow"/>
+</mfc:interfaceMediationFlow>

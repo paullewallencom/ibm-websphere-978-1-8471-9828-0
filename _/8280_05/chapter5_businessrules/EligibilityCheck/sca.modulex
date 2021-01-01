@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.wiring.ui.ext.model="http:///com/ibm/wbit/wiring/ui/ext/model.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1252820946406" namespace="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+    <extensions xmi:id="Extension_1252820946406">
+      <extendedObject href="sca.module#//@module"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:ModuleExtension" xmi:id="ModuleExtension_1252820946406" autoLayout="true"/>
+    </extensions>
+    <extensions xmi:id="Extension_1252820946408">
+      <extendedObject href="eligibilityCheckProcess.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1252820946407" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0}ProcessImplementation" unknown="false" visible="true" x="30" y="30"/>
+    </extensions>
+    <extensions xmi:id="Extension_1252822927468">
+      <extendedObject href="approveEligibility.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1252822927468" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/human-task/6.0.0}TaskImplementation" unknown="false" visible="true" x="229" y="30"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="BusinessRule.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" type="{http://www.ibm.com/xmlns/prod/websphere/wbiserver/scdl/BusinessRuleGroupImplementation/6.0.0}BusinessRuleGroupImplementation" unknown="false" visible="true" x="30" y="101"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1252820946407" namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions xmi:id="Extension_1252820946409">
+      <extendedObject href="sca.module#//@module"/>
+      <extensionObject xsi:type="sb:StickyDocument" xmi:id="StickyDocument_1252820946406">
+        <stickyBoard xmi:id="StickyBoard_1252820946406" id="default">
+          <stickyNote body="Need update artifacts with new interface EligibilityChecRulesInterface">
+            <bounds x="267" y="153"/>
+            <association>
+              <target href="BusinessRule.component#//@Component"/>
+            </association>
+          </stickyNote>
+        </stickyBoard>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

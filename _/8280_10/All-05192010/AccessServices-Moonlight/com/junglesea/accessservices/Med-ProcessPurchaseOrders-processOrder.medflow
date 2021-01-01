@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Callout.mednode="mednode://mednodes/Callout.mednode/Callout" xmlns:CalloutResponse.mednode="mednode://mednodes/CalloutResponse.mednode/CalloutResponse" xmlns:Fail.mednode="mednode://mednodes/Fail.mednode/Fail" xmlns:FanOut.mednode="mednode://mednodes/FanOut.mednode/FanOut" xmlns:Input.mednode="mednode://mednodes/Input.mednode/Input" xmlns:InputFault.mednode="mednode://mednodes/InputFault.mednode/InputFault" xmlns:InputResponse.mednode="mednode://mednodes/InputResponse.mednode/InputResponse" xmlns:Med-ProcessPurchaseOrders-processOrder.medflow="Med-ProcessPurchaseOrders-processOrder.medflow" xmlns:XSLTransformation.mednode="mednode://mednodes/XSLTransformation.mednode/XSLTransformation" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow2="http://www.ibm.com/2006/eflow" xmlns:type="http://www.ibm.com/2006/eflow/type" xmlns:utility="http://www.ibm.com/2006/eflow/utility" name="root" nsURI="Med-ProcessPurchaseOrders-processOrder.medflow" nsPrefix="Med-ProcessPurchaseOrders-processOrder.medflow">
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_2">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_1">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders}submitSupplierOrderRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_2">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders}submitSupplierOrderResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_3">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders}submitSupplierOrder_submitSupplierOrderFaultMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_4">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder}processOrderRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_5">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders}submitSupplierOrderRequestMsg"/>
+        </elements>
+        <elements id="/context/primitiveContext/FanOutContext/occurrence">
+          <type xmi:type="type:XSDType" xsiType="{http://CustomerDomain-v1_0/com/junglesea/bo}OrderItem"/>
+        </elements>
+      </type>
+      <nodes xmi:type="Input.mednode:Input" xmi:id="Input_1" name="ProcessSPOrders_submitSupplierOrder_Input">
+        <location x="10" y="110"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="submitSupplierOrder : ProcessSPOrders"/>
+      </nodes>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_1" name="ProcessSPOrders_submitSupplierOrder_InputResponse">
+        <location x="633" y="98"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_2"/>
+        <translation xmi:type="utility:ConstantString" string="submitSupplierOrder : ProcessSPOrders"/>
+      </nodes>
+      <nodes xmi:type="InputFault.mednode:InputFault" xmi:id="InputFault_1" name="ProcessSPOrders_submitSupplierOrder_InputFault">
+        <location x="633" y="176"/>
+        <inTerminals terminalNodeID="InTerminal.dynamic:in:submitSupplierOrder_submitSupplierOrderFaultMsg" dynamic="true" explicitType="true" label="submitSupplierOrder_submitSupplierOrderFaultMsg" longDescription="" type="CompositeType_3"/>
+        <translation xmi:type="utility:ConstantString" string="submitSupplierOrder : ProcessSPOrders"/>
+      </nodes>
+      <nodes xmi:type="Callout.mednode:Callout" xmi:id="Callout_1" name="ProcessPurchaseOrderPartner_processOrder_Callout" referenceName="ProcessPurchaseOrderPartner" operationName="processOrder">
+        <location x="633" y="20"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_4"/>
+        <translation xmi:type="utility:ConstantString" string="processOrder : ProcessPurchaseOrderPartner"/>
+      </nodes>
+      <nodes xmi:type="XSLTransformation.mednode:XSLTransformation" xmi:id="XSLTransformation_1" name="SupplierPartnerOrderMSG_2_PurchaseOrderType" root="/body" XSLTransform="com/junglesea/transforms/SupplierPartnerOrderMSG_2_PurchaseOrderType.xsl" XMXMap="com/junglesea/transforms/SupplierPartnerOrderMSG_2_PurchaseOrderType.map" SMOVersion="SMO61">
+        <location x="348" y="20"/>
+        <outTerminals terminalNodeID="OutTerminal.out" type="CompositeType_4"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_5"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="SupplierPartnerOrderMSG_2_PurchaseOrderType"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_1" name="Exception_in_SupplierPartnerOrderMSG_2_PurchaseOrderType_Transform">
+        <location x="493" y="52"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_5"/>
+        <translation xmi:type="utility:ConstantString" string="Exception in SupplierPartnerOrderMSG_2_PurchaseOrderType Transform"/>
+      </nodes>
+      <nodes xmi:type="FanOut.mednode:FanOut" xmi:id="FanOut_1" name="FanOutOnOrderItem" mode="1" iterateExpression="/body/submitSupplierOrder/inputParams/SupplierPartnerOrder/OrderItems">
+        <location x="222" y="110"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_5"/>
+        <outTerminals terminalNodeID="OutTerminal.noOccurrences" explicitType="true" type="CompositeType_1"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_1"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="FanOutOnOrderItem"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_2" name="No_Order_Items_Found_in_the_Supplier_Partner_Order">
+        <location x="348" y="122"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="No Order Items Found in the Supplier/Partner Order"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_3" name="Exception_in_FanOutOnOrderItem">
+        <location x="348" y="224"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="Exception in FanOutOnOrderItem"/>
+      </nodes>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_1" targetNode="FanOut_1" sourceNode="Input_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_2" targetNode="Callout_1" sourceNode="XSLTransformation_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_3" targetNode="Fail_1" sourceNode="XSLTransformation_1" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_4" targetNode="XSLTransformation_1" sourceNode="FanOut_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_5" targetNode="Fail_2" sourceNode="FanOut_1" sourceTerminalName="OutTerminal.noOccurrences" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_6" targetNode="Fail_3" sourceNode="FanOut_1" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_3">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition/>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_4">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_6">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder}processOrderResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_7">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder}processOrderRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_8">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders}submitSupplierOrderResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_9">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders}submitSupplierOrder_submitSupplierOrderFaultMsg"/>
+        </elements>
+      </type>
+      <nodes xmi:type="CalloutResponse.mednode:CalloutResponse" xmi:id="CalloutResponse_1" name="ProcessPurchaseOrderPartner_processOrder_CalloutResponse" referenceName="ProcessPurchaseOrderPartner" operationName="processOrder">
+        <location x="10" y="40"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_6"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" explicitType="true" type="CompositeType_7"/>
+        <translation xmi:type="utility:ConstantString" string="processOrder : ProcessPurchaseOrderPartner"/>
+      </nodes>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_2" name="ProcessSPOrders_submitSupplierOrder_InputResponse">
+        <location x="555" y="20"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_8"/>
+        <translation xmi:type="utility:ConstantString" string="submitSupplierOrder : ProcessSPOrders"/>
+      </nodes>
+      <nodes xmi:type="InputFault.mednode:InputFault" xmi:id="InputFault_2" name="ProcessSPOrders_submitSupplierOrder_InputFault">
+        <location x="555" y="98"/>
+        <inTerminals terminalNodeID="InTerminal.dynamic:in:submitSupplierOrder_submitSupplierOrderFaultMsg" dynamic="true" explicitType="true" label="submitSupplierOrder_submitSupplierOrderFaultMsg" longDescription="" type="CompositeType_9"/>
+        <translation xmi:type="utility:ConstantString" string="submitSupplierOrder : ProcessSPOrders"/>
+      </nodes>
+      <nodes xmi:type="XSLTransformation.mednode:XSLTransformation" xmi:id="XSLTransformation_2" name="processOrderResponseMsg_2_submitSupplierOrderResponseMsg" root="/body" XSLTransform="com/junglesea/transforms/processOrderResponseMsg_2_submitSupplierOrderResponseMsg.xsl" XMXMap="com/junglesea/transforms/processOrderResponseMsg_2_submitSupplierOrderResponseMsg.map" SMOVersion="SMO61">
+        <location x="270" y="40"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_8"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_6"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_6"/>
+        <translation xmi:type="utility:ConstantString" string="processOrderResponseMsg_2_submitSupplierOrderResponseMsg"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_4" name="Exception_in_processOrderResponseMsg_2_submitSupplierOrderResponseMsg_Transform">
+        <location x="415" y="52"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_6"/>
+        <translation xmi:type="utility:ConstantString" string="Exception in processOrderResponseMsg_2_submitSupplierOrderResponseMsg Transform"/>
+      </nodes>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_7" targetNode="XSLTransformation_2" sourceNode="CalloutResponse_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_8" targetNode="InputResponse_2" sourceNode="XSLTransformation_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_9" targetNode="Fail_4" sourceNode="XSLTransformation_2" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <composition>
+      <nodes xmi:type="Med-ProcessPurchaseOrders-processOrder.medflow:root_I_2" xmi:id="root_I_2_1" name="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders}ProcessSPOrders:submitSupplierOrder::request"/>
+      <nodes xmi:type="Med-ProcessPurchaseOrders-processOrder.medflow:root_I_3" xmi:id="root_I_3_1" name="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders}ProcessSPOrders:cancelSupplierOrder::request"/>
+      <nodes xmi:type="Med-ProcessPurchaseOrders-processOrder.medflow:root_I_4" xmi:id="root_I_4_1" name="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders}ProcessSPOrders:submitSupplierOrder::response"/>
+    </composition>
+    <propertyOrganizer/>
+  </eClassifiers>
+</ecore:EPackage>

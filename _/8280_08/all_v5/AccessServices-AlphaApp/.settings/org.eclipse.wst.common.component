@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="AccessServices-AlphaApp">
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+        <dependent-module archiveName="AccessServices-Alpha.jar" deploy-path="/" handle="module:/resource/AccessServices-Alpha/AccessServices-Alpha">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/AccessServices-AlphaWeb/AccessServices-AlphaWeb">
+            <dependent-object>WebModule_1169158408425</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

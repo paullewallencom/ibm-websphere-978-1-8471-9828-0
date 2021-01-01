@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.wiring.ui.ext.model="http:///com/ibm/wbit/wiring/ui/ext/model.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap namespace="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+    <extensions>
+      <extendedObject href="sca.module#//@module"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:ModuleExtension" autoLayout="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HandleCustomer.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0}ProcessImplementation" unknown="false" visible="true" x="30" y="30"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="GreenSim.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/mfc/6.0.0}MediationFlowImplementation" unknown="false" visible="true" x="383" y="32"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="MaintainCustomerInfo.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0}ProcessImplementation" unknown="false" visible="true" x="193" y="31"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HandleCustomer.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" unknown="false" visible="true" x="20" y="34"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="MaintainCustomerInfo.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" unknown="false" visible="true" x="20" y="34"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="Component1.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/java/6.0.0}JavaImplementation" unknown="false" visible="true" x="512" y="33"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions>
+      <extendedObject href="sca.module#//@module"/>
+      <extensionObject xsi:type="sb:StickyDocument">
+        <stickyBoard id="default"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

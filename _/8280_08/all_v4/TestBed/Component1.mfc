@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mfc:interfaceMediationFlow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/wbiserver/mfc/6.0.0" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation" xmlns:ns1_1="http://PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices" xmlns:ns3="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" name="Component1" targetNamespace="http://TestBed/Component1">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns3:ProcessCustomerPayments">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <references>
+    <reference name="CardPaymentServicesPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1_1:CardPaymentServices"/>
+    </reference>
+  </references>
+  <operationFlow medflow="Component1.medflow"/>
+</mfc:interfaceMediationFlow>

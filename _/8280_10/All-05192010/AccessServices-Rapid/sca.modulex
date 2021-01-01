@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.wbit.wiring.ui.ext.model="http:///com/ibm/wbit/wiring/ui/ext/model.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1272894448906" namespace="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+    <extensions xmi:id="Extension_1272894448906">
+      <extendedObject xmi:type="scdl:Component" href="Med-LabelsAndShipments-prepareShipLabel.component#//@Component"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1272894448906" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/mfc/6.0.0}MediationFlowImplementation" unknown="false" visible="true" x="352" y="30"/>
+    </extensions>
+    <extensions xmi:id="Extension_1272894448909">
+      <extendedObject xmi:type="scdl:Export" href="Med-LabelsAndShipments-prepareShipLabelExport.export#//@export"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:ExportExtension" xmi:id="ExportExtension_1272894448906" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}ExportBinding" unknown="false" visible="true" x="30" y="30" bound="true"/>
+    </extensions>
+    <extensions xmi:id="Extension_1272894448910">
+      <extendedObject xmi:type="scdl:Module" href="sca.module#//@module"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:ModuleExtension" xmi:id="ModuleExtension_1272894448907"/>
+    </extensions>
+    <extensions xmi:id="Extension_1273099408078">
+      <extendedObject xmi:type="scdl:Import" href="com/junglesea/adapter/OutboundRapidFlatFileAdapterImport.import#//@import"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1273099408078" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/eis/6.0.0}EISImportBinding" unknown="false" visible="true" x="645" y="31"/>
+    </extensions>
+    <extensions xmi:id="Extension_1273099408079">
+      <extendedObject xmi:type="scdl:Export" href="com/junglesea/adapter/InboundRapidFileAdapterExport.export#//@export"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:ExportExtension" xmi:id="ExportExtension_1273099408078" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/eis/6.0.0}EISExportBinding" unknown="false" visible="true" x="36" y="414"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1272894448907" namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions xmi:id="Extension_1272894448912">
+      <extendedObject xmi:type="scdl:Module" href="sca.module#//@module"/>
+      <extensionObject xmi:type="sb:StickyDocument" xmi:id="StickyDocument_1272894448906">
+        <stickyBoard xmi:id="StickyBoard_1272894448906" id="default">
+          <stickyNote xmi:id="StickyNote_1272894448906" body="Will interface with the Rapid application using a File adapter. &#xA;The Rapid application will process requests for shipment label immediately from a &#xA;specified file location and respond with a shipping label as base64 binary." id="e1a1f39e-b830-4d8c-a25d-910289dfe541">
+            <bounds xmi:id="Bounds_1272894448906" x="365" y="192"/>
+            <association xmi:id="Association_1272894448906">
+              <target xmi:type="scdl:Component" href="Med-LabelsAndShipments-prepareShipLabel.component#//@Component"/>
+            </association>
+          </stickyNote>
+          <stickyNote xmi:id="StickyNote_1272894448907" body="File Adapter import that will create a unique file for every shipment request and place it in a specified location. &#xA;The format of the file contents will be XML based on the shipping_label BO." id="cf955d9d-fb97-4a44-95ad-f71cf2099c5d">
+            <bounds xmi:id="Bounds_1272894448907" x="655" y="105"/>
+            <association xmi:id="Association_1272894448907">
+              <target xmi:type="scdl:Import" href="com/junglesea/adapter/OutboundRapidFlatFileAdapterImport.import#//@import"/>
+            </association>
+          </stickyNote>
+          <stickyNote xmi:id="StickyNote_1272894448908" body="SCA export exposed to the Business Services layer." id="00392b43-070b-4dff-ad2a-dc267faab42d">
+            <bounds xmi:id="Bounds_1272894448908" x="36" y="195"/>
+            <association xmi:id="Association_1272894448908">
+              <target xmi:type="scdl:Export" href="Med-LabelsAndShipments-prepareShipLabelExport.export#//@export"/>
+            </association>
+          </stickyNote>
+        </stickyBoard>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://junglesea.com/BetaInventoryService" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:scdl_1="http://www.ibm.com/xmlns/prod/websphere/fabric/2007/02/scdl" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="Component3" name="Component3">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:BetaInventoryService">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <implementation xsi:type="scdl_1:DynamicAssembler">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+    <configurationFile>Component3.dac</configurationFile>
+  </implementation>
+</scdl:component>

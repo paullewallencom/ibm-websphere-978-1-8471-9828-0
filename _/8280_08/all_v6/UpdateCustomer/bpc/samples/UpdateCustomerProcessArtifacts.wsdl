@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+"This sample program is provided AS IS and may be used, executed, copied and modified without royalty payment by customer (a) for its own instruction and study, (b) in order to develop applications designed to run with an IBM WebSphere product, either for customer's own internal use or for redistribution by customer, as part of such an application, in customer's own products."
+
+Product 5655-FLW,  (C) COPYRIGHT International Business Machines Corp., 2005
+All Rights Reserved * Licensed Materials - Property of IBM
+-->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://bpc/samples/UpdateCustomer" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://bpc/samples/UpdateCustomerProcessArtifacts" xmlns:wsdl0="http://bpc/samples/UpdateCustomerProcessInterface" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UpdateCustomerProcess" targetNamespace="http://bpc/samples/UpdateCustomerProcessArtifacts">
+    <plnk:partnerLinkType name="PartnerPLT">
+    <plnk:role name="myRole">
+      <plnk:portType name="ns:UpdateCustomer"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <import location="UpdateCustomer.wsdl" namespace="http://bpc/samples/UpdateCustomer"/>
+</definitions>

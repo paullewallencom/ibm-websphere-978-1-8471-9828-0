@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="TrackShipments" targetNamespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/TrackShipments" xmlns:bons1="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:bons2="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" xmlns:tns="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/TrackShipments" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/TrackShipments">
+            <xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/BusinessException.xsd"/>
+            <xsd:import namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/ShipmentMSG.xsd"/>
+      <xsd:element name="packageMovementInfo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons2:ShipmentMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="packageMovementInfoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons2:ShipmentMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="packageMovementInfoFault1_packageMovementInfoFault" nillable="true" type="bons1:BusinessException"/>
+        </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="packageMovementInfoRequestMsg">
+    <wsdl:part element="tns:packageMovementInfo" name="packageMovementInfoParameters"/>
+  </wsdl:message>
+    <wsdl:message name="packageMovementInfoResponseMsg">
+    <wsdl:part element="tns:packageMovementInfoResponse" name="packageMovementInfoResult"/>
+  </wsdl:message>
+    <wsdl:message name="packageMovementInfo_packageMovementInfoFaultMsg">
+    <wsdl:part element="tns:packageMovementInfoFault1_packageMovementInfoFault" name="packageMovementInfoFault"/>
+  </wsdl:message>
+    <wsdl:portType name="TrackShipments">
+    <wsdl:operation name="packageMovementInfo">
+      <wsdl:input message="tns:packageMovementInfoRequestMsg" name="packageMovementInfoRequest"/>
+      <wsdl:output message="tns:packageMovementInfoResponseMsg" name="packageMovementInfoResponse"/>
+            <wsdl:fault message="tns:packageMovementInfo_packageMovementInfoFaultMsg" name="packageMovementInfoFault"/>
+        </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

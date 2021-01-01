@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments" xmlns:process="http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="ProcessCustomerPayments" name="ProcessCustomerPayments">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:ProcessCustomerPayments">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <references/>
+  <implementation xsi:type="process:ProcessImplementation">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+    <process bpel="/com/junglsea/businessservices/ProcessCustomerPayments.bpel"/>
+  </implementation>
+</scdl:component>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://EqualLibrary/com/junglesea/apps/equal"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="CompanyBackground">
+		<xsd:sequence>
+
+			<xsd:element minOccurs="0" name="some" type="xsd:string"></xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="LastUpdatedDate"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="CompaniesReporting"
+				type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="CompaniesReportingCashOnlyTerms" type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="CompaniesReportingWriteOffs" type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="PaymentExperiences"
+				type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="PastDuePaymentExperiences" type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="PaymentExperiencesWithThirtyDaysPastDue" type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="PaymentExperiencesWithSixtyDaysPastDue" type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="PaymentExperiencesWithNinetyDaysPastDue" type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="RecentPaymentExperiences" type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="RecentPastDuePaymentExperiences" type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="EarliestFirstSalesDate" type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="HighestCredit"
+				type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="AverageBalance"
+				type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="HighestBalance"
+				type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="AverageDBT"
+				type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="WorstPaymentStatus"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="RecentAverageCurrent" type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="RecentAverageThirtyDaysPastDue" type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="RecentAverageSixtyDaysPastDue" type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="RecentAverageNintyDaysPastDue" type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="RecentAverageNintyPlusDaysPastDue" type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="RecentAverageTotal"
+				type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="RecentAverageDBT"
+				type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="RecentHighestDBT"
+				type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="RecentAverageThirtyPlusDaysBalanceRatio" type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="RecentAverageSixtyPlusDaysBalanceRatio" type="xsd:double" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="AllCompanyPaymentScore" type="xsd:int" />
+
+		</xsd:sequence>
+
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/flatfile" xmlns:flatfile="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/flatfile" xmlns:unstructuredcontent="http://www.ibm.com/xmlns/prod/websphere/j2ca/base/unstructuredcontent">
+<xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/base/unstructuredcontent" schemaLocation="UnstructuredContent.xsd"/>
+<xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/datatransformation/databindingmapping" schemaLocation="FlatFileASI.xsd"/>
+
+<xsd:annotation xml:space="preserve">
+<xsd:appinfo source="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability">
+<info:resourceAdapter xmlns:info="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability" version="7.0.0.0"/>
+</xsd:appinfo>
+</xsd:annotation>
+
+<xsd:complexType name="FlatFile">
+<xsd:sequence minOccurs="1" maxOccurs="1">
+<xsd:element name="directoryPath" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="fileName" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="chunkFileName" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="fileContentEncoding" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="includeEndBODelimiter" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="stagingDirectory" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="chunkNumber" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="generateUniqueFile" type="xsd:boolean" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="createFileIfNotExists" type="xsd:boolean" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="splitFunctionClassName" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="splitCriteria" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="deleteOnRetrieve" type="xsd:boolean" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="archiveDirectoryForDeleteOnRetrieve" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Content" type="unstructuredcontent:UnstructuredContent" nillable="true" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>

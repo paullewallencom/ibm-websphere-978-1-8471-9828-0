@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://ProductDomain-v1_0/com/junglesea/bo/msg"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:bons1="http://ProductDomain-v1_0/com/junglesea/bo">
+	<xsd:import schemaLocation="../Entity.xsd"
+		namespace="http://CommonDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:import schemaLocation="../Product.xsd"
+		namespace="http://ProductDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:import schemaLocation="../Header.xsd"
+		namespace="http://CommonDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:complexType name="ProductMSG">
+		<xsd:complexContent>
+			<xsd:extension base="bons0:Entity">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="MessageHeader"
+						type="bons0:Header">
+					</xsd:element>
+					<xsd:element minOccurs="0" name="Product"
+						type="bons1:Product" maxOccurs="unbounded">
+					</xsd:element>
+				</xsd:sequence>
+
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

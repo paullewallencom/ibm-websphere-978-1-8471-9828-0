@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="eligibiltyCheckProcess" targetNamespace="http://EligibilityCheck/eligibiltyCheckProcessArtifacts" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://EligibilityCheck/eligibiltyCheckProcessArtifacts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl0="http://EligibilityCheck/EligibiltiyCheckInterface" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="EligibiltiyCheckInterfacePLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:EligibiltiyCheckInterface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="approveMemberPLT">
+    <plnk:role name="Reference">
+      <plnk:portType name="wsdl0:EligibiltiyCheckInterface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <wsdl:import location="EligibiltiyCheckInterface.wsdl" namespace="http://EligibilityCheck/EligibiltiyCheckInterface"/>
+</wsdl:definitions>

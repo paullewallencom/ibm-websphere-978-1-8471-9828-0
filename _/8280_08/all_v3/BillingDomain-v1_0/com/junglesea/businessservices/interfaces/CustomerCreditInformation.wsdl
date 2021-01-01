@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="CustomerCreditInformation" targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation" xmlns:bons0="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation" xmlns:bons1="http://CustomerDomain-v1_0/com/junglesea/bo/msg" xmlns:bons2="http://CustomerDomain-v1_0/com/junglesea/bo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation" xmlns:tns="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation">
+            <xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/CustomerOrderMSG.xsd"/>
+            <xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/msg/CustomerCreditMSG.xsd"/>
+            <xsd:element name="getCustomerCredit">
+        <xsd:complexType>
+          <xsd:sequence>
+                        <xsd:element name="InputParams" nillable="true" type="bons1:CustomerOrderMSG"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCustomerCreditResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons2:CustomerCreditMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+        </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="getCustomerCreditRequestMsg">
+    <wsdl:part element="bons0:getCustomerCredit" name="getCustomerCreditParameters"/>
+  </wsdl:message>
+    <wsdl:message name="getCustomerCreditResponseMsg">
+    <wsdl:part element="bons0:getCustomerCreditResponse" name="getCustomerCreditResult"/>
+  </wsdl:message>
+    <wsdl:portType name="CustomerCreditInformation">
+    <wsdl:operation name="getCustomerCredit">
+            <wsdl:input message="bons0:getCustomerCreditRequestMsg" name="getCustomerCreditRequest"/>
+            <wsdl:output message="bons0:getCustomerCreditResponseMsg" name="getCustomerCreditResponse"/>
+        </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

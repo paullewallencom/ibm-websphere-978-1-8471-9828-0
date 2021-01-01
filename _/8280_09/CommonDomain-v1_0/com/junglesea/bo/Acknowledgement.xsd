@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="Acknowledgement">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RequestReferenceId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ReceiptId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ReceiptDateTime"
+				type="xsd:dateTime">
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="DuplicateIndicator"
+				type="xsd:boolean">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="TransactionStatus"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="OriginalRequest"
+				type="xsd:anyType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfg:bindingConfiguration xmlns:cfg="http://www.ibm.com/xmlns/prod/websphere/bindingconfiguration/6.1.0" name="FlatFileXMLDataBinding" targetNamespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/configuration/6.1.0">
+  <cfg:typeName>com.ibm.j2ca.flatfile.emd.runtime.FlatFileBaseDataBinding</cfg:typeName>
+  <cfg:propertyBean type="com.ibm.j2ca.flatfile.emd.runtime.FlatFileBaseDataBindingProperties">
+    <bindingType>DataHandler</bindingType>
+    <bindingTypeBeanProp type="commonj.connector.metadata.discovery.properties.extensions.BindingTypeBeanProperty"><tags>BindingType_EIS/Local File System</tags><tags>BindingKind_DataHandler</tags><value>{http://www.ibm.com/xmlns/prod/websphere/j2ca/configuration/6.1.0}UTF8XMLDataHandler</value></bindingTypeBeanProp>
+  </cfg:propertyBean>
+  <cfg:tag>BindingKind_DataBinding</cfg:tag>
+  <cfg:tag>BindingType_EIS/Local File System</cfg:tag>
+</cfg:bindingConfiguration>

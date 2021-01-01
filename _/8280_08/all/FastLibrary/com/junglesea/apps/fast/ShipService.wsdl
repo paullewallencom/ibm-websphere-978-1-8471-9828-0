@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="ShipService" targetNamespace="http://FastLibrary/com/junglesea/apps/fast/ShipService" xmlns:bons1="http://RapidLibrary/com/junglesea/apps/rapid" xmlns:tns="http://FastLibrary/com/junglesea/apps/fast/ShipService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://FastLibrary/com/junglesea/apps/fast/ShipService">
+      <xsd:import namespace="http://RapidLibrary/com/junglesea/apps/rapid" schemaLocation="shipStatus.xsd"/>
+      <xsd:import namespace="http://RapidLibrary/com/junglesea/apps/rapid" schemaLocation="label.xsd"/>
+      <xsd:element name="CreatePendingShipmentRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="bons1:label"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreatePendingShipmentRequestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="bons1:label"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="QueryPendingShipmentStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="QueryPendingShipmentStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="bons1:shipStatus"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="CreatePendingShipmentRequestRequestMsg">
+    <wsdl:part element="tns:CreatePendingShipmentRequest" name="CreatePendingShipmentRequestParameters"/>
+  </wsdl:message>
+    <wsdl:message name="CreatePendingShipmentRequestResponseMsg">
+    <wsdl:part element="tns:CreatePendingShipmentRequestResponse" name="CreatePendingShipmentRequestResult"/>
+  </wsdl:message>
+    <wsdl:message name="QueryPendingShipmentStatusRequestMsg">
+    <wsdl:part element="tns:QueryPendingShipmentStatus" name="QueryPendingShipmentStatusParameters"/>
+  </wsdl:message>
+    <wsdl:message name="QueryPendingShipmentStatusResponseMsg">
+    <wsdl:part element="tns:QueryPendingShipmentStatusResponse" name="QueryPendingShipmentStatusResult"/>
+  </wsdl:message>
+    <wsdl:portType name="ShipService">
+    <wsdl:operation name="CreatePendingShipmentRequest">
+      <wsdl:input message="tns:CreatePendingShipmentRequestRequestMsg" name="CreatePendingShipmentRequestRequest"/>
+      <wsdl:output message="tns:CreatePendingShipmentRequestResponseMsg" name="CreatePendingShipmentRequestResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="QueryPendingShipmentStatus">
+      <wsdl:input message="tns:QueryPendingShipmentStatusRequestMsg" name="QueryPendingShipmentStatusRequest"/>
+      <wsdl:output message="tns:QueryPendingShipmentStatusResponseMsg" name="QueryPendingShipmentStatusResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

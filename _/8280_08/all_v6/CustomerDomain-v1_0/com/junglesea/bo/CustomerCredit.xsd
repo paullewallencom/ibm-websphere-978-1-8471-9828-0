@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://CustomerDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="CustomerCredit">
+		<xsd:sequence>
+
+			<xsd:element minOccurs="0" name="OrderAmount"
+				type="xsd:double">
+				<xsd:annotation><xsd:documentation>Is the total of the order that is typically used to compare against a credit limit during credit checking.</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="AvailableAmount"
+				type="xsd:double">
+				<xsd:annotation><xsd:documentation>Is the credit amount available for a customer o make an additional order against.  This amount is typically a combination of orders approved but not yet invoiced and orders invoiced yet still considered open items in the receivables balance.</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="OrderLimitAmount"
+				type="xsd:double"><xsd:annotation><xsd:documentation>Is the credit limit of a single sales order used during credit checking.</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="TotalCreditAmount"
+				type="xsd:double"><xsd:annotation><xsd:documentation>Is the total credit limit for a trading partner used during credit checking.</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="RiskRating"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CreditScore"
+				type="xsd:int">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CreditHistoryEvents"
+				type="xsd:int">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

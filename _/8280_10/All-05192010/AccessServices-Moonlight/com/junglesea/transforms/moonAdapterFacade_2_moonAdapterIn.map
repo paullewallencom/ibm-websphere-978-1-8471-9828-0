@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" targetNamespace="http://AccessServices-Moonlight2/com/junglesea/transforms/moonAdapterFacade_2_moonAdapterIn" version="7.0.101" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://AccessServices-Moonlight2/com/junglesea/transforms/moonAdapterFacade_2_moonAdapterIn">
+    <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FMoonlightLibrary%252Fcom%252Fjunglesea%252Fapps%252Fmoonlight%252FProcessPurchaseOrder%257DprocessOrderRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FAccessServices-Moonlight2%252FMoonlightJDBCAdapterImport%257DcreateDb2adminSupplierordersBGRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <imports>
+        <import kind="xml" location="moonAdapterFacade_2_moonAdapterIn.xml"/>
+        <import kind="java" location="org.apache.commons.lang.RandomStringUtils" namespace="xalan://org.apache.commons.lang.RandomStringUtils"/>
+        <import kind="java" location="org.apache.commons.lang.math.RandomUtils" namespace="xalan://org.apache.commons.lang.math.RandomUtils"/>
+    </imports>
+    <namespaces>
+        <namespace kind="extension" prefix="RandomStringUtils" uri="xalan://org.apache.commons.lang.RandomStringUtils"/>
+        <namespace kind="extension" prefix="RandomUtils" uri="xalan://org.apache.commons.lang.math.RandomUtils"/>
+    </namespaces>
+    <mappingDeclaration name="moonAdapterFacade_2_moonAdapterIn">
+        <input path="body"/>
+        <output path="body"/>
+        <customFunction lang="java" ref="RandomUtils:nextInt">
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/sp_order_id"/>
+        </customFunction>
+        <move>
+            <input path="processOrder/purchaseOrder/@orderDate"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/orderdate"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/shipTo/name"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/shippername"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/shipTo/street"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/shipperstreet"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/shipTo/city"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/shippercity"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/shipTo/state"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/shipperstate"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/shipTo/zip"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/shipperzipcode"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/comment"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/comment"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/items/item/shipDate"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/shipdate"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/items/item/USPrice"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/usprice"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/items/item/quantity"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/quantity"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/items/item/productName"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/productname"/>
+        </move>
+        <move>
+            <input path="processOrder/purchaseOrder/items/item/@partNum"/>
+            <output path="createDb2adminSupplierordersBG/createDb2adminSupplierordersBGInput/Db2adminSupplierorders/partnum"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EIS="http://www.ibm.com/xmlns/prod/websphere/scdl/eis/6.0.0" xmlns:configuration_6.1.0="http://www.ibm.com/xmlns/prod/websphere/j2ca/configuration/6.1.0" xmlns:ns1="http://AccessServices-Rapid/com/junglesea/adapter/InboundRapidFileAdapterExport" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="InboundRapidFileAdapterExport" name="com/junglesea/adapter/InboundRapidFileAdapterExport">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:InboundRapidFileAdapterExport"/>
+  </interfaces>
+  <esbBinding xsi:type="EIS:EISExportBinding" dataBindingReferenceName="configuration_6.1.0:FlatFileXMLDataBinding">
+    <resourceAdapter name="AccessServices-RapidApp.IBM WebSphere Adapter for Flat Files" type="com.ibm.j2ca.flatfile.FlatFileResourceAdapter" version="7.0.0.0_IF02">
+      <properties>
+        <adapterID>001</adapterID>
+      </properties>
+    </resourceAdapter>
+    <connection type="com.ibm.j2ca.flatfile.FlatFileActivationSpecWithXid" listenerType="com.ibm.j2ca.base.ExtendedInboundListener" selectorType="com.ibm.j2ca.extension.emd.runtime.FilenameFunctionSelector">
+      <properties>
+        <archiveDirectory>C:\tmp\inbound\rapid\archive</archiveDirectory>
+        <eventDirectory>C:\tmp\inbound\rapid</eventDirectory>
+        <fileContentEncoding>UTF-8</fileContentEncoding>
+      </properties>
+    </connection>
+    <methodBinding method="emit" nativeMethod="emitFlatFile"/>
+  </esbBinding>
+</scdl:export>

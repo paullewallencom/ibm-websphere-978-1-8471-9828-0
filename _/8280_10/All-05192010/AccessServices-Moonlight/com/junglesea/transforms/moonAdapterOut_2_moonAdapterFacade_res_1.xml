@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body xmlns:bo="http://www.ibm.com/xmlns/prod/websphere/bo/6.0.0" xmlns:bons2="http://com/ibm/j2ca/fault/afcfault" xmlns:db2adminsupplierorders="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/db2adminsupplierorders" xmlns:existsresult="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/existsresult" xmlns:httpsca="http://www.ibm.com/xmlns/prod/websphere/http/sca/6.1.0" xmlns:mq="http://www.ibm.com/xmlns/prod/websphere/mq/sca/6.0.0" xmlns:p="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/db2adminsupplierordersbg" xmlns:primkey="http://com/ibm/j2ca/fault" xmlns:smo="http://www.ibm.com/websphere/sibx/smo/v6.0.1" xmlns:tns="http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport" xmlns:tns1="http://www.w3.org/2005/08/addressing" xmlns:tns2="http://www.w3.org/2003/05/soap-envelope" xmlns:tns_1="wsdl.http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="foo.xsd">
+  <tns:createDb2adminSupplierordersBGResponse>
+    <tns:createDb2adminSupplierordersBGOutput>
+      <bo:package xsi:type="anyType"/>
+      <bo:eventSummary key="http://tempuri.org">
+        <bo:value ObjectEventId="" verb=""/>
+      </bo:eventSummary>
+      <bo:changeSummary>bo:changeSummary</bo:changeSummary>
+      <bo:rootObject>http://tempuri.org</bo:rootObject>
+      <bo:properties>
+        <ANY-ELEMENT/>
+      </bo:properties>
+      <bo:eventSummary key="http://tempuri.org">
+        <bo:value ObjectEventId="" verb=""/>
+      </bo:eventSummary>
+      <verb>Create</verb>
+      <Db2adminSupplierorders>
+        <sp_order_id>sp_order_id</sp_order_id>
+        <orderdate>orderdate</orderdate>
+        <shippername>shippername</shippername>
+        <shipperstreet>shipperstreet</shipperstreet>
+        <shippercity>shippercity</shippercity>
+        <shipperstate>shipperstate</shipperstate>
+        <shipperzipcode>0</shipperzipcode>
+        <billername>billername</billername>
+        <billerstreet>billerstreet</billerstreet>
+        <billercity>billercity</billercity>
+        <billerstate>billerstate</billerstate>
+        <billerzipcode>0</billerzipcode>
+        <productname>productname</productname>
+        <partnum>partnum</partnum>
+        <quantity>0</quantity>
+        <usprice>0.0</usprice>
+        <shipdate>shipdate</shipdate>
+        <comment>comment</comment>
+      </Db2adminSupplierorders>
+    </tns:createDb2adminSupplierordersBGOutput>
+  </tns:createDb2adminSupplierordersBGResponse>
+</body>

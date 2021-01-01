@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://PayMeLibrary/com/junglesea/apps/payme" xmlns:bons0="http://PayMeLibrary/com/junglesea/apps/payme" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="Address.xsd"/>
+	<xsd:complexType name="CardBillingAccount">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="firstName" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="lastName" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="billAddress" type="bons0:Address">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="phone" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="mobilePhone" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="email" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

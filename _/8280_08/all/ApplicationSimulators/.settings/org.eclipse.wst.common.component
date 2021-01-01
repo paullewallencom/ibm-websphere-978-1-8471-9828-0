@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ApplicationSimulators">
+        <wb-resource deploy-path="/" source-path="/Behavior"/>
+        <wb-resource deploy-path="/" source-path="/Run"/>
+        <wb-resource deploy-path="/" source-path="/Emulator"/>
+        <wb-resource deploy-path="/" source-path="/TestSuite"/>
+        <wb-resource deploy-path="/" source-path="/Configurations"/>
+        <wb-resource deploy-path="/" source-path="/Data"/>
+        <wb-resource deploy-path="/" source-path="/"/>
+    </wb-module>
+</project-modules>

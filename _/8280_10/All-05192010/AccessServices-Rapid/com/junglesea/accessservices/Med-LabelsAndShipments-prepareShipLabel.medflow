@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Callout.mednode="mednode://mednodes/Callout.mednode/Callout" xmlns:Fail.mednode="mednode://mednodes/Fail.mednode/Fail" xmlns:Input.mednode="mednode://mednodes/Input.mednode/Input" xmlns:InputFault.mednode="mednode://mednodes/InputFault.mednode/InputFault" xmlns:InputResponse.mednode="mednode://mednodes/InputResponse.mednode/InputResponse" xmlns:Med-LabelsAndShipments-prepareShipLabel.medflow="Med-LabelsAndShipments-prepareShipLabel.medflow" xmlns:XSLTransformation.mednode="mednode://mednodes/XSLTransformation.mednode/XSLTransformation" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow2="http://www.ibm.com/2006/eflow" xmlns:type="http://www.ibm.com/2006/eflow/type" xmlns:utility="http://www.ibm.com/2006/eflow/utility" name="root" nsURI="Med-LabelsAndShipments-prepareShipLabel.medflow" nsPrefix="Med-LabelsAndShipments-prepareShipLabel.medflow">
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_2">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_1">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}createShippingLabelRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_2">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}createShippingLabelResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_3">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}createShippingLabel_createShippingLabelFaultMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_4">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://AccessServices-Rapid/com/junglesea/adapter/OutboundRapidFlatFileAdapterImport}createRequestMsg"/>
+        </elements>
+      </type>
+      <nodes xmi:type="Input.mednode:Input" xmi:id="Input_1" name="ManageShipments_createShippingLabel_Input">
+        <location x="10" y="40"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="createShippingLabel : ManageShipments"/>
+      </nodes>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_1" name="ManageShipments_createShippingLabel_InputResponse">
+        <location x="506" y="98"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_2"/>
+        <translation xmi:type="utility:ConstantString" string="createShippingLabel : ManageShipments"/>
+      </nodes>
+      <nodes xmi:type="InputFault.mednode:InputFault" xmi:id="InputFault_1" name="ManageShipments_createShippingLabel_InputFault">
+        <location x="506" y="176"/>
+        <inTerminals terminalNodeID="InTerminal.dynamic:in:createShippingLabel_createShippingLabelFaultMsg" dynamic="true" explicitType="true" label="createShippingLabel_createShippingLabelFaultMsg" type="CompositeType_3"/>
+        <translation xmi:type="utility:ConstantString" string="createShippingLabel : ManageShipments"/>
+      </nodes>
+      <nodes xmi:type="Callout.mednode:Callout" xmi:id="Callout_1" name="OutboundRapidFlatFileAdapterImportPartner_create_Callout" referenceName="OutboundRapidFlatFileAdapterImportPartner" operationName="create">
+        <location x="506" y="20"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_4"/>
+        <translation xmi:type="utility:ConstantString" string="create : OutboundRapidFlatFileAdapterImportPartner"/>
+      </nodes>
+      <nodes xmi:type="XSLTransformation.mednode:XSLTransformation" xmi:id="XSLTransformation_1" name="createShippingLabelRequestMsg_2_createRequestMsg" root="/body" XSLTransform="com/junglesea/transforms/createShippingLabelRequestMsg_2_createRequestMsg.xsl" XMXMap="com/junglesea/transforms/createShippingLabelRequestMsg_2_createRequestMsg.map" SMOVersion="SMO61">
+        <location x="221" y="40"/>
+        <outTerminals terminalNodeID="OutTerminal.out" type="CompositeType_4"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_1"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="createShippingLabelRequestMsg_2_createRequestMsg"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_1" name="createShippingLabelRequestMsg_2_createRequestMsg1">
+        <location x="366" y="52"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="createShippingLabelRequestMsg_2_createRequestMsg"/>
+      </nodes>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_1" targetNode="XSLTransformation_1" sourceNode="Input_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_2" targetNode="Callout_1" sourceNode="XSLTransformation_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_3" targetNode="Fail_1" sourceNode="XSLTransformation_1" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_3">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition/>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_4">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition/>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_5">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_5">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}createShippingLabelResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_6">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}createShippingLabel_createShippingLabelFaultMsg"/>
+        </elements>
+      </type>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_2" name="ManageShipments_createShippingLabel_InputResponse">
+        <location/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_5"/>
+        <translation xmi:type="utility:ConstantString" string="createShippingLabel : ManageShipments"/>
+      </nodes>
+      <nodes xmi:type="InputFault.mednode:InputFault" xmi:id="InputFault_2" name="ManageShipments_createShippingLabel_InputFault">
+        <location/>
+        <inTerminals terminalNodeID="InTerminal.dynamic:in:createShippingLabel_createShippingLabelFaultMsg" dynamic="true" explicitType="true" label="createShippingLabel_createShippingLabelFaultMsg" type="CompositeType_6"/>
+        <translation xmi:type="utility:ConstantString" string="createShippingLabel : ManageShipments"/>
+      </nodes>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <composition>
+      <nodes xmi:type="Med-LabelsAndShipments-prepareShipLabel.medflow:root_I_2" xmi:id="root_I_2_1" name="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}ManageShipments:createShippingLabel::request"/>
+      <nodes xmi:type="Med-LabelsAndShipments-prepareShipLabel.medflow:root_I_3" xmi:id="root_I_3_1" name="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}ManageShipments:cancelShipment::request"/>
+      <nodes xmi:type="Med-LabelsAndShipments-prepareShipLabel.medflow:root_I_4" xmi:id="root_I_4_1" name="{http://AccessServices-Rapid/com/junglesea/adapter/InboundRapidFileAdapterExport}InboundRapidFileAdapterExport:emit::request"/>
+      <nodes xmi:type="Med-LabelsAndShipments-prepareShipLabel.medflow:root_I_5" xmi:id="root_I_5_1" name="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}ManageShipments:createShippingLabel::response"/>
+    </composition>
+    <propertyOrganizer/>
+  </eClassifiers>
+</ecore:EPackage>

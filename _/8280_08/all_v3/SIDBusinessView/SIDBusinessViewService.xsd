@@ -1,0 +1,1442 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  CONFIDENTIAL LICENSED MATERIAL
+      © 2004-2005 Pantero Corporation. All rights reserved.	-->
+<!-- Exporter Configuration Options:
+     All package and sub-packages under - com.sid.ServiceDomain
+     Complex Types Only - true			
+     Include Required Rules - false			 
+     Include Reverse Relationships - true	 
+     Export with Weak Typing - false-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ xmlns:SIDBusCm="http://www.tmforum.org/NGOSS/SID/Business/3.1/Common" 
+ xmlns:SIDBusCu="http://www.tmforum.org/NGOSS/SID/Business/3.1/Customer" 
+ xmlns:SIDBusEn="http://www.tmforum.org/NGOSS/SID/Business/3.1/Enterprise" 
+ xmlns:SIDBusMa="http://www.tmforum.org/NGOSS/SID/Business/3.1/MarketSales" 
+ xmlns:SIDBusPr="http://www.tmforum.org/NGOSS/SID/Business/3.1/Product" 
+ xmlns:SIDBusRe="http://www.tmforum.org/NGOSS/SID/Business/3.1/Resource" 
+ xmlns:SIDBusSe="http://www.tmforum.org/NGOSS/SID/Business/3.1/Service" 
+ targetNamespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Service">
+<xs:import schemaLocation="SIDBusinessViewCommon.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Common"/>
+<xs:import schemaLocation="SIDBusinessViewCustomer.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Customer"/>
+<xs:import schemaLocation="SIDBusinessViewEnterprise.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Enterprise"/>
+<xs:import schemaLocation="SIDBusinessViewMarketSales.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/MarketSales"/>
+<xs:import schemaLocation="SIDBusinessViewProduct.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Product"/>
+<xs:import schemaLocation="SIDBusinessViewResource.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Resource"/>
+
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkArchitectureEntities._802Service-->
+   <xs:complexType name="_802Service">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:QoSService">
+            <xs:sequence>
+               <xs:element name="_802PriorityValue" minOccurs="0" type="xs:string"/>
+               <xs:element name="_802QValue" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkArchitectureEntities.AFService-->
+   <xs:complexType name="AFService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:DiffServService">
+            <xs:sequence>
+               <xs:element name="afClassNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="afDropProbabilityNumber" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkArchitectureEntities.DiffServService-->
+   <xs:complexType name="DiffServService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:QoSService">
+            <xs:sequence>
+               <xs:element name="dscpValue" minOccurs="0" type="xs:string"/>
+               <xs:element name="phbID" minOccurs="0" type="xs:string"/>
+               <xs:element name="queuingRecommended" minOccurs="0" type="xs:int"/>
+               <xs:element name="queuingUsed" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkArchitectureEntities.EFService-->
+   <xs:complexType name="EFService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:DiffServService">
+            <xs:sequence>
+               <xs:element name="usesLimiting" minOccurs="0" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkArchitectureEntities.ToSService-->
+   <xs:complexType name="ToSService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:QoSService">
+            <xs:sequence>
+               <xs:element name="tosPrecedenceValue" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.NetworkForwardingService-->
+   <xs:complexType name="NetworkForwardingService" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceAtomic">
+            <xs:sequence>
+               <xs:element name="NetworkForwardingServiceHas" type="SIDBusSe:NetworkForwardingService" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="NetworkForwardingServiceFor" type="SIDBusSe:NetworkForwardingService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.CompoundConditioningEntities.CompoundConditioningElement-->
+   <xs:complexType name="CompoundConditioningElement" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:TrafficConditioningService">
+            <xs:sequence>
+               <xs:element name="conditioningDirection" minOccurs="0" type="xs:int"/>
+               <xs:element name="hasBuffering" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="TokenBucket" type="SIDBusSe:TokenBucket" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.CompoundConditioningEntities.PolicerService-->
+   <xs:complexType name="PolicerService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CompoundConditioningElement">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.CompoundConditioningEntities.ShaperService-->
+   <xs:complexType name="ShaperService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CompoundConditioningElement">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.DropperServiceEntities.AdaptiveREDDropperService-->
+   <xs:complexType name="AdaptiveREDDropperService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:REDDropperService">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.DropperServiceEntities.DropperService-->
+   <xs:complexType name="DropperService" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:TrafficConditioningService">
+            <xs:sequence>
+               <xs:element name="typeOfDropper" minOccurs="0" type="xs:int"/>
+               <xs:element name="customDropAlgorithmInfo" minOccurs="0" type="xs:string"/>
+               <xs:element name="startMetric" minOccurs="0" type="xs:int"/>
+               <xs:element name="dropAllMetric" minOccurs="0" type="xs:int"/>
+               <xs:element name="otherStartMetric" minOccurs="0" type="xs:string"/>
+               <xs:element name="otherDropAllMetric" minOccurs="0" type="xs:string"/>
+               <xs:element name="QueueService" type="SIDBusSe:QueueService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.DropperServiceEntities.DropProbabilityDetails-->
+   <xs:complexType name="DropProbabilityDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="dropperClassID" minOccurs="0" type="xs:string"/>
+               <xs:element name="REDServiceElement" type="SIDBusSe:REDServiceElement" minOccurs="0"/>
+               <xs:element name="REDDropperServiceForDropProbabilityDetails" type="SIDBusSe:REDDropperService" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.DropperServiceEntities.FlowREDDropperService-->
+   <xs:complexType name="FlowREDDropperService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:REDDropperService">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.DropperServiceEntities.HeadTailDropperService-->
+   <xs:complexType name="HeadTailDropperService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:DropperService">
+            <xs:sequence>
+               <xs:element name="queueThreshold" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.DropperServiceEntities.REDDropperService-->
+   <xs:complexType name="REDDropperService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:DropperService">
+            <xs:sequence>
+               <xs:element name="isWeighted" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="hasDifferentDropProbabilities" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="DropProbabilityDetails" type="SIDBusSe:DropProbabilityDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.DropperServiceEntities.REDServiceElement-->
+   <xs:complexType name="REDServiceElement">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="minQueueDropThreshold" minOccurs="0" type="xs:int"/>
+               <xs:element name="maxQueueDropThreshold" minOccurs="0" type="xs:int"/>
+               <xs:element name="dropProbabilityThreshold" minOccurs="0" type="xs:int"/>
+               <xs:element name="weightingConstant" minOccurs="0" type="xs:int"/>
+               <xs:element name="queueLengthCalcFactor" minOccurs="0" type="xs:int"/>
+               <xs:element name="thresholdUnits" minOccurs="0" type="xs:int"/>
+               <xs:element name="MarkerService" type="SIDBusSe:MarkerService" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="DropProbabilityDetailsForREDServiceElement" type="SIDBusSe:DropProbabilityDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.MeterServiceEntities.MeterProfile-->
+   <xs:complexType name="MeterProfile">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="numberOfConformanceLevels" minOccurs="0" type="xs:int"/>
+               <xs:element name="MeterService" type="SIDBusSe:MeterService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.MeterServiceEntities.MeterService-->
+   <xs:complexType name="MeterService" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:TrafficConditioningService">
+            <xs:sequence>
+               <xs:element name="typeOfMeter" minOccurs="0" type="xs:int"/>
+               <xs:element name="otherTypeOfMeter" minOccurs="0" type="xs:string"/>
+               <xs:element name="MeterProfile" type="SIDBusSe:MeterProfile" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.QueuingServiceEntities.ClassBasedWeightedFairQueuingService-->
+   <xs:complexType name="ClassBasedWeightedFairQueuingService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:WeightedFairQueuingService">
+            <xs:sequence>
+               <xs:element name="numberOfQueueClasses" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.QueuingServiceEntities.CustomQueuingService-->
+   <xs:complexType name="CustomQueuingService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:QueueService">
+            <xs:sequence>
+               <xs:element name="queueServiceMetric" minOccurs="0" type="xs:int"/>
+               <xs:element name="queueServiceValue" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.QueuingServiceEntities.FairQueuingService-->
+   <xs:complexType name="FairQueuingService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:QueueService">
+            <xs:sequence>
+               <xs:element name="sortingMethod" minOccurs="0" type="xs:int"/>
+               <xs:element name="messagesPerQueue" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.QueuingServiceEntities.PriorityQueuingService-->
+   <xs:complexType name="PriorityQueuingService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:QueueService">
+            <xs:sequence>
+               <xs:element name="relativePriorityValue" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.QueuingServiceEntities.QueueService-->
+   <xs:complexType name="QueueService" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:TrafficConditioningService">
+            <xs:sequence>
+               <xs:element name="isIngressQueue" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="isTransmitQueue" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="isFIFOqueuing" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="currentQueueDepth" minOccurs="0" type="xs:int"/>
+               <xs:element name="queueDepthUnits" minOccurs="0" type="xs:int"/>
+               <xs:element name="queueID" minOccurs="0" type="xs:string"/>
+               <xs:element name="DropperService" type="SIDBusSe:DropperService" minOccurs="0"/>
+               <xs:element name="SchedulingService" type="SIDBusSe:SchedulingService" minOccurs="0"/>
+               <xs:element name="RelatedQueueDetailsHas" type="SIDBusSe:RelatedQueueDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="RelatedQueueDetailsFor" type="SIDBusSe:RelatedQueueDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.QueuingServiceEntities.RelatedQueueDetails-->
+   <xs:complexType name="RelatedQueueDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="numberOfRelatedQueues" minOccurs="0" type="xs:int"/>
+               <xs:element name="hasDifferentQueueTypes" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="absoluteQueuePriority" minOccurs="0" type="xs:int"/>
+               <xs:element name="QueueServiceHas" type="SIDBusSe:QueueService" minOccurs="0"/>
+               <xs:element name="QueueServiceFor" type="SIDBusSe:QueueService" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.QueuingServiceEntities.WeightedFairQueuingService-->
+   <xs:complexType name="WeightedFairQueuingService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:FairQueuingService">
+            <xs:sequence>
+               <xs:element name="numberFlowCategories" minOccurs="0" type="xs:int"/>
+               <xs:element name="queueWeight" minOccurs="0" type="xs:int"/>
+               <xs:element name="numberQueuesPerFlow" minOccurs="0" type="xs:int"/>
+               <xs:element name="numberReservedQueues" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.SchedulingServiceEntities.DeficitRoundRobinSchedulingService-->
+   <xs:complexType name="DeficitRoundRobinSchedulingService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:RoundRobinSchedulingService">
+            <xs:sequence>
+               <xs:element name="deficitCounter" minOccurs="0" type="xs:int"/>
+               <xs:element name="bandwidthPercentage" minOccurs="0" type="xs:int"/>
+               <xs:element name="serviceQuantum" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.SchedulingServiceEntities.RoundRobinSchedulingService-->
+   <xs:complexType name="RoundRobinSchedulingService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:SchedulingServiceAtomic">
+            <xs:sequence>
+               <xs:element name="isFlowBased" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="schedulingMetric" minOccurs="0" type="xs:int"/>
+               <xs:element name="metricValue" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.SchedulingServiceEntities.SchedulingService-->
+   <xs:complexType name="SchedulingService" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:TrafficConditioningService">
+            <xs:sequence>
+               <xs:element name="isWorkConserving" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="schedulingFrequency" minOccurs="0" type="xs:int"/>
+               <xs:element name="SchedulingServiceComposite" type="SIDBusSe:SchedulingServiceComposite" minOccurs="0"/>
+               <xs:element name="QueueService" type="SIDBusSe:QueueService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.SchedulingServiceEntities.SchedulingServiceAtomic-->
+   <xs:complexType name="SchedulingServiceAtomic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:SchedulingService">
+            <xs:sequence>
+               <xs:element name="canShare" minOccurs="0" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.SchedulingServiceEntities.SchedulingServiceComposite-->
+   <xs:complexType name="SchedulingServiceComposite">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:SchedulingService">
+            <xs:sequence>
+               <xs:element name="SchedulingService" type="SIDBusSe:SchedulingService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.SchedulingServiceEntities.StrictSchedulingService-->
+   <xs:complexType name="StrictSchedulingService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:SchedulingServiceAtomic">
+            <xs:sequence>
+               <xs:element name="prioritySchedulingValue" minOccurs="0" type="xs:int"/>
+               <xs:element name="bandwidthLimit" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.SchedulingServiceEntities.WeightedRoundRobinSchedulingService-->
+   <xs:complexType name="WeightedRoundRobinSchedulingService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:RoundRobinSchedulingService">
+            <xs:sequence>
+               <xs:element name="weightingValue" minOccurs="0" type="xs:int"/>
+               <xs:element name="wrrPriority" minOccurs="0" type="xs:int"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.TokenBucket-->
+   <xs:complexType name="TokenBucket">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="arrivalRate" minOccurs="0" type="xs:string"/>
+               <xs:element name="normalBurstSize" minOccurs="0" type="xs:string"/>
+               <xs:element name="excessBurstSize" minOccurs="0" type="xs:string"/>
+               <xs:element name="conformAction" minOccurs="0" type="xs:string"/>
+               <xs:element name="exceedAction" minOccurs="0" type="xs:string"/>
+               <xs:element name="violateAction" minOccurs="0" type="xs:string"/>
+               <xs:element name="CompoundConditioningElement" type="SIDBusSe:CompoundConditioningElement" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficConditioningEntities.TrafficConditioningService-->
+   <xs:complexType name="TrafficConditioningService" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:NetworkForwardingService">
+            <xs:sequence>
+               <xs:element name="PreambleMarkingDetails" type="SIDBusSe:PreambleMarkingDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="QoSService" type="SIDBusSe:QoSService" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficIdentificationEntities.ClassifierService-->
+   <xs:complexType name="ClassifierService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:TrafficIdentificationService">
+            <xs:sequence>
+               <xs:element name="dynamicClassVariableName" minOccurs="0" type="xs:string"/>
+               <xs:element name="dynamicAttributeVariableName" minOccurs="0" type="xs:string"/>
+               <xs:element name="dynamicClassValueName" minOccurs="0" type="xs:string"/>
+               <xs:element name="dynamicAttributeValueName" minOccurs="0" type="xs:string"/>
+               <xs:element name="TrafficMatchCriteria" type="SIDBusSe:TrafficMatchCriteria" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficIdentificationEntities.MarkerPool-->
+   <xs:complexType name="MarkerPool">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="typeOfMarkerPool" minOccurs="0" type="xs:int"/>
+               <xs:element name="isExhausted" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="valuesLeftInPool" minOccurs="0" type="xs:int"/>
+               <xs:element name="QoSService" type="SIDBusSe:QoSService" minOccurs="0"/>
+               <xs:element name="MarkerService" type="SIDBusSe:MarkerService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficIdentificationEntities.MarkerService-->
+   <xs:complexType name="MarkerService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:TrafficIdentificationService">
+            <xs:sequence>
+               <xs:element name="MarkerPool" type="SIDBusSe:MarkerPool" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="REDServiceElement" type="SIDBusSe:REDServiceElement" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficIdentificationEntities.PreambleMarkerService-->
+   <xs:complexType name="PreambleMarkerService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:MarkerService">
+            <xs:sequence>
+               <xs:element name="marking" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+               <xs:element name="PreambleMarkingDetailsForPreambleMarkerService" type="SIDBusSe:PreambleMarkingDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficIdentificationEntities.PreambleMarkingDetails-->
+   <xs:complexType name="PreambleMarkingDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="PreambleMarkerService" type="SIDBusSe:PreambleMarkerService" minOccurs="0"/>
+               <xs:element name="TrafficConditioningServiceForPreambleMarkingDetails" type="SIDBusSe:TrafficConditioningService" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficIdentificationEntities.StandardMarkerService-->
+   <xs:complexType name="StandardMarkerService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:MarkerService">
+            <xs:sequence>
+               <xs:element name="typeOfMarker" minOccurs="0" type="xs:int"/>
+               <xs:element name="valueOfMarker" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficIdentificationEntities.TrafficIdentificationService-->
+   <xs:complexType name="TrafficIdentificationService" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:NetworkForwardingService">
+            <xs:sequence>
+               <xs:element name="QoSService" type="SIDBusSe:QoSService" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.NetworkForwardingServiceEntities.TrafficIdentificationEntities.TrafficMatchCriteria-->
+   <xs:complexType name="TrafficMatchCriteria">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="ClassifierService" type="SIDBusSe:ClassifierService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.QoSService-->
+   <xs:complexType name="QoSService" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceComposite">
+            <xs:sequence>
+               <xs:element name="TrafficConditioningService" type="SIDBusSe:TrafficConditioningService" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="QoSServiceHas" type="SIDBusSe:QoSService" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="TrafficIdentificationService" type="SIDBusSe:TrafficIdentificationService" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="QoSServiceFor" type="SIDBusSe:QoSService" minOccurs="0"/>
+               <xs:element name="MarkerPool" type="SIDBusSe:MarkerPool" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.QoSServiceEntities.QoSServiceSpecType-->
+   <xs:complexType name="QoSServiceSpecType" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceSpecificationType">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.CoS1Bundle-->
+   <xs:complexType name="CoS1Bundle">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceBundle">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.CoS1BundleSpec-->
+   <xs:complexType name="CoS1BundleSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceBundleSpecAtomic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.CoS2Bundle-->
+   <xs:complexType name="CoS2Bundle">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceBundle">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.CoS2BundleSpec-->
+   <xs:complexType name="CoS2BundleSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceBundleSpecAtomic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.CoS3Bundle-->
+   <xs:complexType name="CoS3Bundle">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceBundle">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.CoS3BundleSpec-->
+   <xs:complexType name="CoS3BundleSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceBundleSpecAtomic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.CoS4Bundle-->
+   <xs:complexType name="CoS4Bundle">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceBundle">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.CoS4BundleSpec-->
+   <xs:complexType name="CoS4BundleSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceBundleSpecAtomic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.ServiceBundle-->
+   <xs:complexType name="ServiceBundle" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceComposite">
+            <xs:sequence>
+               <xs:element name="hasMultipleQoSTypes" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="ServicePackage" type="SIDBusSe:ServicePackage" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.ServiceBundleSpec-->
+   <xs:complexType name="ServiceBundleSpec" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceSpecComposite">
+            <xs:sequence>
+               <xs:element name="bundleType" minOccurs="0" type="xs:int"/>
+               <xs:element name="ServiceBundleSpecComposite" type="SIDBusSe:ServiceBundleSpecComposite" minOccurs="0"/>
+               <xs:element name="ServicePackageBundleDetailsForServiceBundleSpec" type="SIDBusSe:ServicePackageBundleDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.ServiceBundleSpecAtomic-->
+   <xs:complexType name="ServiceBundleSpecAtomic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceBundleSpec">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.ServiceBundleSpecComposite-->
+   <xs:complexType name="ServiceBundleSpecComposite">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceBundleSpec">
+            <xs:sequence>
+               <xs:element name="ServiceBundleSpec" type="SIDBusSe:ServiceBundleSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBundleEntities.ServicePackageBundleDetails-->
+   <xs:complexType name="ServicePackageBundleDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="preferredBundleSpec" minOccurs="0" type="xs:string"/>
+               <xs:element name="bundleSpecValidFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+               <xs:element name="ServiceBundleSpec" type="SIDBusSe:ServiceBundleSpec" minOccurs="0"/>
+               <xs:element name="ServicePackageSpecForServicePackageBundleDetails" type="SIDBusSe:ServicePackageSpec" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.CustomerFacingServiceEntities.Connectivity-->
+   <xs:complexType name="Connectivity" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingService">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.CustomerFacingServiceEntities.CustomerFacingService-->
+   <xs:complexType name="CustomerFacingService" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:Service">
+            <xs:sequence>
+               <xs:element name="cfsStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="ResourceFacingService" type="SIDBusSe:ResourceFacingService" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingServiceRole" type="SIDBusSe:CustomerFacingServiceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingServiceComposite" type="SIDBusSe:CustomerFacingServiceComposite" minOccurs="0"/>
+               <xs:element name="CustomerFacingServiceSpec" type="SIDBusSe:CustomerFacingServiceSpec" minOccurs="0"/>
+               <xs:element name="Product" type="SIDBusPr:Product" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.CustomerFacingServiceEntities.CustomerFacingServiceAtomic-->
+   <xs:complexType name="CustomerFacingServiceAtomic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingService">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.CustomerFacingServiceEntities.CustomerFacingServiceComposite-->
+   <xs:complexType name="CustomerFacingServiceComposite" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingService">
+            <xs:sequence>
+               <xs:element name="CustomerFacingService" type="SIDBusSe:CustomerFacingService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.CustomerFacingServiceEntities.IPsecVPNService-->
+   <xs:complexType name="IPsecVPNService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingService">
+            <xs:sequence>
+               <xs:element name="IPsecVPNServiceSpecification" type="SIDBusSe:IPsecVPNServiceSpecification" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ResourceFacingServiceEntities.BandwidthService-->
+   <xs:complexType name="BandwidthService">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceComposite">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ResourceFacingServiceEntities.ProtocolServiceDetails-->
+   <xs:complexType name="ProtocolServiceDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:ManagedEntity">
+            <xs:sequence>
+               <xs:element name="Protocol" type="SIDBusRe:Protocol" minOccurs="0"/>
+               <xs:element name="ResourceFacingServiceForProtocolServiceDetails" type="SIDBusSe:ResourceFacingService" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ResourceFacingServiceEntities.ResourceFacingService-->
+   <xs:complexType name="ResourceFacingService" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:Service">
+            <xs:sequence>
+               <xs:element name="rfsStatus" minOccurs="0" type="xs:int"/>
+               <xs:element name="ResourceFacingServiceRole" type="SIDBusSe:ResourceFacingServiceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ProtocolServiceDetails" type="SIDBusSe:ProtocolServiceDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServicePRDependency" type="SIDBusSe:ServicePRDependency" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceLRDependency" type="SIDBusSe:ServiceLRDependency" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingService" type="SIDBusSe:CustomerFacingService" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceFacingServiceComposite" type="SIDBusSe:ResourceFacingServiceComposite" minOccurs="0"/>
+               <xs:element name="ResourceFacingServiceSpec" type="SIDBusSe:ResourceFacingServiceSpec" minOccurs="0"/>
+               <xs:element name="ServiceDeviceInterfaceDetailsForResourceFacingService" type="SIDBusRe:ServiceDeviceInterfaceDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ResourceFacingServiceEntities.ResourceFacingServiceAtomic-->
+   <xs:complexType name="ResourceFacingServiceAtomic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingService">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ResourceFacingServiceEntities.ResourceFacingServiceComposite-->
+   <xs:complexType name="ResourceFacingServiceComposite" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingService">
+            <xs:sequence>
+               <xs:element name="ResourceFacingService" type="SIDBusSe:ResourceFacingService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.Service-->
+   <xs:complexType name="Service" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:RootEntity">
+            <xs:sequence>
+               <xs:element name="isServiceEnabled" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="hasStarted" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="isMandatory" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="startMode" minOccurs="0" type="xs:int"/>
+               <xs:element name="isStateful" minOccurs="0" type="xs:boolean"/>
+               <xs:element name="PartyRole" type="SIDBusCm:PartyRole" minOccurs="0"/>
+               <xs:element name="ServiceCharacteristic" type="SIDBusSe:ServiceCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceRole" type="SIDBusSe:ServiceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="LogicalResourceRole" type="SIDBusRe:LogicalResourceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceCharacteristicValue" type="SIDBusSe:ServiceCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalResourceRole" type="SIDBusRe:PhysicalResourceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceUsage" type="SIDBusSe:ServiceUsage" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="BusinessInteractionItem" type="SIDBusCm:BusinessInteractionItem" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Device" type="SIDBusRe:Device" minOccurs="0"/>
+               <xs:element name="ServiceSpecification" type="SIDBusSe:ServiceSpecification" minOccurs="0"/>
+               <xs:element name="AdministerServiceDetailsForService" type="SIDBusSe:AdministerServiceDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ServiceBusinessActor-->
+   <xs:complexType name="ServiceBusinessActor">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ServiceCharacteristic-->
+   <xs:complexType name="ServiceCharacteristic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="ServiceCharacteristicValue" type="SIDBusSe:ServiceCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Service" type="SIDBusSe:Service" minOccurs="0"/>
+               <xs:element name="ServiceSpecCharacteristic" type="SIDBusSe:ServiceSpecCharacteristic" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ServiceCharacteristicValue-->
+   <xs:complexType name="ServiceCharacteristicValue" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="Service" type="SIDBusSe:Service" minOccurs="0"/>
+               <xs:element name="ServiceCharacteristic" type="SIDBusSe:ServiceCharacteristic" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ServiceLRDependency-->
+   <xs:complexType name="ServiceLRDependency">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="LogicalResource" type="SIDBusRe:LogicalResource" minOccurs="0"/>
+               <xs:element name="ResourceFacingServiceForServiceLRDependency" type="SIDBusSe:ResourceFacingService" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ServicePRDependency-->
+   <xs:complexType name="ServicePRDependency">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="PhysicalResource" type="SIDBusRe:PhysicalResource" minOccurs="0"/>
+               <xs:element name="ResourceFacingServiceForServicePRDependency" type="SIDBusSe:ResourceFacingService" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceBusinessEntities.ServiceUtilizationDetails-->
+   <xs:complexType name="ServiceUtilizationDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceLevelSpecABE.KeyPerformanceIndicatorSLSParm-->
+   <xs:complexType name="KeyPerformanceIndicatorSLSParm">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceLevelSpecParameter">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceLevelSpecABE.KeyQualityIndicatorSLSParm-->
+   <xs:complexType name="KeyQualityIndicatorSLSParm">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceLevelSpecParameter">
+            <xs:sequence>
+               <xs:element name="KQITransformationAlgorithm" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceLevelSpecABE.NegotiatedServiceLevelSpec-->
+   <xs:complexType name="NegotiatedServiceLevelSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceLevelSpecification">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceLevelSpecABE.ServiceLevelObjective-->
+   <xs:complexType name="ServiceLevelObjective">
+      <xs:sequence>
+         <xs:element name="conformanceTarget" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="conformanceComparator" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="conformancePeriod" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="thresholdTarget" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="toleranceTarget" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="tolerancePeriod" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="gracePeriods" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="validForSLO" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ServiceLevelSpecParameter" type="SIDBusSe:ServiceLevelSpecParameter" minOccurs="0"/>
+         <xs:element name="ServiceLevelSpecApplicability" type="SIDBusSe:ServiceLevelSpecApplicability" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ServiceLevelSpecification" type="SIDBusSe:ServiceLevelSpecification" minOccurs="0"/>
+         <xs:element name="ServiceLevelSpecConsequence" type="SIDBusSe:ServiceLevelSpecConsequence" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceLevelSpecABE.ServiceLevelSpecApplicability-->
+   <xs:complexType name="ServiceLevelSpecApplicability">
+      <xs:sequence>
+         <xs:element name="__LPAREN_un_RPAREN_applicableCode" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="__LPAREN_un_RPAREN_applicableDays" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="__LPAREN_un_RPAREN_applicableDuring" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ServiceLevelSpecConsequence" type="SIDBusSe:ServiceLevelSpecConsequence" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ServiceLevelObjective" type="SIDBusSe:ServiceLevelObjective" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ServiceLevelSpecification" type="SIDBusSe:ServiceLevelSpecification" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceLevelSpecABE.ServiceLevelSpecConsequence-->
+   <xs:complexType name="ServiceLevelSpecConsequence">
+      <xs:sequence>
+         <xs:element name="prescribedAction" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="validForSLSConsequence" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ServiceLevelSpecApplicability" type="SIDBusSe:ServiceLevelSpecApplicability" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ServiceLevelObjective" type="SIDBusSe:ServiceLevelObjective" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ServiceLevelSpecification" type="SIDBusSe:ServiceLevelSpecification" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceLevelSpecABE.ServiceLevelSpecification-->
+   <xs:complexType name="ServiceLevelSpecification" abstract="true">
+      <xs:sequence>
+         <xs:element name="validForSLS" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ServiceLevelSpecApplicability" type="SIDBusSe:ServiceLevelSpecApplicability" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ServiceLevelObjective" type="SIDBusSe:ServiceLevelObjective" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ServiceResourceSpecification" type="SIDBusSe:ServiceResourceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ServiceLevelSpecConsequence" type="SIDBusSe:ServiceLevelSpecConsequence" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ServiceSpecification" type="SIDBusSe:ServiceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ServiceLevelAgreementItem" type="SIDBusCm:ServiceLevelAgreementItem" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceLevelSpecABE.ServiceLevelSpecParameter-->
+   <xs:complexType name="ServiceLevelSpecParameter" abstract="true">
+      <xs:sequence>
+         <xs:element name="serviceParmPerspective" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="serviceParmCategory" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="validForSLSParam" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ServiceLevelObjective" type="SIDBusSe:ServiceLevelObjective" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceLevelSpecABE.ServiceResourceSpecification-->
+   <xs:complexType name="ServiceResourceSpecification">
+      <xs:sequence>
+         <xs:element name="ServiceLevelSpecification" type="SIDBusSe:ServiceLevelSpecification" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceLevelSpecABE.TemplateServiceLevelSpec-->
+   <xs:complexType name="TemplateServiceLevelSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceLevelSpecification">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceMaintenance.MPLSVPNMaintenancePlan-->
+   <xs:complexType name="MPLSVPNMaintenancePlan">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceManagementEntities.AdministerServiceDetails-->
+   <xs:complexType name="AdministerServiceDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="Service" type="SIDBusSe:Service" minOccurs="0"/>
+               <xs:element name="ValueNetworkRoleForAdministerServiceDetails" type="SIDBusCm:ValueNetworkRole" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceManagementEntities.OwnsServiceDetails-->
+   <xs:complexType name="OwnsServiceDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceOrderABE.ServiceOrder-->
+   <xs:complexType name="ServiceOrder">
+      <xs:sequence/>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceOrderABE.ServiceOrderItem-->
+   <xs:complexType name="ServiceOrderItem">
+      <xs:sequence/>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServicePackageEntities.BestEffortPackageSpec-->
+   <xs:complexType name="BestEffortPackageSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServicePackageSpecAtomic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServicePackageEntities.BronzePackageSpec-->
+   <xs:complexType name="BronzePackageSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServicePackageSpecAtomic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServicePackageEntities.GoldPackageSpec-->
+   <xs:complexType name="GoldPackageSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServicePackageSpecAtomic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServicePackageEntities.PlatinumPackageSpec-->
+   <xs:complexType name="PlatinumPackageSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServicePackageSpecAtomic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServicePackageEntities.ServicePackage-->
+   <xs:complexType name="ServicePackage">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingServiceComposite">
+            <xs:sequence>
+               <xs:element name="ServiceBundle" type="SIDBusSe:ServiceBundle" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServicePackageEntities.ServicePackageSpec-->
+   <xs:complexType name="ServicePackageSpec" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingServiceSpecComposite">
+            <xs:sequence>
+               <xs:element name="packageType" minOccurs="0" type="xs:int"/>
+               <xs:element name="ServicePackageBundleDetails" type="SIDBusSe:ServicePackageBundleDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServicePackageSpecComposite" type="SIDBusSe:ServicePackageSpecComposite" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServicePackageEntities.ServicePackageSpecAtomic-->
+   <xs:complexType name="ServicePackageSpecAtomic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServicePackageSpec">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServicePackageEntities.ServicePackageSpecComposite-->
+   <xs:complexType name="ServicePackageSpecComposite">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServicePackageSpec">
+            <xs:sequence>
+               <xs:element name="ServicePackageSpec" type="SIDBusSe:ServicePackageSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServicePackageEntities.SilverPackageSpec-->
+   <xs:complexType name="SilverPackageSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServicePackageSpecAtomic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceRoleEntities.CustomerFacingServiceRoleEntities.AccessServiceRole-->
+   <xs:complexType name="AccessServiceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingServiceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceRoleEntities.CustomerFacingServiceRoleEntities.CustomerFacingServiceRole-->
+   <xs:complexType name="CustomerFacingServiceRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceRole">
+            <xs:sequence>
+               <xs:element name="ResourceFacingServiceRole" type="SIDBusSe:ResourceFacingServiceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingService" type="SIDBusSe:CustomerFacingService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceRoleEntities.CustomerFacingServiceRoleEntities.FirewallServiceRole-->
+   <xs:complexType name="FirewallServiceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingServiceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceRoleEntities.ResourceFacingServiceRoleEntities.ResourceFacingServiceRole-->
+   <xs:complexType name="ResourceFacingServiceRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceRole">
+            <xs:sequence>
+               <xs:element name="ResourceFacingService" type="SIDBusSe:ResourceFacingService" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingServiceRole" type="SIDBusSe:CustomerFacingServiceRole" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceRoleEntities.ResourceFacingServiceRoleEntities.VPNSecurityServiceRole-->
+   <xs:complexType name="VPNSecurityServiceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceRoleEntities.ResourceFacingServiceRoleEntities.VPNTopologyServiceRole-->
+   <xs:complexType name="VPNTopologyServiceRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceRoleEntities.ServiceRole-->
+   <xs:complexType name="ServiceRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Role">
+            <xs:sequence>
+               <xs:element name="ServiceRoleHas" type="SIDBusSe:ServiceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Service" type="SIDBusSe:Service" minOccurs="0"/>
+               <xs:element name="ServiceSpecificationRole" type="SIDBusSe:ServiceSpecificationRole" minOccurs="0"/>
+               <xs:element name="ServiceRoleFor" type="SIDBusSe:ServiceRole" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.CustomerFacingServiceSpecEntities.CFSSpecVersionDetails-->
+   <xs:complexType name="CFSSpecVersionDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="cfsSpecPreferredVersionToUse" minOccurs="0" type="xs:string"/>
+               <xs:element name="cfsSpecMinVersionForUse" minOccurs="0" type="xs:string"/>
+               <xs:element name="cfsSpecVerValidFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+               <xs:element name="CustomerFacingServiceSpecVersion" type="SIDBusSe:CustomerFacingServiceSpecVersion" minOccurs="0"/>
+               <xs:element name="CustomerFacingServiceSpecForCFSSpecVersionDetails" type="SIDBusSe:CustomerFacingServiceSpec" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.CustomerFacingServiceSpecEntities.CustomerFacingServiceSpec-->
+   <xs:complexType name="CustomerFacingServiceSpec" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceSpecification">
+            <xs:sequence>
+               <xs:element name="ResourceFacingServiceSpec" type="SIDBusSe:ResourceFacingServiceSpec" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingService" type="SIDBusSe:CustomerFacingService" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingServiceSpecRole" type="SIDBusSe:CustomerFacingServiceSpecRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CFSSpecVersionDetails" type="SIDBusSe:CFSSpecVersionDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingServiceSpecComposite" type="SIDBusSe:CustomerFacingServiceSpecComposite" minOccurs="0"/>
+               <xs:element name="ProductSpecification" type="SIDBusPr:ProductSpecification" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.CustomerFacingServiceSpecEntities.CustomerFacingServiceSpecAtomic-->
+   <xs:complexType name="CustomerFacingServiceSpecAtomic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingServiceSpec">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.CustomerFacingServiceSpecEntities.CustomerFacingServiceSpecComposite-->
+   <xs:complexType name="CustomerFacingServiceSpecComposite" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingServiceSpec">
+            <xs:sequence>
+               <xs:element name="CustomerFacingServiceSpec" type="SIDBusSe:CustomerFacingServiceSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.CustomerFacingServiceSpecEntities.CustomerFacingServiceSpecVersion-->
+   <xs:complexType name="CustomerFacingServiceSpecVersion">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceSpecVersion">
+            <xs:sequence>
+               <xs:element name="CFSSpecVersionDetailsForCustomerFacingServiceSpecVersion" type="SIDBusSe:CFSSpecVersionDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.CustomerFacingServiceSpecEntities.IPsecVPNServiceSpecification-->
+   <xs:complexType name="IPsecVPNServiceSpecification">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:VPNServiceSpecification">
+            <xs:sequence>
+               <xs:element name="IPsecVPNService" type="SIDBusSe:IPsecVPNService" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ResourceFacingServiceSpecEntities.ResourceFacingServiceSpec-->
+   <xs:complexType name="ResourceFacingServiceSpec" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceSpecification">
+            <xs:sequence>
+               <xs:element name="ResourceSpecification" type="SIDBusRe:ResourceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceFacingService" type="SIDBusSe:ResourceFacingService" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceFacingServiceSpecRole" type="SIDBusSe:ResourceFacingServiceSpecRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="RFSSpecVersionDetails" type="SIDBusSe:RFSSpecVersionDetails" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingServiceSpec" type="SIDBusSe:CustomerFacingServiceSpec" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceFacingServiceSpecComposite" type="SIDBusSe:ResourceFacingServiceSpecComposite" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ResourceFacingServiceSpecEntities.ResourceFacingServiceSpecAtomic-->
+   <xs:complexType name="ResourceFacingServiceSpecAtomic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceSpec">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ResourceFacingServiceSpecEntities.ResourceFacingServiceSpecComposite-->
+   <xs:complexType name="ResourceFacingServiceSpecComposite" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceSpec">
+            <xs:sequence>
+               <xs:element name="ResourceFacingServiceSpec" type="SIDBusSe:ResourceFacingServiceSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ResourceFacingServiceSpecEntities.ResourceFacingServiceSpecVersion-->
+   <xs:complexType name="ResourceFacingServiceSpecVersion">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceSpecVersion">
+            <xs:sequence>
+               <xs:element name="RFSSpecVersionDetailsForResourceFacingServiceSpecVersion" type="SIDBusSe:RFSSpecVersionDetails" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ResourceFacingServiceSpecEntities.RFSSpecVersionDetails-->
+   <xs:complexType name="RFSSpecVersionDetails">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="rfsSpecPreferredVersionToUse" minOccurs="0" type="xs:string"/>
+               <xs:element name="rfsSpecMinVersionForUse" minOccurs="0" type="xs:string"/>
+               <xs:element name="rfsSpecVerValidFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+               <xs:element name="ResourceFacingServiceSpecVersion" type="SIDBusSe:ResourceFacingServiceSpecVersion" minOccurs="0"/>
+               <xs:element name="ResourceFacingServiceSpecForRFSSpecVersionDetails" type="SIDBusSe:ResourceFacingServiceSpec" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ResourceFacingServiceSpecEntities.VPNServiceSpecification-->
+   <xs:complexType name="VPNServiceSpecification" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingServiceSpec">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ServiceSpecAtomic-->
+   <xs:complexType name="ServiceSpecAtomic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceSpecification">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ServiceSpecCharacteristic-->
+   <xs:complexType name="ServiceSpecCharacteristic" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="ServiceSpecCharacteristicValue" type="SIDBusSe:ServiceSpecCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceCharacteristic" type="SIDBusSe:ServiceCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecification" type="SIDBusSe:ServiceSpecification" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ServiceSpecCharacteristicValue-->
+   <xs:complexType name="ServiceSpecCharacteristicValue" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="ServiceSpecCharacteristic" type="SIDBusSe:ServiceSpecCharacteristic" minOccurs="0"/>
+               <xs:element name="ServiceSpecification" type="SIDBusSe:ServiceSpecification" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ServiceSpecComposite-->
+   <xs:complexType name="ServiceSpecComposite" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceSpecification">
+            <xs:sequence>
+               <xs:element name="ServiceSpecification" type="SIDBusSe:ServiceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ServiceSpecification-->
+   <xs:complexType name="ServiceSpecification" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Specification">
+            <xs:sequence>
+               <xs:element name="ServiceSpecificationHas" type="SIDBusSe:ServiceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecificationRole" type="SIDBusSe:ServiceSpecificationRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecVersion" type="SIDBusSe:ServiceSpecVersion" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecCharacteristic" type="SIDBusSe:ServiceSpecCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Service" type="SIDBusSe:Service" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecCharacteristicValue" type="SIDBusSe:ServiceSpecCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceUsageSpec" type="SIDBusSe:ServiceUsageSpec" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="BusinessInteractionItem" type="SIDBusCm:BusinessInteractionItem" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecificationType" type="SIDBusSe:ServiceSpecificationType" minOccurs="0"/>
+               <xs:element name="ServiceSpecificationFor" type="SIDBusSe:ServiceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecComposite" type="SIDBusSe:ServiceSpecComposite" minOccurs="0"/>
+               <xs:element name="ServiceLevelSpecification" type="SIDBusSe:ServiceLevelSpecification" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ServiceSpecificationType-->
+   <xs:complexType name="ServiceSpecificationType">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="ServiceSpecification" type="SIDBusSe:ServiceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecificationTypeHas" type="SIDBusSe:ServiceSpecificationType" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecificationTypeFor" type="SIDBusSe:ServiceSpecificationType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationEntities.ServiceSpecVersion-->
+   <xs:complexType name="ServiceSpecVersion">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Entity">
+            <xs:sequence>
+               <xs:element name="svcSpecRevisionName" minOccurs="0" type="xs:string"/>
+               <xs:element name="svcSpecRevisionFormat" minOccurs="0" type="xs:string"/>
+               <xs:element name="svcSpecRevisionNumber" minOccurs="0" type="xs:string"/>
+               <xs:element name="svcSpecRevisionReason" minOccurs="0" type="xs:string"/>
+               <xs:element name="svcSpecRevisionSemantics" minOccurs="0" type="xs:string"/>
+               <xs:element name="svcSpecRevisionTimestamp" minOccurs="0" type="xs:date"/>
+               <xs:element name="svcSpecRevisionValidityPeriod" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+               <xs:element name="ServiceSpecification" type="SIDBusSe:ServiceSpecification" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationRoleEntities.CustomerFacingServiceSpecRoleEntities.AccessServiceSpecRole-->
+   <xs:complexType name="AccessServiceSpecRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingServiceSpecRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationRoleEntities.CustomerFacingServiceSpecRoleEntities.CustomerFacingServiceSpecRole-->
+   <xs:complexType name="CustomerFacingServiceSpecRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceSpecificationRole">
+            <xs:sequence>
+               <xs:element name="ResourceFacingServiceSpecRole" type="SIDBusSe:ResourceFacingServiceSpecRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingServiceSpec" type="SIDBusSe:CustomerFacingServiceSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationRoleEntities.CustomerFacingServiceSpecRoleEntities.FirewallServiceSpecRole-->
+   <xs:complexType name="FirewallServiceSpecRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:CustomerFacingServiceSpecRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationRoleEntities.ResourceFacingServiceSpecRoleEntities.ResourceFacingServiceSpecRole-->
+   <xs:complexType name="ResourceFacingServiceSpecRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ServiceSpecificationRole">
+            <xs:sequence>
+               <xs:element name="LogicalResourceRoleSpec" type="SIDBusRe:LogicalResourceRoleSpec" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PhysicalResourceRoleSpec" type="SIDBusRe:PhysicalResourceRoleSpec" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ResourceFacingServiceSpec" type="SIDBusSe:ResourceFacingServiceSpec" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CustomerFacingServiceSpecRole" type="SIDBusSe:CustomerFacingServiceSpecRole" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationRoleEntities.ResourceFacingServiceSpecRoleEntities.VPNSecurityServiceSpecRole-->
+   <xs:complexType name="VPNSecurityServiceSpecRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceSpecRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationRoleEntities.ResourceFacingServiceSpecRoleEntities.VPNTopologyServiceSpecRole-->
+   <xs:complexType name="VPNTopologyServiceSpecRole">
+      <xs:complexContent>
+         <xs:extension base="SIDBusSe:ResourceFacingServiceSpecRole">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceSpecificationRoleEntities.ServiceSpecificationRole-->
+   <xs:complexType name="ServiceSpecificationRole" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:SpecificationRole">
+            <xs:sequence>
+               <xs:element name="ServiceRole" type="SIDBusSe:ServiceRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecificationRoleHas" type="SIDBusSe:ServiceSpecificationRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceSpecification" type="SIDBusSe:ServiceSpecification" minOccurs="0"/>
+               <xs:element name="ServiceSpecificationRoleFor" type="SIDBusSe:ServiceSpecificationRole" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceUsageABE.ServiceUsage-->
+   <xs:complexType name="ServiceUsage">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Usage">
+            <xs:sequence>
+               <xs:element name="Service" type="SIDBusSe:Service" minOccurs="0"/>
+               <xs:element name="ServiceUsageSpec" type="SIDBusSe:ServiceUsageSpec" minOccurs="0"/>
+               <xs:element name="ProductComponentUsage" type="SIDBusPr:ProductComponentUsage" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ServiceDomain.ServiceUsageABE.ServiceUsageSpec-->
+   <xs:complexType name="ServiceUsageSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:UsageSpecification">
+            <xs:sequence>
+               <xs:element name="ServiceUsage" type="SIDBusSe:ServiceUsage" minOccurs="0"/>
+               <xs:element name="ServiceSpecification" type="SIDBusSe:ServiceSpecification" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema>

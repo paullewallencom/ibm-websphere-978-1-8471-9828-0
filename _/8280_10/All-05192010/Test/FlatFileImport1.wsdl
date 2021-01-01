@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="FlatFileImport1.wsdl" targetNamespace="http://Test/FlatFileImport1" xmlns:bons1="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/shipping_labelwrapper" xmlns:tns="http://Test/FlatFileImport1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://Test/FlatFileImport1">
+      <xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/shipping_labelwrapper" schemaLocation="shipping_labelWrapper.xsd"/>
+      <xsd:element name="create">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createInput" type="bons1:shipping_labelWrapper"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createRequestMsg">
+    <wsdl:part element="tns:create" name="createParameters"/>
+  </wsdl:message>
+  <wsdl:portType name="FlatFileImport1">
+    <wsdl:operation name="create">
+      <wsdl:input message="tns:createRequestMsg" name="createRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

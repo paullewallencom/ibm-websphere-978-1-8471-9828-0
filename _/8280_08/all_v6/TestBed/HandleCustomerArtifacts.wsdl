@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="HandleCustomer" targetNamespace="http://TestBed/HandleCustomerArtifacts" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://TestBed/HandleCustomerArtifacts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl0="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="MaintainCustomerInformationPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:MaintainCustomerInformation"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <plnk:partnerLinkType name="MaintainCustomerInformationPLT1">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:MaintainCustomerInformation"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:import location="com/junglesea/businessservices/interfaces/MaintainCustomerInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation"/>
+</wsdl:definitions>

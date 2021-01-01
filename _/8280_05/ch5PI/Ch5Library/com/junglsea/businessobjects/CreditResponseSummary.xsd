@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://Ch5Library/com/junglsea/businessobjects"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="CreditResponseSummary">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="creditScore"
+				type="xsd:double">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="creditSummary"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="vendor"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="processedDate"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="additionalInfo"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

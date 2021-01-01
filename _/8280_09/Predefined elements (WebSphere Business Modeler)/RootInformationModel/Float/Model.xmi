@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.ibm.btools.bom.model.artifacts="http:///com/ibm/btools/bom/model/artifacts.ecore"
+    xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1193247339774"/>
+  <com.ibm.btools.bom.model.artifacts:PrimitiveType xmi:id="FID-00000000000000000000000000000216"
+      uid="FID-00000000000000000000000000000216" name="Float">
+    <owningPackage href="RID-00000000000000000000000000000002.xmi#FID-00000000000000000000000000000002"/>
+    <superClassifier xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000215.xmi#FID-00000000000000000000000000000215"/>
+  </com.ibm.btools.bom.model.artifacts:PrimitiveType>
+</xmi:XMI>

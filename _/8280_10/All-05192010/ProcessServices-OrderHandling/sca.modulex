@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.wbit.wiring.ui.ext.model="http:///com/ibm/wbit/wiring/ui/ext/model.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1263784314125" namespace="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+    <extensions xmi:id="Extension_1263784314125">
+      <extendedObject xmi:type="scdl:Module" href="sca.module#//@module"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:ModuleExtension" xmi:id="ModuleExtension_1263784314125" autoLayout="true"/>
+    </extensions>
+    <extensions xmi:id="Extension_1263784314126">
+      <extendedObject xmi:type="scdl:Component" href="TrackAndManageCustomerOrder.component#//@Component"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1263784314125" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0}ProcessImplementation" unknown="false" visible="true" x="30" y="177"/>
+    </extensions>
+    <extensions xmi:id="Extension_1263784314127">
+      <extendedObject xmi:type="scdl:Import" href="ManageShipments.import#//@import"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1263784314126" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}SCAImportBinding" unknown="false" visible="true" x="568" y="168"/>
+    </extensions>
+    <extensions xmi:id="Extension_1263784314128">
+      <extendedObject xmi:type="scdl:Import" href="ProcessSPOrders.import#//@import"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1263784314127" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}SCAImportBinding" unknown="false" visible="true" x="573" y="237"/>
+    </extensions>
+    <extensions xmi:id="Extension_1263784314129">
+      <extendedObject xmi:type="scdl:Import" href="RetrieveInventoryInformation.import#//@import"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1263784314128" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}SCAImportBinding" unknown="false" visible="true" x="510" y="30"/>
+    </extensions>
+    <extensions xmi:id="Extension_1263784314130">
+      <extendedObject xmi:type="scdl:Import" href="ProcessCustomerPayments.import#//@import"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1263784314129" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}SCAImportBinding" unknown="false" visible="true" x="525" y="99"/>
+    </extensions>
+    <extensions xmi:id="Extension_1263784314131">
+      <extendedObject xmi:type="scdl:Import" href="CustomerCreditInformation.import#//@import"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1263784314130" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}SCAImportBinding" unknown="false" visible="true" x="524" y="306"/>
+    </extensions>
+    <extensions xmi:id="Extension_1263784314132">
+      <extendedObject xmi:type="scdl:Import" href="MaintainInventoryInformation.import#//@import"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1263784314131" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}SCAImportBinding" unknown="false" visible="true" x="511" y="375"/>
+    </extensions>
+    <extensions xmi:id="Extension_1263785921734">
+      <extendedObject xmi:type="scdl:Component" href="OrderManagementRuleGroup.component#//@Component"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1263785921734" type="{http://www.ibm.com/xmlns/prod/websphere/wbiserver/scdl/BusinessRuleGroupImplementation/6.0.0}BusinessRuleGroupImplementation" unknown="false" visible="true" x="286" y="409"/>
+    </extensions>
+    <extensions xmi:id="Extension_1263797990625">
+      <extendedObject xmi:type="scdl:Import" href="HandleCustomerContact.import#//@import"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1263797990640" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}SCAImportBinding" unknown="false" visible="true" x="538" y="444"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1263784314126" namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions xmi:id="Extension_1263784314133">
+      <extendedObject xmi:type="scdl:Module" href="sca.module#//@module"/>
+      <extensionObject xmi:type="sb:StickyDocument" xmi:id="StickyDocument_1263784314125">
+        <stickyBoard xmi:id="StickyBoard_1263784314125" id="default"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

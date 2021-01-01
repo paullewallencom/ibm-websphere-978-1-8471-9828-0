@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://EligibilityCheck/com/junglesea/solution/eligibility/process/eligibilityCheckProcessArtifacts" xmlns:ns0="http://EligibilityCheck" xmlns:ns1="http://EligibilityCheckLibrary/com/junglesea/solution/eligibilityCheck/interfaces/EligibilityCheckInterface" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="eligibilityCheckProcess" suppressJoinFailure="yes" targetNamespace="http://EligibilityCheck/com/junglesea/solution/eligibility/process" wpc:continueOnError="no" wpc:displayName="eligibilityCheckProcess" wpc:executionMode="longRunning" wpc:id="6" wpc:validFrom="2009-09-13T05:20:38">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/EligibilityCheckLibrary/com/junglesea/solution/eligibilityCheck/interfaces/EligibilityCheckInterface.wsdl" namespace="http://EligibilityCheckLibrary/com/junglesea/solution/eligibilityCheck/interfaces/EligibilityCheckInterface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../eligibilityCheck/interfaces/EligibilityCheckInterface.wsdl" namespace="http://EligibilityCheckLibrary/com/junglesea/solution/eligibilityCheck/interfaces/EligibilityCheckInterface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="eligibilityCheckProcessArtifacts.wsdl" namespace="http://EligibilityCheck/com/junglesea/solution/eligibility/process/eligibilityCheckProcessArtifacts"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../memberInfo.xsd" namespace="http://EligibilityCheck"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="EligibilityCheckInterface" partnerLinkType="ns:EligibilityCheckInterfacePLT"/>
+    <bpws:partnerLink name="approveEligibility" partnerLinkType="ns:approveEligibilityPLT" partnerRole="Reference"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="input1" type="ns0:memberInfo" wpc:id="4"/>
+    <bpws:variable name="output1" type="xsd:boolean" wpc:id="5"/>
+  </bpws:variables>
+  <bpws:sequence name="HiddenSequence" wpc:id="1073741825">
+    <bpws:receive createInstance="yes" name="Receive" operation="eligibilityCheck" partnerLink="EligibilityCheckInterface" portType="ns1:EligibilityCheckInterface" wpc:displayName="Receive" wpc:id="2" wpc:transactionalBehavior="commitAfter">
+      <wpc:output>
+        <wpc:parameter name="memberInfo" variable="input1"/>
+      </wpc:output>
+    </bpws:receive>
+    <bpws:switch name="Choice" wpc:displayName="Choice" wpc:id="7">
+      <bpws:case wpc:id="8">
+        <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[($input1/Age <65)]]></bpws:condition>
+        <bpws:invoke name="Snippet" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Snippet" wpc:id="11">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[output1=true; ]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+      </bpws:case>
+      <bpws:case wpc:id="10">
+        <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[($input1/Age >=65)]]></bpws:condition>
+        <bpws:invoke name="Invoke" operation="eligibilityCheck" partnerLink="approveEligibility" portType="ns1:EligibilityCheckInterface" wpc:continueOnError="inherit" wpc:displayName="Invoke" wpc:id="12">
+          <wpc:input>
+            <wpc:parameter name="memberInfo" variable="input1"/>
+          </wpc:input>
+          <wpc:output>
+            <wpc:parameter name="validateEligibility" variable="output1"/>
+          </wpc:output>
+        </bpws:invoke>
+      </bpws:case>
+    </bpws:switch>
+    <bpws:reply name="Reply" operation="eligibilityCheck" partnerLink="EligibilityCheckInterface" portType="ns1:EligibilityCheckInterface" wpc:displayName="Reply" wpc:id="3">
+      <wpc:input>
+        <wpc:parameter name="validateEligibility" variable="output1"/>
+      </wpc:input>
+    </bpws:reply>
+  </bpws:sequence>
+</bpws:process>

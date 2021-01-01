@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.comptest.controller="http://com.ibm.wbit.comptest.controller" xmlns:configuration_6.1.0="http://www.ibm.com/xmlns/prod/websphere/j2ca/configuration/6.1.0" xmlns:http="http://www.ibm.com/xmlns/prod/websphere/scdl/http/6.1.0" xmlns:ns1="http://bk/TestServletInterface" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="ExternalTest" name="ExternalTest" target="TestDelegate">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="com.ibm.wbit.comptest.controller:TestInterface"/>
+  </interfaces>
+  <esbBinding xsi:type="http:HTTPExportBinding" defaultDataBindingReferenceName="configuration_6.1.0:UTF8XMLDataHandler">
+    <exportInteraction contextPath="/TestServlet">
+      <httpMethod>
+        <httpMethod>GET</httpMethod>
+      </httpMethod>
+    </exportInteraction>
+    <functionSelector>com.ibm.wbit.comptest.ctnative.runtime.TestCaseFunctionSelector</functionSelector>
+    <methodBinding inDataBinding="com.ibm.wbit.comptest.ctnative.runtime.TestCaseDataBinding" outDataBinding="com.ibm.wbit.comptest.ctnative.runtime.TestCaseDataBinding" method="getTestcases">
+      <exportInteraction>
+        <httpMethod>
+          <httpMethod>GET</httpMethod>
+        </httpMethod>
+      </exportInteraction>
+      <nativeMethod>getTestcases</nativeMethod>
+      <outputDataBinding>configuration_6.1.0:UTF8XMLDataHandler</outputDataBinding>
+    </methodBinding>
+    <methodBinding inDataBinding="com.ibm.wbit.comptest.ctnative.runtime.TestCaseDataBinding" outDataBinding="com.ibm.wbit.comptest.ctnative.runtime.TestCaseDataBinding" method="getSuites">
+      <exportInteraction>
+        <httpMethod pingable="false">
+          <httpMethod>GET</httpMethod>
+        </httpMethod>
+      </exportInteraction>
+      <nativeMethod>getSuites</nativeMethod>
+      <outputDataBinding>configuration_6.1.0:UTF8XMLDataHandler</outputDataBinding>
+    </methodBinding>
+    <methodBinding inDataBinding="com.ibm.wbit.comptest.ctnative.runtime.TestCaseDataBinding" method="run">
+      <exportInteraction>
+        <httpMethod>
+          <httpMethod>GET</httpMethod>
+        </httpMethod>
+      </exportInteraction>
+      <nativeMethod>run</nativeMethod>
+      <outputDataBinding>configuration_6.1.0:UTF8XMLDataHandler</outputDataBinding>
+    </methodBinding>
+  </esbBinding>
+</scdl:export>

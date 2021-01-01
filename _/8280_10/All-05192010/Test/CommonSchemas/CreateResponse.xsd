@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/createresponse" xmlns:createresponse="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/createresponse">
+
+<xsd:annotation xml:space="preserve">
+<xsd:appinfo source="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability">
+<info:resourceAdapter xmlns:info="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability" version="7.0.0.0"/>
+</xsd:appinfo>
+</xsd:annotation>
+
+<xsd:complexType name="CreateResponse">
+<xsd:sequence minOccurs="1" maxOccurs="1">
+<xsd:element name="filename" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://BillingDomain-Msg/com/junglesea/bo"
+	xmlns:bons0="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons1="http://BillingDomain-v1_0/com/junglesea/bo">
+	<xsd:import schemaLocation="CreditCardDetails.xsd"
+		namespace="http://BillingDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo"
+		schemaLocation="Entity.xsd">
+	</xsd:import>
+	<xsd:complexType name="PaymentMethod">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="CreditCardDetails"
+				type="bons1:CreditCardDetails">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="OtherPaymentMechanism"
+				type="bons0:Entity">
+			</xsd:element>
+
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

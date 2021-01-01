@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Callout.mednode="mednode://mednodes/Callout.mednode/Callout" xmlns:CalloutResponse.mednode="mednode://mednodes/CalloutResponse.mednode/CalloutResponse" xmlns:Fail.mednode="mednode://mednodes/Fail.mednode/Fail" xmlns:GreenSim.medflow="GreenSim.medflow" xmlns:Input.mednode="mednode://mednodes/Input.mednode/Input" xmlns:InputFault.mednode="mednode://mednodes/InputFault.mednode/InputFault" xmlns:InputResponse.mednode="mednode://mednodes/InputResponse.mednode/InputResponse" xmlns:MessageFilter.mednode="mednode://mednodes/MessageFilter.mednode/MessageFilter" xmlns:XSLTransformation.mednode="mednode://mednodes/XSLTransformation.mednode/XSLTransformation" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow2="http://www.ibm.com/2006/eflow" xmlns:type="http://www.ibm.com/2006/eflow/type" xmlns:utility="http://www.ibm.com/2006/eflow/utility" name="root" nsURI="GreenSim.medflow" nsPrefix="GreenSim.medflow">
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_2">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_1">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation}createCustomerRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_2">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation}createCustomerResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_3">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation}createCustomer_createCustomerFaultMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_4">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://GreenLibrary/com/junglesea/apps/green/CustomerProfile}createCustomerAccountRequestMsg"/>
+        </elements>
+      </type>
+      <nodes xmi:type="Input.mednode:Input" xmi:id="Input_1" name="MaintainCustomerInformation_createCustomer_Input">
+        <location x="10" y="164"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="createCustomer : MaintainCustomerInformation"/>
+      </nodes>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_1" name="MaintainCustomerInformation_createCustomer_InputResponse">
+        <location x="493" y="98"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_2"/>
+        <translation xmi:type="utility:ConstantString" string="createCustomer : MaintainCustomerInformation"/>
+      </nodes>
+      <nodes xmi:type="InputFault.mednode:InputFault" xmi:id="InputFault_1" name="MaintainCustomerInformation_createCustomer_InputFault">
+        <location x="493" y="176"/>
+        <inTerminals terminalNodeID="InTerminal.dynamic:in:createCustomer_createCustomerFaultMsg" dynamic="true" explicitType="true" label="createCustomer_createCustomerFaultMsg" longDescription="" type="CompositeType_3"/>
+        <translation xmi:type="utility:ConstantString" string="createCustomer : MaintainCustomerInformation"/>
+      </nodes>
+      <nodes xmi:type="Callout.mednode:Callout" xmi:id="Callout_1" name="CustomerProfilePartner_createCustomerAccount_Callout" referenceName="CustomerProfilePartner" operationName="createCustomerAccount">
+        <location x="493" y="20"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_4"/>
+        <translation xmi:type="utility:ConstantString" string="createCustomerAccount : CustomerProfilePartner"/>
+      </nodes>
+      <nodes xmi:type="XSLTransformation.mednode:XSLTransformation" xmi:id="XSLTransformation_1" name="XSLTransformation1" root="/body" XSLTransform="xslt/XSLTransformation1_req_1.xsl" XMXMap="xslt/XSLTransformation1_req_1.map" SMOVersion="SMO61">
+        <location x="375" y="20"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_4"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_1"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="XSLTransformation1"/>
+      </nodes>
+      <nodes xmi:type="MessageFilter.mednode:MessageFilter" xmi:id="MessageFilter_1" name="MessageFilter1" filters.pattern="%2Fbody%2FcreateCustomer%2FinputParam%2FCustomer%2FParty%2FPartyDetails%2FPerson%2FHomeAddress%2FCity+%21%3D+%27Coimbatore%27" filters.terminalName="match1">
+        <location x="267" y="164"/>
+        <outTerminals terminalNodeID="OutTerminal.default" type="CompositeType_1"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_1"/>
+        <outTerminals terminalNodeID="OutTerminal.dynamic:match:match1" dynamic="true" label="match1" longDescription="" type="CompositeType_1"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="MessageFilter1"/>
+      </nodes>
+      <nodes xmi:type="Fail.mednode:Fail" xmi:id="Fail_1" name="FailedDataValidation">
+        <location x="375" y="278"/>
+        <inTerminals terminalNodeID="InTerminal.in" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="FailedDataValidation"/>
+      </nodes>
+      <nodes xmi:type="XSLTransformation.mednode:XSLTransformation" xmi:id="XSLTransformation_2" name="XSLTransformation2" root="/body" XSLTransform="xslt/XSLTransformation2_req_1.xsl" XMXMap="xslt/XSLTransformation2_req_1.map" SMOVersion="SMO61">
+        <location x="375" y="176"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_3"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_1"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_1"/>
+        <translation xmi:type="utility:ConstantString" string="XSLTransformation2"/>
+      </nodes>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_1" targetNode="MessageFilter_1" sourceNode="Input_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_2" targetNode="Callout_1" sourceNode="XSLTransformation_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_3" targetNode="XSLTransformation_1" sourceNode="MessageFilter_1" sourceTerminalName="OutTerminal.default" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_4" targetNode="XSLTransformation_2" sourceNode="MessageFilter_1" sourceTerminalName="OutTerminal.dynamic:match:match1" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_5" targetNode="Fail_1" sourceNode="MessageFilter_1" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_6" targetNode="XSLTransformation_2" sourceNode="MessageFilter_1" sourceTerminalName="OutTerminal.Failure" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_7" targetNode="InputFault_1" sourceNode="XSLTransformation_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.dynamic:in:createCustomer_createCustomerFaultMsg"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_3">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition/>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root_I_4">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.name" name="name" lowerBound="1" defaultValueLiteral="">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <composition>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_5">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://GreenLibrary/com/junglesea/apps/green/CustomerProfile}createCustomerAccountResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_6">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://GreenLibrary/com/junglesea/apps/green/CustomerProfile}createCustomerAccountRequestMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_7">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation}createCustomerResponseMsg"/>
+        </elements>
+      </type>
+      <type xmi:type="type:CompositeType" xmi:id="CompositeType_8">
+        <elements id="message">
+          <type xmi:type="type:WSDLMessageType" wsdlMessage="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation}createCustomer_createCustomerFaultMsg"/>
+        </elements>
+      </type>
+      <nodes xmi:type="CalloutResponse.mednode:CalloutResponse" xmi:id="CalloutResponse_1" name="CustomerProfilePartner_createCustomerAccount_CalloutResponse" referenceName="CustomerProfilePartner" operationName="createCustomerAccount">
+        <location x="10" y="20"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_5"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" explicitType="true" type="CompositeType_6"/>
+        <translation xmi:type="utility:ConstantString" string="createCustomerAccount : CustomerProfilePartner"/>
+      </nodes>
+      <nodes xmi:type="InputResponse.mednode:InputResponse" xmi:id="InputResponse_2" name="MaintainCustomerInformation_createCustomer_InputResponse">
+        <location x="400" y="20"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_7"/>
+        <translation xmi:type="utility:ConstantString" string="createCustomer : MaintainCustomerInformation"/>
+      </nodes>
+      <nodes xmi:type="InputFault.mednode:InputFault" xmi:id="InputFault_2" name="MaintainCustomerInformation_createCustomer_InputFault">
+        <location x="400" y="98"/>
+        <inTerminals terminalNodeID="InTerminal.dynamic:in:createCustomer_createCustomerFaultMsg" dynamic="true" explicitType="true" label="createCustomer_createCustomerFaultMsg" longDescription="" type="CompositeType_8"/>
+        <translation xmi:type="utility:ConstantString" string="createCustomer : MaintainCustomerInformation"/>
+      </nodes>
+      <nodes xmi:type="XSLTransformation.mednode:XSLTransformation" xmi:id="XSLTransformation_3" name="XSLTransformation1" root="/body" XSLTransform="xslt/XSLTransformation1_res_1.xsl" XMXMap="xslt/XSLTransformation1_res_1.map" SMOVersion="SMO61">
+        <location x="241" y="20"/>
+        <outTerminals terminalNodeID="OutTerminal.out" explicitType="true" type="CompositeType_7"/>
+        <outTerminals terminalNodeID="OutTerminal.Failure" type="CompositeType_5"/>
+        <inTerminals terminalNodeID="InTerminal.in" explicitType="true" type="CompositeType_5"/>
+        <translation xmi:type="utility:ConstantString" string="XSLTransformation1"/>
+      </nodes>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_8" targetNode="XSLTransformation_3" sourceNode="CalloutResponse_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow2:FCMConnection" xmi:id="FCMConnection_9" targetNode="InputResponse_2" sourceNode="XSLTransformation_3" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="basic" describedAttribute="Property.name"/>
+    </propertyOrganizer>
+  </eClassifiers>
+  <eClassifiers xmi:type="eflow2:FCMComposite" name="root">
+    <eSuperTypes href="http://www.ibm.com/2006/eflow#//FCMBlock"/>
+    <composition>
+      <nodes xmi:type="GreenSim.medflow:root_I_2" xmi:id="root_I_2_1" name="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation}MaintainCustomerInformation:createCustomer::request"/>
+      <nodes xmi:type="GreenSim.medflow:root_I_3" xmi:id="root_I_3_1" name="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation}MaintainCustomerInformation:updateCustomer::request"/>
+      <nodes xmi:type="GreenSim.medflow:root_I_4" xmi:id="root_I_4_1" name="{http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation}MaintainCustomerInformation:createCustomer::response"/>
+    </composition>
+    <propertyOrganizer/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfg:bindingConfiguration xmlns:cfg="http://www.ibm.com/xmlns/prod/websphere/bindingconfiguration/6.1.0" name="UTF8XMLDataHandler" targetNamespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/configuration/6.1.0">
+  <description>On inbound, parses UTF-8 encoded XML data into a business object. On outbound, serializes business object to UTF-8 encoded XML data.</description>
+  <cfg:typeName>com.ibm.wbiserver.datahandler.xml.XMLDataHandler</cfg:typeName>
+  <cfg:propertyBean type="com.ibm.wbiserver.datahandler.xml.XMLDataHandlerProperties"/>
+  <cfg:tag>BindingKind_DataHandler</cfg:tag>
+  <cfg:tag>BindingType_JMS</cfg:tag>
+  <cfg:tag>BindingType_MQ</cfg:tag>
+  <cfg:tag>BindingType_EIS/Email Server</cfg:tag>
+  <cfg:tag>BindingType_HTTP</cfg:tag>
+  <cfg:tag>BindingType_EIS/Remote File System</cfg:tag>
+  <cfg:tag>BindingType_EIS/Local File System</cfg:tag>
+</cfg:bindingConfiguration>

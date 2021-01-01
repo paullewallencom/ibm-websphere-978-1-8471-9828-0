@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:moduleAndLibraryAttributes xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" versionValue="" versionProvider="">
+  <boImplementation>
+    <emf/>
+  </boImplementation>
+</scdl:moduleAndLibraryAttributes>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="MaintainCustomerInformation" targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation" xmlns:bons2="http://CustomerDomain-v1_0/com/junglesea/bo" xmlns:tns="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation">
+            <xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/msg/CustomerMSG.xsd"/>
+      <xsd:element name="createCustomer">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParam" nillable="true" type="bons2:CustomerMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createCustomerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParam" nillable="true" type="bons2:CustomerMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCustomer">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParam" nillable="true" type="bons2:CustomerMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCustomerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParam" nillable="true" type="bons2:CustomerMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="createCustomerRequestMsg">
+    <wsdl:part element="tns:createCustomer" name="createCustomerParameters"/>
+  </wsdl:message>
+    <wsdl:message name="createCustomerResponseMsg">
+    <wsdl:part element="tns:createCustomerResponse" name="createCustomerResult"/>
+  </wsdl:message>
+    <wsdl:message name="updateCustomerRequestMsg">
+    <wsdl:part element="tns:updateCustomer" name="updateCustomerParameters"/>
+  </wsdl:message>
+    <wsdl:message name="updateCustomerResponseMsg">
+    <wsdl:part element="tns:updateCustomerResponse" name="updateCustomerResult"/>
+  </wsdl:message>
+    <wsdl:portType name="MaintainCustomerInformation">
+    <wsdl:operation name="createCustomer">
+      <wsdl:input message="tns:createCustomerRequestMsg" name="createCustomerRequest"/>
+      <wsdl:output message="tns:createCustomerResponseMsg" name="createCustomerResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomer">
+      <wsdl:input message="tns:updateCustomerRequestMsg" name="updateCustomerRequest"/>
+      <wsdl:output message="tns:updateCustomerResponseMsg" name="updateCustomerResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

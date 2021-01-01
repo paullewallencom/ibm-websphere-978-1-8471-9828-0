@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:model="http:///com/ibm/wbit/sib/mediation/ui/ext/model" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap namespace="http:///com/ibm/wbit/sib/mediation/ui/ext/model">
+    <extensions>
+      <extendedObject href="Med-LabelsAndShipments-prepareShipLabel.mfc#//@interfaceMediationFlow"/>
+      <extensionObject xsi:type="model:MediationFlowUIExtension" saveAsMultipleFiles="false">
+        <messageFlowUI autoLayout="true" id="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}ManageShipments:createShippingLabel::request"/>
+        <messageFlowUI autoLayout="true" id="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}ManageShipments:cancelShipment::request"/>
+        <messageFlowUI autoLayout="true" id="{http://AccessServices-Rapid/com/junglesea/adapter/InboundRapidFileAdapterExport}InboundRapidFileAdapterExport:emit::request"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions>
+      <extendedObject href="Med-LabelsAndShipments-prepareShipLabel.mfc#//@interfaceMediationFlow"/>
+      <extensionObject xsi:type="sb:StickyDocument">
+        <stickyBoard id="{http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments}ManageShipments:createShippingLabel::request"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

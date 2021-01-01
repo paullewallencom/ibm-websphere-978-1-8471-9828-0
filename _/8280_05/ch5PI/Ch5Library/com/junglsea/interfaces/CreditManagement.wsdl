@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="CreditManagement" targetNamespace="http://Ch5Library/com/junglsea/interfaces/CreditManagement" xmlns:bons1="http://Ch5Library/com/junglsea/businessobjects" xmlns:tns="http://Ch5Library/com/junglsea/interfaces/CreditManagement" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://Ch5Library/com/junglsea/interfaces/CreditManagement">
+      <xsd:import namespace="http://Ch5Library/com/junglsea/businessobjects" schemaLocation="../businessobjects/CustomerCreditApproval.xsd"/>
+      <xsd:import namespace="http://Ch5Library/com/junglsea/businessobjects" schemaLocation="../businessobjects/Customer.xsd"/>
+      <xsd:element name="requestCreditApproval">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="customerInfo" nillable="true" type="bons1:Customer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestCreditApprovalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="customerCreditApprovalRespose" nillable="true" type="bons1:CustomerCreditApproval"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestCreditApprovalFault1_creditApprovalFault" nillable="true" type="xsd:string"/>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="requestCreditApprovalRequestMsg">
+    <wsdl:part element="tns:requestCreditApproval" name="requestCreditApprovalParameters"/>
+  </wsdl:message>
+    <wsdl:message name="requestCreditApprovalResponseMsg">
+    <wsdl:part element="tns:requestCreditApprovalResponse" name="requestCreditApprovalResult"/>
+  </wsdl:message>
+    <wsdl:message name="requestCreditApproval_creditApprovalFaultMsg">
+    <wsdl:part element="tns:requestCreditApprovalFault1_creditApprovalFault" name="creditApprovalFault"/>
+  </wsdl:message>
+    <wsdl:portType name="CreditManagement">
+    <wsdl:operation name="requestCreditApproval">
+      <wsdl:input message="tns:requestCreditApprovalRequestMsg" name="requestCreditApprovalRequest"/>
+      <wsdl:output message="tns:requestCreditApprovalResponseMsg" name="requestCreditApprovalResponse"/>
+      <wsdl:fault message="tns:requestCreditApproval_creditApprovalFaultMsg" name="creditApprovalFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

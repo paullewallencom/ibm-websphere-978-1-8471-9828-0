@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.ibm.btools.bom.model.artifacts="http:///com/ibm/btools/bom/model/artifacts.ecore"
+    xmlns:com.ibm.btools.bom.model.models="http:///com/ibm/btools/bom/model/models.ecore"
+    xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1193247339680"/>
+  <com.ibm.btools.bom.model.models:InformationModel xmi:id="FID-00000000000000000000000000000002"
+      uid="FID-00000000000000000000000000000002" name="RootInformationModel">
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000201.xmi#FID-00000000000000000000000000000201"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000202.xmi#FID-00000000000000000000000000000202"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000208.xmi#FID-00000000000000000000000000000208"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000209.xmi#FID-00000000000000000000000000000209"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000210.xmi#FID-00000000000000000000000000000210"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000211.xmi#FID-00000000000000000000000000000211"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000214.xmi#FID-00000000000000000000000000000214"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000215.xmi#FID-00000000000000000000000000000215"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000204.xmi#FID-00000000000000000000000000000204"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000203.xmi#FID-00000000000000000000000000000203"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000205.xmi#FID-00000000000000000000000000000205"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000206.xmi#FID-00000000000000000000000000000206"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000207.xmi#FID-00000000000000000000000000000207"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000212.xmi#FID-00000000000000000000000000000212"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000213.xmi#FID-00000000000000000000000000000213"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000216.xmi#FID-00000000000000000000000000000216"/>
+    <ownedMember xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000222.xmi#FID-00000000000000000000000000000222"/>
+  </com.ibm.btools.bom.model.models:InformationModel>
+</xmi:XMI>

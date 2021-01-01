@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://PayMeLibrary/com/junglesea/apps/payme"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://PayMeLibrary/com/junglesea/apps/payme">
+	<xsd:include schemaLocation="CardBillingAccount.xsd"></xsd:include>
+	<xsd:include schemaLocation="Card.xsd"></xsd:include>
+	<xsd:complexType name="ccPayRequest">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="amount"
+				type="xsd:double">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="card" type="bons0:Card"></xsd:element>
+			<xsd:element minOccurs="0" name="billDetails"
+				type="bons0:CardBillingAccount">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

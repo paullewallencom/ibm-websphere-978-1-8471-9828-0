@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="ProcessSPOrders" targetNamespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders" xmlns:bons1="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:bons3="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" xmlns:tns="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders">
+            <xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/BusinessException.xsd"/>
+            <xsd:import namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/SupplierPartnerOrderMSG.xsd"/>
+      <xsd:element name="submitSupplierOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons3:SupplierPartnerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="submitSupplierOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons3:SupplierPartnerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelSupplierOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons3:SupplierPartnerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelSupplierOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons3:SupplierPartnerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="submitSupplierOrderFault1_submitSupplierOrderFault" nillable="true" type="bons1:BusinessException"/>
+            <xsd:element name="cancelSupplierOrderFault1_cancelSupplierOrderFault" nillable="true" type="bons1:BusinessException"/>
+        </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="submitSupplierOrderRequestMsg">
+    <wsdl:part element="tns:submitSupplierOrder" name="submitSupplierOrderParameters"/>
+  </wsdl:message>
+    <wsdl:message name="submitSupplierOrderResponseMsg">
+    <wsdl:part element="tns:submitSupplierOrderResponse" name="submitSupplierOrderResult"/>
+  </wsdl:message>
+    <wsdl:message name="cancelSupplierOrderRequestMsg">
+    <wsdl:part element="tns:cancelSupplierOrder" name="cancelSupplierOrderParameters"/>
+  </wsdl:message>
+    <wsdl:message name="cancelSupplierOrderResponseMsg">
+    <wsdl:part element="tns:cancelSupplierOrderResponse" name="cancelSupplierOrderResult"/>
+  </wsdl:message>
+    <wsdl:message name="submitSupplierOrder_submitSupplierOrderFaultMsg">
+    <wsdl:part element="tns:submitSupplierOrderFault1_submitSupplierOrderFault" name="submitSupplierOrderFault"/>
+  </wsdl:message>
+    <wsdl:message name="cancelSupplierOrder_cancelSupplierOrderFaultMsg">
+    <wsdl:part element="tns:cancelSupplierOrderFault1_cancelSupplierOrderFault" name="cancelSupplierOrderFault"/>
+  </wsdl:message>
+    <wsdl:portType name="ProcessSPOrders">
+    <wsdl:operation name="submitSupplierOrder">
+      <wsdl:input message="tns:submitSupplierOrderRequestMsg" name="submitSupplierOrderRequest"/>
+      <wsdl:output message="tns:submitSupplierOrderResponseMsg" name="submitSupplierOrderResponse"/>
+            <wsdl:fault message="tns:submitSupplierOrder_submitSupplierOrderFaultMsg" name="submitSupplierOrderFault"/>
+        </wsdl:operation>
+    <wsdl:operation name="cancelSupplierOrder">
+      <wsdl:input message="tns:cancelSupplierOrderRequestMsg" name="cancelSupplierOrderRequest"/>
+      <wsdl:output message="tns:cancelSupplierOrderResponseMsg" name="cancelSupplierOrderResponse"/>
+            <wsdl:fault message="tns:cancelSupplierOrder_cancelSupplierOrderFaultMsg" name="cancelSupplierOrderFault"/>
+        </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.ibm.btools.cef.descriptor="http:///com/ibm/btools/cef/descriptor.ecore"
+    xmlns:com.ibm.btools.cef.model="http:///com/ibm/btools/cef/model.ecore" xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1193247344054"/>
+  <com.ibm.btools.cef.model:VisualModelDocument xmi:id="CEF-00000000000000000000000000000113"
+      id="CEF-00000000000000000000000000000113" currentContent="CEF-d844d25a695fa81070b785365c6e5c7e">
+    <descriptor xsi:type="com.ibm.btools.cef.descriptor:CommonContainerDescriptor"
+        href="platform:/plugin/com.ibm.btools.blm.gef.treestructeditor/tse.descriptor#com.ibm.btools.blm.gef.treestructeditor.root"/>
+    <properties xmi:id="CEF-c1bba1312db7f55309274ea8be7ff69b" id="CEF-c1bba1312db7f55309274ea8be7ff69b"
+        name="name" value="java.lang.String(RootCefModel)"/>
+    <properties xmi:id="CEF-5b47f0c9a7f2d34970f176f5f1ce7180" id="CEF-5b47f0c9a7f2d34970f176f5f1ce7180"
+        name="key printer paper context" value="java.lang.String(hello)">
+      <properties xmi:id="CEF-3580c67b27897e3cccf5849818c38216" id="CEF-3580c67b27897e3cccf5849818c38216"
+          name="key paper orientation" value="java.lang.String(key paper orientation landscape)"/>
+      <properties xmi:id="CEF-7a02037c6c7ba1f8148fd9c8a6442f0a" id="CEF-7a02037c6c7ba1f8148fd9c8a6442f0a"
+          name="key print fit to rows" value="java.lang.Integer(1)"/>
+      <properties xmi:id="CEF-f400100408fadb3a6c557e0fcc57fb5f" id="CEF-f400100408fadb3a6c557e0fcc57fb5f"
+          name="key print fit to columns" value="java.lang.Integer(1)"/>
+      <properties xmi:id="CEF-029537a8c4e7e39d34d735918a72c576" id="CEF-029537a8c4e7e39d34d735918a72c576"
+          name="key print scale" value="java.lang.String(1.0)"/>
+      <properties xmi:id="CEF-13bcd094d3334284cef9ca432b1e8df0" id="CEF-13bcd094d3334284cef9ca432b1e8df0"
+          name="key paper left margin" value="java.lang.String(25.4)"/>
+      <properties xmi:id="CEF-ee6a7fb90d0e8e84ff68f184d46c4a0f" id="CEF-ee6a7fb90d0e8e84ff68f184d46c4a0f"
+          name="key maintain drawing page ratio" value="java.lang.Boolean(false)"/>
+      <properties xmi:id="CEF-10d11673df9580efb13f34a374c2d956" id="CEF-10d11673df9580efb13f34a374c2d956"
+          name="key paper top margin" value="java.lang.String(25.4)"/>
+      <properties xmi:id="CEF-e53c8824e52e15de87b24b31ecb8a66a" id="CEF-e53c8824e52e15de87b24b31ecb8a66a"
+          name="key paper bottom margin" value="java.lang.String(25.4)"/>
+      <properties xmi:id="CEF-0dcee4582cda902be76df5e50fcf90e5" id="CEF-0dcee4582cda902be76df5e50fcf90e5"
+          name="key print zoom option" value="java.lang.String(value print scale)"/>
+      <properties xmi:id="CEF-50121ea75bd503c20486cd612859d813" id="CEF-50121ea75bd503c20486cd612859d813"
+          name="key custom paper height" value="java.lang.String(297.0)"/>
+      <properties xmi:id="CEF-25fc913477d3f7ffa2e5b1a1963b0e5c" id="CEF-25fc913477d3f7ffa2e5b1a1963b0e5c"
+          name="key paper right margin" value="java.lang.String(25.4)"/>
+      <properties xmi:id="CEF-f9176ea9842c5a8d2b86fc653f77ebf9" id="CEF-f9176ea9842c5a8d2b86fc653f77ebf9"
+          name="key custom paper width" value="java.lang.String(210.0)"/>
+      <properties xmi:id="CEF-b2e8f55aca9d28b00ddb5bc2d1a88b9d" id="CEF-b2e8f55aca9d28b00ddb5bc2d1a88b9d"
+          name="key paper name" value="java.lang.String(A4)"/>
+    </properties>
+    <properties xmi:id="CEF-34c7e88f7ab9c2ff4162ca7afe7a1c92" id="CEF-34c7e88f7ab9c2ff4162ca7afe7a1c92"
+        name="key show paper overlay" value="java.lang.Boolean(false)"/>
+    <properties xmi:id="CEF-71483e021bc768fd95f4e313c949f3ee" id="CEF-71483e021bc768fd95f4e313c949f3ee"
+        name="btools migrate page layout" value="java.lang.String(hello)"/>
+    <rootContent xmi:id="CEF-d844d25a695fa81070b785365c6e5c7e" id="CEF-d844d25a695fa81070b785365c6e5c7e">
+      <contentChildren xsi:type="com.ibm.btools.cef.model:CommonContainerModel" xmi:id="CEF-0c2625d0765237789582d0e45e5ac039"
+          id="CEF-0c2625d0765237789582d0e45e5ac039">
+        <descriptor xsi:type="com.ibm.btools.cef.descriptor:CommonContainerDescriptor"
+            href="platform:/plugin/com.ibm.btools.blm.gef.treestructeditor/tse.descriptor#com.ibm.btools.blm.gef.treestructeditor.root"/>
+        <domainContent href="RID-00000000000000000000000000000113.xmi#FID-00000000000000000000000000000113"/>
+        <bounds xmi:id="CEF-a875ce1f6d6701091482f9f9aea5bf0c" id="CEF-a875ce1f6d6701091482f9f9aea5bf0c"
+            layoutId="LAYOUT.DEFAULT" x="-1" y="-1" width="-1" height="-1"/>
+      </contentChildren>
+      <contentChildren xsi:type="com.ibm.btools.cef.model:CommonContainerModel" xmi:id="CEF-bc7e235b693a04bb07d34ab9d0a5bd4a"
+          id="CEF-bc7e235b693a04bb07d34ab9d0a5bd4a">
+        <descriptor xsi:type="com.ibm.btools.cef.descriptor:CommonContainerDescriptor"
+            href="platform:/plugin/com.ibm.btools.blm.gef.treestructeditor/tse.descriptor#com.ibm.btools.blm.gef.treestructeditor.Category"/>
+        <domainContent href="RID-00000000000000000000000000000113.xmi#FID-00000000000000000000000000000114"/>
+        <bounds xmi:id="CEF-922bc25751e08062f3e4d69ce69493a2" id="CEF-922bc25751e08062f3e4d69ce69493a2"
+            layoutId="LAYOUT.DEFAULT" x="100" y="100" width="150" height="55"/>
+      </contentChildren>
+    </rootContent>
+  </com.ibm.btools.cef.model:VisualModelDocument>
+</xmi:XMI>

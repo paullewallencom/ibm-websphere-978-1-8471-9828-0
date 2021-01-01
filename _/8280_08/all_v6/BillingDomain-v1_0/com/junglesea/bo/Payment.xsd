@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://BillingDomain-Msg/com/junglesea/bo" xmlns:bons0="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:bons1="http://BillingDomain-Msg/com/junglesea/bo" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="Invoice.xsd"/>
+	<xsd:include schemaLocation="PaymentMethod.xsd"/>
+	<xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="Party.xsd">
+	</xsd:import>
+	<xsd:complexType name="Payment">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="PaymentRefId" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Amount" type="xsd:double">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Payor" type="bons0:Party">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="PaymentDate" type="xsd:dateTime">
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="PaymentMethod" type="bons1:PaymentMethod">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Invoice" type="bons1:Invoice">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Payee" type="bons0:Party">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

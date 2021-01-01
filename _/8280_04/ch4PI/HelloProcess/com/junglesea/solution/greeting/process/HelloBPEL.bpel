@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://HelloProcess/com/junglesea/solution/greeting/process/HelloBPELArtifacts" xmlns:ns0="http://GreetingLibrary/com/junglesea/solution/greeting/bo" xmlns:ns1="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage" xmlns:ns2="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/customGreeting" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="HelloBPEL" suppressJoinFailure="yes" targetNamespace="http://HelloProcess/com/junglesea/solution/greeting/process" wpc:continueOnError="no" wpc:displayName="HelloBPEL" wpc:executionMode="microflow" wpc:id="6" wpc:validFrom="2009-08-25T06:19:41">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage.wsdl" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="HelloBPELArtifacts.wsdl" namespace="http://HelloProcess/com/junglesea/solution/greeting/process/HelloBPELArtifacts"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../interfaces/HandleGreetingMessage.wsdl" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../bo/Party.xsd" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/bo"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../interfaces/customGreeting.wsdl" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/customGreeting"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="HandleGreetingMessage" partnerLinkType="ns:HandleGreetingMessagePLT"/>
+    <bpws:partnerLink name="customGreeting" partnerLinkType="ns:nullPLT" partnerRole="Reference"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="inputPartyInfo" type="ns0:Party" wpc:id="4"/>
+    <bpws:variable name="outputGreetingMessage" type="xsd:string" wpc:id="5"/>
+    <bpws:variable name="age" type="xsd:int" wpc:id="9"/>
+  </bpws:variables>
+  <bpws:sequence name="HiddenSequence" wpc:id="1073741825">
+    <bpws:receive createInstance="yes" name="Receive" operation="returnGreeting" partnerLink="HandleGreetingMessage" portType="ns1:HandleGreetingMessage" wpc:displayName="Receive" wpc:id="2" wpc:transactionalBehavior="commitAfter">
+      <wpc:output>
+        <wpc:parameter name="inputPartyInfo" variable="inputPartyInfo"/>
+      </wpc:output>
+    </bpws:receive>
+    <bpws:invoke name="InvokeGetGreeting" operation="getGreeting" partnerLink="customGreeting" portType="ns2:customGreeting" wpc:continueOnError="inherit" wpc:displayName="InvokeGetGreeting" wpc:id="10">
+      <wpc:input>
+        <wpc:parameter name="personInfo" variable="inputPartyInfo"/>
+      </wpc:input>
+      <wpc:output>
+        <wpc:parameter name="customGreetingMessage" variable="outputGreetingMessage"/>
+      </wpc:output>
+    </bpws:invoke>
+    <bpws:reply name="Reply" operation="returnGreeting" partnerLink="HandleGreetingMessage" portType="ns1:HandleGreetingMessage" wpc:displayName="Reply" wpc:id="3">
+      <wpc:input>
+        <wpc:parameter name="outputGreetingMessage" variable="outputGreetingMessage"/>
+      </wpc:input>
+    </bpws:reply>
+  </bpws:sequence>
+</bpws:process>

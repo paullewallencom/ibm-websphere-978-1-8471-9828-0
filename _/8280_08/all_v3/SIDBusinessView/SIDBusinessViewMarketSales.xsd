@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  CONFIDENTIAL LICENSED MATERIAL
+      © 2004-2005 Pantero Corporation. All rights reserved.	-->
+<!-- Exporter Configuration Options:
+     All package and sub-packages under - com.sid.Market_SLASH_SalesDomain
+     Complex Types Only - true			
+     Include Required Rules - false			 
+     Include Reverse Relationships - true	 
+     Export with Weak Typing - false-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ xmlns:SIDBusCm="http://www.tmforum.org/NGOSS/SID/Business/3.1/Common" 
+ xmlns:SIDBusCu="http://www.tmforum.org/NGOSS/SID/Business/3.1/Customer" 
+ xmlns:SIDBusEn="http://www.tmforum.org/NGOSS/SID/Business/3.1/Enterprise" 
+ xmlns:SIDBusPr="http://www.tmforum.org/NGOSS/SID/Business/3.1/Product" 
+ xmlns:SIDBusRe="http://www.tmforum.org/NGOSS/SID/Business/3.1/Resource" 
+ xmlns:SIDBusSe="http://www.tmforum.org/NGOSS/SID/Business/3.1/Service" 
+ xmlns:SIDBusMa="http://www.tmforum.org/NGOSS/SID/Business/3.1/MarketSales" 
+ targetNamespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/MarketSales">
+<xs:import schemaLocation="SIDBusinessViewCommon.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Common"/>
+<xs:import schemaLocation="SIDBusinessViewCustomer.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Customer"/>
+<xs:import schemaLocation="SIDBusinessViewEnterprise.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Enterprise"/>
+<xs:import schemaLocation="SIDBusinessViewProduct.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Product"/>
+<xs:import schemaLocation="SIDBusinessViewResource.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Resource"/>
+<xs:import schemaLocation="SIDBusinessViewService.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Service"/>
+
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitiveTier-->
+   <xs:complexType name="CompetitiveTier">
+      <xs:sequence>
+         <xs:element name="size" minOccurs="0" type="xs:string"/>
+         <xs:element name="perspective" minOccurs="0" type="xs:string"/>
+         <xs:element name="perspectiveCharacteristic" minOccurs="0" type="xs:string"/>
+         <xs:element name="CompetitorTier" type="SIDBusMa:CompetitorTier" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.Competitor-->
+   <xs:complexType name="Competitor">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:PartyRole">
+            <xs:sequence>
+               <xs:element name="ID" minOccurs="0" type="xs:string"/>
+               <xs:element name="description" minOccurs="0" type="xs:string"/>
+               <xs:element name="dateCreated" minOccurs="0" type="xs:date"/>
+               <xs:element name="CompetitorTier" type="SIDBusMa:CompetitorTier" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="PartyRole" type="SIDBusCm:PartyRole" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CompetitorIntelligence" type="SIDBusMa:CompetitorIntelligence" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CompetitorMarketSegmentForCompetitor" type="SIDBusMa:CompetitorMarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CompetitorMarketSegmentSWOTForCompetitor" type="SIDBusMa:CompetitorMarketSegmentSWOT" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorIntelligenceABE.AtomicCompIntelCharacteristic-->
+   <xs:complexType name="AtomicCompIntelCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:CompetitorIntelCharacteristic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorIntelligenceABE.CompetitorIntelCharacteristic-->
+   <xs:complexType name="CompetitorIntelCharacteristic" abstract="true">
+      <xs:sequence>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="derivationFormula" minOccurs="0" type="xs:string"/>
+         <xs:element name="CompetitorIntelCharacteristicValue" type="SIDBusMa:CompetitorIntelCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompetitorIntelligence" type="SIDBusMa:CompetitorIntelligence" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompositeCompIntelCharacteristic" type="SIDBusMa:CompositeCompIntelCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorIntelligenceABE.CompetitorIntelCharacteristicValue-->
+   <xs:complexType name="CompetitorIntelCharacteristicValue">
+      <xs:sequence>
+         <xs:element name="valueType" minOccurs="0" type="xs:string"/>
+         <xs:element name="value" minOccurs="0" type="xs:string"/>
+         <xs:element name="fromValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="toValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="vaildFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="CompetitorIntelCharacteristic" type="SIDBusMa:CompetitorIntelCharacteristic" minOccurs="0"/>
+         <xs:element name="CompetitorIntelligence" type="SIDBusMa:CompetitorIntelligence" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorIntelligenceABE.CompetitorIntelligence-->
+   <xs:complexType name="CompetitorIntelligence">
+      <xs:sequence>
+         <xs:element name="ID" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="Competitor" type="SIDBusMa:Competitor" minOccurs="0"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompetitorIntelCharacteristic" type="SIDBusMa:CompetitorIntelCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompetitorIntelCharacteristicValue" type="SIDBusMa:CompetitorIntelCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompetitorIntelligenceMarketSegment" type="SIDBusMa:CompetitorIntelligenceMarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompetitorIntelligencePartyRole" type="SIDBusMa:CompetitorIntelligencePartyRole" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorIntelligenceABE.CompetitorIntelligenceMarketSegment-->
+   <xs:complexType name="CompetitorIntelligenceMarketSegment">
+      <xs:sequence>
+         <xs:element name="plannedEntryDate" minOccurs="0" type="xs:date"/>
+         <xs:element name="plannedMarketCoverage" minOccurs="0" type="xs:string"/>
+         <xs:element name="rank" minOccurs="0" type="xs:int"/>
+         <xs:element name="plannedSpending" type="SIDBusCm:Money" minOccurs="0"/>
+         <xs:element name="MarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0"/>
+         <xs:element name="CompetitorIntelligence" type="SIDBusMa:CompetitorIntelligence" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorIntelligenceABE.CompetitorIntelligencePartyRole-->
+   <xs:complexType name="CompetitorIntelligencePartyRole">
+      <xs:sequence>
+         <xs:element name="dateAcquired" minOccurs="0" type="xs:date"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="ciSource" minOccurs="0" type="xs:string"/>
+         <xs:element name="CompetitorIntelligence" type="SIDBusMa:CompetitorIntelligence" minOccurs="0"/>
+         <xs:element name="PartyRole" type="SIDBusCm:PartyRole" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorIntelligenceABE.CompositeCompIntelCharacteristic-->
+   <xs:complexType name="CompositeCompIntelCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:CompetitorIntelCharacteristic">
+            <xs:sequence>
+               <xs:element name="CompetitorIntelCharacteristic" type="SIDBusMa:CompetitorIntelCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorMarketSegment-->
+   <xs:complexType name="CompetitorMarketSegment">
+      <xs:sequence>
+         <xs:element name="rank" minOccurs="0" type="xs:int"/>
+         <xs:element name="plannedMarketEntryDate" minOccurs="0" type="xs:date"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="Competitor" type="SIDBusMa:Competitor" minOccurs="0"/>
+         <xs:element name="MarketSegmentForCompetitorMarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorMarketSegmentSWOT-->
+   <xs:complexType name="CompetitorMarketSegmentSWOT">
+      <xs:sequence>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="Competitor" type="SIDBusMa:Competitor" minOccurs="0"/>
+         <xs:element name="CompetitorSWOTForCompetitorMarketSegmentSWOT" type="SIDBusMa:CompetitorSWOT" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorProductCorrelationABE.AtomicCompProdCorrelationCharacteristic-->
+   <xs:complexType name="AtomicCompProdCorrelationCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:CompProdCorrelationCharacteristic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorProductCorrelationABE.CompetitorProductCorrelation-->
+   <xs:complexType name="CompetitorProductCorrelation">
+      <xs:sequence>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="lifeCycleStage" minOccurs="0" type="xs:string"/>
+         <xs:element name="degreeOfCorrelation" type="SIDBusCm:Quantity" minOccurs="0"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ProductOfferingHas" type="SIDBusPr:ProductOffering" minOccurs="0"/>
+         <xs:element name="ProductOfferingFor" type="SIDBusPr:ProductOffering" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorProductCorrelationABE.CompositeCompProdCorrelationCharacteristic-->
+   <xs:complexType name="CompositeCompProdCorrelationCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:CompProdCorrelationCharacteristic">
+            <xs:sequence>
+               <xs:element name="CompProdCorrelationCharacteristic" type="SIDBusMa:CompProdCorrelationCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorProductCorrelationABE.CompProdCorCharacteristicValue-->
+   <xs:complexType name="CompProdCorCharacteristicValue">
+      <xs:sequence>
+         <xs:element name="valueType" minOccurs="0" type="xs:string"/>
+         <xs:element name="value" minOccurs="0" type="xs:string"/>
+         <xs:element name="fromValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="toValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="vaildFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="CompProdCorrelationCharacteristic" type="SIDBusMa:CompProdCorrelationCharacteristic" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorProductCorrelationABE.CompProdCorrelationCharacteristic-->
+   <xs:complexType name="CompProdCorrelationCharacteristic">
+      <xs:sequence>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="derivationFormula" minOccurs="0" type="xs:string"/>
+         <xs:element name="CompProdCorCharacteristicValue" type="SIDBusMa:CompProdCorCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompositeCompProdCorrelationCharacteristic" type="SIDBusMa:CompositeCompProdCorrelationCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorSWOT-->
+   <xs:complexType name="CompetitorSWOT">
+      <xs:sequence>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="SWOT" type="SIDBusMa:SWOT" minOccurs="0"/>
+         <xs:element name="CompetitorMarketSegmentSWOT" type="SIDBusMa:CompetitorMarketSegmentSWOT" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.CompetitorTier-->
+   <xs:complexType name="CompetitorTier">
+      <xs:sequence>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="CompetitiveTier" type="SIDBusMa:CompetitiveTier" minOccurs="0"/>
+         <xs:element name="Competitor" type="SIDBusMa:Competitor" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.CompetitorABE.SWOT-->
+   <xs:complexType name="SWOT">
+      <xs:sequence>
+         <xs:element name="swotType" minOccurs="0" type="xs:string"/>
+         <xs:element name="CompetitorSWOT" type="SIDBusMa:CompetitorSWOT" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketingCampaignABE.AtomicMarketingCampaignCharacteristic-->
+   <xs:complexType name="AtomicMarketingCampaignCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:MarketingCampaignCharacteristic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketingCampaignABE.CompositeMarketingCampaignCharacteristic-->
+   <xs:complexType name="CompositeMarketingCampaignCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:MarketingCampaignCharacteristic">
+            <xs:sequence>
+               <xs:element name="MarketingCampaignCharacteristic" type="SIDBusMa:MarketingCampaignCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketingCampaignABE.MarketingCampaign-->
+   <xs:complexType name="MarketingCampaign">
+      <xs:sequence>
+         <xs:element name="ID" minOccurs="0" type="xs:string"/>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="mcType" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="MarketingCampaignCharacteristic" type="SIDBusMa:MarketingCampaignCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketingCampaignCharacteristicValue" type="SIDBusMa:MarketingCampaignCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="Media" type="SIDBusMa:Media" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="SalesChannel" type="SIDBusMa:SalesChannel" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyProfileType" type="SIDBusMa:PartyProfileType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyRoleType" type="SIDBusCm:PartyRoleType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ChurnAndRetentionStatistic" type="SIDBusCu:ChurnAndRetentionStatistic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOfferingStrategy" type="SIDBusPr:ProductOfferingStrategy" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketingCampaignABE.MarketingCampaignCharacteristic-->
+   <xs:complexType name="MarketingCampaignCharacteristic" abstract="true">
+      <xs:sequence>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="derivationFormula" minOccurs="0" type="xs:string"/>
+         <xs:element name="MarketingCampaignCharacteristicValue" type="SIDBusMa:MarketingCampaignCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketingCampaign" type="SIDBusMa:MarketingCampaign" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompositeMarketingCampaignCharacteristic" type="SIDBusMa:CompositeMarketingCampaignCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketingCampaignABE.MarketingCampaignCharacteristicValue-->
+   <xs:complexType name="MarketingCampaignCharacteristicValue">
+      <xs:sequence>
+         <xs:element name="valueType" minOccurs="0" type="xs:string"/>
+         <xs:element name="value" minOccurs="0" type="xs:string"/>
+         <xs:element name="fromValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="toValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="vaildFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="MarketingCampaignCharacteristic" type="SIDBusMa:MarketingCampaignCharacteristic" minOccurs="0"/>
+         <xs:element name="MarketingCampaign" type="SIDBusMa:MarketingCampaign" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketingCampaignABE.Media.Media-->
+   <xs:complexType name="Media">
+      <xs:sequence>
+         <xs:element name="ID" minOccurs="0" type="xs:string"/>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ProductPlacement" type="SIDBusPr:ProductPlacement" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketingCampaign" type="SIDBusMa:MarketingCampaign" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.AtomicMarketSegment-->
+   <xs:complexType name="AtomicMarketSegment">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:MarketSegment">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.AtomicMarketSegmentCharacteristic-->
+   <xs:complexType name="AtomicMarketSegmentCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:MarketSegmentCharacteristic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.CompositeMarketSegment-->
+   <xs:complexType name="CompositeMarketSegment">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:MarketSegment">
+            <xs:sequence>
+               <xs:element name="MarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.CompositeMarketSegmentCharacteristic-->
+   <xs:complexType name="CompositeMarketSegmentCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:MarketSegmentCharacteristic">
+            <xs:sequence>
+               <xs:element name="MarketSegmentCharacteristic" type="SIDBusMa:MarketSegmentCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.MarketSegment-->
+   <xs:complexType name="MarketSegment" abstract="true">
+      <xs:sequence>
+         <xs:element name="ID" minOccurs="0" type="xs:string"/>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="marketSegmentCategory" minOccurs="0" type="xs:string"/>
+         <xs:element name="marketSegmentSubCategory" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="PartyDemographic" type="SIDBusMa:PartyDemographic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketStatistic" type="SIDBusMa:MarketStatistic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="GeographicArea" type="SIDBusCm:GeographicArea" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyProfileType" type="SIDBusMa:PartyProfileType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="SalesChannel" type="SIDBusMa:SalesChannel" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegmentCharacteristic" type="SIDBusMa:MarketSegmentCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketingCampaign" type="SIDBusMa:MarketingCampaign" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompetitorMarketSegment" type="SIDBusMa:CompetitorMarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ChurnAndRetentionStatistic" type="SIDBusCu:ChurnAndRetentionStatistic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompositeMarketSegment" type="SIDBusMa:CompositeMarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegmentCharacteristicValue" type="SIDBusMa:MarketSegmentCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompetitorIntelligenceMarketSegment" type="SIDBusMa:CompetitorIntelligenceMarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.MarketSegmentCharacteristic-->
+   <xs:complexType name="MarketSegmentCharacteristic" abstract="true">
+      <xs:sequence>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="derivationFormula" minOccurs="0" type="xs:string"/>
+         <xs:element name="DemographicCharacteristic" type="SIDBusMa:DemographicCharacteristic" minOccurs="0"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegmentCharacteristicValue" type="SIDBusMa:MarketSegmentCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="GeographicArea" type="SIDBusCm:GeographicArea" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompositeMarketSegmentCharacteristic" type="SIDBusMa:CompositeMarketSegmentCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.MarketSegmentCharacteristicValue-->
+   <xs:complexType name="MarketSegmentCharacteristicValue">
+      <xs:sequence>
+         <xs:element name="valueType" minOccurs="0" type="xs:string"/>
+         <xs:element name="value" minOccurs="0" type="xs:string"/>
+         <xs:element name="fromValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="toValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="vaildFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="DemoCharacteristicValue" type="SIDBusMa:DemoCharacteristicValue" minOccurs="0"/>
+         <xs:element name="MarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegmentCharacteristic" type="SIDBusMa:MarketSegmentCharacteristic" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.MarketStatisticsABE.AtomicMarketStatistic-->
+   <xs:complexType name="AtomicMarketStatistic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:MarketStatistic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.MarketStatisticsABE.CompositeMarketStatistic-->
+   <xs:complexType name="CompositeMarketStatistic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:MarketStatistic">
+            <xs:sequence>
+               <xs:element name="MarketStatistic" type="SIDBusMa:MarketStatistic" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.MarketStatisticsABE.MarketStatistic-->
+   <xs:complexType name="MarketStatistic" abstract="true">
+      <xs:sequence>
+         <xs:element name="ID" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="marketStatisticType" minOccurs="0" type="xs:string"/>
+         <xs:element name="marketStatisicClassification" minOccurs="0" type="xs:string"/>
+         <xs:element name="marketStatisticLevel" minOccurs="0" type="xs:string"/>
+         <xs:element name="amount" type="SIDBusCm:Quantity" minOccurs="0"/>
+         <xs:element name="currencyAmount" type="SIDBusCm:Money" minOccurs="0"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="PartyRole" type="SIDBusCm:PartyRole" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompositeMarketStatistic" type="SIDBusMa:CompositeMarketStatistic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="GeographicArea" type="SIDBusCm:GeographicArea" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="SalesChannel" type="SIDBusMa:SalesChannel" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyDemographicABE.AtomicDemographicCharacteristic-->
+   <xs:complexType name="AtomicDemographicCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:DemographicCharacteristic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyDemographicABE.AtomicPartyDemographic-->
+   <xs:complexType name="AtomicPartyDemographic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:PartyDemographic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyDemographicABE.CompositeDemoGraphicCharacteristic-->
+   <xs:complexType name="CompositeDemoGraphicCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:DemographicCharacteristic">
+            <xs:sequence>
+               <xs:element name="DemographicCharacteristic" type="SIDBusMa:DemographicCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyDemographicABE.CompositePartyDemographic-->
+   <xs:complexType name="CompositePartyDemographic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:PartyDemographic">
+            <xs:sequence>
+               <xs:element name="PartyDemographic" type="SIDBusMa:PartyDemographic" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyDemographicABE.DemoCharacteristicValue-->
+   <xs:complexType name="DemoCharacteristicValue">
+      <xs:sequence>
+         <xs:element name="valueType" minOccurs="0" type="xs:string"/>
+         <xs:element name="value" minOccurs="0" type="xs:string"/>
+         <xs:element name="fromValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="toValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="vaildFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="PartyDemographicValue" type="SIDBusMa:PartyDemographicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="DemographicCharacteristic" type="SIDBusMa:DemographicCharacteristic" minOccurs="0"/>
+         <xs:element name="PartyProfileTypeCharacteristicValue" type="SIDBusMa:PartyProfileTypeCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegmentCharacteristicValue" type="SIDBusMa:MarketSegmentCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyDemographicABE.DemographicCharacteristic-->
+   <xs:complexType name="DemographicCharacteristic" abstract="true">
+      <xs:sequence>
+         <xs:element name="ID" minOccurs="0" type="xs:string"/>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="derivationFormula" minOccurs="0" type="xs:string"/>
+         <xs:element name="DemoCharacteristicValue" type="SIDBusMa:DemoCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyDemographicValue" type="SIDBusMa:PartyDemographicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompositeDemoGraphicCharacteristic" type="SIDBusMa:CompositeDemoGraphicCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyProfileTypeCharacteristic" type="SIDBusMa:PartyProfileTypeCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegmentCharacteristic" type="SIDBusMa:MarketSegmentCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyDemographicABE.PartyDemographic-->
+   <xs:complexType name="PartyDemographic" abstract="true">
+      <xs:sequence>
+         <xs:element name="ID" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="partyDemographicSource" minOccurs="0" type="xs:string"/>
+         <xs:element name="dateCreated" minOccurs="0" type="xs:date"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="PartyDemographicValue" type="SIDBusMa:PartyDemographicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="GeographicArea" type="SIDBusCm:GeographicArea" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyRole" type="SIDBusCm:PartyRole" minOccurs="0"/>
+         <xs:element name="CompositePartyDemographic" type="SIDBusMa:CompositePartyDemographic" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyDemographicABE.PartyDemographicValue-->
+   <xs:complexType name="PartyDemographicValue">
+      <xs:sequence>
+         <xs:element name="value" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="DemographicCharacteristic" type="SIDBusMa:DemographicCharacteristic" minOccurs="0"/>
+         <xs:element name="DemoCharacteristicValue" type="SIDBusMa:DemoCharacteristicValue" minOccurs="0"/>
+         <xs:element name="PartyDemographic" type="SIDBusMa:PartyDemographic" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyProfileABE.AtomicPartyProfileTypeCharacteristic-->
+   <xs:complexType name="AtomicPartyProfileTypeCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:PartyProfileTypeCharacteristic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyProfileABE.CompositePartyProfileTypeCharacteristic-->
+   <xs:complexType name="CompositePartyProfileTypeCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusMa:PartyProfileTypeCharacteristic">
+            <xs:sequence>
+               <xs:element name="PartyProfileTypeCharacteristic" type="SIDBusMa:PartyProfileTypeCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyProfileABE.PartyProfile-->
+   <xs:complexType name="PartyProfile">
+      <xs:sequence>
+         <xs:element name="ID" minOccurs="0" type="xs:string"/>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="dateCreated" minOccurs="0" type="xs:date"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="PartyProfileType" type="SIDBusMa:PartyProfileType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyRole" type="SIDBusCm:PartyRole" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyProfileABE.PartyProfileType-->
+   <xs:complexType name="PartyProfileType">
+      <xs:sequence>
+         <xs:element name="ID" minOccurs="0" type="xs:string"/>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="PartyRoleType" type="SIDBusCm:PartyRoleType" minOccurs="0"/>
+         <xs:element name="PartyProfileTypeCharacteristic" type="SIDBusMa:PartyProfileTypeCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyProfileTypeCharacteristicValue" type="SIDBusMa:PartyProfileTypeCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketingCampaign" type="SIDBusMa:MarketingCampaign" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="GeographicArea" type="SIDBusCm:GeographicArea" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyProfile" type="SIDBusMa:PartyProfile" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyProfileABE.PartyProfileTypeCharacteristic-->
+   <xs:complexType name="PartyProfileTypeCharacteristic" abstract="true">
+      <xs:sequence>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="derivationFormula" minOccurs="0" type="xs:string"/>
+         <xs:element name="partyProfileTypeCategory" minOccurs="0" type="xs:string"/>
+         <xs:element name="DemographicCharacteristic" type="SIDBusMa:DemographicCharacteristic" minOccurs="0"/>
+         <xs:element name="PartyProfileTypeCharacteristicValue" type="SIDBusMa:PartyProfileTypeCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyProfileType" type="SIDBusMa:PartyProfileType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompositePartyProfileTypeCharacteristic" type="SIDBusMa:CompositePartyProfileTypeCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketSegmentABE.PartyProfileABE.PartyProfileTypeCharacteristicValue-->
+   <xs:complexType name="PartyProfileTypeCharacteristicValue">
+      <xs:sequence>
+         <xs:element name="valueType" minOccurs="0" type="xs:string"/>
+         <xs:element name="value" minOccurs="0" type="xs:string"/>
+         <xs:element name="fromValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="toValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="vaildFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="DemoCharacteristicValue" type="SIDBusMa:DemoCharacteristicValue" minOccurs="0"/>
+         <xs:element name="PartyProfileTypeCharacteristic" type="SIDBusMa:PartyProfileTypeCharacteristic" minOccurs="0"/>
+         <xs:element name="PartyProfileType" type="SIDBusMa:PartyProfileType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.MarketStrategy_AMP_PlanABE.MarketStrategy-->
+   <xs:complexType name="MarketStrategy">
+      <xs:sequence>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.Market_SLASH_SalesDomain.SalesChannelABE.SalesChannel-->
+   <xs:complexType name="SalesChannel">
+      <xs:sequence>
+         <xs:element name="MarketStatistic" type="SIDBusMa:MarketStatistic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketingCampaign" type="SIDBusMa:MarketingCampaign" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductCatalog" type="SIDBusPr:ProductCatalog" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOfferingPrice" type="SIDBusPr:ProductOfferingPrice" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="MoonlightJDBCAdapterImport.wsdl" targetNamespace="http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport" xmlns:bons1="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/db2adminsupplierordersbg" xmlns:bons2="http://com/ibm/j2ca/fault/afcfault" xmlns:bons8="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/existsresult" xmlns:tns="http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://com/ibm/j2ca/fault/afcfault" xmlns:tns="http://com/ibm/j2ca/fault/afcfault">
+      <xsd:include schemaLocation="MultipleMatchingRecordsFault.xsd"/>
+      <xsd:include schemaLocation="RecordNotFoundFault.xsd"/>
+      <xsd:include schemaLocation="UniqueConstraintFault.xsd"/>
+      <xsd:include schemaLocation="ObjectNotFoundFault.xsd"/>
+      <xsd:include schemaLocation="MissingDataFault.xsd"/>
+      <xsd:include schemaLocation="IntegrityConstraintFault.xsd"/>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport" xmlns:bons5="http://com/ibm/j2ca/fault/afcfault">
+      <xsd:import namespace="http://com/ibm/j2ca/fault/afcfault"/>
+      <xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/db2adminsupplierordersbg" schemaLocation="Db2adminSupplierordersBG.xsd"/>
+      <xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/existsresult" schemaLocation="ExistsResult.xsd"/>
+      <xsd:element name="createDb2adminSupplierordersBG">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createDb2adminSupplierordersBGInput" type="bons1:Db2adminSupplierordersBG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createDb2adminSupplierordersBGResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createDb2adminSupplierordersBGOutput" type="bons1:Db2adminSupplierordersBG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MissingDataFault_element" nillable="true" type="bons5:MissingDataFault"/>
+      <xsd:element name="UniqueConstraintFault_element" nillable="true" type="bons5:UniqueConstraintFault"/>
+      <xsd:element name="IntegrityConstraintFault_element" nillable="true" type="bons5:IntegrityConstraintFault"/>
+      <xsd:element name="ObjectNotFoundFault_element" nillable="true" type="bons5:ObjectNotFoundFault"/>
+      <xsd:element name="updateDb2adminSupplierordersBG">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateDb2adminSupplierordersBGInput" type="bons1:Db2adminSupplierordersBG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateDb2adminSupplierordersBGResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateDb2adminSupplierordersBGOutput" type="bons1:Db2adminSupplierordersBG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RecordNotFoundFault_element" nillable="true" type="bons5:RecordNotFoundFault"/>
+      <xsd:element name="MultipleMatchingRecordsFault_element" nillable="true" type="bons5:MultipleMatchingRecordsFault"/>
+      <xsd:element name="retrieveDb2adminSupplierordersBG">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="retrieveDb2adminSupplierordersBGInput" type="bons1:Db2adminSupplierordersBG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="retrieveDb2adminSupplierordersBGResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="retrieveDb2adminSupplierordersBGOutput" type="bons1:Db2adminSupplierordersBG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="existsDb2adminSupplierordersBG">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="existsDb2adminSupplierordersBGInput" type="bons1:Db2adminSupplierordersBG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="existsDb2adminSupplierordersBGResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="existsDb2adminSupplierordersBGOutput" type="bons8:ExistsResult"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createDb2adminSupplierordersBGRequestMsg">
+    <wsdl:part element="tns:createDb2adminSupplierordersBG" name="createDb2adminSupplierordersBGParameters"/>
+  </wsdl:message>
+  <wsdl:message name="createDb2adminSupplierordersBGResponseMsg">
+    <wsdl:part element="tns:createDb2adminSupplierordersBGResponse" name="createDb2adminSupplierordersBGResult"/>
+  </wsdl:message>
+  <wsdl:message name="createDb2adminSupplierordersBGMissingDataFaultMsg">
+    <wsdl:part element="tns:MissingDataFault_element" name="MissingDataFault"/>
+  </wsdl:message>
+  <wsdl:message name="createDb2adminSupplierordersBGUniqueConstraintFaultMsg">
+    <wsdl:part element="tns:UniqueConstraintFault_element" name="UniqueConstraintFault"/>
+  </wsdl:message>
+  <wsdl:message name="createDb2adminSupplierordersBGIntegrityConstraintFaultMsg">
+    <wsdl:part element="tns:IntegrityConstraintFault_element" name="IntegrityConstraintFault"/>
+  </wsdl:message>
+  <wsdl:message name="createDb2adminSupplierordersBGObjectNotFoundFaultMsg">
+    <wsdl:part element="tns:ObjectNotFoundFault_element" name="ObjectNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="updateDb2adminSupplierordersBGRequestMsg">
+    <wsdl:part element="tns:updateDb2adminSupplierordersBG" name="updateDb2adminSupplierordersBGParameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateDb2adminSupplierordersBGResponseMsg">
+    <wsdl:part element="tns:updateDb2adminSupplierordersBGResponse" name="updateDb2adminSupplierordersBGResult"/>
+  </wsdl:message>
+  <wsdl:message name="updateDb2adminSupplierordersBGMissingDataFaultMsg">
+    <wsdl:part element="tns:MissingDataFault_element" name="MissingDataFault"/>
+  </wsdl:message>
+  <wsdl:message name="updateDb2adminSupplierordersBGUniqueConstraintFaultMsg">
+    <wsdl:part element="tns:UniqueConstraintFault_element" name="UniqueConstraintFault"/>
+  </wsdl:message>
+  <wsdl:message name="updateDb2adminSupplierordersBGIntegrityConstraintFaultMsg">
+    <wsdl:part element="tns:IntegrityConstraintFault_element" name="IntegrityConstraintFault"/>
+  </wsdl:message>
+  <wsdl:message name="updateDb2adminSupplierordersBGRecordNotFoundFaultMsg">
+    <wsdl:part element="tns:RecordNotFoundFault_element" name="RecordNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="updateDb2adminSupplierordersBGMultipleMatchingRecordsFaultMsg">
+    <wsdl:part element="tns:MultipleMatchingRecordsFault_element" name="MultipleMatchingRecordsFault"/>
+  </wsdl:message>
+  <wsdl:message name="updateDb2adminSupplierordersBGObjectNotFoundFaultMsg">
+    <wsdl:part element="tns:ObjectNotFoundFault_element" name="ObjectNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveDb2adminSupplierordersBGRequestMsg">
+    <wsdl:part element="tns:retrieveDb2adminSupplierordersBG" name="retrieveDb2adminSupplierordersBGParameters"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveDb2adminSupplierordersBGResponseMsg">
+    <wsdl:part element="tns:retrieveDb2adminSupplierordersBGResponse" name="retrieveDb2adminSupplierordersBGResult"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveDb2adminSupplierordersBGMissingDataFaultMsg">
+    <wsdl:part element="tns:MissingDataFault_element" name="MissingDataFault"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveDb2adminSupplierordersBGRecordNotFoundFaultMsg">
+    <wsdl:part element="tns:RecordNotFoundFault_element" name="RecordNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveDb2adminSupplierordersBGMultipleMatchingRecordsFaultMsg">
+    <wsdl:part element="tns:MultipleMatchingRecordsFault_element" name="MultipleMatchingRecordsFault"/>
+  </wsdl:message>
+  <wsdl:message name="existsDb2adminSupplierordersBGRequestMsg">
+    <wsdl:part element="tns:existsDb2adminSupplierordersBG" name="existsDb2adminSupplierordersBGParameters"/>
+  </wsdl:message>
+  <wsdl:message name="existsDb2adminSupplierordersBGResponseMsg">
+    <wsdl:part element="tns:existsDb2adminSupplierordersBGResponse" name="existsDb2adminSupplierordersBGResult"/>
+  </wsdl:message>
+  <wsdl:portType name="MoonlightJDBCAdapterImport">
+    <wsdl:operation name="createDb2adminSupplierordersBG">
+      <wsdl:input message="tns:createDb2adminSupplierordersBGRequestMsg" name="createDb2adminSupplierordersBGRequest"/>
+      <wsdl:output message="tns:createDb2adminSupplierordersBGResponseMsg" name="createDb2adminSupplierordersBGResponse"/>
+      <wsdl:fault message="tns:createDb2adminSupplierordersBGMissingDataFaultMsg" name="MISSING_DATA"/>
+      <wsdl:fault message="tns:createDb2adminSupplierordersBGUniqueConstraintFaultMsg" name="UNIQUECONSTRAINT_VIOLATION"/>
+      <wsdl:fault message="tns:createDb2adminSupplierordersBGIntegrityConstraintFaultMsg" name="INTEGRITY_CONSTRAINT_VIOLATION"/>
+      <wsdl:fault message="tns:createDb2adminSupplierordersBGObjectNotFoundFaultMsg" name="OBJECT_NOTFOUND_EXCEPTION"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateDb2adminSupplierordersBG">
+      <wsdl:input message="tns:updateDb2adminSupplierordersBGRequestMsg" name="updateDb2adminSupplierordersBGRequest"/>
+      <wsdl:output message="tns:updateDb2adminSupplierordersBGResponseMsg" name="updateDb2adminSupplierordersBGResponse"/>
+      <wsdl:fault message="tns:updateDb2adminSupplierordersBGMissingDataFaultMsg" name="MISSING_DATA"/>
+      <wsdl:fault message="tns:updateDb2adminSupplierordersBGUniqueConstraintFaultMsg" name="UNIQUECONSTRAINT_VIOLATION"/>
+      <wsdl:fault message="tns:updateDb2adminSupplierordersBGIntegrityConstraintFaultMsg" name="INTEGRITY_CONSTRAINT_VIOLATION"/>
+      <wsdl:fault message="tns:updateDb2adminSupplierordersBGRecordNotFoundFaultMsg" name="RECORD_NOT_FOUND"/>
+      <wsdl:fault message="tns:updateDb2adminSupplierordersBGMultipleMatchingRecordsFaultMsg" name="MULTIPLE_MATCHING_RECORDS"/>
+      <wsdl:fault message="tns:updateDb2adminSupplierordersBGObjectNotFoundFaultMsg" name="OBJECT_NOTFOUND_EXCEPTION"/>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveDb2adminSupplierordersBG">
+      <wsdl:input message="tns:retrieveDb2adminSupplierordersBGRequestMsg" name="retrieveDb2adminSupplierordersBGRequest"/>
+      <wsdl:output message="tns:retrieveDb2adminSupplierordersBGResponseMsg" name="retrieveDb2adminSupplierordersBGResponse"/>
+      <wsdl:fault message="tns:retrieveDb2adminSupplierordersBGMissingDataFaultMsg" name="MISSING_DATA"/>
+      <wsdl:fault message="tns:retrieveDb2adminSupplierordersBGRecordNotFoundFaultMsg" name="RECORD_NOT_FOUND"/>
+      <wsdl:fault message="tns:retrieveDb2adminSupplierordersBGMultipleMatchingRecordsFaultMsg" name="MULTIPLE_MATCHING_RECORDS"/>
+    </wsdl:operation>
+    <wsdl:operation name="existsDb2adminSupplierordersBG">
+      <wsdl:input message="tns:existsDb2adminSupplierordersBGRequestMsg" name="existsDb2adminSupplierordersBGRequest"/>
+      <wsdl:output message="tns:existsDb2adminSupplierordersBGResponseMsg" name="existsDb2adminSupplierordersBGResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

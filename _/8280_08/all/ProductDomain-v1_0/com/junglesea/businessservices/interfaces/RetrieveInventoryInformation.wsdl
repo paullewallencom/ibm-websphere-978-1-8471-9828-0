@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="RetrieveInventoryInformation" targetNamespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation" xmlns:bons1="http://ProductDomain-v1_0/com/junglesea/bo" xmlns:tns="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation">
+            <xsd:import namespace="http://ProductDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/InventoryItem.xsd"/>
+      <xsd:element name="queryItemAvailability">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons1:InventoryItem"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryItemAvailabilityResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons1:InventoryItem"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="queryItemAvailabilityRequestMsg">
+    <wsdl:part element="tns:queryItemAvailability" name="queryItemAvailabilityParameters"/>
+  </wsdl:message>
+    <wsdl:message name="queryItemAvailabilityResponseMsg">
+    <wsdl:part element="tns:queryItemAvailabilityResponse" name="queryItemAvailabilityResult"/>
+  </wsdl:message>
+    <wsdl:portType name="RetrieveInventoryInformation">
+    <wsdl:operation name="queryItemAvailability">
+      <wsdl:input message="tns:queryItemAvailabilityRequestMsg" name="queryItemAvailabilityRequest"/>
+      <wsdl:output message="tns:queryItemAvailabilityResponseMsg" name="queryItemAvailabilityResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

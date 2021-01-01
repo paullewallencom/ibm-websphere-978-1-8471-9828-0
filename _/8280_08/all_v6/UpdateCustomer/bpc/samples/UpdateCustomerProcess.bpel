@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://bpc/samples/UpdateCustomerProcessArtifacts" xmlns:ns0="http://bpc/samples/UpdateCustomerProcessInterface" xmlns:ns1="http://bpc/samples" xmlns:ns2="http://bpc/samples/UpdateCustomer" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="UpdateCustomerProcess" suppressJoinFailure="yes" targetNamespace="http://bpc/samples" wpc:displayName="UpdateCustomerProcess" wpc:executionMode="microflow" wpc:id="1" wpc:validFrom="2005-07-27T07:34:57">
+  <wpc:javaGlobals>
+    <wpc:import packages="javax.xml.namespace.QName"/>
+  </wpc:javaGlobals>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="UpdateCustomerProcess.wsdl" namespace="http://bpc/samples/UpdateCustomerProcessInterface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="UpdateCustomerProcessArtifacts.wsdl" namespace="http://bpc/samples/UpdateCustomerProcessArtifacts"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="CustomerRecord.xsd" namespace="http://bpc/samples"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="UpdateCustomer.wsdl" namespace="http://bpc/samples/UpdateCustomer"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="Error.xsd" namespace="http://bpc/samples"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="myRole" name="Client" partnerLinkType="ns:PartnerPLT"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="CustomerRecord" type="ns1:CustomerRecord" wpc:id="32"/>
+    <bpws:variable name="Message" type="xsd:string" wpc:id="33"/>
+    <bpws:variable name="Error" type="ns1:Error" wpc:id="34"/>
+  </bpws:variables>
+  <bpws:faultHandlers>
+    <bpws:catch faultName="ns1:DataIncomplete">
+      <bpws:sequence name="HiddenSequence4" wpc:id="1073741852">
+        <bpws:assign name="PrepareErrorReturn" wpc:displayName="PrepareErrorReturn" wpc:id="26">
+          <bpws:copy>
+            <bpws:from><![CDATA["Error: data incomplete."]]></bpws:from>
+            <bpws:to variable="Error">
+              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/message]]></bpws:query>
+            </bpws:to>
+          </bpws:copy>
+        </bpws:assign>
+        <bpws:reply faultName="ns2:error" name="ReplyDataIncompleteError" operation="update" partnerLink="Client" portType="ns2:UpdateCustomer" wpc:displayName="ReplyDataIncompleteError" wpc:id="29">
+          <wpc:input>
+            <wpc:parameter name="update_error" variable="Error"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:catch>
+    <bpws:catchAll>
+      <bpws:sequence name="HiddenSequence5" wpc:id="1073741854">
+        <bpws:assign name="PrepareErrorReturn1" wpc:displayName="PrepareErrorReturn" wpc:id="27">
+          <bpws:copy>
+            <bpws:from><![CDATA["Unknown error."]]></bpws:from>
+            <bpws:to variable="Error">
+              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/message]]></bpws:query>
+            </bpws:to>
+          </bpws:copy>
+        </bpws:assign>
+        <bpws:reply faultName="ns2:error" name="ReplyUnknownError" operation="update" partnerLink="Client" portType="ns2:UpdateCustomer" wpc:displayName="ReplyUnknownError" wpc:id="31">
+          <wpc:input>
+            <wpc:parameter name="update_error" variable="Error"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:catchAll>
+  </bpws:faultHandlers>
+  <bpws:sequence name="HiddenSequence" wpc:id="1073741826">
+    <bpws:receive createInstance="yes" name="Receive" operation="update" partnerLink="Client" portType="ns2:UpdateCustomer" wpc:displayName="Receive" wpc:id="3">
+      <wpc:output>
+        <wpc:parameter name="customerRecord" variable="CustomerRecord"/>
+      </wpc:output>
+    </bpws:receive>
+    <bpws:switch name="Choice" wpc:displayName="Choice" wpc:id="6">
+      <bpws:case wpc:id="7">
+        <bpws:condition><![CDATA[boolean dataIncomplete = true;
+if(CustomerRecord != null)
+{
+  String firstName = CustomerRecord.getString("firstName");
+  String familyName = CustomerRecord.getString("familyName");
+  dataIncomplete = firstName == null || familyName == null || firstName.equals("") || familyName.equals("");
+}
+return dataIncomplete;]]></bpws:condition>
+        <bpws:throw faultName="ns1:DataIncomplete" name="ThrowDataIncompleteFault" wpc:displayName="ThrowDataIncompleteFault" wpc:id="8"/>
+      </bpws:case>
+      <bpws:otherwise>
+        <bpws:sequence name="HiddenSequence2" wpc:id="1073741840">
+          <bpws:scope name="Scope" wpc:displayName="Scope" wpc:id="10">
+            <bpws:faultHandlers>
+              <bpws:catch faultName="ns1:RecordDoesNotExist">
+                <bpws:sequence name="HiddenSequence6" wpc:id="1073741860">
+                  <bpws:invoke name="CreateCustomerRecord" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="CreateCustomerRecord" wpc:id="25">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[System.out.println("CreateCustomerRecord");]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                  <bpws:assign name="PrepareReturn1" wpc:displayName="PrepareReturn" wpc:id="35">
+                    <bpws:copy>
+                      <bpws:from><![CDATA["Customer data created."]]></bpws:from>
+                      <bpws:to variable="Message"/>
+                    </bpws:copy>
+                  </bpws:assign>
+                </bpws:sequence>
+              </bpws:catch>
+              <bpws:catchAll>
+                <bpws:sequence name="HiddenSequence3" wpc:id="1073741846">
+                  <bpws:invoke name="CloseDatabaseConnection1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="CloseDatabaseConnection" wpc:id="21">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[System.out.println("CloseDatabaseConnection due to error");]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                  <bpws:rethrow name="Rethrow" wpc:displayName="Rethrow" wpc:id="23"/>
+                </bpws:sequence>
+              </bpws:catchAll>
+            </bpws:faultHandlers>
+            <bpws:sequence name="HiddenSequence1" wpc:id="1073741837">
+              <bpws:invoke name="OpenDatabaseConnection" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="OpenDatabaseConnection" wpc:id="12">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[System.out.println("OpenDatabaseConnection");]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="UpdateCustomerRecord" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="UpdateCustomerRecord" wpc:id="15">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[System.out.println("UpdateCustomerRecord");
+
+if(CustomerRecord.getInt("customerNo") > 99)
+raiseFault(new QName("http://bpc/samples","RecordDoesNotExist"));
+
+if((CustomerRecord.getString("familyName")).equals("xcpt"))
+throw new IllegalStateException("Name must not be xcpt!");]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:assign name="PrepareReturn" wpc:displayName="PrepareReturn" wpc:id="19">
+                <bpws:copy>
+                  <bpws:from><![CDATA["Customer data updated."]]></bpws:from>
+                  <bpws:to variable="Message"/>
+                </bpws:copy>
+              </bpws:assign>
+            </bpws:sequence>
+          </bpws:scope>
+          <bpws:invoke name="CloseDataBaseConnection" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="CloseDataBaseConnection" wpc:id="18">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[System.out.println("CloseDatabaseConnection");]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:reply name="Reply" operation="update" partnerLink="Client" portType="ns2:UpdateCustomer" wpc:displayName="Reply" wpc:id="4">
+            <wpc:input>
+              <wpc:parameter name="message" variable="Message"/>
+            </wpc:input>
+          </bpws:reply>
+        </bpws:sequence>
+      </bpws:otherwise>
+    </bpws:switch>
+  </bpws:sequence>
+</bpws:process>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://CustomerDomain-Msg/com/junglesea/bo"
+	xmlns:bons0="http://CustomerDomain-v1_0/com/junglesea/bo"
+	xmlns:bons1="http://CustomerDomain-Msg/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo"
+		schemaLocation="OrderedItems.xsd">
+	</xsd:import>
+	<xsd:include schemaLocation="Customer.xsd" />
+
+	<xsd:complexType name="Order">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="OrderId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="OrderPriority"
+				type="xsd:int">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="BuyerInfo"
+				type="bons1:Customer">
+			</xsd:element>
+
+			<xsd:element maxOccurs="unbounded" minOccurs="0"
+				name="OrderItems" type="bons0:OrderItem">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0"
+				name="PaymentInformation" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="TaxAmount"
+				type="xsd:double">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="TotalAmount"
+				type="xsd:double">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0"
+				name="OrderNotes" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CreditCheckNeeded"
+				type="xsd:boolean">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="HandleGreetingMessageExport1_HandleGreetingMessageHttp_Service" targetNamespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/Binding" xmlns:Port_0="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:this="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/Binding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import location="HandleGreetingMessage.wsdl" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+  <wsdl:binding name="HandleGreetingMessageExport1_HandleGreetingMessageHttpBinding" type="Port_0:HandleGreetingMessage">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="returnGreeting">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="returnGreetingRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="returnGreetingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HandleGreetingMessageExport1_HandleGreetingMessageHttpService">
+    <wsdl:port binding="this:HandleGreetingMessageExport1_HandleGreetingMessageHttpBinding" name="HandleGreetingMessageExport1_HandleGreetingMessageHttpPort">
+      <soap:address location="http://localhost:9080/HelloProcessWeb/sca/HandleGreetingMessageExport1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

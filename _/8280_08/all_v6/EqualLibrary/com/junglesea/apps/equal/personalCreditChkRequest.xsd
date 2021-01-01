@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://EqualLibrary/com/junglesea/apps/equal"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://EqualLibrary/com/junglesea/apps/equal">
+	<xsd:include schemaLocation="CreditCheckInput.xsd"></xsd:include>
+	<xsd:include schemaLocation="Individual.xsd"></xsd:include>
+	<xsd:complexType name="personalCreditChkRequest">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="individual"
+				type="bons0:Individual">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="creditChkIn"
+				type="bons0:CreditCheckInput">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

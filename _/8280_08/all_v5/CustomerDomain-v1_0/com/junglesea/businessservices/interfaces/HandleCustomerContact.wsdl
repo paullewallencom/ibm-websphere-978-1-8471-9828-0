@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="HandleCustomerContact" targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact" xmlns:bons0="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact" xmlns:bons1="http://CustomerDomain-v1_0/com/junglesea/bo/msg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact">
+            <xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/CustomerCommunucationMSG.xsd"/>
+            <xsd:element name="sendStandardCommunication">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons1:CustomerCommunucationMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="sendStandardCommunicationRequestMsg">
+    <wsdl:part element="bons0:sendStandardCommunication" name="sendStandardCommunicationParameters"/>
+  </wsdl:message>
+    <wsdl:portType name="HandleCustomerContact">
+    <wsdl:operation name="sendStandardCommunication">
+      <wsdl:input message="bons0:sendStandardCommunicationRequestMsg" name="sendStandardCommunicationRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="EligibilityCheckApp">
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+        <dependent-module archiveName="EligibilityCheck.jar" deploy-path="/" handle="module:/resource/EligibilityCheck/EligibilityCheck">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/EligibilityCheckWeb/EligibilityCheckWeb">
+            <dependent-object>WebModule_1169158408425</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EligibilityCheckLibrary.jar" deploy-path="/" handle="module:/resource/EligibilityCheckLibrary/EligibilityCheckLibrary">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

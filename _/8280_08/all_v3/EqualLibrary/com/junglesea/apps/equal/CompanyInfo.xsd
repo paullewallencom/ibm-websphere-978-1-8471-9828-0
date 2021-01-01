@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://EqualLibrary/com/junglesea/apps/equal"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://EqualLibrary/com/junglesea/apps/equal">
+	<xsd:include schemaLocation="Address.xsd"></xsd:include>
+	<xsd:complexType name="CompanyInfo">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="companyId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="name" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="address"
+				type="bons0:Address">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

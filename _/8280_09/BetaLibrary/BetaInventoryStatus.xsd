@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://junglesea.com/BetaInventory">
+	<xsd:complexType mixed="false" name="BetaInventoryStatusType">
+		<xsd:sequence>
+			<xsd:element default="0" minOccurs="1" name="AvailableQuantity" type="xsd:double">
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="UnitOfMeasure" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="AvailabilityStatus" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

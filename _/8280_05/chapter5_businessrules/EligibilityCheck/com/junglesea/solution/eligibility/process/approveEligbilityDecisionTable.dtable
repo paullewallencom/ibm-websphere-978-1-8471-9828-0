@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rl:Table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EligibilityCheckInterface="http://EligibilityCheckLibrary/com/junglesea/solution/eligibilityCheck/interfaces/EligibilityCheckInterface" xmlns:java="http://com.ibm.wbit.br.cb.core/java/" xmlns:prim="http://com.ibm.wbit.br.cb.core/prim/" xmlns:rl="http://www.ibm.com/xmlns/prod/websphere/wbi/br/6.0.0" xmlns:selt="http://EligibilityCheck/com/junglesea/solution/eligibility/process" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd9="http://EligibilityCheck" displayName="approveEligbilityDecisionTable" name="approveEligbilityDecisionTable" syncDisplayName="true" targetNamespace="http://EligibilityCheck/com/junglesea/solution/eligibility/process">
+  <rl:interface operation="eligibilityCheck">
+    <rl:porttype>EligibilityCheckInterface:EligibilityCheckInterface</rl:porttype>
+  </rl:interface>
+  <rl:rulegroup>selt:BusinessRule</rl:rulegroup>
+  <rl:property name="IBMSystemVersion" type="SystemDefined" value="6.1.0"/>
+  <rl:initRule xsi:type="rl:AssertionRule" displayName="Rule1" label="Rule1" syncDisplayName="true">
+    <rl:assert>
+      <rl:Action value="validateEligibility=&quot;Approved&quot;"/>
+    </rl:assert>
+  </rl:initRule>
+  <rl:TreeBlock>
+    <rl:conditionDefinition>
+      <rl:termDefinition>
+        <rl:termExpression value="memberInfo.Age"/>
+      </rl:termDefinition>
+      <rl:valueDefinition>
+        <rl:valueExpression value=">=65"/>
+      </rl:valueDefinition>
+      <rl:valueDefinition>
+        <rl:valueExpression value=" &lt;65"/>
+      </rl:valueDefinition>
+      <rl:orientation>Row</rl:orientation>
+    </rl:conditionDefinition>
+    <rl:conditionDefinition>
+      <rl:termDefinition>
+        <rl:termExpression value="memberInfo.EmploymentStatus"/>
+      </rl:termDefinition>
+      <rl:valueDefinition>
+        <rl:valueExpression value="&quot;FullTime&quot;"/>
+      </rl:valueDefinition>
+      <rl:valueDefinition>
+        <rl:valueExpression value="&quot;PartTime&quot;"/>
+      </rl:valueDefinition>
+      <rl:orientation>Row</rl:orientation>
+    </rl:conditionDefinition>
+    <rl:actionTermDefinition>
+      <rl:termExpression value="validateEligibility"/>
+    </rl:actionTermDefinition>
+    <rl:treeNode xsi:type="rl:ConditionNode">
+      <rl:termDefinitionRef>//@table/@treeBlock/@conditionDefinition.0/@termDefinition</rl:termDefinitionRef>
+      <rl:edge>
+        <rl:valueDefinitionRef>//@table/@treeBlock/@conditionDefinition.0/@valueDefinition.0</rl:valueDefinitionRef>
+        <rl:treeNode xsi:type="rl:ConditionNode">
+          <rl:termDefinitionRef>//@table/@treeBlock/@conditionDefinition.1/@termDefinition</rl:termDefinitionRef>
+          <rl:edge>
+            <rl:valueDefinitionRef>//@table/@treeBlock/@conditionDefinition.1/@valueDefinition.0</rl:valueDefinitionRef>
+            <rl:treeNode xsi:type="rl:ActionNode">
+              <rl:treeAction valueNotApplicable="false">
+                <rl:termDefinitionRef>//@table/@treeBlock/@actionTermDefinition.0</rl:termDefinitionRef>
+                <rl:valueExpression value="&quot;Review&quot;"/>
+              </rl:treeAction>
+            </rl:treeNode>
+          </rl:edge>
+          <rl:edge>
+            <rl:valueDefinitionRef>//@table/@treeBlock/@conditionDefinition.1/@valueDefinition.1</rl:valueDefinitionRef>
+            <rl:treeNode xsi:type="rl:ActionNode">
+              <rl:treeAction valueNotApplicable="false">
+                <rl:termDefinitionRef>//@table/@treeBlock/@actionTermDefinition.0</rl:termDefinitionRef>
+                <rl:valueExpression value="&quot;Reject&quot;"/>
+              </rl:treeAction>
+            </rl:treeNode>
+          </rl:edge>
+        </rl:treeNode>
+      </rl:edge>
+      <rl:edge>
+        <rl:valueDefinitionRef>//@table/@treeBlock/@conditionDefinition.0/@valueDefinition.1</rl:valueDefinitionRef>
+        <rl:treeNode xsi:type="rl:ConditionNode">
+          <rl:termDefinitionRef>//@table/@treeBlock/@conditionDefinition.1/@termDefinition</rl:termDefinitionRef>
+          <rl:edge>
+            <rl:valueDefinitionRef>//@table/@treeBlock/@conditionDefinition.1/@valueDefinition.0</rl:valueDefinitionRef>
+            <rl:treeNode xsi:type="rl:ActionNode">
+              <rl:treeAction valueNotApplicable="false">
+                <rl:termDefinitionRef>//@table/@treeBlock/@actionTermDefinition.0</rl:termDefinitionRef>
+                <rl:valueExpression value="&quot;Approved&quot;"/>
+              </rl:treeAction>
+            </rl:treeNode>
+          </rl:edge>
+          <rl:edge>
+            <rl:valueDefinitionRef>//@table/@treeBlock/@conditionDefinition.1/@valueDefinition.1</rl:valueDefinitionRef>
+            <rl:treeNode xsi:type="rl:ActionNode">
+              <rl:treeAction valueNotApplicable="false">
+                <rl:termDefinitionRef>//@table/@treeBlock/@actionTermDefinition.0</rl:termDefinitionRef>
+                <rl:valueExpression value="&quot;Review&quot;"/>
+              </rl:treeAction>
+            </rl:treeNode>
+          </rl:edge>
+        </rl:treeNode>
+      </rl:edge>
+    </rl:treeNode>
+  </rl:TreeBlock>
+</rl:Table>

@@ -1,0 +1,18 @@
+#Mon Nov 30 02:07:21 CST 2009
+vals/com.ibm.ast.ws.was61.policyset.ui.BindingXMLValidator/global=FF01
+vals/org.eclipse.wst.xsd.core.xsd/global=FF02168com.ibm.ccl.soa.sdo.xsd.validation.internal.EclipseXSDBasedValidator
+override=true
+USER_MANUAL_PREFERENCE=enabledManualValidatorList
+vals/org.eclipse.wst.wsdl.validation.wsdl/global=FF02170com.ibm.ccl.soa.sdo.wsdl.validation.internal.EclipseWSDLBasedValidator
+vals/com.ibm.xtt.xsl.ui.xsl/global=FF02
+vals/org.eclipse.wst.html.ui.HTMLValidator/global=FF01
+vals/org.eclipse.wst.xml.core.xml/global=FF03
+suspend=false
+vals/org.eclipse.jst.jsp.core.JSPContentValidator/global=FF01
+eclipse.preferences.version=1
+vf.version=3
+DELEGATES_PREFERENCE=delegateValidatorList
+vals/com.ibm.ast.ws.was7.policyset.ui.BindingXMLValidator/global=FF01
+vals/org.eclipse.wst.dtd.core.dtdDTDValidator/global=FF01
+USER_PREFERENCE=overrideGlobalPreferencestruedisableAllValidationfalseversion1.2.3.v200811101716
+USER_BUILD_PREFERENCE=enabledBuildValidatorList

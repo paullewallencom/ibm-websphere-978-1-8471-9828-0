@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mfc:interfaceMediationFlow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/wbiserver/mfc/6.0.0" xmlns:ns1="http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder" xmlns:ns2="http://AccessServices-Moonlight2/MoonlightJDBCAdapterImport" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" name="MoonlightAdapterFacade" targetNamespace="http://AccessServices-Moonlight2/com/junglesea/accessservices/MoonlightAdapterFacade">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns1:ProcessPurchaseOrder"/>
+  </interfaces>
+  <references>
+    <reference name="MoonlightJDBCAdapterImportPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns2:MoonlightJDBCAdapterImport"/>
+    </reference>
+  </references>
+  <extendedOperationBinding source="processOrder" target="createDb2adminSupplierordersBG" sourcePortType="ns1:ProcessPurchaseOrder" targetReference="MoonlightJDBCAdapterImportPartner"/>
+  <operationFlow medflow="MoonlightAdapterFacade.medflow"/>
+</mfc:interfaceMediationFlow>

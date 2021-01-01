@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="ProcessCustomerOrder" targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder" xmlns:bons1="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:bons2="http://CustomerDomain-v1_0/com/junglesea/bo/msg" xmlns:tns="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder">
+            <xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/BusinessException.xsd"/>
+            <xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/CustomerOrderStatusMSG.xsd"/>
+            <xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/CustomerOrderMSG.xsd"/>
+      <xsd:element name="submitCustomerOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParam" nillable="true" type="bons2:CustomerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="submitCustomerOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParam" nillable="true" type="bons2:CustomerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryOrderStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParam" nillable="true" type="bons2:CustomerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryOrderStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParam" nillable="true" type="bons2:CustomerOrderStatusMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelCustomerOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParam" nillable="true" type="bons2:CustomerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelCustomerOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParam" nillable="true" type="bons2:CustomerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="submitCustomerOrderFault1_submitCustomerOrderFault" nillable="true" type="bons1:BusinessException"/>
+            <xsd:element name="queryOrderStatusFault1_queryOrderStatusFault" nillable="true" type="bons1:BusinessException"/>
+            <xsd:element name="cancelCustomerOrderFault1_cancelCustomerOrderFault" nillable="true" type="bons1:BusinessException"/>
+        </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="submitCustomerOrderRequestMsg">
+    <wsdl:part element="tns:submitCustomerOrder" name="submitCustomerOrderParameters"/>
+  </wsdl:message>
+    <wsdl:message name="submitCustomerOrderResponseMsg">
+    <wsdl:part element="tns:submitCustomerOrderResponse" name="submitCustomerOrderResult"/>
+  </wsdl:message>
+    <wsdl:message name="queryOrderStatusRequestMsg">
+    <wsdl:part element="tns:queryOrderStatus" name="queryOrderStatusParameters"/>
+  </wsdl:message>
+    <wsdl:message name="queryOrderStatusResponseMsg">
+    <wsdl:part element="tns:queryOrderStatusResponse" name="queryOrderStatusResult"/>
+  </wsdl:message>
+    <wsdl:message name="cancelCustomerOrderRequestMsg">
+    <wsdl:part element="tns:cancelCustomerOrder" name="cancelCustomerOrderParameters"/>
+  </wsdl:message>
+    <wsdl:message name="cancelCustomerOrderResponseMsg">
+    <wsdl:part element="tns:cancelCustomerOrderResponse" name="cancelCustomerOrderResult"/>
+  </wsdl:message>
+    <wsdl:message name="submitCustomerOrder_submitCustomerOrderFaultMsg">
+    <wsdl:part element="tns:submitCustomerOrderFault1_submitCustomerOrderFault" name="submitCustomerOrderFault"/>
+  </wsdl:message>
+    <wsdl:message name="queryOrderStatus_queryOrderStatusFaultMsg">
+    <wsdl:part element="tns:queryOrderStatusFault1_queryOrderStatusFault" name="queryOrderStatusFault"/>
+  </wsdl:message>
+    <wsdl:message name="cancelCustomerOrder_cancelCustomerOrderFaultMsg">
+    <wsdl:part element="tns:cancelCustomerOrderFault1_cancelCustomerOrderFault" name="cancelCustomerOrderFault"/>
+  </wsdl:message>
+    <wsdl:portType name="ProcessCustomerOrder">
+    <wsdl:operation name="submitCustomerOrder">
+      <wsdl:input message="tns:submitCustomerOrderRequestMsg" name="submitCustomerOrderRequest"/>
+      <wsdl:output message="tns:submitCustomerOrderResponseMsg" name="submitCustomerOrderResponse"/>
+            <wsdl:fault message="tns:submitCustomerOrder_submitCustomerOrderFaultMsg" name="submitCustomerOrderFault"/>
+        </wsdl:operation>
+    <wsdl:operation name="queryOrderStatus">
+      <wsdl:input message="tns:queryOrderStatusRequestMsg" name="queryOrderStatusRequest"/>
+      <wsdl:output message="tns:queryOrderStatusResponseMsg" name="queryOrderStatusResponse"/>
+            <wsdl:fault message="tns:queryOrderStatus_queryOrderStatusFaultMsg" name="queryOrderStatusFault"/>
+        </wsdl:operation>
+    <wsdl:operation name="cancelCustomerOrder">
+      <wsdl:input message="tns:cancelCustomerOrderRequestMsg" name="cancelCustomerOrderRequest"/>
+      <wsdl:output message="tns:cancelCustomerOrderResponseMsg" name="cancelCustomerOrderResponse"/>
+            <wsdl:fault message="tns:cancelCustomerOrder_cancelCustomerOrderFaultMsg" name="cancelCustomerOrderFault"/>
+        </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

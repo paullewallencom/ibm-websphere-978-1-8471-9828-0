@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="LabelsAndShipments" targetNamespace="http://RapidLibrary/com/junglesea/apps/rapid/LabelsAndShipments" xmlns:bons1="http://RapidLibrary/com/junglesea/apps/rapid" xmlns:tns="http://RapidLibrary/com/junglesea/apps/rapid/LabelsAndShipments" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://RapidLibrary/com/junglesea/apps/rapid/LabelsAndShipments">
+      <xsd:import namespace="http://RapidLibrary/com/junglesea/apps/rapid" schemaLocation="shipping_label.xsd"/>
+      <xsd:element name="prepareShipLabel">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="bons1:shipping_label"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="prepareShipLabelResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="bons1:shipping_label"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="shipmentStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="shipmentStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="prepareShipLabelRequestMsg">
+    <wsdl:part element="tns:prepareShipLabel" name="prepareShipLabelParameters"/>
+  </wsdl:message>
+    <wsdl:message name="prepareShipLabelResponseMsg">
+    <wsdl:part element="tns:prepareShipLabelResponse" name="prepareShipLabelResult"/>
+  </wsdl:message>
+    <wsdl:message name="shipmentStatusRequestMsg">
+    <wsdl:part element="tns:shipmentStatus" name="shipmentStatusParameters"/>
+  </wsdl:message>
+    <wsdl:message name="shipmentStatusResponseMsg">
+    <wsdl:part element="tns:shipmentStatusResponse" name="shipmentStatusResult"/>
+  </wsdl:message>
+    <wsdl:portType name="LabelsAndShipments">
+    <wsdl:operation name="prepareShipLabel">
+      <wsdl:input message="tns:prepareShipLabelRequestMsg" name="prepareShipLabelRequest"/>
+      <wsdl:output message="tns:prepareShipLabelResponseMsg" name="prepareShipLabelResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="shipmentStatus">
+      <wsdl:input message="tns:shipmentStatusRequestMsg" name="shipmentStatusRequest"/>
+      <wsdl:output message="tns:shipmentStatusResponseMsg" name="shipmentStatusResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

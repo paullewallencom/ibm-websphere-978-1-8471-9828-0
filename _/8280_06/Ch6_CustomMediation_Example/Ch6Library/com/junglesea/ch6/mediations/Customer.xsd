@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://Ch6Library" xmlns:bons0="http://Ch6Library" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="Address.xsd"/>
+    <xsd:complexType name="Customer">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="id" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="address" type="bons0:Address">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="firstName" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="lastName" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="middleName" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="dateOfBirth" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

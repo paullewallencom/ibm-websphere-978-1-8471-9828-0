@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:bons0="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:include schemaLocation="Entity.xsd"></xsd:include>
+	<xsd:include schemaLocation="Organization.xsd" />
+	<xsd:include schemaLocation="Person.xsd" />
+
+	<xsd:complexType name="Party">
+		<xsd:complexContent>
+			<xsd:extension base="bons0:Entity">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="Id"
+						type="xsd:string" />
+					<xsd:element minOccurs="0" name="PartyType">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="Person" />
+								<xsd:enumeration value="Organization" />
+								<xsd:enumeration
+									value="Supplier-Partner" />
+								<xsd:enumeration value="Other" />
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+
+					<xsd:element name="PartyDetails">
+						<xsd:complexType>
+							<xsd:choice>
+								<xsd:element minOccurs="0" name="Person"
+									type="bons0:Person" />
+								<xsd:element minOccurs="0"
+									name="Orgnization" type="bons0:Organization" />
+								<xsd:element minOccurs="0"
+									name="SupplierPartner" type="bons0:Organization" />
+							</xsd:choice>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

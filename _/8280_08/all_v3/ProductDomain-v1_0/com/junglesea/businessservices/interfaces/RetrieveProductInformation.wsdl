@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="RetrieveProductInformation" targetNamespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveProductInformation" xmlns:bons2="http://ProductDomain-v1_0/com/junglesea/bo/msg" xmlns:tns="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveProductInformation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveProductInformation">
+            <xsd:import namespace="http://ProductDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/ProductCollectionMSG.xsd"/>
+            <xsd:import namespace="http://ProductDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/ProductMSG.xsd"/>
+            <xsd:element name="queryProductDetails">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons2:ProductMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryProductDetailsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons2:ProductMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons2:ProductMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons2:ProductCollectionMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="queryProductDetailsRequestMsg">
+    <wsdl:part element="tns:queryProductDetails" name="queryProductDetailsParameters"/>
+  </wsdl:message>
+    <wsdl:message name="queryProductDetailsResponseMsg">
+    <wsdl:part element="tns:queryProductDetailsResponse" name="queryProductDetailsResult"/>
+  </wsdl:message>
+    <wsdl:message name="findProductRequestMsg">
+    <wsdl:part element="tns:findProduct" name="findProductParameters"/>
+  </wsdl:message>
+    <wsdl:message name="findProductResponseMsg">
+    <wsdl:part element="tns:findProductResponse" name="findProductResult"/>
+  </wsdl:message>
+    <wsdl:portType name="RetrieveProductInformation">
+    <wsdl:operation name="queryProductDetails">
+      <wsdl:input message="tns:queryProductDetailsRequestMsg" name="queryProductDetailsRequest"/>
+      <wsdl:output message="tns:queryProductDetailsResponseMsg" name="queryProductDetailsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="findProduct">
+      <wsdl:input message="tns:findProductRequestMsg" name="findProductRequest"/>
+      <wsdl:output message="tns:findProductResponseMsg" name="findProductResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

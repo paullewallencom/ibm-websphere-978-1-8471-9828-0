@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="EligibiltiyCheckInterfaceExport1_EligibiltiyCheckInterfaceHttp_Service" targetNamespace="http://EligibilityCheck/EligibiltiyCheckInterface/Binding" xmlns:Port_0="http://EligibilityCheck/EligibiltiyCheckInterface" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:this="http://EligibilityCheck/EligibiltiyCheckInterface/Binding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import location="EligibiltiyCheckInterface.wsdl" namespace="http://EligibilityCheck/EligibiltiyCheckInterface"/>
+  <wsdl:binding name="EligibiltiyCheckInterfaceExport1_EligibiltiyCheckInterfaceHttpBinding" type="Port_0:EligibiltiyCheckInterface">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="eligibiilityCheck">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="eligibiilityCheckRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eligibiilityCheckResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EligibiltiyCheckInterfaceExport1_EligibiltiyCheckInterfaceHttpService">
+    <wsdl:port binding="this:EligibiltiyCheckInterfaceExport1_EligibiltiyCheckInterfaceHttpBinding" name="EligibiltiyCheckInterfaceExport1_EligibiltiyCheckInterfaceHttpPort">
+      <soap:address location="http://localhost:9080/EligibilityCheckWeb/sca/EligibiltiyCheckInterfaceExport1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.bpel.ui.uiextensionmodel="http:///com/ibm/wbit/bpel/ui/uiextensionmodel.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.bpel.ui/">
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#/"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1252314174619" autoLayout="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@variables/@children.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@variables/@children.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity/@activities.1/@cases.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity/@activities.1/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension" displayName="AutoApproval"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity/@activities.1/@cases.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension" displayName="ManualApproval"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity/@activities.1/@cases.1/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension" condition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;le:Condition xmi:version=&quot;2.0&quot; xmlns:xmi=&quot;http://www.omg.org/XMI&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:le=&quot;http://www.ibm.com/xmlns/prod/websphere/wbi/le/6.0.0&quot;>&#xD;&#xA;  &lt;conditionExpression xsi:type=&quot;le:BooleanExpression&quot; expString=&quot;input1.Age >=65&quot;/>&#xD;&#xA;&lt;/le:Condition>&#xD;&#xA;"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity/@activities.1/@cases.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity/@activities.1/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#//@activity/@activities.1/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension" condition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;le:Condition xmi:version=&quot;2.0&quot; xmlns:xmi=&quot;http://www.omg.org/XMI&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:le=&quot;http://www.ibm.com/xmlns/prod/websphere/wbi/le/6.0.0&quot;>&#xD;&#xA;  &lt;conditionExpression xsi:type=&quot;le:BooleanExpression&quot; expString=&quot;input1.Age &amp;lt;65&quot;/>&#xD;&#xA;&lt;/le:Condition>&#xD;&#xA;"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions>
+      <extendedObject href="eligibiltyCheckProcess.bpel#/"/>
+      <extensionObject xsi:type="sb:StickyDocument">
+        <stickyBoard id="default"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

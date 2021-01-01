@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://PayMeLibrary/com/junglesea/apps/payme" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="Address">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="address1" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="address2" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="city" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="zip" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="state" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="country" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

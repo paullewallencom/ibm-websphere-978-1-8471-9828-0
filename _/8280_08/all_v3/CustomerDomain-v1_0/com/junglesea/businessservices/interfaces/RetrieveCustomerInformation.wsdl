@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="RetrieveCustomerInformation" targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation" xmlns:bons2="http://CustomerDomain-v1_0/com/junglesea/bo" xmlns:bons3="http://CustomerDomain-v1_0/com/junglesea/bo/msg" xmlns:tns="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation">
+            <xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/CustomerCollectionMSG.xsd"/>
+            <xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/msg/CustomerMSG.xsd"/>
+      <xsd:element name="queryCustomer">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParam" nillable="true" type="bons2:CustomerMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryCustomerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParam" nillable="true" type="bons2:CustomerMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCustomer">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParam" nillable="true" type="bons2:CustomerMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCustomerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParam" nillable="true" type="bons3:CustomerCollectionMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="queryCustomerRequestMsg">
+    <wsdl:part element="tns:queryCustomer" name="queryCustomerParameters"/>
+  </wsdl:message>
+    <wsdl:message name="queryCustomerResponseMsg">
+    <wsdl:part element="tns:queryCustomerResponse" name="queryCustomerResult"/>
+  </wsdl:message>
+    <wsdl:message name="searchCustomerRequestMsg">
+    <wsdl:part element="tns:searchCustomer" name="searchCustomerParameters"/>
+  </wsdl:message>
+    <wsdl:message name="searchCustomerResponseMsg">
+    <wsdl:part element="tns:searchCustomerResponse" name="searchCustomerResult"/>
+  </wsdl:message>
+    <wsdl:portType name="RetrieveCustomerInformation">
+    <wsdl:operation name="queryCustomer">
+      <wsdl:input message="tns:queryCustomerRequestMsg" name="queryCustomerRequest"/>
+      <wsdl:output message="tns:queryCustomerResponseMsg" name="queryCustomerResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchCustomer">
+      <wsdl:input message="tns:searchCustomerRequestMsg" name="searchCustomerRequest"/>
+      <wsdl:output message="tns:searchCustomerResponseMsg" name="searchCustomerResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

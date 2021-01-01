@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+"This sample program is provided AS IS and may be used, executed, copied and modified without royalty payment by customer (a) for its own instruction and study, (b) in order to develop applications designed to run with an IBM WebSphere product, either for customer's own internal use or for redistribution by customer, as part of such an application, in customer's own products."
+
+Product 5655-FLW,  (C) COPYRIGHT International Business Machines Corp., 2005
+All Rights Reserved * Licensed Materials - Property of IBM
+-->
+<wsdl:definitions xmlns:bons1="http://bpc/samples" xmlns:tns="http://bpc/samples/UpdateCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UpdateCustomer" targetNamespace="http://bpc/samples/UpdateCustomer">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bpc/samples/UpdateCustomer" xmlns:bons1="http://bpc/samples" xmlns:tns="http://bpc/samples/UpdateCustomer" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://bpc/samples" schemaLocation="../../xsd-includes/http.bpc.samples.xsd"/>
+      <xsd:element name="update">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="customerRecord" nillable="true" type="bons1:CustomerRecord"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="message" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="update_error" type="bons1:Error"/>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="updateRequestMsg">
+    <wsdl:part element="tns:update" name="updateParameters"/>
+  </wsdl:message>
+    <wsdl:message name="updateResponseMsg">
+    <wsdl:part element="tns:updateResponse" name="updateResult"/>
+  </wsdl:message>
+    <wsdl:message name="update_errorMsg">
+    <wsdl:part element="tns:update_error" name="error"/>
+  </wsdl:message>
+    <wsdl:portType name="UpdateCustomer">
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateRequestMsg" name="updateRequest"/>
+      <wsdl:output message="tns:updateResponseMsg" name="updateResponse"/>
+      <wsdl:fault message="tns:update_errorMsg" name="error"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

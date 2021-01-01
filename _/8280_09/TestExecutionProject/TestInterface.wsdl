@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="TestServletInterface" targetNamespace="http://wbit.ibm.com/comptest/automation" xmlns:bons1="http://wbit.ibm.com/comptest/automation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://wbit.ibm.com/comptest/automation">
+            <xsd:include schemaLocation="TestResults.xsd"/>
+            <xsd:include schemaLocation="TestSuiteList.xsd"/>
+			<xsd:element name="getTestcases">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="testSuites" nillable="true" type="bons1:TestSuiteList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getTestcasesResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="testCases" nillable="true" type="bons1:TestSuiteList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getSuitesResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="testSuites" nillable="true" type="bons1:TestSuiteList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="run">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="inputs" nillable="true" type="bons1:TestInput"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="runResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="results" nillable="true" type="bons1:TestResults"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getTestcasesRequestMsg">
+		<wsdl:part element="bons1:getTestcases" name="getTestcasesParameters"/>
+	</wsdl:message>
+	<wsdl:message name="getTestcasesResponseMsg">
+		<wsdl:part element="bons1:getTestcasesResponse" name="getTestcasesResult"/>
+	</wsdl:message>
+	<wsdl:message name="getSuitesResponseMsg">
+		<wsdl:part element="bons1:getSuitesResponse" name="getTestsuitesResult"/>
+	</wsdl:message>
+	<wsdl:message name="runRequestMsg">
+		<wsdl:part element="bons1:run" name="runParameters"/>
+	</wsdl:message>
+	<wsdl:message name="runResponseMsg">
+		<wsdl:part element="bons1:runResponse" name="runResult"/>
+	</wsdl:message>
+	<wsdl:portType name="TestInterface">
+		<wsdl:operation name="getTestcases">
+			<wsdl:input message="bons1:getTestcasesRequestMsg" name="getTestcasesRequest"/>
+			<wsdl:output message="bons1:getTestcasesResponseMsg" name="getTestcasesResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getSuites">
+			<wsdl:output message="bons1:getSuitesResponseMsg" name="getSuitesResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="run">
+			<wsdl:input message="bons1:runRequestMsg" name="runRequest"/>
+			<wsdl:output message="bons1:runResponseMsg" name="runResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

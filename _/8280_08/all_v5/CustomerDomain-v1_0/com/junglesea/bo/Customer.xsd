@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://CustomerDomain-Msg/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:bons1="http://CustomerDomain-Msg/com/junglesea/bo">
+
+	<xsd:include schemaLocation="CustomerAccount.xsd"></xsd:include>
+	<xsd:import schemaLocation="PartyRole.xsd"
+		namespace="http://CommonDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:complexType name="Customer">
+		<xsd:complexContent>
+			<xsd:extension base="bons0:PartyRole">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="CustomerId"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CustomerStatus"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CustomerPriority"
+						type="xsd:int">
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CustomerAccount"
+						type="bons1:CustomerAccount">
+					</xsd:element>
+
+				</xsd:sequence>
+
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

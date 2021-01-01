@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="HandleCustomerContact" targetNamespace="http://BizServices-CustomerInfoMgmt/com/junglsea/businessservices/HandleCustomerContactArtifacts" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://BizServices-CustomerInfoMgmt/com/junglsea/businessservices/HandleCustomerContactArtifacts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl0="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="HandleCustomerContactPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:HandleCustomerContact"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="HandleCustomerContactPLT1">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:HandleCustomerContact"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <wsdl:import location="../../junglesea/businessservices/interfaces/HandleCustomerContact.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact"/>
+</wsdl:definitions>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="RetrieveCustomerInformation" targetNamespace="http://BizServices-CustomerInfoMgmt/com/junglsea/businessservices/RetrieveCustomerInformationArtifacts" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://BizServices-CustomerInfoMgmt/com/junglsea/businessservices/RetrieveCustomerInformationArtifacts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl0="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="RetrieveCustomerInformationPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:RetrieveCustomerInformation"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:import location="../../junglesea/businessservices/interfaces/RetrieveCustomerInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation"/>
+</wsdl:definitions>

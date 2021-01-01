@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="ProcessPurchaseOrder" targetNamespace="http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder" xmlns:tns="http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder">
+      <xsd:import schemaLocation="PurchaseOrder.xsd"/>
+      <xsd:element name="processOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="purchaseOrder"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="processOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="purchaseOrder" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="processOrderRequestMsg">
+    <wsdl:part element="tns:processOrder" name="processOrderParameters"/>
+  </wsdl:message>
+    <wsdl:message name="processOrderResponseMsg">
+    <wsdl:part element="tns:processOrderResponse" name="processOrderResult"/>
+  </wsdl:message>
+    <wsdl:portType name="ProcessPurchaseOrder">
+    <wsdl:operation name="processOrder">
+      <wsdl:input message="tns:processOrderRequestMsg" name="processOrderRequest"/>
+      <wsdl:output message="tns:processOrderResponseMsg" name="processOrderResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

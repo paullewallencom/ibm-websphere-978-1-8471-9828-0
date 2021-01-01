@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brg:BusinessRuleGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EligibiltyCheck="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck" xmlns:acd="http://www.ibm.com/xmlns/prod/websphere/wbi/cf/ComponentDef/6.0.0" xmlns:brg="http://www.ibm.com/xmlns/prod/websphere/wbi/BusinessRuleGroup/6.0.0" xmlns:selt="http://EligibilityCheck/com/jungleseainsurance/solution/eligibilityCheck/rules" targetNamespace="http://EligibilityCheck/com/jungleseainsurance/solution/eligibilityCheck/rules" name="EligibilityCheckRuleGroup" displayName="EligibilityCheckRuleGroup" syncNameAndDisplayName="true">
+  <PresentationTimezone>local</PresentationTimezone>
+  <OperationDef name="checkEligibility">
+    <Selector>com.ibm.wbiservers.common.selection.GenericSelector</Selector>
+    <ParameterDef xsi:type="acd:CodeParameterDef">
+      <JavaCode>&lt;![CDATA[//@generated:com.ibm.wbit.selector.ui.CurrentDate&#xD;
+return new java.util.Date();]]&gt;</JavaCode>
+    </ParameterDef>
+  </OperationDef>
+  <Interfaces>
+    <Interface xsi:type="acd:WSDLPortType" portType="EligibiltyCheck:EligibiltyCheck"/>
+  </Interfaces>
+  <Property type="SystemDefined" name="IBMSystemVersion" value="6.1.0"/>
+  <BusinessRuleGroupTable>selt:EligibilityCheckRuleGroup</BusinessRuleGroupTable>
+  <References/>
+</brg:BusinessRuleGroup>

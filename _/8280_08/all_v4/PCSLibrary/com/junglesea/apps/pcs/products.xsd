@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://PCSLibrary/com/junglesea/apps/pcs"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://PCSLibrary/com/junglesea/apps/pcs">
+	<xsd:include schemaLocation="product.xsd"></xsd:include>
+	<xsd:complexType name="products">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="product"
+				type="bons0:product" maxOccurs="unbounded">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

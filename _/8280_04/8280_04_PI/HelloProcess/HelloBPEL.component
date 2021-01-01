@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage" xmlns:ns2="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/customGreeting" xmlns:process="http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="HelloBPEL" name="HelloBPEL">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:HandleGreetingMessage">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <references>
+    <reference name="customGreeting">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns2:customGreeting"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="customGreetingImport1"/>
+    </reference>
+  </references>
+  <implementation xsi:type="process:ProcessImplementation">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+    <process bpel="/com/junglesea/solution/greeting/process/HelloBPEL.bpel"/>
+  </implementation>
+</scdl:component>

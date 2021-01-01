@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://PayMeLibrary/com/junglesea/apps/payme" xmlns:bons0="http://PayMeLibrary/com/junglesea/apps/payme" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="ccPayCancelRequest.xsd"/>
+	<xsd:complexType name="ccPayCancelResponse">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="confirmationId" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="originalRequest" type="bons0:ccPayCancelRequest">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

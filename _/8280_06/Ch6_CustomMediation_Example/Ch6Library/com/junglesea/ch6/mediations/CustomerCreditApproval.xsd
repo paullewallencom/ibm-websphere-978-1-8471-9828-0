@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://Ch6Library" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="CustomerCreditApproval">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="id" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="approvalStatus" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="approvalCode" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="approvalDescription" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="creditScore" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ratingAgency" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

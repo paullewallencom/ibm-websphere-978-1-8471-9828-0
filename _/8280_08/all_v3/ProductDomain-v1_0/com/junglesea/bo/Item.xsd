@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://BillingDomain-v1_0/com/junglesea/bo" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="Item">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="ItemCode" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ItemName" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ItemDescription" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ItemQuantity" type="xsd:int">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ItemUnitPrice" type="xsd:double">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ItemWeight" type="xsd:double">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

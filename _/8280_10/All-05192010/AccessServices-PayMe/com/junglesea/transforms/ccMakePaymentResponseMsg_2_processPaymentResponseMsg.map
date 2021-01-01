@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" targetNamespace="http://AccessServices-PayMe/com/junglesea/transforms/ccMakePaymentResponseMsg_2_processPaymentResponseMsg" version="7.0.200" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://AccessServices-PayMe/com/junglesea/transforms/ccMakePaymentResponseMsg_2_processPaymentResponseMsg">
+    <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FPayMeLibrary%252Fcom%252Fjunglesea%252Fapps%252Fpayme%252FCardPaymentServices%257DccMakePaymentResponseMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FCustomerDomain-v1_0%252Fcom%252Fjunglesea%252Fbusinessservices%252Finterfaces%252FProcessCustomerPayments%257DprocessPaymentResponseMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <imports>
+        <import kind="java" location="org.apache.xalan.lib.ExsltDatetime" namespace="xalan://org.apache.xalan.lib.ExsltDatetime"/>
+    </imports>
+    <namespaces>
+        <namespace kind="extension" prefix="ExsltDatetime" uri="xalan://org.apache.xalan.lib.ExsltDatetime"/>
+    </namespaces>
+    <mappingDeclaration name="ccMakePaymentResponseMsg_2_processPaymentResponseMsg">
+        <input path="body"/>
+        <output path="body"/>
+        <move>
+            <input path="ccMakePaymentResponse/output1/confirmationId"/>
+            <output path="processPaymentResponse/outputParams/PaymentAcknowledge/ReceiptId"/>
+        </move>
+        <function lang="java" ref="ExsltDatetime:dateTime">
+            <output path="processPaymentResponse/outputParams/PaymentAcknowledge/ReceiptDateTime"/>
+        </function>
+        <move>
+            <input path="ccMakePaymentResponse/output1/origRequest"/>
+            <output path="processPaymentResponse/outputParams/PaymentAcknowledge/OriginalRequest"/>
+        </move>
+        <move>
+            <input path="ccMakePaymentResponse/output1/rejection/reasonCode"/>
+            <output path="processPaymentResponse/outputParams/CharacteristicValue/Characteristic/Name"/>
+        </move>
+        <move>
+            <input path="ccMakePaymentResponse/output1/rejection/reasonDesc"/>
+            <output path="processPaymentResponse/outputParams/CharacteristicValue/Value"/>
+        </move>
+        <move>
+            <input path="ccMakePaymentResponse/output1/rejection/action"/>
+            <output path="processPaymentResponse/outputParams/PaymentAcknowledge/TransactionStatus"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

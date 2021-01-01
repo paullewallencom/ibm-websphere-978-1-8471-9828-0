@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" targetNamespace="http://AccessServices-Rapid/com/junglesea/transforms/createShippingLabelRequestMsg_2_createRequestMsg" version="7.0.101" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://AccessServices-Rapid/com/junglesea/transforms/createShippingLabelRequestMsg_2_createRequestMsg">
+    <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FSupplierPartnerDomain-v1_0%252Fcom%252Fjunglesea%252Fbusinessservices%252Finterfaces%252FManageShipments%257DcreateShippingLabelRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FAccessServices-Rapid%252Fcom%252Fjunglesea%252Fadapter%252FOutboundRapidFlatFileAdapterImport%257DcreateRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <imports>
+        <import kind="xml" location="createShippingLabelRequestMsg_2_createRequestMsg.xml"/>
+    </imports>
+    <mappingDeclaration name="createShippingLabelRequestMsg_2_createRequestMsg">
+        <input path="body"/>
+        <output path="body"/>
+        <move>
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderItems/ShippingAddress/LineOne"/>
+            <output path="create/createInput/Content/line1"/>
+        </move>
+        <move>
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderItems/ShippingAddress/LineTwo"/>
+            <output path="create/createInput/Content/line2"/>
+        </move>
+        <move>
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderItems/ShippingAddress/PostalCode"/>
+            <output path="create/createInput/Content/zipCode"/>
+        </move>
+        <move>
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderItems/ShippingAddress/Country"/>
+            <output path="create/createInput/Content/country"/>
+        </move>
+        <move>
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderItems/ShippingAddress/StateOrProvince"/>
+            <output path="create/createInput/Content/state"/>
+        </move>
+        <move>
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderItems/ShippingAddress/City"/>
+            <output path="create/createInput/Content/city"/>
+        </move>
+        <move>
+            <input path="createShippingLabel/inputParams/CustomerOrder/BuyerInfo/Party/PartyDetails/Person/Name/FirstName"/>
+            <output path="create/createInput/Content/firstName"/>
+        </move>
+        <move>
+            <input path="createShippingLabel/inputParams/CustomerOrder/BuyerInfo/Party/PartyDetails/Person/Name/LastName"/>
+            <output path="create/createInput/Content/lastName"/>
+        </move>
+        <move>
+            <input path="createShippingLabel/inputParams/CustomerOrder/BuyerInfo/Party/PartyDetails/Person/Contact/Phone"/>
+            <output path="create/createInput/Content/contactPhone"/>
+        </move>
+        <expression>
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderItems/PurchasedItem/ProductDetails/ItemWeight" var="ItemWeight"/>
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderItems/PurchasedItem/ProductDetails/ItemQuantity" var="ItemQuantity"/>
+            <output path="create/createInput/Content/package/weight"/>
+            <code lang="xpath">$ItemQuantity*$ItemWeight</code>
+        </expression>
+        <move>
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderItems/ShippingDate"/>
+            <output path="create/createInput/Content/shipDate"/>
+        </move>
+        <assign value="C:\tmp\outbound\rapid">
+            <output path="create/createInput/directoryPath"/>
+        </assign>
+        <assign value="true">
+            <output path="create/createInput/createFileIfNotExists"/>
+        </assign>
+        <assign value="true">
+            <output path="create/createInput/generateUniqueFile"/>
+        </assign>
+        <function ref="concat">
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderId" var="OrderId"/>
+            <input path="createShippingLabel/inputParams/CustomerOrder/OrderItems/PurchasedItem/SKU" var="SKU"/>
+            <output path="create/createInput/fileName"/>
+        </function>
+    </mappingDeclaration>
+</mappingRoot>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://com.ibm.wbit.comptest.controller"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:Q1="http://com.ibm.wbit.comptest.controller">
+   <xsd:complexType name="TestSuiteList">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="testSuite" type="Q1:TestSuite" maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+
+   <xsd:complexType name="TestSuite">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="name" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="className" type="xsd:string"/>
+         <xsd:element name="testcases" type="xsd:string" maxOccurs="unbounded" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+
+   <xsd:complexType name="TestInput">
+      <xsd:sequence>
+         <xsd:element name="testProject" type="xsd:string"/>
+         <xsd:element name="username" type="xsd:string"/>
+         <xsd:element name="password" type="xsd:string"/>
+         <xsd:element name="testSuites" type="Q1:TestSuiteList"/>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

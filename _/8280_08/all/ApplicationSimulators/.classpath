@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="com.ibm.wbit.comptest.ct.core.classpathContainer"/>
+	<classpathentry excluding="Behavior/|Run/|Emulator/|TestSuite/|Configurations/|Data/|.settings/" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.ibm.ws.ast.st.runtime.runtimeTarget.v61.bi/wps.v62"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/WebSphere Process Server v6.2 JRE"/>
+	<classpathentry kind="src" path="/GreenLibrary"/>
+	<classpathentry kind="src" path="Behavior"/>
+	<classpathentry kind="src" path="Run"/>
+	<classpathentry kind="src" path="Emulator"/>
+	<classpathentry kind="src" path="TestSuite"/>
+	<classpathentry kind="src" path="Configurations"/>
+	<classpathentry kind="src" path="Data"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

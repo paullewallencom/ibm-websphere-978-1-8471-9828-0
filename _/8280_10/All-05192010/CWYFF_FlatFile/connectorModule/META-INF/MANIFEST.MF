@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.5
+Created-By: 2.4 (IBM Corporation)
+Implementation-Title: IBM WebSphere Adapter for Flat Files
+Implementation-Version: 7.0.0.0_IF02
+Implementation-Vendor: International Business Machines Corporation
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="MaintainProductInformation" targetNamespace="http://BizServices-ProductCatalogMgmt/com/junglsea/businessservices/MaintainProductInformationArtifacts" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://BizServices-ProductCatalogMgmt/com/junglsea/businessservices/MaintainProductInformationArtifacts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl0="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainProductInformation" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="MaintainProductInformationPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:MaintainProductInformation"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:import location="../../junglesea/businessservices/interfaces/MaintainProductInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainProductInformation"/>
+</wsdl:definitions>

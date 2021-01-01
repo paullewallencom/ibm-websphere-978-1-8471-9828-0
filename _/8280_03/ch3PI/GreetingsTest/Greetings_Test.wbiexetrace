@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.ccl.soa.test.common.models.value="http:///com/ibm/ccl/soa/test/common/models/value.ecore" xmlns:com.ibm.wbit.comptest.common.tc.models.event="http:///com/ibm/wbit/comptest/common/tc/models/event.ecore" xmlns:com.ibm.wbit.comptest.core.tc.models.client="http:///com/ibm/wbit/comptest/core/tc/models/client.ecore" xmlns:com.ibm.wbit.comptest.fgt.model.config="http:///com/ibm/wbit/fgt/common/model/config/finegraintrace.ecore" xmlns:com.ibm.wbit.comptest.fgt.model.event="http:///com/ibm/wbit/fgt/common/model/event/finegraintrace.ecore">
+  <com.ibm.wbit.comptest.core.tc.models.client:EclipseClient name="Greetings_Test" id="1267160708703_1" eventTrace="/1" clientID="1267160708703_1">
+    <scopes name="Default Module Test" id="1267160708718_3" userId="admin">
+      <testModules name="Greetings" id="1267160708718_4">
+        <monitors name="HandleGreetingMessageExport1.&lt;export>->HelloProcess" id="1267160708734_5" sourceComponent="HandleGreetingMessageExport1" sourceReference="&lt;export>" interface="HandleGreetingMessage" request="true" response="true" targetComponent="HelloProcess"/>
+        <configurationAdditions xsi:type="com.ibm.wbit.comptest.fgt.model.config:FineGrainTraceConfiguration" id="1267160708984_7">
+          <fineGrainTrace xsi:type="com.ibm.wbit.comptest.fgt.model.config:BPELFineGrainTrace" name="HelloProcess (Process:HelloProcess)" id="1267160708984_6" component="HelloProcess"/>
+        </configurationAdditions>
+      </testModules>
+    </scopes>
+  </com.ibm.wbit.comptest.core.tc.models.client:EclipseClient>
+  <com.ibm.wbit.comptest.common.tc.models.event:ExecutionEventTrace id="1267160708703_2" children="/2 /16 /30"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:InteractiveComponentInvocationEvent id="1267161728250_542" readOnly="true" clientID="1267160708703_1" timestamp="1267161728250" children="/3 /15" module="Greetings" part="HandleGreetingMessageExport1" interface="HandleGreetingMessage" operation="returnGreeting" testScopeID="1267160708718_3" exportPart="true" targetDeploymentLocationID="1267161170328_199">
+    <properties name="serviceAddress" value="http://localhost:9080/GreetingsWeb/sca/HandleGreetingMessageExport1"/>
+    <request id="1267161202578_303">
+      <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="serviceAddress" id="1267161202578_304" value="http://localhost:9085/GreetingsWeb/sca/HandleGreetingMessageExport1" defaultValue="" typeURI="java:/java.lang#String" baseTypeURI="java:/java.lang#String">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="valueFactoryInput" value="sca:/Greetings/HandleGreetingMessageExport1/HandleGreetingMessage#wsdl:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/HandleGreetingMessage%23returnGreeting"/>
+        <properties name="valueFactoryParmName" value="serviceAddress"/>
+        <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+      </parameters>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Envelope" id="1267161202578_305" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" required="true" hasChildren="true">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <properties name="valueFactoryInput" value="sca:/Greetings/HandleGreetingMessageExport1/HandleGreetingMessage#wsdl:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/HandleGreetingMessage%23returnGreeting"/>
+        <properties name="valueFactoryParmName" value="Envelope"/>
+        <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Header" id="1267161202578_306" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161202578_307" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Security" id="1267161202578_308" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" hasChildren="true">
+              <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161202578_309" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                <properties name="anyElement"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="UsernameToken" id="1267161202578_310" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" hasChildren="true">
+                  <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Username" id="1267161202578_311" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" required="true" hasChildren="true">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161202578_312" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                      <properties name="attribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_313" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                      <properties name="anyAttribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161202578_314" set="false" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                      <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161202578_315" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                    <properties name="anyElement"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Password" id="1267161202578_316" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" hasChildren="true">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161202578_317" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                        <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                        <properties name="attribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_318" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                        <properties name="anyAttribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161202578_319" set="false" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                        <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Type" id="1267161202578_320" set="false" value="" defaultValue="http://" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI">
+                        <properties name="attribute"/>
+                      </elements>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161202578_321" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                    <properties name="attribute"/>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_322" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                    <properties name="anyAttribute"/>
+                  </elements>
+                </elements>
+              </elements>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_323" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                <properties name="anyAttribute"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_324" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Body" id="1267161202578_325" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" required="true">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161202578_326" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" required="true" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="returnGreeting" id="1267161202578_327" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" required="true" hasChildren="true">
+              <properties name="elementNS" value="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="inputPartyInfo" id="1267161202578_328" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" required="true" hasChildren="true">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161202578_329" value="John" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161202578_330" value="Doe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161202578_331" value="Austin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161202578_332" value="22" defaultValue="0" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#int" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#int"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_333" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161202578_334" null="true" abstract="true" writeable="false" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+          <properties name="anyElement"/>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_335" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+          <properties name="anyAttribute"/>
+        </elements>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:InteractiveComponentInvocationEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:StartEvent id="1267161728281_455" clientID="1267160708703_1" parentID="1267161728250_542" timestamp="1267161728281" invokeCommandId="1267161728250_576" children="/4 /14"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:WebServiceBindingRequestEvent id="1267161728281_456" clientID="1267160708703_1" parentID="1267161728281_455" timestamp="1267161728281" invokeCommandId="1267161728250_576" testScopeId="1267160708718_3" module="Greetings" export="HandleGreetingMessageExport1" children="/5 /6 /7 /12 /13" service="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/Binding#HandleGreetingMessageExport1_HandleGreetingMessageHttpService" port="HandleGreetingMessageExport1_HandleGreetingMessageHttpPort" address="http://localhost:9085/GreetingsWeb/sca/HandleGreetingMessageExport1" message="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;>&#xD;&#xA;  &lt;soap:Header>&#xD;&#xA;    &lt;ns1:Security xmlns:ns1=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;>&#xD;&#xA;      &lt;ns1:UsernameToken>&#xD;&#xA;        &lt;ns1:Username>admin&lt;/ns1:Username>&#xD;&#xA;        &lt;ns1:Password>admin&lt;/ns1:Password>&#xD;&#xA;      &lt;/ns1:UsernameToken>&#xD;&#xA;    &lt;/ns1:Security>&#xD;&#xA;  &lt;/soap:Header>&#xD;&#xA;  &lt;soap:Body>&#xD;&#xA;    &lt;ns2:returnGreeting xmlns:ns2=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage&quot;>&#xD;&#xA;      &lt;inputPartyInfo>&#xD;&#xA;        &lt;FirstName>John&lt;/FirstName>&#xD;&#xA;        &lt;LastName>Doe&lt;/LastName>&#xD;&#xA;        &lt;Location>Austin&lt;/Location>&#xD;&#xA;        &lt;Age>22&lt;/Age>&#xD;&#xA;      &lt;/inputPartyInfo>&#xD;&#xA;    &lt;/ns2:returnGreeting>&#xD;&#xA;  &lt;/soap:Body>&#xD;&#xA;&lt;/soap:Envelope>" interface="HandleGreetingMessage" operation="returnGreeting">
+    <request id="1267161202578_303">
+      <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Envelope" id="1267161202578_305" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" required="true" hasChildren="true">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <properties name="valueFactoryInput" value="sca:/Greetings/HandleGreetingMessageExport1/HandleGreetingMessage#wsdl:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/HandleGreetingMessage%23returnGreeting"/>
+        <properties name="valueFactoryParmName" value="Envelope"/>
+        <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Header" id="1267161202578_306" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161202578_307" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Security" id="1267161202578_308" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" hasChildren="true">
+              <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161202578_309" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                <properties name="anyElement"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="UsernameToken" id="1267161202578_310" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" hasChildren="true">
+                  <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Username" id="1267161202578_311" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" required="true" hasChildren="true">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161202578_312" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                      <properties name="attribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_313" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                      <properties name="anyAttribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161202578_314" value="admin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                      <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161202578_315" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                    <properties name="anyElement"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Password" id="1267161202578_316" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" hasChildren="true">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161202578_317" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                        <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                        <properties name="attribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_318" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                        <properties name="anyAttribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161202578_319" value="admin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                        <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Type" id="1267161202578_320" set="false" value="" defaultValue="http://" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI">
+                        <properties name="attribute"/>
+                      </elements>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161202578_321" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                    <properties name="attribute"/>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_322" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                    <properties name="anyAttribute"/>
+                  </elements>
+                </elements>
+              </elements>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_323" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                <properties name="anyAttribute"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_324" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Body" id="1267161202578_325" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" required="true">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161202578_326" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" required="true" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="returnGreeting" id="1267161202578_327" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" required="true" hasChildren="true">
+              <properties name="elementNS" value="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="inputPartyInfo" id="1267161202578_328" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" required="true" hasChildren="true">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161202578_329" value="John" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161202578_330" value="Doe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161202578_331" value="Austin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161202578_332" value="22" defaultValue="0" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#int" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#int"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_333" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161202578_334" null="true" abstract="true" writeable="false" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+          <properties name="anyElement"/>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161202578_335" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+          <properties name="anyAttribute"/>
+        </elements>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:WebServiceBindingRequestEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:ComponentInvocationEvent id="1267161728421_490" clientID="1267160708703_1" parentID="1267161728281_456" timestamp="1267161728421" invokeCommandId="1267161728250_576" module="Greetings" part="HandleGreetingMessageExport1" interface="HandleGreetingMessage" operation="returnGreeting" testScopeID="1267160708718_3">
+    <request id="1267161728421_491">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="inputPartyInfo" id="1267161728421_492" value="" typeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;inputPartyInfo xsi:type=&quot;bo:Party&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:bo=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/bo&quot;>&#xD;&#xA;  &lt;FirstName>John&lt;/FirstName>&#xD;&#xA;  &lt;LastName>Doe&lt;/LastName>&#xD;&#xA;  &lt;Location>Austin&lt;/Location>&#xD;&#xA;  &lt;Age>22&lt;/Age>&#xD;&#xA;&lt;/inputPartyInfo>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161728421_493" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161728421_494" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161728421_495" value="22" typeURI="sdo:/#int" baseTypeURI="sdo:/#int"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161728421_496" value="John" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:ComponentInvocationEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:MonitorRequestEvent id="1267161728421_497" readOnly="true" clientID="1267160708703_1" parentID="1267161728281_456" timestamp="1267161728421" invokeCommandId="1267161728250_576" sourceComponent="HandleGreetingMessageExport1" targetComponent="HelloProcess" sourceReference="&lt;export>" interface="HandleGreetingMessage" operation="returnGreeting" module="Greetings">
+    <request id="1267161728421_498">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="result" id="1267161728421_499" value="" typeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party">
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;bo:Party&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:bo=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/bo&quot;>&#xD;&#xA;  &lt;FirstName>John&lt;/FirstName>&#xD;&#xA;  &lt;LastName>Doe&lt;/LastName>&#xD;&#xA;  &lt;Location>Austin&lt;/Location>&#xD;&#xA;  &lt;Age>22&lt;/Age>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161728421_500" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161728421_501" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161728421_502" value="22" typeURI="sdo:/#int" baseTypeURI="sdo:/#int"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161728421_503" value="John" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:MonitorRequestEvent>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="HelloProcess" id="1267161728421_504" readOnly="true" clientID="1267160708703_1" parentID="1267161728281_456" timestamp="1267161728421" children="/8 /9 /11">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" operationName="returnGreeting"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="Receive" id="1267161728453_507" readOnly="true" clientID="1267160708703_1" parentID="1267161728421_504" timestamp="1267161728453">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="4"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="CheckPartyAge" id="1267161728453_508" readOnly="true" clientID="1267160708703_1" parentID="1267161728421_504" timestamp="1267161728453" children="/10">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="8"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="SayGreeting-WhatsUp" id="1267161728687_509" readOnly="true" clientID="1267160708703_1" parentID="1267161728453_508" timestamp="1267161728687">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="11"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="Reply" id="1267161728687_511" readOnly="true" clientID="1267160708703_1" parentID="1267161728421_504" timestamp="1267161728687">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="5"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.common.tc.models.event:MonitorResponseEvent id="1267161728687_515" readOnly="true" clientID="1267160708703_1" parentID="1267161728281_456" timestamp="1267161728687" invokeCommandId="1267161728250_576" sourceComponent="HandleGreetingMessageExport1" targetComponent="HelloProcess" sourceReference="&lt;export>" interface="HandleGreetingMessage" operation="returnGreeting" module="Greetings">
+    <response id="1267161728687_516">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="outputGreetingMessage" id="1267161728687_517" value="What's up John" defaultValue="" typeURI="java:/java.lang#String" baseTypeURI="java:/java.lang#String">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+      </parameters>
+    </response>
+  </com.ibm.wbit.comptest.common.tc.models.event:MonitorResponseEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:InvocationResponseEvent id="1267161728703_518" clientID="1267160708703_1" parentID="1267161728281_456" timestamp="1267161728703" invokeCommandId="1267161728250_576" testScopeID="1267160708718_3" module="Greetings" component="HandleGreetingMessageExport1" interface="HandleGreetingMessage" operation="returnGreeting">
+    <response id="1267161728703_519">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="outputGreetingMessage" id="1267161728703_520" value="What's up John" defaultValue="" typeURI="java:/java.lang#String" baseTypeURI="java:/java.lang#String">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+      </parameters>
+    </response>
+  </com.ibm.wbit.comptest.common.tc.models.event:InvocationResponseEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:WebServiceBindingResponseEvent id="1267161728703_521" clientID="1267160708703_1" parentID="1267161728281_455" timestamp="1267161728703" invokeCommandId="1267161728250_576" testScopeId="1267160708718_3" module="Greetings" export="HandleGreetingMessageExport1" service="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/Binding#HandleGreetingMessageExport1_HandleGreetingMessageHttpService" port="HandleGreetingMessageExport1_HandleGreetingMessageHttpPort" address="http://localhost:9085/GreetingsWeb/sca/HandleGreetingMessageExport1" message="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;soapenv:Envelope xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>&#xD;&#xA;  &lt;soapenv:Body>&#xD;&#xA;    &lt;me:returnGreetingResponse xmlns:me=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage&quot;>&#xD;&#xA;      &lt;outputGreetingMessage>What's up John&lt;/outputGreetingMessage>&#xD;&#xA;    &lt;/me:returnGreetingResponse>&#xD;&#xA;  &lt;/soapenv:Body>&#xD;&#xA;&lt;/soapenv:Envelope>" interface="HandleGreetingMessage" operation="returnGreeting"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:EndEvent id="1267161728703_522" clientID="1267160708703_1" parentID="1267161728250_542" timestamp="1267161728703" invokeCommandId="1267161728250_576"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:InteractiveComponentInvocationEvent id="1267161777218_692" readOnly="true" clientID="1267160708703_1" timestamp="1267161777218" children="/17 /29" module="Greetings" part="HandleGreetingMessageExport1" interface="HandleGreetingMessage" operation="returnGreeting" testScopeID="1267160708718_3" exportPart="true" targetDeploymentLocationID="1267161170328_199">
+    <properties name="serviceAddress" value="http://localhost:9080/GreetingsWeb/sca/HandleGreetingMessageExport1"/>
+    <request id="1267161777218_693">
+      <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="serviceAddress" id="1267161777218_694" value="http://localhost:9085/GreetingsWeb/sca/HandleGreetingMessageExport1" defaultValue="" typeURI="java:/java.lang#String" baseTypeURI="java:/java.lang#String">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="valueFactoryInput" value="sca:/Greetings/HandleGreetingMessageExport1/HandleGreetingMessage#wsdl:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/HandleGreetingMessage%23returnGreeting"/>
+        <properties name="valueFactoryParmName" value="serviceAddress"/>
+        <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+      </parameters>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Envelope" id="1267161777218_695" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" required="true" hasChildren="true">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <properties name="valueFactoryInput" value="sca:/Greetings/HandleGreetingMessageExport1/HandleGreetingMessage#wsdl:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/HandleGreetingMessage%23returnGreeting"/>
+        <properties name="valueFactoryParmName" value="Envelope"/>
+        <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Header" id="1267161777218_696" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161777218_697" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Security" id="1267161777218_698" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" hasChildren="true">
+              <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161777218_699" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                <properties name="anyElement"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="UsernameToken" id="1267161777218_700" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" hasChildren="true">
+                  <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Username" id="1267161777218_701" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" required="true" hasChildren="true">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161777218_702" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                      <properties name="attribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_703" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                      <properties name="anyAttribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161777218_704" set="false" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                      <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161777218_705" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                    <properties name="anyElement"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Password" id="1267161777218_706" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" hasChildren="true">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161777218_707" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                        <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                        <properties name="attribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_708" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                        <properties name="anyAttribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161777218_709" set="false" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                        <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Type" id="1267161777218_710" set="false" value="" defaultValue="http://" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI">
+                        <properties name="attribute"/>
+                      </elements>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161777218_711" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                    <properties name="attribute"/>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_712" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                    <properties name="anyAttribute"/>
+                  </elements>
+                </elements>
+              </elements>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_713" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                <properties name="anyAttribute"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_714" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Body" id="1267161777218_715" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" required="true">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161777218_716" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" required="true" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="returnGreeting" id="1267161777218_717" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" required="true" hasChildren="true">
+              <properties name="elementNS" value="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="inputPartyInfo" id="1267161777218_718" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" required="true" hasChildren="true">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161777218_719" value="John" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161777218_720" value="Doe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161777218_721" value="Austin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161777218_722" value="55" defaultValue="0" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#int" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#int"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_723" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161777218_724" null="true" abstract="true" writeable="false" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+          <properties name="anyElement"/>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_725" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+          <properties name="anyAttribute"/>
+        </elements>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:InteractiveComponentInvocationEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:StartEvent id="1267161786359_616" clientID="1267160708703_1" parentID="1267161777218_692" timestamp="1267161786359" children="/18 /28"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:WebServiceBindingRequestEvent id="1267161786359_617" clientID="1267160708703_1" parentID="1267161786359_616" timestamp="1267161786359" testScopeId="1267160708718_3" module="Greetings" export="HandleGreetingMessageExport1" children="/19 /20 /21 /26 /27" service="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/Binding#HandleGreetingMessageExport1_HandleGreetingMessageHttpService" port="HandleGreetingMessageExport1_HandleGreetingMessageHttpPort" address="http://localhost:9085/GreetingsWeb/sca/HandleGreetingMessageExport1" message="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;>&#xD;&#xA;  &lt;soap:Header>&#xD;&#xA;    &lt;ns1:Security xmlns:ns1=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;>&#xD;&#xA;      &lt;ns1:UsernameToken>&#xD;&#xA;        &lt;ns1:Username>admin&lt;/ns1:Username>&#xD;&#xA;        &lt;ns1:Password>admin&lt;/ns1:Password>&#xD;&#xA;      &lt;/ns1:UsernameToken>&#xD;&#xA;    &lt;/ns1:Security>&#xD;&#xA;  &lt;/soap:Header>&#xD;&#xA;  &lt;soap:Body>&#xD;&#xA;    &lt;ns2:returnGreeting xmlns:ns2=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage&quot;>&#xD;&#xA;      &lt;inputPartyInfo>&#xD;&#xA;        &lt;FirstName>John&lt;/FirstName>&#xD;&#xA;        &lt;LastName>Doe&lt;/LastName>&#xD;&#xA;        &lt;Location>Austin&lt;/Location>&#xD;&#xA;        &lt;Age>55&lt;/Age>&#xD;&#xA;      &lt;/inputPartyInfo>&#xD;&#xA;    &lt;/ns2:returnGreeting>&#xD;&#xA;  &lt;/soap:Body>&#xD;&#xA;&lt;/soap:Envelope>" interface="HandleGreetingMessage" operation="returnGreeting">
+    <request id="1267161777218_693">
+      <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Envelope" id="1267161777218_695" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" required="true" hasChildren="true">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <properties name="valueFactoryInput" value="sca:/Greetings/HandleGreetingMessageExport1/HandleGreetingMessage#wsdl:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/HandleGreetingMessage%23returnGreeting"/>
+        <properties name="valueFactoryParmName" value="Envelope"/>
+        <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Header" id="1267161777218_696" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161777218_697" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Security" id="1267161777218_698" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" hasChildren="true">
+              <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161777218_699" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                <properties name="anyElement"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="UsernameToken" id="1267161777218_700" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" hasChildren="true">
+                  <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Username" id="1267161777218_701" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" required="true" hasChildren="true">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161777218_702" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                      <properties name="attribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_703" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                      <properties name="anyAttribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161777218_704" value="admin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                      <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161777218_705" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                    <properties name="anyElement"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Password" id="1267161777218_706" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" hasChildren="true">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161777218_707" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                        <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                        <properties name="attribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_708" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                        <properties name="anyAttribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161777218_709" value="admin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                        <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Type" id="1267161777218_710" set="false" value="" defaultValue="http://" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI">
+                        <properties name="attribute"/>
+                      </elements>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161777218_711" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                    <properties name="attribute"/>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_712" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                    <properties name="anyAttribute"/>
+                  </elements>
+                </elements>
+              </elements>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_713" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                <properties name="anyAttribute"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_714" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Body" id="1267161777218_715" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" required="true">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161777218_716" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" required="true" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="returnGreeting" id="1267161777218_717" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" required="true" hasChildren="true">
+              <properties name="elementNS" value="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="inputPartyInfo" id="1267161777218_718" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" required="true" hasChildren="true">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161777218_719" value="John" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161777218_720" value="Doe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161777218_721" value="Austin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161777218_722" value="55" defaultValue="0" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#int" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#int"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_723" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161777218_724" null="true" abstract="true" writeable="false" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+          <properties name="anyElement"/>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161777218_725" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+          <properties name="anyAttribute"/>
+        </elements>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:WebServiceBindingRequestEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:ComponentInvocationEvent id="1267161786375_651" clientID="1267160708703_1" parentID="1267161786359_617" timestamp="1267161786375" module="Greetings" part="HandleGreetingMessageExport1" interface="HandleGreetingMessage" operation="returnGreeting" testScopeID="1267160708718_3">
+    <request id="1267161786375_652">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="inputPartyInfo" id="1267161786375_653" value="" typeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;inputPartyInfo xsi:type=&quot;bo:Party&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:bo=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/bo&quot;>&#xD;&#xA;  &lt;FirstName>John&lt;/FirstName>&#xD;&#xA;  &lt;LastName>Doe&lt;/LastName>&#xD;&#xA;  &lt;Location>Austin&lt;/Location>&#xD;&#xA;  &lt;Age>55&lt;/Age>&#xD;&#xA;&lt;/inputPartyInfo>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161786375_654" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161786375_655" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161786375_656" value="55" typeURI="sdo:/#int" baseTypeURI="sdo:/#int"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161786375_657" value="John" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:ComponentInvocationEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:MonitorRequestEvent id="1267161786375_658" readOnly="true" clientID="1267160708703_1" parentID="1267161786359_617" timestamp="1267161786375" sourceComponent="HandleGreetingMessageExport1" targetComponent="HelloProcess" sourceReference="&lt;export>" interface="HandleGreetingMessage" operation="returnGreeting" module="Greetings">
+    <request id="1267161786375_659">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="result" id="1267161786375_660" value="" typeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party">
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;bo:Party&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:bo=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/bo&quot;>&#xD;&#xA;  &lt;FirstName>John&lt;/FirstName>&#xD;&#xA;  &lt;LastName>Doe&lt;/LastName>&#xD;&#xA;  &lt;Location>Austin&lt;/Location>&#xD;&#xA;  &lt;Age>55&lt;/Age>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161786375_661" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161786375_662" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161786375_663" value="55" typeURI="sdo:/#int" baseTypeURI="sdo:/#int"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161786375_664" value="John" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:MonitorRequestEvent>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="HelloProcess" id="1267161786375_665" readOnly="true" clientID="1267160708703_1" parentID="1267161786359_617" timestamp="1267161786375" children="/22 /23 /25">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" operationName="returnGreeting"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="Receive" id="1267161786390_668" readOnly="true" clientID="1267160708703_1" parentID="1267161786375_665" timestamp="1267161786390">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="4"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="CheckPartyAge" id="1267161786390_669" readOnly="true" clientID="1267160708703_1" parentID="1267161786375_665" timestamp="1267161786390" children="/24">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="8"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="SayGreetingWhatsHappening" id="1267161786390_670" readOnly="true" clientID="1267160708703_1" parentID="1267161786390_669" timestamp="1267161786390">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="13"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="Reply" id="1267161786390_672" readOnly="true" clientID="1267160708703_1" parentID="1267161786375_665" timestamp="1267161786390">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="5"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.common.tc.models.event:MonitorResponseEvent id="1267161786390_676" readOnly="true" clientID="1267160708703_1" parentID="1267161786359_617" timestamp="1267161786390" sourceComponent="HandleGreetingMessageExport1" targetComponent="HelloProcess" sourceReference="&lt;export>" interface="HandleGreetingMessage" operation="returnGreeting" module="Greetings">
+    <response id="1267161786390_677">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="result" id="1267161786390_678" value="What's happening John" defaultValue="" typeURI="java:/java.lang#String" baseTypeURI="java:/java.lang#String"/>
+    </response>
+  </com.ibm.wbit.comptest.common.tc.models.event:MonitorResponseEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:InvocationResponseEvent id="1267161786390_679" clientID="1267160708703_1" parentID="1267161786359_617" timestamp="1267161786390" testScopeID="1267160708718_3" module="Greetings" component="HandleGreetingMessageExport1" interface="HandleGreetingMessage" operation="returnGreeting">
+    <response id="1267161786390_680">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="outputGreetingMessage" id="1267161786390_681" value="What's happening John" defaultValue="" typeURI="java:/java.lang#String" baseTypeURI="java:/java.lang#String">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+      </parameters>
+    </response>
+  </com.ibm.wbit.comptest.common.tc.models.event:InvocationResponseEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:WebServiceBindingResponseEvent id="1267161786406_682" clientID="1267160708703_1" parentID="1267161786359_616" timestamp="1267161786406" testScopeId="1267160708718_3" module="Greetings" export="HandleGreetingMessageExport1" service="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/Binding#HandleGreetingMessageExport1_HandleGreetingMessageHttpService" port="HandleGreetingMessageExport1_HandleGreetingMessageHttpPort" address="http://localhost:9085/GreetingsWeb/sca/HandleGreetingMessageExport1" message="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;soapenv:Envelope xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>&#xD;&#xA;  &lt;soapenv:Body>&#xD;&#xA;    &lt;me:returnGreetingResponse xmlns:me=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage&quot;>&#xD;&#xA;      &lt;outputGreetingMessage>What's happening John&lt;/outputGreetingMessage>&#xD;&#xA;    &lt;/me:returnGreetingResponse>&#xD;&#xA;  &lt;/soapenv:Body>&#xD;&#xA;&lt;/soapenv:Envelope>" interface="HandleGreetingMessage" operation="returnGreeting"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:EndEvent id="1267161786406_683" clientID="1267160708703_1" parentID="1267161777218_692" timestamp="1267161786406"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:InteractiveComponentInvocationEvent id="1267161792156_844" readOnly="true" clientID="1267160708703_1" timestamp="1267161792156" children="/31 /43" module="Greetings" part="HandleGreetingMessageExport1" interface="HandleGreetingMessage" operation="returnGreeting" testScopeID="1267160708718_3" exportPart="true" targetDeploymentLocationID="1267161170328_199">
+    <properties name="serviceAddress" value="http://localhost:9080/GreetingsWeb/sca/HandleGreetingMessageExport1"/>
+    <request id="1267161792156_845">
+      <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="serviceAddress" id="1267161792156_846" value="http://localhost:9085/GreetingsWeb/sca/HandleGreetingMessageExport1" defaultValue="" typeURI="java:/java.lang#String" baseTypeURI="java:/java.lang#String">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="valueFactoryInput" value="sca:/Greetings/HandleGreetingMessageExport1/HandleGreetingMessage#wsdl:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/HandleGreetingMessage%23returnGreeting"/>
+        <properties name="valueFactoryParmName" value="serviceAddress"/>
+        <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+      </parameters>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Envelope" id="1267161792156_847" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" required="true" hasChildren="true">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <properties name="valueFactoryInput" value="sca:/Greetings/HandleGreetingMessageExport1/HandleGreetingMessage#wsdl:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/HandleGreetingMessage%23returnGreeting"/>
+        <properties name="valueFactoryParmName" value="Envelope"/>
+        <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Header" id="1267161792156_848" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161792156_849" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Security" id="1267161792156_850" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" hasChildren="true">
+              <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161792156_851" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                <properties name="anyElement"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="UsernameToken" id="1267161792156_852" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" hasChildren="true">
+                  <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Username" id="1267161792156_853" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" required="true" hasChildren="true">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161792156_854" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                      <properties name="attribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_855" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                      <properties name="anyAttribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161792156_856" set="false" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                      <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161792156_857" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                    <properties name="anyElement"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Password" id="1267161792156_858" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" hasChildren="true">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161792156_859" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                        <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                        <properties name="attribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_860" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                        <properties name="anyAttribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161792156_861" set="false" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                        <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Type" id="1267161792156_862" set="false" value="" defaultValue="http://" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI">
+                        <properties name="attribute"/>
+                      </elements>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161792156_863" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                    <properties name="attribute"/>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_864" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                    <properties name="anyAttribute"/>
+                  </elements>
+                </elements>
+              </elements>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_865" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                <properties name="anyAttribute"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_866" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Body" id="1267161792156_867" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" required="true">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161792156_868" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" required="true" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="returnGreeting" id="1267161792156_869" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" required="true" hasChildren="true">
+              <properties name="elementNS" value="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="inputPartyInfo" id="1267161792156_870" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" required="true" hasChildren="true">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161792156_871" value="John" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161792156_872" value="Doe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161792156_873" value="Austin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161792156_874" value="75" defaultValue="0" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#int" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#int"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_875" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161792156_876" null="true" abstract="true" writeable="false" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+          <properties name="anyElement"/>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_877" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+          <properties name="anyAttribute"/>
+        </elements>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:InteractiveComponentInvocationEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:StartEvent id="1267161798281_767" clientID="1267160708703_1" parentID="1267161792156_844" timestamp="1267161798281" children="/32 /42"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:WebServiceBindingRequestEvent id="1267161798281_768" clientID="1267160708703_1" parentID="1267161798281_767" timestamp="1267161798281" testScopeId="1267160708718_3" module="Greetings" export="HandleGreetingMessageExport1" children="/33 /34 /35 /40 /41" service="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/Binding#HandleGreetingMessageExport1_HandleGreetingMessageHttpService" port="HandleGreetingMessageExport1_HandleGreetingMessageHttpPort" address="http://localhost:9085/GreetingsWeb/sca/HandleGreetingMessageExport1" message="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;>&#xD;&#xA;  &lt;soap:Header>&#xD;&#xA;    &lt;ns1:Security xmlns:ns1=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;>&#xD;&#xA;      &lt;ns1:UsernameToken>&#xD;&#xA;        &lt;ns1:Username>admin&lt;/ns1:Username>&#xD;&#xA;        &lt;ns1:Password>admin&lt;/ns1:Password>&#xD;&#xA;      &lt;/ns1:UsernameToken>&#xD;&#xA;    &lt;/ns1:Security>&#xD;&#xA;  &lt;/soap:Header>&#xD;&#xA;  &lt;soap:Body>&#xD;&#xA;    &lt;ns2:returnGreeting xmlns:ns2=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage&quot;>&#xD;&#xA;      &lt;inputPartyInfo>&#xD;&#xA;        &lt;FirstName>John&lt;/FirstName>&#xD;&#xA;        &lt;LastName>Doe&lt;/LastName>&#xD;&#xA;        &lt;Location>Austin&lt;/Location>&#xD;&#xA;        &lt;Age>75&lt;/Age>&#xD;&#xA;      &lt;/inputPartyInfo>&#xD;&#xA;    &lt;/ns2:returnGreeting>&#xD;&#xA;  &lt;/soap:Body>&#xD;&#xA;&lt;/soap:Envelope>" interface="HandleGreetingMessage" operation="returnGreeting">
+    <request id="1267161792156_845">
+      <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Envelope" id="1267161792156_847" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Envelope" required="true" hasChildren="true">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <properties name="valueFactoryInput" value="sca:/Greetings/HandleGreetingMessageExport1/HandleGreetingMessage#wsdl:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/HandleGreetingMessage%23returnGreeting"/>
+        <properties name="valueFactoryParmName" value="Envelope"/>
+        <properties name="paramlist_context" value="Greetings.HandleGreetingMessageExport1.returnGreeting"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Header" id="1267161792156_848" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Header">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161792156_849" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Security" id="1267161792156_850" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#SecurityHeaderType" hasChildren="true">
+              <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161792156_851" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                <properties name="anyElement"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="UsernameToken" id="1267161792156_852" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#UsernameTokenType" hasChildren="true">
+                  <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Username" id="1267161792156_853" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#AttributedString" required="true" hasChildren="true">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161792156_854" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                      <properties name="attribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_855" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                      <properties name="anyAttribute"/>
+                    </elements>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161792156_856" value="admin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                      <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161792156_857" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+                    <properties name="anyElement"/>
+                    <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Password" id="1267161792156_858" value="" defaultValue="" typeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" baseTypeURI="xsd:/http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#PasswordString" hasChildren="true">
+                      <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161792156_859" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                        <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                        <properties name="attribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_860" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                        <properties name="anyAttribute"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="value" id="1267161792156_861" value="admin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string">
+                        <properties name="simpleExtension" value="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                      </elements>
+                      <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Type" id="1267161792156_862" set="false" value="" defaultValue="http://" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyURI">
+                        <properties name="attribute"/>
+                      </elements>
+                    </elements>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Id" id="1267161792156_863" set="false" value="" defaultValue="_" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#ID">
+                    <properties name="elementNS" value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+                    <properties name="attribute"/>
+                  </elements>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_864" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                    <properties name="anyAttribute"/>
+                  </elements>
+                </elements>
+              </elements>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_865" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+                <properties name="anyAttribute"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_866" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Body" id="1267161792156_867" value="" defaultValue="" typeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" baseTypeURI="xsd:/http://schemas.xmlsoap.org/soap/envelope/#Body" required="true">
+          <properties name="elementNS" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161792156_868" abstract="true" writeable="false" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" required="true" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+            <properties name="anyElement"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="returnGreeting" id="1267161792156_869" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage#returnGreeting_._type" required="true" hasChildren="true">
+              <properties name="elementNS" value="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="inputPartyInfo" id="1267161792156_870" value="" defaultValue="" typeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="xsd:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" required="true" hasChildren="true">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161792156_871" value="John" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161792156_872" value="Doe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161792156_873" value="Austin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161792156_874" value="75" defaultValue="0" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#int" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#int"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_875" set="false" abstract="true" value="" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+            <properties name="anyAttribute"/>
+          </elements>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="any" id="1267161792156_876" null="true" abstract="true" writeable="false" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anyType">
+          <properties name="anyElement"/>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueArray" name="anyAttribute" id="1267161792156_877" null="true" abstract="true" value="null" defaultValue="" baseTypeAbstract="true" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType[]" elementTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType" elementBaseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#anySimpleType">
+          <properties name="anyAttribute"/>
+        </elements>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:WebServiceBindingRequestEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:ComponentInvocationEvent id="1267161798296_802" clientID="1267160708703_1" parentID="1267161798281_768" timestamp="1267161798296" module="Greetings" part="HandleGreetingMessageExport1" interface="HandleGreetingMessage" operation="returnGreeting" testScopeID="1267160708718_3">
+    <request id="1267161798296_803">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="inputPartyInfo" id="1267161798296_804" value="" typeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;inputPartyInfo xsi:type=&quot;bo:Party&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:bo=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/bo&quot;>&#xD;&#xA;  &lt;FirstName>John&lt;/FirstName>&#xD;&#xA;  &lt;LastName>Doe&lt;/LastName>&#xD;&#xA;  &lt;Location>Austin&lt;/Location>&#xD;&#xA;  &lt;Age>75&lt;/Age>&#xD;&#xA;&lt;/inputPartyInfo>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161798296_805" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161798296_806" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161798296_807" value="75" typeURI="sdo:/#int" baseTypeURI="sdo:/#int"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161798296_808" value="John" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:ComponentInvocationEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:MonitorRequestEvent id="1267161798296_809" readOnly="true" clientID="1267160708703_1" parentID="1267161798281_768" timestamp="1267161798296" sourceComponent="HandleGreetingMessageExport1" targetComponent="HelloProcess" sourceReference="&lt;export>" interface="HandleGreetingMessage" operation="returnGreeting" module="Greetings">
+    <request id="1267161798296_810">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="result" id="1267161798296_811" value="" typeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party" baseTypeURI="sdo:/http://GreetingLibrary/com/junglesea/solution/greeting/bo#Party">
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;bo:Party&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:bo=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/bo&quot;>&#xD;&#xA;  &lt;FirstName>John&lt;/FirstName>&#xD;&#xA;  &lt;LastName>Doe&lt;/LastName>&#xD;&#xA;  &lt;Location>Austin&lt;/Location>&#xD;&#xA;  &lt;Age>75&lt;/Age>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Location" id="1267161798296_812" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="LastName" id="1267161798296_813" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Age" id="1267161798296_814" value="75" typeURI="sdo:/#int" baseTypeURI="sdo:/#int"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="FirstName" id="1267161798296_815" value="John" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:MonitorRequestEvent>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="HelloProcess" id="1267161798296_816" readOnly="true" clientID="1267160708703_1" parentID="1267161798281_768" timestamp="1267161798296" children="/36 /37 /39">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" operationName="returnGreeting"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="Receive" id="1267161798312_819" readOnly="true" clientID="1267160708703_1" parentID="1267161798296_816" timestamp="1267161798312">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="4"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="CheckPartyAge" id="1267161798312_820" readOnly="true" clientID="1267160708703_1" parentID="1267161798296_816" timestamp="1267161798312" children="/38">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="8"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="SayGreetingGoodDay" id="1267161798312_821" readOnly="true" clientID="1267160708703_1" parentID="1267161798312_820" timestamp="1267161798312">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="14"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="Reply" id="1267161798312_823" readOnly="true" clientID="1267160708703_1" parentID="1267161798296_816" timestamp="1267161798312">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:BPELFineGrainTraceEvent" module="Greetings" component="HelloProcess" activityID="5"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.common.tc.models.event:MonitorResponseEvent id="1267161798312_827" readOnly="true" clientID="1267160708703_1" parentID="1267161798281_768" timestamp="1267161798312" sourceComponent="HandleGreetingMessageExport1" targetComponent="HelloProcess" sourceReference="&lt;export>" interface="HandleGreetingMessage" operation="returnGreeting" module="Greetings">
+    <response id="1267161798312_828">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="result" id="1267161798312_829" value="Good day to you John" defaultValue="" typeURI="java:/java.lang#String" baseTypeURI="java:/java.lang#String"/>
+    </response>
+  </com.ibm.wbit.comptest.common.tc.models.event:MonitorResponseEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:InvocationResponseEvent id="1267161798312_830" clientID="1267160708703_1" parentID="1267161798281_768" timestamp="1267161798312" testScopeID="1267160708718_3" module="Greetings" component="HandleGreetingMessageExport1" interface="HandleGreetingMessage" operation="returnGreeting">
+    <response id="1267161798312_831">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="outputGreetingMessage" id="1267161798312_832" value="Good day to you John" defaultValue="" typeURI="java:/java.lang#String" baseTypeURI="java:/java.lang#String">
+        <context>
+          <properties name="project_context" value="Greetings"/>
+        </context>
+      </parameters>
+    </response>
+  </com.ibm.wbit.comptest.common.tc.models.event:InvocationResponseEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:WebServiceBindingResponseEvent id="1267161798328_833" clientID="1267160708703_1" parentID="1267161798281_767" timestamp="1267161798328" testScopeId="1267160708718_3" module="Greetings" export="HandleGreetingMessageExport1" service="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage/Binding#HandleGreetingMessageExport1_HandleGreetingMessageHttpService" port="HandleGreetingMessageExport1_HandleGreetingMessageHttpPort" address="http://localhost:9085/GreetingsWeb/sca/HandleGreetingMessageExport1" message="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;soapenv:Envelope xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>&#xD;&#xA;  &lt;soapenv:Body>&#xD;&#xA;    &lt;me:returnGreetingResponse xmlns:me=&quot;http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage&quot;>&#xD;&#xA;      &lt;outputGreetingMessage>Good day to you John&lt;/outputGreetingMessage>&#xD;&#xA;    &lt;/me:returnGreetingResponse>&#xD;&#xA;  &lt;/soapenv:Body>&#xD;&#xA;&lt;/soapenv:Envelope>" interface="HandleGreetingMessage" operation="returnGreeting"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:EndEvent id="1267161798328_834" clientID="1267160708703_1" parentID="1267161792156_844" timestamp="1267161798328"/>
+</xmi:XMI>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/scdl/mfc/6.0.0" xmlns:ns1="http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder" xmlns:ns2="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="Med-ProcessPurchaseOrders-processOrder" name="Med-ProcessPurchaseOrders-processOrder">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns2:ProcessSPOrders">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <references>
+    <reference name="ProcessPurchaseOrderPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1:ProcessPurchaseOrder"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="MoonlightAdapterFacade"/>
+    </reference>
+  </references>
+  <implementation xsi:type="mfc:MediationFlowImplementation" mfcFile="com/junglesea/accessservices/Med-ProcessPurchaseOrders-processOrder.mfc">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+  </implementation>
+</scdl:component>

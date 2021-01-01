@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/scdl/mfc/6.0.0" xmlns:ns1="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments" xmlns:ns2="http://AccessServices-Rapid/com/junglesea/adapter/RapidFlatFileAdapterImport" xmlns:ns3="http://RapidLibrary/com/junglesea/apps/rapid/LabelsAndShipments" xmlns:ns4="http://AccessServices-Rapid/com/junglesea/adapter/InboundRapidFileAdapterExport" xmlns:ns5="http://AccessServices-Rapid/com/junglesea/adapter/OutboundRapidFlatFileAdapterImport" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="Med-LabelsAndShipments-prepareShipLabel" name="Med-LabelsAndShipments-prepareShipLabel">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns1:ManageShipments">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <references>
+    <reference name="OutboundRapidFlatFileAdapterImportPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns5:OutboundRapidFlatFileAdapterImport"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="com/junglesea/adapter/OutboundRapidFlatFileAdapterImport"/>
+    </reference>
+  </references>
+  <implementation xsi:type="mfc:MediationFlowImplementation" mfcFile="com/junglesea/accessservices/Med-LabelsAndShipments-prepareShipLabel.mfc">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+  </implementation>
+</scdl:component>

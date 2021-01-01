@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="EligibiltyCheckExport1_EligibiltyCheckHttp_Service" targetNamespace="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck/Binding" xmlns:Port_0="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:this="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck/Binding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import location="EligibiltyCheck.wsdl" namespace="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck"/>
+  <wsdl:binding name="EligibiltyCheckExport1_EligibiltyCheckHttpBinding" type="Port_0:EligibiltyCheck">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="checkEligibility">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="checkEligibilityRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkEligibilityResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="invalidMemberDataException">
+        <soap:fault name="invalidMemberDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EligibiltyCheckExport1_EligibiltyCheckHttpService">
+    <wsdl:port binding="this:EligibiltyCheckExport1_EligibiltyCheckHttpBinding" name="EligibiltyCheckExport1_EligibiltyCheckHttpPort">
+      <soap:address location="http://localhost:9080/EligibilityCheckWeb/sca/EligibiltyCheckExport1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

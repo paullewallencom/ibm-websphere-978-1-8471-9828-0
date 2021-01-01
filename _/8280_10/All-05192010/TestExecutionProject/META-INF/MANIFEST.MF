@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Class-Path: ProductDomain-v1_0.jar 
+ OutboundRapidFlatFileAdapter.rar 
+ CustomerDomain-v1_0.jar 
+ MoonlightJDBCAdapter.rar 
+ SupplierPartnerDomain-v1_0.jar 
+ BillingDomain-v1_0.jar 
+ CommonDomain-v1_0.jar 
+ PayMeLibrary.jar 
+ RapidLibrary.jar
+Created-By: 1.5.0 (IBM Corporation)
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rl:RuleSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EligibiltyCheck="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck" xmlns:java="http://com.ibm.wbit.br.cb.core/java/" xmlns:prim="http://com.ibm.wbit.br.cb.core/prim/" xmlns:rl="http://www.ibm.com/xmlns/prod/websphere/wbi/br/6.0.0" xmlns:selt="http://EligibilityCheck/com/jungleseainsurance/solution/eligibilityCheck/rules" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd8="http://EligibilityCheckLibrary/com/jungleseainsurance/businessobjects" displayName="ApproveEligibility" name="ApproveEligibility" syncDisplayName="true" targetNamespace="http://EligibilityCheck/com/jungleseainsurance/solution/eligibilityCheck/rules">
+  <rl:interface operation="checkEligibility">
+    <rl:porttype>EligibiltyCheck:EligibiltyCheck</rl:porttype>
+  </rl:interface>
+  <rl:rulegroup>selt:EligibilityCheckRuleGroup</rl:rulegroup>
+  <rl:property name="IBMSystemVersion" type="SystemDefined" value="6.1.0"/>
+  <rl:template displayName="AgeBasedValidationTemplate" name="AgeBasedValidationTemplate" syncDisplayName="true">
+    <rl:id>uid-12681147300360</rl:id>
+    <rl:webPresentation>If Member Age > {0} then reject eligibility</rl:webPresentation>
+    <rl:parameter dataType="xsd:int" displayName="age" syncDisplayName="true" varName="age"/>
+    <rl:rule xsi:type="rl:IfThenRule">
+      <rl:if>
+        <rl:conditionExpression xsi:type="rl:BooleanExpression">
+          <rl:expString>member.Age >age</rl:expString>
+        </rl:conditionExpression>
+      </rl:if>
+      <rl:then>
+        <rl:Action value="validateEligibilty=false"/>
+      </rl:then>
+    </rl:rule>
+  </rl:template>
+  <rl:RuleBlock>
+    <rl:rule xsi:type="rl:TemplateInstanceRule" displayName="SeniorValidationRule" label="SeniorValidationRule" syncDisplayName="true">
+      <rl:templateRef>uid-12681147300360</rl:templateRef>
+      <rl:parameterValue>
+        <rl:name>age</rl:name>
+        <rl:value value="65"/>
+      </rl:parameterValue>
+    </rl:rule>
+  </rl:RuleBlock>
+</rl:RuleSet>

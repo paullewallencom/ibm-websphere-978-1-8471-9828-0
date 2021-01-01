@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="HandleOrderFallout" targetNamespace="http://BizServices-CustomerOrderMgmt/com/junglsea/businessservices/HandleOrderFalloutArtifacts" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://BizServices-CustomerOrderMgmt/com/junglsea/businessservices/HandleOrderFalloutArtifacts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl0="http://CommonDomain-v1_0/com/junglesea/businessservices/interfaces/HandleOrderFallout" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="HandleOrderFalloutPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:HandleOrderFallout"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:import location="../../junglesea/businessservices/interfaces/HandleOrderFallout.wsdl" namespace="http://CommonDomain-v1_0/com/junglesea/businessservices/interfaces/HandleOrderFallout"/>
+</wsdl:definitions>

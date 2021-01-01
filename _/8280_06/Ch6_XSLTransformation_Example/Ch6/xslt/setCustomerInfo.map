@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" targetNamespace="http://Ch6/xslt/setCustomerInfo" version="7.0.101" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://Ch6/xslt/setCustomerInfo">
+    <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FCh6Library%252Fcom%252Fjunglesea%252Fch6%252Fmediations%252Finterfaces%252FCreditManagement%257DrequestCreditApprovalRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FCh6Library%252Fcom%252Fjunglesea%252Fch6%252Fmediations%252Finterfaces%252FWashingtonCreditAgencyService%257DrequestCreditApprovalRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <mappingDeclaration name="setCustomerInfo">
+        <input path="body"/>
+        <output path="body"/>
+        <move>
+            <input path="requestCreditApproval/customerCreditRequest/id"/>
+            <output path="requestCreditApproval/customerInfo"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

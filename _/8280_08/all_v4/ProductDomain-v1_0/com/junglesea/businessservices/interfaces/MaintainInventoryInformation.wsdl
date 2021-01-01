@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="MaintainInventoryInformation" targetNamespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation" xmlns:bons2="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:bons3="http://ProductDomain-v1_0/com/junglesea/bo/msg" xmlns:tns="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation">
+            <xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/BusinessException.xsd"/>
+            <xsd:import namespace="http://ProductDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/InventoryItemMSG.xsd"/>
+            <xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/Acknowledgement.xsd"/>
+      <xsd:element name="addInventoryItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons3:InventoryItemMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addInventoryItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons2:Acknowledgement"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="modifyInventoryItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons3:InventoryItemMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="modifyInventoryItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons2:Acknowledgement"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="backkOrderItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons3:InventoryItemMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="backkOrderItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons2:Acknowledgement"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="addInventoryItemFault1_addInventoryItemFault" nillable="true" type="bons2:BusinessException"/>
+            <xsd:element name="modifyInventoryItemFault1_modifyInventoryItemFault" nillable="true" type="bons2:BusinessException"/>
+            <xsd:element name="backkOrderItemFault1_backkOrderItemFault" nillable="true" type="bons2:BusinessException"/>
+        </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="addInventoryItemRequestMsg">
+    <wsdl:part element="tns:addInventoryItem" name="addInventoryItemParameters"/>
+  </wsdl:message>
+    <wsdl:message name="addInventoryItemResponseMsg">
+    <wsdl:part element="tns:addInventoryItemResponse" name="addInventoryItemResult"/>
+  </wsdl:message>
+    <wsdl:message name="modifyInventoryItemRequestMsg">
+    <wsdl:part element="tns:modifyInventoryItem" name="modifyInventoryItemParameters"/>
+  </wsdl:message>
+    <wsdl:message name="modifyInventoryItemResponseMsg">
+    <wsdl:part element="tns:modifyInventoryItemResponse" name="modifyInventoryItemResult"/>
+  </wsdl:message>
+    <wsdl:message name="backkOrderItemRequestMsg">
+    <wsdl:part element="tns:backkOrderItem" name="backkOrderItemParameters"/>
+  </wsdl:message>
+    <wsdl:message name="backkOrderItemResponseMsg">
+    <wsdl:part element="tns:backkOrderItemResponse" name="backkOrderItemResult"/>
+  </wsdl:message>
+    <wsdl:message name="addInventoryItem_addInventoryItemFaultMsg">
+    <wsdl:part element="tns:addInventoryItemFault1_addInventoryItemFault" name="addInventoryItemFault"/>
+  </wsdl:message>
+    <wsdl:message name="modifyInventoryItem_modifyInventoryItemFaultMsg">
+    <wsdl:part element="tns:modifyInventoryItemFault1_modifyInventoryItemFault" name="modifyInventoryItemFault"/>
+  </wsdl:message>
+    <wsdl:message name="backkOrderItem_backkOrderItemFaultMsg">
+    <wsdl:part element="tns:backkOrderItemFault1_backkOrderItemFault" name="backkOrderItemFault"/>
+  </wsdl:message>
+    <wsdl:portType name="MaintainInventoryInformation">
+    <wsdl:operation name="addInventoryItem">
+      <wsdl:input message="tns:addInventoryItemRequestMsg" name="addInventoryItemRequest"/>
+      <wsdl:output message="tns:addInventoryItemResponseMsg" name="addInventoryItemResponse"/>
+            <wsdl:fault message="tns:addInventoryItem_addInventoryItemFaultMsg" name="addInventoryItemFault"/>
+        </wsdl:operation>
+    <wsdl:operation name="modifyInventoryItem">
+      <wsdl:input message="tns:modifyInventoryItemRequestMsg" name="modifyInventoryItemRequest"/>
+      <wsdl:output message="tns:modifyInventoryItemResponseMsg" name="modifyInventoryItemResponse"/>
+            <wsdl:fault message="tns:modifyInventoryItem_modifyInventoryItemFaultMsg" name="modifyInventoryItemFault"/>
+        </wsdl:operation>
+    <wsdl:operation name="backkOrderItem">
+      <wsdl:input message="tns:backkOrderItemRequestMsg" name="backkOrderItemRequest"/>
+      <wsdl:output message="tns:backkOrderItemResponseMsg" name="backkOrderItemResponse"/>
+            <wsdl:fault message="tns:backkOrderItem_backkOrderItemFaultMsg" name="backkOrderItemFault"/>
+        </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

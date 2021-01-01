@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" targetNamespace="http://TestBed/xslt/XSLTransformation1_req_1" version="7.0.101" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://TestBed/xslt/XSLTransformation1_req_1">
+    <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FCustomerDomain-v1_0%252Fcom%252Fjunglesea%252Fbusinessservices%252Finterfaces%252FMaintainCustomerInformation%257DcreateCustomerRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FGreenLibrary%252Fcom%252Fjunglesea%252Fapps%252Fgreen%252FCustomerProfile%257DcreateCustomerAccountRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <mappingDeclaration name="XSLTransformation1_req_1">
+        <input path="body"/>
+        <output path="body"/>
+        <move>
+            <input path="createCustomer/inputParam/Customer/Party/PartyDetails/Person/Name/FirstName"/>
+            <output path="createCustomerAccount/input1/firstName"/>
+        </move>
+        <move>
+            <input path="createCustomer/inputParam/Customer/Party/PartyDetails/Person/Name/LastName"/>
+            <output path="createCustomerAccount/input1/lastName"/>
+        </move>
+        <move>
+            <input path="createCustomer/inputParam/Customer/Party/Id"/>
+            <output path="createCustomerAccount/input1/type"/>
+        </move>
+        <move>
+            <input path="createCustomer/inputParam/Customer/Party/PartyDetails/Person/HomeAddress/LineOne"/>
+            <output path="createCustomerAccount/input1/homeAddress/line1"/>
+        </move>
+        <move>
+            <input path="createCustomer/inputParam/Customer/Party/PartyDetails/Person/HomeAddress/LineTwo"/>
+            <output path="createCustomerAccount/input1/homeAddress/line2"/>
+        </move>
+        <move>
+            <input path="createCustomer/inputParam/Customer/Party/PartyDetails/Person/HomeAddress/City"/>
+            <output path="createCustomerAccount/input1/homeAddress/city"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

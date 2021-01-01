@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://Ch5Library/com/junglsea/businessobjects"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="Customer">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="id" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="firstName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="lastName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="title" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="dateOfBirth"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="suffix"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.btools.bom.model.organizationstructures="http:///com/ibm/btools/bom/model/organizationstructures.ecore"
+    xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1193247344054"/>
+  <com.ibm.btools.bom.model.organizationstructures:TreeStructure xmi:id="FID-00000000000000000000000000000113"
+      uid="FID-00000000000000000000000000000113" name="Default structure template">
+    <ownedComment xmi:id="BLM-b8c700ff46d0fecca9bc06dca0f9e2b5" uid="BLM-b8c700ff46d0fecca9bc06dca0f9e2b5"
+        body=""/>
+    <owningPackage href="RID-00000000000000000000000000000006.xmi#FID-00000000000000000000000000000006"/>
+    <rootType xmi:id="FID-00000000000000000000000000000114" uid="FID-00000000000000000000000000000114"
+        name="Root" isRecursive="true"/>
+  </com.ibm.btools.bom.model.organizationstructures:TreeStructure>
+</xmi:XMI>

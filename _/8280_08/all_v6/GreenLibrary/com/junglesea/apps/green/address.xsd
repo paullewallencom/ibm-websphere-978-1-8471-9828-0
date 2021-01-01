@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://GreenLibrary/com/junglesea/apps/green"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="address">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="line1" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="line2" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="city" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="state" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="zip" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="country"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

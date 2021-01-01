@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.ibm.btools.bom.model.artifacts="http:///com/ibm/btools/bom/model/artifacts.ecore"
+    xmlns:com.ibm.btools.bom.model.resources="http:///com/ibm/btools/bom/model/resources.ecore"
+    xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1193247339867"/>
+  <com.ibm.btools.bom.model.resources:IndividualResourceType xmi:id="FID-00000000000000000000000000000100"
+      uid="FID-00000000000000000000000000000100" name="Person_Category" isAbstract="true">
+    <owningPackage href="RID-00000000000000000000000000000004.xmi#FID-00000000000000000000000000000004"/>
+    <ownedAttribute xmi:id="FID-00000000000000000000000000001001" uid="FID-00000000000000000000000000001001"
+        name="personId">
+      <type xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000203.xmi#FID-00000000000000000000000000000203"/>
+      <upperBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-9b03cb6f00d33cdbca4c7eccf8386652"
+          uid="BLM-9b03cb6f00d33cdbca4c7eccf8386652" name="LITERAL" value="1"/>
+      <lowerBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-ea36c378a83dc0acea437a907ec495b4"
+          uid="BLM-ea36c378a83dc0acea437a907ec495b4" name="LITERAL" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="FID-00000000000000000000000000001002" uid="FID-00000000000000000000000000001002"
+        name="lastName">
+      <type xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000203.xmi#FID-00000000000000000000000000000203"/>
+      <upperBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-5f50f5e48b80cab0080c86731445c140"
+          uid="BLM-5f50f5e48b80cab0080c86731445c140" name="LITERAL" value="1"/>
+      <lowerBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-aa79d4831b60318da336401c78cc602e"
+          uid="BLM-aa79d4831b60318da336401c78cc602e" name="LITERAL" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="FID-00000000000000000000000000001003" uid="FID-00000000000000000000000000001003"
+        name="firstName">
+      <type xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000203.xmi#FID-00000000000000000000000000000203"/>
+      <upperBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-efbf42c65d852ba27038014687df98f4"
+          uid="BLM-efbf42c65d852ba27038014687df98f4" name="LITERAL" value="1"/>
+      <lowerBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-8ecde6e261b54ea835d05956c46be876"
+          uid="BLM-8ecde6e261b54ea835d05956c46be876" name="LITERAL" value="0"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="FID-00000000000000000000000000001004" uid="FID-00000000000000000000000000001004"
+        name="middleName">
+      <type xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000203.xmi#FID-00000000000000000000000000000203"/>
+      <upperBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-2803ffd2b3f9a4415f3b051dbd669e1c"
+          uid="BLM-2803ffd2b3f9a4415f3b051dbd669e1c" name="LITERAL" value="1"/>
+      <lowerBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-e9bb8d1962a17a04bef39d6a934fb861"
+          uid="BLM-e9bb8d1962a17a04bef39d6a934fb861" name="LITERAL" value="0"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="FID-00000000000000000000000000001005" uid="FID-00000000000000000000000000001005"
+        name="preferredName">
+      <type xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000203.xmi#FID-00000000000000000000000000000203"/>
+      <upperBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-0adc9e4cc832b3fc4cfd422a7578e597"
+          uid="BLM-0adc9e4cc832b3fc4cfd422a7578e597" name="LITERAL" value="1"/>
+      <lowerBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-b878e1b3102786fe6322458c0017b5ce"
+          uid="BLM-b878e1b3102786fe6322458c0017b5ce" name="LITERAL" value="0"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="FID-00000000000000000000000000001006" uid="FID-00000000000000000000000000001006"
+        name="gender">
+      <type xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000203.xmi#FID-00000000000000000000000000000203"/>
+      <upperBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-4930a40d63f74e1465f0e3af0b0ab457"
+          uid="BLM-4930a40d63f74e1465f0e3af0b0ab457" name="LITERAL" value="1"/>
+      <lowerBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-af240c6a2b8fec97e545fb935f040d98"
+          uid="BLM-af240c6a2b8fec97e545fb935f040d98" name="LITERAL" value="0"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="FID-00000000000000000000000000001007" uid="FID-00000000000000000000000000001007"
+        name="preferredLanguage">
+      <type xsi:type="com.ibm.btools.bom.model.artifacts:PrimitiveType" href="RID-00000000000000000000000000000203.xmi#FID-00000000000000000000000000000203"/>
+      <upperBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-68f356cb9a40755e47b2dc828fdece7e"
+          uid="BLM-68f356cb9a40755e47b2dc828fdece7e" name="LITERAL" value="1"/>
+      <lowerBound xsi:type="com.ibm.btools.bom.model.artifacts:LiteralInteger" xmi:id="BLM-d7e90cca74757a0c04b95cad51ed1d3a"
+          uid="BLM-d7e90cca74757a0c04b95cad51ed1d3a" name="LITERAL" value="0"/>
+    </ownedAttribute>
+  </com.ibm.btools.bom.model.resources:IndividualResourceType>
+</xmi:XMI>

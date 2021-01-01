@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensionmodel:ExtensionMap xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.bpel.ui.uiextensionmodel="http:///com/ibm/wbit/bpel/ui/uiextensionmodel.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" namespace="http://com.ibm.wbit.bpel.ui/">
+  <extensions>
+    <extendedObject href="ProcessCustomerPayments.bpel#/"/>
+    <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ProcessExtension" autoLayout="true" maxWpcId="13" minWpcId="0"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="ProcessCustomerPayments.bpel#//@activity/@messages.0/@activity"/>
+    <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="ProcessCustomerPayments.bpel#//@activity/@messages.1/@activity"/>
+    <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+  </extensions>
+</extensionmodel:ExtensionMap>

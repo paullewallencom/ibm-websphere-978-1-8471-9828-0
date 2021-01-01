@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:bo="http://bpc/samples" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bpc/samples">
+  <xsd:annotation>
+    <xsd:appinfo source="wid.federated.schema"/>
+  </xsd:annotation>
+  <xsd:include schemaLocation="../bpc/samples/Error.xsd"/>
+  <xsd:include schemaLocation="../bpc/samples/CustomerRecord.xsd"/>
+</xsd:schema>

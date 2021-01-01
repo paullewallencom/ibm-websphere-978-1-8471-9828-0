@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:module xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:mt="http://www.ibm.com/xmlns/prod/websphere/scdl/moduletype/6.0.0" name="HelloMediationModule">
+   <mt:moduleType  type="com.ibm.ws.sca.scdl.moduletype.mediation" version="1.0.0"/>
+</scdl:module>

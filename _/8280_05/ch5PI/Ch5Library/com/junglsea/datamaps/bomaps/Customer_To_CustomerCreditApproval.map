@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:businessObjectMap xmlns:Customer="http://Ch5Library/com/junglsea/businessobjects" xmlns:Customer_To_CustomerCreditApproval="http://Ch5Library/com/junglsea/datamaps/bomaps" xmlns:map="http://www.ibm.com/xmlns/prod/websphere/wbiserver/map/6.0.0" targetNamespace="http://Ch5Library/com/junglsea/datamaps/bomaps">
+  <map:name>Customer_To_CustomerCreditApproval</map:name>
+  <map:inputBusinessObjectVariable businessObjectRef="Customer:Customer" name="Customer"/>
+  <map:outputBusinessObjectVariable businessObjectRef="Customer:CustomerCreditApproval" name="CustomerCreditApproval"/>
+  <map:propertyMap executionOrder="1">
+    <map:move>
+      <map:input businessObjectVariableRef="Customer" property="id"/>
+      <map:output businessObjectVariableRef="CustomerCreditApproval" property="creditInput/person/ssn_identifier"/>
+    </map:move>
+  </map:propertyMap>
+  <map:propertyMap executionOrder="2">
+    <map:move>
+      <map:input businessObjectVariableRef="Customer" property="firstName"/>
+      <map:output businessObjectVariableRef="CustomerCreditApproval" property="creditInput/person/fName"/>
+    </map:move>
+  </map:propertyMap>
+  <map:propertyMap executionOrder="3">
+    <map:move>
+      <map:input businessObjectVariableRef="Customer" property="lastName"/>
+      <map:output businessObjectVariableRef="CustomerCreditApproval" property="creditInput/person/lName"/>
+    </map:move>
+  </map:propertyMap>
+  <map:propertyMap executionOrder="4">
+    <map:move>
+      <map:input businessObjectVariableRef="Customer" property="dateOfBirth"/>
+      <map:output businessObjectVariableRef="CustomerCreditApproval" property="creditInput/person/dob"/>
+    </map:move>
+  </map:propertyMap>
+  <map:propertyMap executionOrder="5">
+    <map:customAssignment>
+      <map:output businessObjectVariableRef="CustomerCreditApproval" property="creditInput/requestIntiateDate"/>
+      <map:javaCode>java.util.Date __CustomerCreditApproval_creditInput_requestIntiateDate = (java.util.Date)CustomerCreditApproval_creditInput_requestIntiateDate;&#xD;
+java.util.Date __result__1;&#xD;
+{// current date and time&#xD;
+	__result__1 = new java.util.Date();&#xD;
+}&#xD;
+__CustomerCreditApproval_creditInput_requestIntiateDate = __result__1;&#xD;
+CustomerCreditApproval_creditInput_requestIntiateDate = __CustomerCreditApproval_creditInput_requestIntiateDate;&#xD;
+
+//@generated:com.ibm.wbit.activity.ui
+//&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+//&lt;com.ibm.wbit.activity:CompositeActivity xmi:version=&quot;2.0&quot; xmlns:xmi=&quot;http://www.omg.org/XMI&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:com.ibm.wbit.activity=&quot;http:///com/ibm/wbit/activity.ecore&quot; name=&quot;ActivityMethod&quot;>
+//  &lt;exceptions>
+//    &lt;type xsi:type=&quot;com.ibm.wbit.activity:JavaElementType&quot; name=&quot;java.lang.Exception&quot;/>
+//  &lt;/exceptions>
+//  &lt;executableElements xsi:type=&quot;com.ibm.wbit.activity:LibraryActivity&quot; name=&quot;current date and time&quot; description=&quot;The current date and time&quot; category=&quot;date&quot; template=&quot;&amp;lt;%return%> new java.util.Date();&quot;>
+//    &lt;result name=&quot;dateTimeNow&quot; displayName=&quot;date time now&quot;>
+//      &lt;dataOutputs target=&quot;//@executableElements.1&quot;/>
+//      &lt;type xsi:type=&quot;com.ibm.wbit.activity:JavaElementType&quot; name=&quot;java.util.Date&quot;/>
+//    &lt;/result>
+//  &lt;/executableElements>
+//  &lt;executableElements xsi:type=&quot;com.ibm.wbit.activity:Expression&quot; dataInputs=&quot;//@executableElements.0/@result/@dataOutputs.0&quot; value=&quot;CustomerCreditApproval_creditInput_requestIntiateDate&quot; variable=&quot;true&quot;>
+//    &lt;type xsi:type=&quot;com.ibm.wbit.activity:XSDElementType&quot; name=&quot;date&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot;/>
+//  &lt;/executableElements>
+//  &lt;executableGroups executableElements=&quot;//@executableElements.0 //@executableElements.1&quot;/>
+//&lt;/com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG&#xD;
+//!SMAP!*L&#xD;
+//!SMAP!1:2,4&#xD;
+//!SMAP!2:6,2&#xD;
+//!SMAP!1000000:32,1</map:javaCode>
+    </map:customAssignment>
+  </map:propertyMap>
+  <map:propertyMap executionOrder="6">
+    <map:set value="Equal">
+      <map:output businessObjectVariableRef="CustomerCreditApproval" property="creditInput/vendor"/>
+    </map:set>
+  </map:propertyMap>
+</map:businessObjectMap>

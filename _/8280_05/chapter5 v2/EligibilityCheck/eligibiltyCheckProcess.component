@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://EligibilityCheck/EligibiltiyCheckInterface" xmlns:process="http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="eligibiltyCheckProcess" name="eligibiltyCheckProcess">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="async" portType="ns1:EligibiltiyCheckInterface">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="false"/>
+    </interface>
+  </interfaces>
+  <references>
+    <reference name="approveMember">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1:EligibiltiyCheckInterface"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <wire target="approveEligibilty"/>
+    </reference>
+  </references>
+  <implementation xsi:type="process:ProcessImplementation">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+    <process bpel="/eligibiltyCheckProcess.bpel"/>
+  </implementation>
+</scdl:component>

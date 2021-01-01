@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mfc:interfaceMediationFlow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/wbiserver/mfc/6.0.0" xmlns:ns1="http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder" xmlns:ns2="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" name="Med-ProcessPurchaseOrders-processOrder" targetNamespace="http://AccessServices-Moonlight2/com/junglesea/accessservices/Med-ProcessPurchaseOrders-processOrder">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns2:ProcessSPOrders"/>
+  </interfaces>
+  <references>
+    <reference name="ProcessPurchaseOrderPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1:ProcessPurchaseOrder"/>
+    </reference>
+  </references>
+  <extendedOperationBinding source="submitSupplierOrder" target="processOrder" sourcePortType="ns2:ProcessSPOrders" targetReference="ProcessPurchaseOrderPartner"/>
+  <operationFlow medflow="Med-ProcessPurchaseOrders-processOrder.medflow"/>
+</mfc:interfaceMediationFlow>

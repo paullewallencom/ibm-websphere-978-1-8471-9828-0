@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rl:Table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProcessCustomerOrder="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder" xmlns:java="http://com.ibm.wbit.br.cb.core/java/" xmlns:prim="http://com.ibm.wbit.br.cb.core/prim/" xmlns:rl="http://www.ibm.com/xmlns/prod/websphere/wbi/br/6.0.0" xmlns:selt="http://TestBed/com/junglesea/businessrules" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd10="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:xsd11="http://CustomerDomain-Msg/com/junglesea/bo" xmlns:xsd9="http://CustomerDomain-v1_0/com/junglesea/bo/msg" displayName="Dummy" name="Dummy" syncDisplayName="true" targetNamespace="http://TestBed/com/junglesea/businessrules">
+  <rl:interface operation="queryOrderStatus">
+    <rl:porttype>ProcessCustomerOrder:ProcessCustomerOrder</rl:porttype>
+  </rl:interface>
+  <rl:rulegroup>selt:OrderManagementRuleGroup</rl:rulegroup>
+  <rl:property name="IBMSystemVersion" type="SystemDefined" value="6.1.0"/>
+  <rl:TreeBlock>
+    <rl:conditionDefinition>
+      <rl:termDefinition>
+        <rl:termExpression value="inputParam.CustomerOrder.OrderPriority"/>
+      </rl:termDefinition>
+      <rl:valueDefinition>
+        <rl:valueExpression value="> 1"/>
+      </rl:valueDefinition>
+      <rl:orientation>Row</rl:orientation>
+    </rl:conditionDefinition>
+    <rl:actionTermDefinition>
+      <rl:termExpression value="inputParam.CustomerOrder.OrderPriority"/>
+    </rl:actionTermDefinition>
+    <rl:treeNode xsi:type="rl:ConditionNode">
+      <rl:termDefinitionRef>//@table/@treeBlock/@conditionDefinition.0/@termDefinition</rl:termDefinitionRef>
+      <rl:edge>
+        <rl:valueDefinitionRef>//@table/@treeBlock/@conditionDefinition.0/@valueDefinition.0</rl:valueDefinitionRef>
+        <rl:treeNode xsi:type="rl:ActionNode">
+          <rl:treeAction>
+            <rl:termDefinitionRef>//@table/@treeBlock/@actionTermDefinition.0</rl:termDefinitionRef>
+            <rl:valueExpression value="1"/>
+          </rl:treeAction>
+        </rl:treeNode>
+      </rl:edge>
+    </rl:treeNode>
+  </rl:TreeBlock>
+</rl:Table>

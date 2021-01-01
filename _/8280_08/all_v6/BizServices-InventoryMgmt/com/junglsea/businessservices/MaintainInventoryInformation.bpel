@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://BizServices-InventoryMgmt/com/junglsea/businessservices/MaintainInventoryInformationArtifacts" xmlns:ns0="http://ProductDomain-v1_0/com/junglesea/bo/msg" xmlns:ns1="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:ns2="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="MaintainInventoryInformation" suppressJoinFailure="yes" targetNamespace="http://BizServices-InventoryMgmt/com/junglsea/businessservices" wpc:continueOnError="no" wpc:displayName="MaintainInventoryInformation" wpc:executionMode="longRunning" wpc:id="1" wpc:validFrom="2010-01-06T17:52:49" wpc:version="IBM_7.0.100">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/Acknowledgement.xsd" namespace="http://CommonDomain-v1_0/com/junglesea/bo"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/MaintainInventoryInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/InventoryItemMSG.xsd" namespace="http://ProductDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="MaintainInventoryInformationArtifacts.wsdl" namespace="http://BizServices-InventoryMgmt/com/junglsea/businessservices/MaintainInventoryInformationArtifacts"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="MaintainInventoryInformation" partnerLinkType="ns:MaintainInventoryInformationPLT" wpc:id="2"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="inputParams" type="ns0:InventoryItemMSG" wpc:id="13"/>
+    <bpws:variable name="outputParams" type="ns1:Acknowledgement" wpc:id="14"/>
+    <bpws:variable name="inputParams1" type="ns0:InventoryItemMSG" wpc:id="15"/>
+    <bpws:variable name="outputParams1" type="ns1:Acknowledgement" wpc:id="16"/>
+    <bpws:variable name="inputParams2" type="ns0:InventoryItemMSG" wpc:id="17"/>
+    <bpws:variable name="outputParams2" type="ns1:Acknowledgement" wpc:id="18"/>
+  </bpws:variables>
+  <bpws:pick createInstance="yes" name="ReceiveChoice" wpc:displayName="Receive Choice" wpc:id="3" wpc:transactionalBehavior="commitAfter">
+    <bpws:onMessage operation="addInventoryItem" partnerLink="MaintainInventoryInformation" portType="ns2:MaintainInventoryInformation" wpc:id="4">
+      <wpc:output>
+        <wpc:parameter name="inputParams" variable="inputParams"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence" wpc:id="1073741829">
+        <bpws:reply name="Reply_addInventoryItem" operation="addInventoryItem" partnerLink="MaintainInventoryInformation" portType="ns2:MaintainInventoryInformation" wpc:displayName="Reply-addInventoryItem" wpc:id="6">
+          <wpc:input>
+            <wpc:parameter name="outputParams" variable="outputParams"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+    <bpws:onMessage operation="modifyInventoryItem" partnerLink="MaintainInventoryInformation" portType="ns2:MaintainInventoryInformation" wpc:id="7">
+      <wpc:output>
+        <wpc:parameter name="inputParams" variable="inputParams1"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence1" wpc:id="1073741832">
+        <bpws:reply name="Reply_modifyInventoryItem" operation="modifyInventoryItem" partnerLink="MaintainInventoryInformation" portType="ns2:MaintainInventoryInformation" wpc:displayName="Reply-modifyInventoryItem" wpc:id="9">
+          <wpc:input>
+            <wpc:parameter name="outputParams" variable="outputParams1"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+    <bpws:onMessage operation="backkOrderItem" partnerLink="MaintainInventoryInformation" portType="ns2:MaintainInventoryInformation" wpc:id="10">
+      <wpc:output>
+        <wpc:parameter name="inputParams" variable="inputParams2"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence2" wpc:id="1073741835">
+        <bpws:reply name="Reply_backkOrderItem" operation="backkOrderItem" partnerLink="MaintainInventoryInformation" portType="ns2:MaintainInventoryInformation" wpc:displayName="Reply-backkOrderItem" wpc:id="12">
+          <wpc:input>
+            <wpc:parameter name="outputParams" variable="outputParams2"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+  </bpws:pick>
+</bpws:process>

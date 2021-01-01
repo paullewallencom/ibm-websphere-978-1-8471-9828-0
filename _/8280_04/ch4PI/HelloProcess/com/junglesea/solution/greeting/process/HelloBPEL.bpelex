@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.bpel.ui.uiextensionmodel="http:///com/ibm/wbit/bpel/ui/uiextensionmodel.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.bpel.ui/">
+    <extensions>
+      <extendedObject href="HelloBPEL.bpel#/"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1251186192234" autoLayout="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HelloBPEL.bpel#//@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HelloBPEL.bpel#//@variables/@children.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HelloBPEL.bpel#//@variables/@children.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HelloBPEL.bpel#//@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HelloBPEL.bpel#//@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HelloBPEL.bpel#//@variables/@children.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HelloBPEL.bpel#//@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions>
+      <extendedObject href="HelloBPEL.bpel#/"/>
+      <extensionObject xsi:type="sb:StickyDocument">
+        <stickyBoard id="default"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ IBM Confidential
+ OCO Source Materials
+ 5724-T73, 5724-L77
+ (c) Copyright IBM Corporation 2004, 2007
+ The source code for this program is not published or otherwise
+ divested of its trade secrets, irrespective of what has been
+ deposited with the U.S. Copyright Office.
+-->
+<schema
+	targetNamespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/metadata"
+	xmlns:jdbcasi="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/metadata"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:botm="http://www.ibm.com/wbi/BusinessObjectMetadata"
+	elementFormDefault="qualified"
+	xmlns="http://www.w3.org/2001/XMLSchema">
+
+	<simpleType name="OrderingScheme">
+		<restriction base="string">
+			<enumeration value="" />
+			<enumeration value="implicit" />
+			<enumeration value="visual" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="Orientation">
+		<restriction base="string">
+			<enumeration value="" />
+			<enumeration value="LTR" />
+			<enumeration value="RTL" />
+			<enumeration value="contextual_LTR" />
+			<enumeration value="contextual_RTL" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="TrueFalse">
+		<restriction base="string">
+			<enumeration value="" />
+			<enumeration value="true" />
+			<enumeration value="false" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="NumeralShapes">
+		<restriction base="string">
+			<enumeration value="" />
+			<enumeration value="nominal" />
+			<enumeration value="national" />
+			<enumeration value="contextual" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="TextShapes">
+		<restriction base="string">
+			<enumeration value="" />
+			<enumeration value="nominal" />
+			<enumeration value="shaped" />
+			<enumeration value="initial" />
+			<enumeration value="middle" />
+			<enumeration value="final" />
+			<enumeration value="isolated" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="Bi_DirectionStringTD">
+		<sequence minOccurs="1" maxOccurs="1">
+			<element name="orderingScheme"
+				type="jdbcasi:OrderingScheme" />
+			<element name="orientation" type="jdbcasi:Orientation" />
+			<element name="symmetricSwapping" type="jdbcasi:TrueFalse" />
+			<element name="numeralShapes" type="jdbcasi:NumeralShapes" />
+			<element name="textShape" type="jdbcasi:TextShapes" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="SpecString">
+		<restriction base="string">
+			<enumeration value="NORMAL_STRING" />
+			<enumeration value="JDBC_URL_SQL" />
+			<enumeration value="SAP_WHERE_CLAUSE" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="BiDiContext">
+		<sequence minOccurs="0" maxOccurs="1">
+			<element name="BiDiEIS" type="jdbcasi:Bi_DirectionStringTD"
+				minOccurs="0" />
+			<element name="BiDiMetadata"
+				type="jdbcasi:Bi_DirectionStringTD" minOccurs="0" />
+			<element name="BiDiSkip" type="jdbcasi:TrueFalse"
+				minOccurs="0" />
+			<element name="BiDiSpecFormat" type="jdbcasi:SpecString"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="JDBCBusinessObjectTypeMetadata"
+		type="jdbcasi:JDBCBusinessObjectTypeMetadata">
+		<annotation>
+			<appinfo source="commonj.connector.asi">
+				<emd:annotationType xmlns:emd="commonj.connector.asi"
+					annotationKind="complexType" annotationScope="global" />
+			</appinfo>
+		</annotation>
+	</element>
+
+	<complexType name="JDBCBusinessObjectTypeMetadata">
+		<sequence minOccurs="0" maxOccurs="1">
+			<element name="TableName" type="string" minOccurs="0" />
+			<element name="StatusColumnName" type="string"  minOccurs="0" />
+			<element name="SPName" type="string" minOccurs="0" />
+			<element name="ResultSet" type="boolean" minOccurs="0" />
+			<element name="MaxNumOfRetRS" type="integer" minOccurs="0" />
+			<element name="ReturnValue" type="string" minOccurs="0" />
+			<element name="SelectStatement" type="string" minOccurs="0" />
+			<element name="StatusValue" type="string" minOccurs="0" />
+			<element name="Operation"
+				type="jdbcasi:JDBCOperationTypeMetadata" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="BatchSQL"
+				type="jdbcasi:JDBCBatchSQLTypeMetadata" minOccurs="0"
+				maxOccurs="unbounded" />	
+			<!-- IBM BIDI Append -->
+			<element name="BiDiContext" type="jdbcasi:Bi_DirectionStringTD" minOccurs="0"/>
+			<element name="BiDiMetadata" type="jdbcasi:Bi_DirectionStringTD" minOccurs="0"/>
+			<element name="Wrapper" type="boolean" minOccurs="0" />
+			<element name="ResultSetBOMode" type="boolean" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="JDBCOperationTypeMetadata"
+		type="jdbcasi:JDBCOperationTypeMetadata">
+		<annotation>
+			<appinfo source="commonj.connector.asi">
+				<emd:annotationType xmlns:emd="commonj.connector.asi"
+					annotationKind="complexType" annotationScope="global" />
+			</appinfo>
+		</annotation>
+	</element>
+
+	<complexType name="JDBCOperationTypeMetadata">
+		<sequence minOccurs="0" maxOccurs="1">
+			<element name="Name" type="string" />
+			<element name="StoredProcedures"
+				type="jdbcasi:StoredProcedureDefn" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<element name="StoredProcedureDefn"
+		type="jdbcasi:StoredProcedureDefn">
+		<annotation>
+			<appinfo source="http://commonj.connector.asi">
+				<emd:annotationType
+					xmlns:emd="http://commonj.connector.asi"
+					annotationKind="complexType" annotationScope="global" />
+			</appinfo>
+		</annotation>
+	</element>
+
+	<complexType name="StoredProcedureDefn">
+		<sequence minOccurs="0" maxOccurs="1">
+			<element name="StoredProcedureType" type="string" minOccurs="0" />
+			<element name="StoredProcedureName" type="string" minOccurs="0" />
+			<element name="ResultSet" type="boolean" minOccurs="0" />
+			<element name="ReturnValue" type="string" minOccurs="0" />
+			<element name="Parameters" type="jdbcasi:ParameterPair"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<element name="ParameterType" type="jdbcasi:ParameterType">
+		<annotation>
+			<appinfo source="http://commonj.connector.asi">
+				<emd:annotationType
+					xmlns:emd="http://commonj.connector.asi"
+					annotationKind="complexType" annotationScope="global" />
+			</appinfo>
+		</annotation>
+	</element>
+
+	<simpleType name="ParameterType">
+		<restriction base="string">
+			<enumeration value="IP" />
+			<enumeration value="IO" />
+			<enumeration value="OP" />
+			<enumeration value="RS" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ChildBOParameterType">
+		<restriction base="string">
+			<enumeration value="Struct" />
+			<enumeration value="Array" />
+			<enumeration value="ResultSet" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DateTypeTransfer">
+		<restriction base="string">
+			<enumeration value="Time" />
+			<enumeration value="Date" />
+			<enumeration value="TimeStamp" />
+		</restriction>
+	</simpleType>
+	
+	<element name="ParameterPair" type="jdbcasi:ParameterPair">
+		<annotation>
+			<appinfo source="http://commonj.connector.asi">
+				<emd:annotationType
+					xmlns:emd="http://commonj.connector.asi"
+					annotationKind="complexType" annotationScope="global" />
+			</appinfo>
+		</annotation>
+	</element>
+
+	<complexType name="ParameterPair">
+		<sequence minOccurs="1" maxOccurs="1">
+			<element name="Type" type="jdbcasi:ParameterType" />
+			<element name="PropertyName" type="string" />
+		</sequence>
+	</complexType>
+
+
+<element name="JDBCBatchSQLTypeMetadata"
+		type="jdbcasi:JDBCBatchSQLTypeMetadata">
+		<annotation>
+			<appinfo source="commonj.connector.asi">
+				<emd:annotationType xmlns:emd="commonj.connector.asi"
+					annotationKind="complexType" annotationScope="global" />
+			</appinfo>
+		</annotation>
+	</element>
+
+	<complexType name="JDBCBatchSQLTypeMetadata">
+		<sequence minOccurs="0" maxOccurs="1">
+			<element name="BatchSQLIndex" type="string" />
+			<element name="SQLStatement" type="string" />
+		</sequence>
+	</complexType>
+
+		
+	<element name="JDBCAttributeTypeMetadata"
+		type="jdbcasi:JDBCAttributeTypeMetadata">
+		<annotation>
+			<appinfo source="commonj.connector.asi">
+				<emd:annotationType xmlns:emd="commonj.connector.asi"
+					annotationKind="element" annotationScope="local" />
+			</appinfo>
+		</annotation>
+	</element>
+
+
+	<complexType name="JDBCAttributeTypeMetadata">
+		<sequence minOccurs="1" maxOccurs="1">
+			<element name="ColumnName" type="string" minOccurs="0" />
+			<element name="PrimaryKey" type="boolean" minOccurs="0" />
+			<element name="ForeignKey" type="string" minOccurs="0" />
+			<element name="OrderBy" type="string" minOccurs="0" />
+			<element name="FixedChar" type="string" minOccurs="0" />
+			<element name="KeepRelationship" type="boolean"
+				minOccurs="0" />
+			<element name="Ownership" type="boolean" minOccurs="0" />
+			<element name="SPParameterType" type="jdbcasi:ParameterType"
+				minOccurs="0" />
+			<element name="UID" type="string" minOccurs="0" />
+			<element name="ByteArray" type="boolean" minOccurs="0" />
+			<element name="DateType" type="jdbcasi:DateTypeTransfer"
+				minOccurs="0" />
+			<element name="DecimalScale" type="int"
+				minOccurs="0" />
+			<element name="BLOB" type="boolean" minOccurs="0" />
+			<element name="CLOB" type="boolean" minOccurs="0" />
+			<element name="Dummy" type="boolean" minOccurs="0" />
+			<element name="ChildBOType"
+				type="jdbcasi:ChildBOParameterType" minOccurs="0" />
+			<element name="BiDiContext" type="jdbcasi:BiDiContext"
+				minOccurs="0" />
+			<element name="ChildBOTypeName" type="string" minOccurs="0" />
+			<element name="CopyAttribute" type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+</schema>
+

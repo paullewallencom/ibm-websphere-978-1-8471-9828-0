@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://CustomerDomain-v1_0/com/junglesea/bo"
+	xmlns:bons1="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:bons2="http://ProductDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo"
+		schemaLocation="Party.xsd">
+	</xsd:import>
+	<xsd:import namespace="http://ProductDomain-v1_0/com/junglesea/bo"
+		schemaLocation="Product.xsd">
+	</xsd:import>
+	<xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo"
+		schemaLocation="GeographicAddress.xsd">
+	</xsd:import>
+
+	<xsd:complexType name="OrderItem">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="PurchasedItem"
+				type="bons2:Product">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ShippingAddress"
+				type="bons1:GeographicAddress">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="BillingAddress"
+				type="bons1:GeographicAddress">
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="SellerParty"
+				type="bons1:Party">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ShippingPrice"
+				type="xsd:string">
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="ShippingDate"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="DeliveryDate"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Notes" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="SupplierOrder"
+				type="xsd:boolean" default="false">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

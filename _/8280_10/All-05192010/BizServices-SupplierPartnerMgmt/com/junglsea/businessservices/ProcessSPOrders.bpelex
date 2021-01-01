@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.bpel.ui.uiextensionmodel="http:///com/ibm/wbit/bpel/ui/uiextensionmodel.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1272411438000" namespace="http://com.ibm.wbit.bpel.ui/">
+    <extensions xmi:id="Extension_1272411438000">
+      <extendedObject href="ProcessSPOrders.bpel#/"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ProcessExtension" xmi:id="ProcessExtension_1272411438015" modificationStamp="1272891874953" autoLayout="true" maxWpcId="39" minWpcId="0"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@variables/@children.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@variables/@children.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@variables/@children.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@variables/@children.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:OnMessageExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:OnMessageExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.1/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catch.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catch.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catch.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catch.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catchAll/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catchAll/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catchAll/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@variables/@children.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catchAll/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catch.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catch.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catchAll/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catchAll/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions>
+      <extendedObject href="ProcessSPOrders.bpel#/"/>
+      <extensionObject xsi:type="sb:StickyDocument">
+        <stickyBoard id="default">
+          <stickyNote body="Invoke business service" id="2eb6270e-50ad-42c2-86c7-89cbc6527d73">
+            <bounds x="14" y="324"/>
+            <association>
+              <target href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0"/>
+            </association>
+          </stickyNote>
+          <stickyNote body="Handle exceptions" id="66214ff2-d2a0-4b37-a605-ceaab2723aa1">
+            <bounds x="925" y="444"/>
+            <association>
+              <target href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler"/>
+            </association>
+          </stickyNote>
+          <stickyNote body="Map to BusinessException BO" id="95e9be60-2cfd-4f85-a007-f579aaff193f">
+            <bounds x="912" y="291"/>
+            <association>
+              <target href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catchAll/@activity/@activities.0"/>
+            </association>
+            <association>
+              <target href="ProcessSPOrders.bpel#//@activity/@messages.0/@activity/@activities.1/@activities.0/@faultHandler/@catch.0/@activity/@activities.0"/>
+            </association>
+          </stickyNote>
+        </stickyBoard>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="HandleGreetingMessage" targetNamespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage" xmlns:bons1="http://GreetingLibrary/com/junglesea/solution/greeting/bo" xmlns:tns="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage">
+      <xsd:import namespace="http://GreetingLibrary/com/junglesea/solution/greeting/bo" schemaLocation="../bo/Party.xsd"/>
+      <xsd:element name="returnGreeting">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputPartyInfo" nillable="true" type="bons1:Party"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="returnGreetingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputGreetingMessage" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="returnGreetingRequestMsg">
+    <wsdl:part element="tns:returnGreeting" name="returnGreetingParameters"/>
+  </wsdl:message>
+    <wsdl:message name="returnGreetingResponseMsg">
+    <wsdl:part element="tns:returnGreetingResponse" name="returnGreetingResult"/>
+  </wsdl:message>
+    <wsdl:portType name="HandleGreetingMessage">
+    <wsdl:operation name="returnGreeting">
+      <wsdl:input message="tns:returnGreetingRequestMsg" name="returnGreetingRequest"/>
+      <wsdl:output message="tns:returnGreetingResponseMsg" name="returnGreetingResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

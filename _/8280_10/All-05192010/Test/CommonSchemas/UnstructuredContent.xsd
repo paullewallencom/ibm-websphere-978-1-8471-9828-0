@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/base/unstructuredcontent" xmlns:unstructuredcontent="http://www.ibm.com/xmlns/prod/websphere/j2ca/base/unstructuredcontent">
+
+<xsd:annotation xml:space="preserve">
+<xsd:appinfo source="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability">
+<info:resourceAdapter xmlns:info="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability" version="7.0.0.0"/>
+</xsd:appinfo>
+</xsd:annotation>
+
+<xsd:complexType name="UnstructuredContent">
+<xsd:sequence minOccurs="1" maxOccurs="1">
+<xsd:element name="ContentType" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ObjectName" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="AsText" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="AsBinary" type="xsd:hexBinary" nillable="true" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>

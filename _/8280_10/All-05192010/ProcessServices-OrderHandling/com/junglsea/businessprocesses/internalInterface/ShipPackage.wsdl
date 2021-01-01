@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="ShipPackage" targetNamespace="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/internalInterface/ShipPackage" xmlns:bons1="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" xmlns:bons2="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:tns="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/internalInterface/ShipPackage" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/internalInterface/ShipPackage">
+      <xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="../../../junglesea/bo/Acknowledgement.xsd"/>
+      <xsd:import namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../../junglesea/bo/msg/ShipmentMSG.xsd"/>
+      <xsd:element name="shipPackage">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="bons1:ShipmentMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="shipPackageResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="bons2:Acknowledgement"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="shipPackageRequestMsg">
+    <wsdl:part element="tns:shipPackage" name="shipPackageParameters"/>
+  </wsdl:message>
+    <wsdl:message name="shipPackageResponseMsg">
+    <wsdl:part element="tns:shipPackageResponse" name="shipPackageResult"/>
+  </wsdl:message>
+    <wsdl:portType name="ShipPackage">
+    <wsdl:operation name="shipPackage">
+      <wsdl:input message="tns:shipPackageRequestMsg" name="shipPackageRequest"/>
+      <wsdl:output message="tns:shipPackageResponseMsg" name="shipPackageResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

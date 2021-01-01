@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://BizServices-CustomerCreditMgmt/com/junglsea/businessservices/CustomerCreditInformationArtifacts" xmlns:ns0="http://CustomerDomain-v1_0/com/junglesea/bo/msg" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/bo" xmlns:ns2="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="CustomerCreditInformation" suppressJoinFailure="yes" targetNamespace="http://BizServices-CustomerCreditMgmt/com/junglsea/businessservices" wpc:continueOnError="no" wpc:displayName="CustomerCreditInformation" wpc:executionMode="microflow" wpc:id="1" wpc:validFrom="2010-01-06T17:51:04" wpc:version="IBM_7.0.100">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/BillingDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/CustomerOrderMSG.xsd" namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/CustomerCreditMSG.xsd" namespace="http://CustomerDomain-v1_0/com/junglesea/bo"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="CustomerCreditInformationArtifacts.wsdl" namespace="http://BizServices-CustomerCreditMgmt/com/junglsea/businessservices/CustomerCreditInformationArtifacts"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/CustomerCreditInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="CustomerCreditInformation" partnerLinkType="ns:CustomerCreditInformationPLT" wpc:id="2"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="InputParams" type="ns0:CustomerOrderMSG" wpc:id="6"/>
+    <bpws:variable name="outputParams" type="ns1:CustomerCreditMSG" wpc:id="7"/>
+  </bpws:variables>
+  <bpws:sequence name="HiddenSequence" wpc:id="1073741827">
+    <bpws:receive createInstance="yes" name="Receive" operation="getCustomerCredit" partnerLink="CustomerCreditInformation" portType="ns2:CustomerCreditInformation" wpc:displayName="Receive" wpc:id="4" wpc:transactionalBehavior="commitAfter">
+      <wpc:output>
+        <wpc:parameter name="InputParams" variable="InputParams"/>
+      </wpc:output>
+    </bpws:receive>
+    <bpws:assign name="Assign" wpc:displayName="Assign" wpc:id="8">
+      <bpws:copy>
+        <bpws:from>600</bpws:from>
+        <bpws:to variable="outputParams">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[CustomerCredit/CreditScore]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+    </bpws:assign>
+    <bpws:reply name="Reply" operation="getCustomerCredit" partnerLink="CustomerCreditInformation" portType="ns2:CustomerCreditInformation" wpc:displayName="Reply" wpc:id="5">
+      <wpc:input>
+        <wpc:parameter name="outputParams" variable="outputParams"/>
+      </wpc:input>
+    </bpws:reply>
+  </bpws:sequence>
+</bpws:process>

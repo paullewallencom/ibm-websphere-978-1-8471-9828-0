@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="AlphaFBAInventoryPortType" targetNamespace="http://AlphaLibrary/com/junglesea/apps/alpha/AlphaFBAInventoryPortType" xmlns:bons1="http://AlphaInventory/com/junglesea/apps/alpha" xmlns:tns="http://AlphaLibrary/com/junglesea/apps/alpha/AlphaFBAInventoryPortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://AlphaLibrary/com/junglesea/apps/alpha/AlphaFBAInventoryPortType">
+      <xsd:import namespace="http://AlphaInventory/com/junglesea/apps/alpha" schemaLocation="ShowItemAvailability.xsd"/>
+      <xsd:import namespace="http://AlphaInventory/com/junglesea/apps/alpha" schemaLocation="CheckItemAvailability.xsd"/>
+      <xsd:element name="CheckItemAvailability">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CheckItemAvailability" nillable="true" type="bons1:CheckItemAvailabilityType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckItemAvailabilityResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="bons1:ShowItemAvailability"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="CheckItemAvailabilityRequestMsg">
+    <wsdl:part element="tns:CheckItemAvailability" name="CheckItemAvailabilityParameters"/>
+  </wsdl:message>
+    <wsdl:message name="CheckItemAvailabilityResponseMsg">
+    <wsdl:part element="tns:CheckItemAvailabilityResponse" name="CheckItemAvailabilityResult"/>
+  </wsdl:message>
+    <wsdl:portType name="AlphaFBAInventoryPortType">
+    <wsdl:operation name="CheckItemAvailability">
+      <wsdl:input message="tns:CheckItemAvailabilityRequestMsg" name="CheckItemAvailabilityRequest"/>
+      <wsdl:output message="tns:CheckItemAvailabilityResponseMsg" name="CheckItemAvailabilityResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

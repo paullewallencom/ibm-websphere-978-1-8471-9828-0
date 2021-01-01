@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation" xmlns:ns2="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation" xmlns:process="http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="RetrieveCustomerInformation" name="RetrieveCustomerInformation">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="async" portType="ns1:RetrieveCustomerInformation">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="false"/>
+    </interface>
+  </interfaces>
+  <references>
+    <reference name="MaintainCustomerInformationPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns2:MaintainCustomerInformation"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="MaintainCustomerInformationImport1"/>
+    </reference>
+  </references>
+  <implementation xsi:type="process:ProcessImplementation">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+    <process bpel="/com/junglsea/businessservices/RetrieveCustomerInformation.bpel"/>
+  </implementation>
+</scdl:component>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:tns="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="Entity">
+		<xsd:sequence>
+
+			<xsd:element minOccurs="0" name="EntityId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0" />
+			<xsd:element name="CharacteristicValue"
+				type="tns:CharacteristicValue" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CharacteristicValue">
+		<xsd:sequence>
+			<xsd:element name="Characteristic"
+				type="tns:Characteristic" />
+			<xsd:element name="Value" type="xsd:string" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Characteristic">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" />
+			<xsd:element name="Type" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

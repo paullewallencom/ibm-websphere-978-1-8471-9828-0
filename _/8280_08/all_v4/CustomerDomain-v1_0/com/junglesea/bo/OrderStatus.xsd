@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://CustomerDomain-Msg/com/junglesea/bo" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="OrderStatus">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="OrderId" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="OrderStatus">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Active"/>
+						<xsd:enumeration value="Shipped"/>
+						<xsd:enumeration value="Delivered"/>
+						<xsd:enumeration value="Error"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Description" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Timestamp" type="xsd:dateTime">
+			</xsd:element>
+
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="HelloMediationModuleApp">
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+        <dependent-module archiveName="HelloMediationModule.jar" deploy-path="/" handle="module:/resource/HelloMediationModule/HelloMediationModule">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/HelloMediationModuleWeb/HelloMediationModuleWeb">
+            <dependent-object>WebModule_1169158408425</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="GreetingLibrary.jar" deploy-path="/" handle="module:/resource/GreetingLibrary/GreetingLibrary">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

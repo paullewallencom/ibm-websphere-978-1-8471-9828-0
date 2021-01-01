@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" targetNamespace="http://AccessServices-Moonlight2/com/junglesea/transforms/processOrderResponseMsg_2_submitSupplierOrderResponseMsg" version="7.0.101" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://AccessServices-Moonlight2/com/junglesea/transforms/processOrderResponseMsg_2_submitSupplierOrderResponseMsg">
+    <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FMoonlightLibrary%252Fcom%252Fjunglesea%252Fapps%252Fmoonlight%252FProcessPurchaseOrder%257DprocessOrderResponseMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FSupplierPartnerDomain-v1_0%252Fcom%252Fjunglesea%252Fbusinessservices%252Finterfaces%252FProcessSPOrders%257DsubmitSupplierOrderResponseMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <imports>
+        <import kind="xml" location="processOrderResponseMsg_2_submitSupplierOrderResponseMsg.xml"/>
+    </imports>
+    <mappingDeclaration name="processOrderResponseMsg_2_submitSupplierOrderResponseMsg">
+        <input path="body"/>
+        <output path="body"/>
+        <move>
+            <input path="processOrderResponse/purchaseOrder"/>
+            <output path="submitSupplierOrderResponse/outputParams/SupplierPartnerOrder/OrderNotes"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

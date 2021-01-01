@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://CustomerDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://CustomerDomain-Msg/com/junglesea/bo">
+	<xsd:import schemaLocation="Customer.xsd"
+		namespace="http://CustomerDomain-Msg/com/junglesea/bo">
+	</xsd:import>
+	<xsd:complexType name="CustomerCollection">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Customer"
+				type="bons0:Customer" maxOccurs="unbounded">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

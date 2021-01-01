@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://BizServices-SupplierPartnerMgmt/com/junglsea/businessservices/ProcessSPOrdersArtifacts" xmlns:ns0="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" xmlns:ns1="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="ProcessSPOrders" suppressJoinFailure="yes" targetNamespace="http://BizServices-SupplierPartnerMgmt/com/junglsea/businessservices" wpc:continueOnError="no" wpc:displayName="ProcessSPOrders" wpc:executionMode="longRunning" wpc:id="1" wpc:validFrom="2010-01-06T18:38:56" wpc:version="IBM_7.0.100">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders.wsdl" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/ProcessSPOrders.wsdl" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="ProcessSPOrdersArtifacts.wsdl" namespace="http://BizServices-SupplierPartnerMgmt/com/junglsea/businessservices/ProcessSPOrdersArtifacts"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/SupplierPartnerOrderMSG.xsd" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="ProcessSPOrders" partnerLinkType="ns:ProcessSPOrdersPLT" wpc:id="2"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="inputParams" type="ns0:SupplierPartnerOrderMSG" wpc:id="10"/>
+    <bpws:variable name="outputParams" type="ns0:SupplierPartnerOrderMSG" wpc:id="11"/>
+    <bpws:variable name="inputParams1" type="ns0:SupplierPartnerOrderMSG" wpc:id="12"/>
+    <bpws:variable name="outputParams1" type="ns0:SupplierPartnerOrderMSG" wpc:id="13"/>
+  </bpws:variables>
+  <bpws:pick createInstance="yes" name="ReceiveChoice" wpc:displayName="Receive Choice" wpc:id="3" wpc:transactionalBehavior="commitAfter">
+    <bpws:onMessage operation="submitSupplierOrder" partnerLink="ProcessSPOrders" portType="ns1:ProcessSPOrders" wpc:id="4">
+      <wpc:output>
+        <wpc:parameter name="inputParams" variable="inputParams"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence" wpc:id="1073741829">
+        <bpws:reply name="Reply_submitSupplierOrder" operation="submitSupplierOrder" partnerLink="ProcessSPOrders" portType="ns1:ProcessSPOrders" wpc:displayName="Reply-submitSupplierOrder" wpc:id="6">
+          <wpc:input>
+            <wpc:parameter name="outputParams" variable="outputParams"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+    <bpws:onMessage operation="cancelSupplierOrder" partnerLink="ProcessSPOrders" portType="ns1:ProcessSPOrders" wpc:id="7">
+      <wpc:output>
+        <wpc:parameter name="inputParams" variable="inputParams1"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence1" wpc:id="1073741832">
+        <bpws:reply name="Reply_cancelSupplierOrder" operation="cancelSupplierOrder" partnerLink="ProcessSPOrders" portType="ns1:ProcessSPOrders" wpc:displayName="Reply-cancelSupplierOrder" wpc:id="9">
+          <wpc:input>
+            <wpc:parameter name="outputParams" variable="outputParams1"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+  </bpws:pick>
+</bpws:process>

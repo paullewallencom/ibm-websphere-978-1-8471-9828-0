@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.ibm.com/xmlns/prod/websphere/scdl/java/6.0.0" xmlns:ns1="http://com.ibm.wbit.comptest.controller" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="TestDelegate" name="TestDelegate">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:TestInterface">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <implementation xsi:type="java:JavaImplementation" class="com.ibm.wbit.comptest.ctnative.runtime.TestDelegateImpl">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+  </implementation>
+</scdl:component>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:businessObjectMap xmlns:CustomerOrderMSG="http://CustomerDomain-v1_0/com/junglesea/bo/msg" xmlns:SetCustomerOrderShipmentCommunicationMsg="http://ProcessServices-OrderHandling/com/junglsea/maps/bo" xmlns:ShipmentMSG="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" xmlns:map="http://www.ibm.com/xmlns/prod/websphere/wbiserver/map/6.0.0" targetNamespace="http://ProcessServices-OrderHandling/com/junglsea/maps/bo">
+  <map:name>SetCustomerOrderShipmentCommunicationMsg</map:name>
+  <map:inputBusinessObjectVariable businessObjectRef="CustomerOrderMSG:CustomerOrderMSG" name="CustomerOrderMSG"/>
+  <map:inputBusinessObjectVariable businessObjectRef="ShipmentMSG:ShipmentMSG" name="ShipmentMSG"/>
+  <map:outputBusinessObjectVariable businessObjectRef="CustomerOrderMSG:CustomerCommunucationMSG" name="CustomerCommunucationMSG"/>
+  <map:tempVariable>
+    <map:simpleTypeTempVar name="Dear" type="string" value="Dear"/>
+  </map:tempVariable>
+  <map:tempVariable>
+    <map:simpleTypeTempVar name="Order" type="string" value=". Your order -"/>
+  </map:tempVariable>
+  <map:tempVariable>
+    <map:simpleTypeTempVar name="Shipped" type="string" value="has been shipped. The tracking ID for this order is -"/>
+  </map:tempVariable>
+  <map:propertyMap executionOrder="1">
+    <map:join>
+      <map:input businessObjectVariableRef="Dear"/>
+      <map:input businessObjectVariableRef="CustomerOrderMSG" property="CustomerOrder/BuyerInfo/CustomerAccount/AccountContact/ContactPersonName"/>
+      <map:input businessObjectVariableRef="Order"/>
+      <map:input businessObjectVariableRef="CustomerOrderMSG" property="CustomerOrder/OrderId"/>
+      <map:input businessObjectVariableRef="Shipped"/>
+      <map:input businessObjectVariableRef="ShipmentMSG" property="Shipment/ShipmentTrackingId"/>
+      <map:output businessObjectVariableRef="CustomerCommunucationMSG" property="StandardMessage"/>
+    </map:join>
+  </map:propertyMap>
+</map:businessObjectMap>

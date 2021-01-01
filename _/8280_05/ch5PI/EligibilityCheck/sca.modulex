@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.wiring.ui.ext.model="http:///com/ibm/wbit/wiring/ui/ext/model.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1268019465937" namespace="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+    <extensions xmi:id="Extension_1268019465937">
+      <extendedObject href="PerformEligibilityCheck.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1268019465937" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0}ProcessImplementation" unknown="false" visible="true" x="30" y="30"/>
+    </extensions>
+    <extensions xmi:id="Extension_1268019465938">
+      <extendedObject href="sca.module#//@module"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:ModuleExtension" xmi:id="ModuleExtension_1268019465937" autoLayout="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ApproveEligibility.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/human-task/6.0.0}TaskImplementation" unknown="false" visible="true" x="221" y="31"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1268019465938" namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions xmi:id="Extension_1268019465939">
+      <extendedObject href="sca.module#//@module"/>
+      <extensionObject xsi:type="sb:StickyDocument" xmi:id="StickyDocument_1268019465937">
+        <stickyBoard xmi:id="StickyBoard_1268019465937" id="default"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

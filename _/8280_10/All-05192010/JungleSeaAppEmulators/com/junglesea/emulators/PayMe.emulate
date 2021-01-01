@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.wbit.comptest.common.tc.models.emulator:Emulator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.comptest.common.tc.models.emulator="http:///com/ibm/wbit/comptest/common/tc/models/emulator.ecore" xmlns:com.ibm.wbit.comptest.core.tc.models.emulator="http:///com/ibm/wbit/comptest/core/tc/models/emulator.ecore" id="1274214708062_1" implClassURI="/JungleSeaAppEmulators/gen/src/emulation/PayMeImpl.java">
+  <interfaceEmulators name="CardPaymentServices" id="1274214708062_2" file="/PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices.wsdl" namespace="http://PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices" project="PayMeLibrary">
+    <operationEmulators xsi:type="com.ibm.wbit.comptest.core.tc.models.emulator:WSDLOperationEmulator" name="ccMakePayment" id="1274214708421_3" editor="com.ibm.wbit.comptest.ui.editor.ActivityEditor"/>
+    <operationEmulators xsi:type="com.ibm.wbit.comptest.core.tc.models.emulator:WSDLOperationEmulator" name="ccMakeSettlement" id="1274214708421_4"/>
+    <operationEmulators xsi:type="com.ibm.wbit.comptest.core.tc.models.emulator:WSDLOperationEmulator" name="ccDoCancel" id="1274214708421_5" editor="com.ibm.wbit.comptest.ui.editor.ActivityEditor"/>
+  </interfaceEmulators>
+</com.ibm.wbit.comptest.common.tc.models.emulator:Emulator>

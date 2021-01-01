@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="ManageShipments" targetNamespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments" xmlns:bons2="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:bons4="http://CustomerDomain-v1_0/com/junglesea/bo/msg" xmlns:bons5="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" xmlns:tns="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments">
+            <xsd:import namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/ShipmentMSG.xsd"/>
+            <xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/CustomerOrderMSG.xsd"/>
+      <xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/Acknowledgement.xsd"/>
+      <xsd:element name="createShippingLabel">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons4:CustomerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createShippingLabelResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons5:ShipmentMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelShipment">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons5:ShipmentMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelShipmentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons2:Acknowledgement"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="createShippingLabelRequestMsg">
+    <wsdl:part element="tns:createShippingLabel" name="createShippingLabelParameters"/>
+  </wsdl:message>
+    <wsdl:message name="createShippingLabelResponseMsg">
+    <wsdl:part element="tns:createShippingLabelResponse" name="createShippingLabelResult"/>
+  </wsdl:message>
+    <wsdl:message name="cancelShipmentRequestMsg">
+    <wsdl:part element="tns:cancelShipment" name="cancelShipmentParameters"/>
+  </wsdl:message>
+    <wsdl:message name="cancelShipmentResponseMsg">
+    <wsdl:part element="tns:cancelShipmentResponse" name="cancelShipmentResult"/>
+  </wsdl:message>
+    <wsdl:portType name="ManageShipments">
+    <wsdl:operation name="createShippingLabel">
+      <wsdl:input message="tns:createShippingLabelRequestMsg" name="createShippingLabelRequest"/>
+      <wsdl:output message="tns:createShippingLabelResponseMsg" name="createShippingLabelResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="cancelShipment">
+      <wsdl:input message="tns:cancelShipmentRequestMsg" name="cancelShipmentRequest"/>
+      <wsdl:output message="tns:cancelShipmentResponseMsg" name="cancelShipmentResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

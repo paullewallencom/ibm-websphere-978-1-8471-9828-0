@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="HandleOrderFallout" targetNamespace="http://CommonDomain-v1_0/com/junglesea/businessservices/interfaces/HandleOrderFallout" xmlns:tns="http://CommonDomain-v1_0/com/junglesea/businessservices/interfaces/HandleOrderFallout" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://CommonDomain-v1_0/com/junglesea/businessservices/interfaces/HandleOrderFallout">
+      <xsd:element name="handleOrderFault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="handleOrderFaultResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="handleOrderFaultRequestMsg">
+    <wsdl:part element="tns:handleOrderFault" name="handleOrderFaultParameters"/>
+  </wsdl:message>
+    <wsdl:message name="handleOrderFaultResponseMsg">
+    <wsdl:part element="tns:handleOrderFaultResponse" name="handleOrderFaultResult"/>
+  </wsdl:message>
+    <wsdl:portType name="ManageOrderFallout">
+    <wsdl:operation name="handleOrderFault">
+      <wsdl:input message="tns:handleOrderFaultRequestMsg" name="handleOrderFaultRequest"/>
+      <wsdl:output message="tns:handleOrderFaultResponseMsg" name="handleOrderFaultResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

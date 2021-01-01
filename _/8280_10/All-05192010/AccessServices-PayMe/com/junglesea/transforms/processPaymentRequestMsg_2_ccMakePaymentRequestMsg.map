@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" targetNamespace="http://AccessServices-PayMe/com/junglesea/transforms/processPaymentRequestMsg_2_ccMakePaymentRequestMsg" version="7.0.200" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://AccessServices-PayMe/com/junglesea/transforms/processPaymentRequestMsg_2_ccMakePaymentRequestMsg">
+    <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FCustomerDomain-v1_0%252Fcom%252Fjunglesea%252Fbusinessservices%252Finterfaces%252FProcessCustomerPayments%257DprocessPaymentRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FPayMeLibrary%252Fcom%252Fjunglesea%252Fapps%252Fpayme%252FCardPaymentServices%257DccMakePaymentRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <imports>
+        <import kind="xml" location="processPaymentRequestMsg_2_ccMakePaymentRequestMsg.xml"/>
+    </imports>
+    <mappingDeclaration name="processPaymentRequestMsg_2_ccMakePaymentRequestMsg">
+        <input path="body"/>
+        <output path="body"/>
+        <move>
+            <input path="processPayment/inputParams/Payment/PaymentMethod/CreditCardDetails/CardType"/>
+            <output path="ccMakePayment/input1/card/cardType"/>
+        </move>
+        <move>
+            <input path="processPayment/inputParams/Payment/PaymentMethod/CreditCardDetails/CardNumber"/>
+            <output path="ccMakePayment/input1/card/cardNumber"/>
+        </move>
+        <move>
+            <input path="processPayment/inputParams/Payment/PaymentMethod/CreditCardDetails/ExpiryMonth"/>
+            <output path="ccMakePayment/input1/card/expiryDate/month"/>
+        </move>
+        <move>
+            <input path="processPayment/inputParams/Payment/PaymentMethod/CreditCardDetails/ExpiryYear"/>
+            <output path="ccMakePayment/input1/card/expiryDate/year"/>
+        </move>
+        <move>
+            <input path="processPayment/inputParams/Payment/PaymentMethod/CreditCardDetails/SecurityCode"/>
+            <output path="ccMakePayment/input1/card/securityCode"/>
+        </move>
+        <move>
+            <input path="processPayment/inputParams/Payment/Payor/PartyDetails/Person/Name/FirstName"/>
+            <output path="ccMakePayment/input1/billDetails/firstName"/>
+        </move>
+        <move>
+            <input path="processPayment/inputParams/Payment/Payor/PartyDetails/Person/Name/LastName"/>
+            <output path="ccMakePayment/input1/billDetails/lastName"/>
+        </move>
+        <move>
+            <input path="processPayment/inputParams/Payment/Amount"/>
+            <output path="ccMakePayment/input1/amount"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

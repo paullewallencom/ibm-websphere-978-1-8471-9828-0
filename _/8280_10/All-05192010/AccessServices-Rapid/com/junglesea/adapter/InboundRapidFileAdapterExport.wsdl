@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="InboundRapidFileAdapterExport.wsdl" targetNamespace="http://AccessServices-Rapid/com/junglesea/adapter/InboundRapidFileAdapterExport" xmlns:bons1="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/shipping_labelwrapper" xmlns:tns="http://AccessServices-Rapid/com/junglesea/adapter/InboundRapidFileAdapterExport" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://AccessServices-Rapid/com/junglesea/adapter/InboundRapidFileAdapterExport">
+      <xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/shipping_labelwrapper" schemaLocation="shipping_labelWrapper.xsd"/>
+      <xsd:element name="emit">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="emitInput" type="bons1:shipping_labelWrapper"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="emitRequestMsg">
+    <wsdl:part element="tns:emit" name="emitParameters"/>
+  </wsdl:message>
+  <wsdl:portType name="InboundRapidFileAdapterExport">
+    <wsdl:operation name="emit">
+      <wsdl:input message="tns:emitRequestMsg" name="emitRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

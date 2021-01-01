@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://EqualLibrary/com/junglesea/apps/equal"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://EqualLibrary/com/junglesea/apps/equal">
+	<xsd:include schemaLocation="CreditScore.xsd"></xsd:include>
+	<xsd:include schemaLocation="CompanyBackground.xsd"></xsd:include>
+	<xsd:include schemaLocation="CreditCheckInput.xsd"></xsd:include>
+	<xsd:include schemaLocation="Company.xsd"></xsd:include>
+	<xsd:complexType name="companyCreditChkResponse">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="companyOrBusiness"
+				type="bons0:Company">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="creditCheckIn"
+				type="bons0:CreditCheckInput">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="companyOrBusinessHistory"
+				type="bons0:CompanyBackground">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="creditScore"
+				type="bons0:CreditScore">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

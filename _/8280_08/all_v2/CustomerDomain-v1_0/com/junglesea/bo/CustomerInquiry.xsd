@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://CustomerDomain-Msg/com/junglesea/bo" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="CustomerInquiry">
+    <xsd:sequence/>
+  </xsd:complexType>
+</xsd:schema>

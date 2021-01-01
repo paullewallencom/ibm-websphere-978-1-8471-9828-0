@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.wbit.comptest.common.tc.models.emulator:Emulator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.comptest.common.tc.models.emulator="http:///com/ibm/wbit/comptest/common/tc/models/emulator.ecore" xmlns:com.ibm.wbit.comptest.core.tc.models.emulator="http:///com/ibm/wbit/comptest/core/tc/models/emulator.ecore" id="1259568638531_1" implClassURI="/ApplicationSimulators/Emulator/emulation/GreenImpl.java">
+  <interfaceEmulators name="CustomerProfile" id="1259568638531_2" file="/GreenLibrary/com/junglesea/apps/green/CustomerProfile.wsdl" namespace="http://GreenLibrary/com/junglesea/apps/green/CustomerProfile" project="GreenLibrary">
+    <operationEmulators xsi:type="com.ibm.wbit.comptest.core.tc.models.emulator:WSDLOperationEmulator" name="createCustomerAccount" id="1259568638625_3"/>
+    <operationEmulators xsi:type="com.ibm.wbit.comptest.core.tc.models.emulator:WSDLOperationEmulator" name="modifyCustomerAccount" id="1259568638625_4"/>
+    <operationEmulators xsi:type="com.ibm.wbit.comptest.core.tc.models.emulator:WSDLOperationEmulator" name="findCustomer" id="1259568638625_5"/>
+    <operationEmulators xsi:type="com.ibm.wbit.comptest.core.tc.models.emulator:WSDLOperationEmulator" name="getCustomerDetails" id="1259568638625_6"/>
+  </interfaceEmulators>
+</com.ibm.wbit.comptest.common.tc.models.emulator:Emulator>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://BillingDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="CreditCardDetails">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="CardType"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CardNumber"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ExpiryMonth"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ExpiryYear"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="SecurityCode"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

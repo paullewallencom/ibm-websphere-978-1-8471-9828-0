@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.ibm.btools.bom.model.resources="http:///com/ibm/btools/bom/model/resources.ecore"
+    xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1193247340148"/>
+  <com.ibm.btools.bom.model.resources:BulkResourceType xmi:id="FID-00000000000000000000000000000110"
+      uid="FID-00000000000000000000000000000110" name="Tool">
+    <owningPackage href="RID-00000000000000000000000000000004.xmi#FID-00000000000000000000000000000004"/>
+    <superClassifier xsi:type="com.ibm.btools.bom.model.resources:BulkResourceType"
+        href="RID-00000000000000000000000000000106.xmi#FID-00000000000000000000000000000106"/>
+  </com.ibm.btools.bom.model.resources:BulkResourceType>
+</xmi:XMI>

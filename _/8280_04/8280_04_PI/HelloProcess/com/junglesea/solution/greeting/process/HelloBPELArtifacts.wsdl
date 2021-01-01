@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="HelloBPEL" targetNamespace="http://HelloProcess/com/junglesea/solution/greeting/process/HelloBPELArtifacts" xmlns:ns="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/customGreeting" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://HelloProcess/com/junglesea/solution/greeting/process/HelloBPELArtifacts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl0="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="HandleGreetingMessagePLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:HandleGreetingMessage"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="nullPLT">
+    <plnk:role name="Reference">
+      <plnk:portType name="ns:customGreeting"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <wsdl:import location="../interfaces/HandleGreetingMessage.wsdl" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+    <wsdl:import location="../interfaces/customGreeting.wsdl" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/customGreeting"/>
+</wsdl:definitions>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/scdl/mfc/6.0.0" xmlns:ns1="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement" xmlns:ns2="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="CreditManagementMediationFlow" name="CreditManagementMediationFlow">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns1:CreditManagement">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <references>
+    <reference name="CreditManagementPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1:CreditManagement"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="TexasCreditAgency"/>
+    </reference>
+    <reference name="CreditManagementPartner1">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1:CreditManagement"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="NewYorkCreditAgency"/>
+    </reference>
+    <reference name="CreditManagementPartner2">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1:CreditManagement"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="CaliforniaCreditAgency"/>
+    </reference>
+    <reference name="WashingtonCreditAgencyServicePartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns2:WashingtonCreditAgencyService"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="WashingtonCreditAgency"/>
+    </reference>
+  </references>
+  <implementation xsi:type="mfc:MediationFlowImplementation" mfcFile="com/junglesea/solutions/mediations/CreditManagementMediationFlow.mfc">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+  </implementation>
+</scdl:component>

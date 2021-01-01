@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/scdl/mfc/6.0.0" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments" xmlns:ns2="http://PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="Med-CreditCardService-ccPurchase" name="Med-CreditCardService-ccPurchase">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns1:ProcessCustomerPayments"/>
+  </interfaces>
+  <references>
+    <reference name="CardPaymentServicesPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns2:CardPaymentServices"/>
+      <wire target="PayMeWebServiceImport"/>
+    </reference>
+  </references>
+  <implementation xsi:type="mfc:MediationFlowImplementation" mfcFile="com/junglesea/accessservices/Med-CreditCardService-ccPurchase.mfc"/>
+</scdl:component>

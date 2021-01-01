@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="WSImport1_CardPaymentServicesHttp_Service" targetNamespace="http://PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:this="http://PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import location="CardPaymentServices.wsdl" namespace="http://PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices"/>
+  <wsdl:binding name="WSImport1_CardPaymentServicesHttpBinding" type="this:CardPaymentServices">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ccMakePayment">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ccMakePaymentRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ccMakePaymentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ccMakeSettlement">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ccMakeSettlementRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ccMakeSettlementResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ccDoCancel">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ccDoCancelRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ccDoCancelResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSImport1_CardPaymentServicesHttpService">
+    <wsdl:port binding="this:WSImport1_CardPaymentServicesHttpBinding" name="WSImport1_CardPaymentServicesHttpPort">
+      <soap:address location="http://localhost:9080/AccessServices-MoonlightWeb/services/WSImport1_CardPaymentServicesHttpPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

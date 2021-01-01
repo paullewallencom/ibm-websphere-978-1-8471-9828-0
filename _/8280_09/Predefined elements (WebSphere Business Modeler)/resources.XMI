@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.btools.model.resourcemanager="http:///com/ibm/btools/model/resourcemanager.ecore"
+    xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1194640104113"/>
+  <com.ibm.btools.model.resourcemanager:ProjectResourcesMGR>
+    <idRecords id="DM-0393638456f304a2b422dd2ef3a80e6e" uri="dependencies.xmi" modelType="0"
+        rootObjType="0" groupID=""/>
+    <idRecords id="RID-00000000000000000000000000000002" uri="RootInformationModel\Model.xmi"
+        modelType="1" rootObjType="102">
+      <rootObjIDs>FID-00000000000000000000000000000002</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000003" uri="RootOrganizationModel\Model.xmi"
+        modelType="1" rootObjType="103">
+      <rootObjIDs>FID-00000000000000000000000000000003</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000004" uri="RootResourceModel\Model.xmi"
+        modelType="1" rootObjType="104">
+      <rootObjIDs>FID-00000000000000000000000000000004</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000006" uri="RootOrganizationModel\predefined org model\Model.xmi"
+        modelType="1" rootObjType="103" groupID="GID-00000000000000000000000000000006">
+      <rootObjIDs>FID-00000000000000000000000000000006</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000113" uri="RootOrganizationModel\predefined org model\Default structure template\Model.xmi"
+        modelType="1" rootObjType="1008" groupID="GID-00000000000000000000000000000113">
+      <rootObjIDs>FID-00000000000000000000000000000113</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000201" uri="RootInformationModel\PrimitiveType\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000201</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000202" uri="RootInformationModel\Boolean\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000202</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000208" uri="RootInformationModel\Number\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000208</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000209" uri="RootInformationModel\IntegerNumber\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000209</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000210" uri="RootInformationModel\Long\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000210</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000211" uri="RootInformationModel\Integer\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000211</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000214" uri="RootInformationModel\RealNumber\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000214</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000215" uri="RootInformationModel\Double\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000215</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000204" uri="RootInformationModel\Date\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000204</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000203" uri="RootInformationModel\String\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000203</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000205" uri="RootInformationModel\Time\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000205</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000206" uri="RootInformationModel\DateTime\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000206</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000207" uri="RootInformationModel\Duration\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000207</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000212" uri="RootInformationModel\Short\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000212</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000213" uri="RootInformationModel\Byte\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000213</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000216" uri="RootInformationModel\Float\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000216</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000222" uri="RootInformationModel\UnlimitedNatural\Model.xmi"
+        modelType="1" rootObjType="1021">
+      <rootObjIDs>FID-00000000000000000000000000000222</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000100" uri="RootResourceModel\Person_Category\Model.xmi"
+        modelType="1" rootObjType="1013">
+      <rootObjIDs>FID-00000000000000000000000000000100</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000101" uri="RootResourceModel\Person\Model.xmi"
+        modelType="1" rootObjType="1013">
+      <rootObjIDs>FID-00000000000000000000000000000101</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000102" uri="RootResourceModel\Staff_Category\Model.xmi"
+        modelType="1" rootObjType="1013">
+      <rootObjIDs>FID-00000000000000000000000000000102</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000103" uri="RootResourceModel\Staff\Model.xmi"
+        modelType="1" rootObjType="1013">
+      <rootObjIDs>FID-00000000000000000000000000000103</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000106" uri="RootResourceModel\Resource_Category\Model.xmi"
+        modelType="1" rootObjType="1014">
+      <rootObjIDs>FID-00000000000000000000000000000106</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000107" uri="RootResourceModel\Equipment\Model.xmi"
+        modelType="1" rootObjType="1014">
+      <rootObjIDs>FID-00000000000000000000000000000107</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000108" uri="RootResourceModel\Facility\Model.xmi"
+        modelType="1" rootObjType="1014">
+      <rootObjIDs>FID-00000000000000000000000000000108</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000109" uri="RootResourceModel\Machine\Model.xmi"
+        modelType="1" rootObjType="1014">
+      <rootObjIDs>FID-00000000000000000000000000000109</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000110" uri="RootResourceModel\Tool\Model.xmi"
+        modelType="1" rootObjType="1014">
+      <rootObjIDs>FID-00000000000000000000000000000110</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000111" uri="RootResourceModel\General Service\Model.xmi"
+        modelType="1" rootObjType="1014">
+      <rootObjIDs>FID-00000000000000000000000000000111</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000112" uri="RootResourceModel\Communication Service\Model.xmi"
+        modelType="1" rootObjType="1014">
+      <rootObjIDs>FID-00000000000000000000000000000112</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000104" uri="RootOrganizationModel\Organization_Category\Model.xmi"
+        modelType="1" rootObjType="1006">
+      <rootObjIDs>FID-00000000000000000000000000000104</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000105" uri="RootOrganizationModel\Organization\Model.xmi"
+        modelType="1" rootObjType="1006">
+      <rootObjIDs>FID-00000000000000000000000000000105</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000013" uri="RootClassifierModel\Model.xmi"
+        modelType="1" rootObjType="103">
+      <rootObjIDs>FID-00000000000000000000000000000013</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000015" uri="RootClassifierModel\predefined Classifiers\Model.xmi"
+        modelType="1" rootObjType="103" groupID="GID-00000000000000000000000000000129">
+      <rootObjIDs>FID-00000000000000000000000000000015</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000116" uri="RootClassifierModel\predefined Classifiers\OTV\Model.xmi"
+        modelType="1" rootObjType="1006" groupID="GID-00000000000000000000000000000116">
+      <rootObjIDs>FID-00000000000000000000000000000116</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000016" uri="RootClassifierModel\predefined Classifiers\Value-Added\Model.xmi"
+        modelType="1" rootObjType="103" groupID="GID-00000000000000000000000000000117">
+      <rootObjIDs>FID-00000000000000000000000000000016</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000117" uri="RootClassifierModel\predefined Classifiers\Value-Added\Business Value Added\Model.xmi"
+        modelType="1" rootObjType="1004" groupID="GID-00000000000000000000000000000120">
+      <rootObjIDs>FID-00000000000000000000000000000117</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000118" uri="RootClassifierModel\predefined Classifiers\Value-Added\No Value Added\Model.xmi"
+        modelType="1" rootObjType="1004" groupID="GID-00000000000000000000000000000121">
+      <rootObjIDs>FID-00000000000000000000000000000118</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000119" uri="RootClassifierModel\predefined Classifiers\Value-Added\Real Value Added\Model.xmi"
+        modelType="1" rootObjType="1004" groupID="GID-00000000000000000000000000000122">
+      <rootObjIDs>FID-00000000000000000000000000000119</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000017" uri="RootClassifierModel\predefined Classifiers\Quality Control\Model.xmi"
+        modelType="1" rootObjType="103" groupID="GID-00000000000000000000000000000118">
+      <rootObjIDs>FID-00000000000000000000000000000017</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000120" uri="RootClassifierModel\predefined Classifiers\Quality Control\Not Quality Control\Model.xmi"
+        modelType="1" rootObjType="1004" groupID="GID-00000000000000000000000000000123">
+      <rootObjIDs>FID-00000000000000000000000000000120</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000129" uri="RootClassifierModel\predefined Classifiers\Quality Control\Quality Control\Model.xmi"
+        modelType="1" rootObjType="1004" groupID="GID-00000000000000000000000000000124">
+      <rootObjIDs>FID-00000000000000000000000000000129</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000018" uri="RootClassifierModel\predefined Classifiers\Workflow\Model.xmi"
+        modelType="1" rootObjType="103" groupID="GID-00000000000000000000000000000119">
+      <rootObjIDs>FID-00000000000000000000000000000018</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000121" uri="RootClassifierModel\predefined Classifiers\Workflow\Current Workflow\Model.xmi"
+        modelType="1" rootObjType="1004" groupID="GID-00000000000000000000000000000125">
+      <rootObjIDs>FID-00000000000000000000000000000121</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000122" uri="RootClassifierModel\predefined Classifiers\Workflow\Not Workflow\Model.xmi"
+        modelType="1" rootObjType="1004" groupID="GID-00000000000000000000000000000126">
+      <rootObjIDs>FID-00000000000000000000000000000122</rootObjIDs>
+    </idRecords>
+    <idRecords id="RID-00000000000000000000000000000123" uri="RootClassifierModel\predefined Classifiers\Workflow\Potential Current Workflow\Model.xmi"
+        modelType="1" rootObjType="1004" groupID="GID-00000000000000000000000000000127">
+      <rootObjIDs>FID-00000000000000000000000000000123</rootObjIDs>
+    </idRecords>
+    <idRecords id="RootReportModelResourceID" uri="RootReportModel\Model.xmi" modelType="3"
+        rootObjType="106">
+      <rootObjIDs>RootReportModelID</rootObjIDs>
+    </idRecords>
+    <idRecords id="CEF-00000000000000000000000000000113" uri="RootOrganizationModel\predefined org model\Default structure template\View.xmi"
+        modelType="2" rootObjType="107" groupID="GID-00000000000000000000000000000113">
+      <rootObjIDs>CEF-00000000000000000000000000000113</rootObjIDs>
+    </idRecords>
+    <idRecords id="" uri="messages.xmi" modelType="0" rootObjType="0" groupID=""/>
+    <idRecords id="QRY-RootQueryModelResourceID" uri="RootQueryModel\Model.xmi" modelType="4"
+        rootObjType="108" groupID="">
+      <rootObjIDs>RootQueryModelID</rootObjIDs>
+    </idRecords>
+    <idRecords id="QRY-AdvancedResourceID" uri="RootQueryModel\Advanced profile\Model.xmi"
+        modelType="4" rootObjType="108" groupID="">
+      <rootObjIDs>QRY-AdvancedID</rootObjIDs>
+    </idRecords>
+    <idRecords id="QRY-IntermediateResourceID" uri="RootQueryModel\Intermediate profile\Model.xmi"
+        modelType="4" rootObjType="108" groupID="">
+      <rootObjIDs>QRY-IntermediateID</rootObjIDs>
+    </idRecords>
+    <idRecords id="QRY-BasicResourceID" uri="RootQueryModel\Basic profile\Model.xmi"
+        modelType="4" rootObjType="108" groupID="">
+      <rootObjIDs>QRY-BasicID</rootObjIDs>
+    </idRecords>
+    <idRecords id="Reports_Catalog_Resource_ID" uri="RootReportModel\Reports\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-ec1177933a5e8f6299abf5ea12e4f388">
+      <rootObjIDs>Reports_Catalog_ID</rootObjIDs>
+    </idRecords>
+    <idRecords id="Static_Catalog_Resource_ID" uri="RootReportModel\Reports\Static analysis\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-65b2af6f04a5e6cdd9d9d109af14ce17">
+      <rootObjIDs>Static_Catalog_ID</rootObjIDs>
+    </idRecords>
+    <idRecords id="Dynamic_Catalog_Resource_ID" uri="RootReportModel\Reports\Dynamic analysis\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-bd1a049da2cbc5272d355cc6ac8806d0">
+      <rootObjIDs>Dynamic_Catalog_ID</rootObjIDs>
+    </idRecords>
+    <idRecords id="History_Catalog_Resource_ID" uri="RootReportModel\Reports\History\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-a0e64ba6e0684db9d47ebe8c68c83985">
+      <rootObjIDs>History_Profile_Catalog_ID</rootObjIDs>
+    </idRecords>
+    <idRecords id="Documentation_Catalog_Resource_ID" uri="RootReportModel\Reports\Documentation\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-c91e6b6adf3a26a72d01657dc3bdac10">
+      <rootObjIDs>Documentation_Catalog_ID</rootObjIDs>
+    </idRecords>
+    <idRecords id="Process_Catalog_Resource_ID" uri="RootReportModel\Reports\Documentation\Process\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-be67f56cc6d90f88acebc4399ae6ea8c">
+      <rootObjIDs>Process_Catalog_ID</rootObjIDs>
+    </idRecords>
+    <idRecords id="Information_Catalog_Resource_ID" uri="RootReportModel\Reports\Documentation\Data\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-2cfc86a93117924c61cf59787f40be63">
+      <rootObjIDs>Information_Catalog_ID</rootObjIDs>
+    </idRecords>
+    <idRecords id="Resource_Catalog_Resource_ID" uri="RootReportModel\Reports\Documentation\Resource\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-e239cab61fb10cde8da45032a27a8509">
+      <rootObjIDs>Resource_Catalog_ID</rootObjIDs>
+    </idRecords>
+    <idRecords id="Classifier_Catalog_Resource_ID" uri="RootReportModel\Reports\Documentation\Organization\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-32799ff5ad718b6d5130e71c5d0a0156">
+      <rootObjIDs>Classifier_Catalog_ID</rootObjIDs>
+    </idRecords>
+    <idRecords id="Organization_Catalog_Resource_ID" uri="RootReportModel\Reports\Documentation\Classifier\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-a7e698df596088c0ec29b7747c482237">
+      <rootObjIDs>Organization_Catalog_ID</rootObjIDs>
+    </idRecords>
+    <idRecords id="Simulation_Catalog_Resource_ID" uri="RootReportModel\Reports\Documentation\Simulation\Model.xmi"
+        modelType="3" rootObjType="106" groupID="BLMNAV-fc225e002845b00e200cb916e8aafe1d">
+      <rootObjIDs>Simulation_Catalog_ID</rootObjIDs>
+    </idRecords>
+  </com.ibm.btools.model.resourcemanager:ProjectResourcesMGR>
+</xmi:XMI>

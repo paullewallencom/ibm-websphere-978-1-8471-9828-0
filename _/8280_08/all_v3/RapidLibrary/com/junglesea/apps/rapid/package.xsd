@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://RapidLibrary/com/junglesea/apps/rapid"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="package">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="height"
+				type="xsd:double">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="width" type="xsd:double"></xsd:element>
+			<xsd:element minOccurs="0" name="weight"
+				type="xsd:double">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="type" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="dangerous"
+				type="xsd:boolean" default="false">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.ccl.soa.test.common.models.datatable:ComplexDataPool xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.ccl.soa.test.common.models.datatable="http:///com/ibm/ccl/soa/test/common/models/datatable.ecore" xmlns:com.ibm.ccl.soa.test.common.models.value="http:///com/ibm/ccl/soa/test/common/models/value.ecore" id="1267641706578_922">
+  <dataSets name="Default" id="1267641706578_924">
+    <entries xsi:type="com.ibm.ccl.soa.test.common.models.datatable:DataSetColumn" name="Value" id="1267641706578_925">
+      <elements xsi:type="com.ibm.ccl.soa.test.common.models.datatable:DataSetColumnComplexValue">
+        <value xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="customer" id="1267641881953_1617" value="" defaultValue="" typeURI="xsd:/http://Ch6Library#Customer" baseTypeURI="xsd:/http://Ch6Library#Customer" hasChildren="true">
+          <context>
+            <properties name="project_context" value="Ch6"/>
+          </context>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1267641881953_1618" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="address" id="1267641881953_1619" value="" defaultValue="" typeURI="xsd:/http://Ch6Library#Address" baseTypeURI="xsd:/http://Ch6Library#Address" hasChildren="true">
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine1" id="1267641881953_1620" value="Street Car" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine2" id="1267641881953_1621" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="city" id="1267641881953_1622" value="Austin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="zipCode" id="1267641881953_1623" value="78722" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="state" id="1267641881953_1624" value="TX" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="country" id="1267641881953_1625" value="USA" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          </elements>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="firstName" id="1267641881953_1626" value="Joe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="lastName" id="1267641881953_1627" value="Doe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="middleName" id="1267641881953_1628" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="dateOfBirth" id="1267641881953_1629" value="01/01/01" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        </value>
+      </elements>
+    </entries>
+  </dataSets>
+  <columnTemplates name="Value" id="1267641706578_923" typeURI="java:/java.lang#Object"/>
+</com.ibm.ccl.soa.test.common.models.datatable:ComplexDataPool>

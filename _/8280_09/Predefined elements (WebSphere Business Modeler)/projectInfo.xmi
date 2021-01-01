@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.btools.model.modelmanager.dependencymanager="http:///com/ibm/btools/model/modelmanager/dependencymanager.ecore"
+    xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1248466607460"/>
+  <com.ibm.btools.model.modelmanager.dependencymanager:ProjectModel>
+    <projectGroup xmi:id="PGM-bcea2cd24e827982400c74637abd8012" uid="PGM-bcea2cd24e827982400c74637abd8012"/>
+    <projectIdentifier value="PID-5bfa555dc2f602e12ae0d8d5c048064e"/>
+  </com.ibm.btools.model.modelmanager.dependencymanager:ProjectModel>
+</xmi:XMI>

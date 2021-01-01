@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Predefined elements (WebSphere Business Modeler)</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>com.ibm.btools.cef.model.filemanager.CefNature</nature>
+		<nature>com.ibm.btools.blm.model.blmfilemanager.BLMTNature</nature>
+		<nature>com.ibm.btools.blm.model.blmfilemanager.BLMPredefinedNature</nature>
+		<nature>com.ibm.btools.sim.model.simfilemanager.SIMTNature</nature>
+	</natures>
+</projectDescription>

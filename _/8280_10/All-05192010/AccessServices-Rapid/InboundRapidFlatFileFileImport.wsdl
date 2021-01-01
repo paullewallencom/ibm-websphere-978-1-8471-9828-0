@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="InboundRapidFlatFileFileImport.wsdl" targetNamespace="http://AccessServices-Rapid/InboundRapidFlatFileFileImport" xmlns:bons1="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/flatfile" xmlns:bons2="http://RapidLibrary/com/junglesea/apps/rapid" xmlns:bons3="http://com/ibm/j2ca/fault/afcfault" xmlns:tns="http://AccessServices-Rapid/InboundRapidFlatFileFileImport" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://com/ibm/j2ca/fault/afcfault" xmlns:tns="http://com/ibm/j2ca/fault/afcfault">
+      <xsd:include schemaLocation="CommonSchemas/RecordNotFoundFault.xsd"/>
+      <xsd:include schemaLocation="CommonSchemas/MissingDataFault.xsd"/>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://AccessServices-Rapid/InboundRapidFlatFileFileImport" xmlns:bons4="http://com/ibm/j2ca/fault/afcfault">
+      <xsd:import namespace="http://com/ibm/j2ca/fault/afcfault"/>
+      <xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/flatfile" schemaLocation="CommonSchemas/FlatFile.xsd"/>
+      <xsd:import namespace="http://RapidLibrary/com/junglesea/apps/rapid" schemaLocation="com/junglesea/apps/rapid/shipping_label.xsd"/>
+      <xsd:element name="retrieveFlatFile">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="retrieveFlatFileInput" type="bons1:FlatFile"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="retrieveFlatFileResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="retrieveFlatFileOutput" type="bons2:shipping_label"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MissingDataFault_element" nillable="true" type="bons4:MissingDataFault"/>
+      <xsd:element name="RecordNotFoundFault_element" nillable="true" type="bons4:RecordNotFoundFault"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="retrieveFlatFileRequestMsg">
+    <wsdl:part element="tns:retrieveFlatFile" name="retrieveFlatFileParameters"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveFlatFileResponseMsg">
+    <wsdl:part element="tns:retrieveFlatFileResponse" name="retrieveFlatFileResult"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveFlatFileMissingDataFaultMsg">
+    <wsdl:part element="tns:MissingDataFault_element" name="MissingDataFault"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveFlatFileRecordNotFoundFaultMsg">
+    <wsdl:part element="tns:RecordNotFoundFault_element" name="RecordNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:portType name="InboundRapidFlatFileFileImport">
+    <wsdl:operation name="retrieveFlatFile">
+      <wsdl:input message="tns:retrieveFlatFileRequestMsg" name="retrieveFlatFileRequest"/>
+      <wsdl:output message="tns:retrieveFlatFileResponseMsg" name="retrieveFlatFileResponse"/>
+      <wsdl:fault message="tns:retrieveFlatFileMissingDataFaultMsg" name="MISSING_DATA"/>
+      <wsdl:fault message="tns:retrieveFlatFileRecordNotFoundFaultMsg" name="RECORD_NOT_FOUND"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

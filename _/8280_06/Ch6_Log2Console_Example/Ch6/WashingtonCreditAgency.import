@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="WashingtonCreditAgency" name="WashingtonCreditAgency">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:WashingtonCreditAgencyService">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <esbBinding xsi:type="scdl:SCAImportBinding" module="WashingtonCreditAgency" export="WashingtonCreditAgencyExport">
+    <scdl:bindingQualifier xsi:type="scdl:IsTargetSCA" value="true"/>
+  </esbBinding>
+</scdl:import>

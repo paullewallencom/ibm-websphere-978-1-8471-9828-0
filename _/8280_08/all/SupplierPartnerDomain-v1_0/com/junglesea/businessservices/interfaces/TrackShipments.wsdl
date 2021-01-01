@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="TrackShipments" targetNamespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/TrackShipments" xmlns:tns="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/TrackShipments" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:portType name="TrackShipments"/>
+</wsdl:definitions>

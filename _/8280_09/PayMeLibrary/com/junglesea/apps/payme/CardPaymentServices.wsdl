@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="CardPaymentServices" targetNamespace="http://PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices" xmlns:bons1="http://PayMeLibrary/com/junglesea/apps/payme" xmlns:tns="http://PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://PayMeLibrary/com/junglesea/apps/payme/CardPaymentServices">
+      <xsd:import namespace="http://PayMeLibrary/com/junglesea/apps/payme" schemaLocation="ccPayCancelResponse.xsd"/>
+      <xsd:import namespace="http://PayMeLibrary/com/junglesea/apps/payme" schemaLocation="ccPayCancelRequest.xsd"/>
+      <xsd:import namespace="http://PayMeLibrary/com/junglesea/apps/payme" schemaLocation="ccPayResponse.xsd"/>
+      <xsd:import namespace="http://PayMeLibrary/com/junglesea/apps/payme" schemaLocation="ccPayRequest.xsd"/>
+      <xsd:element name="ccMakePayment">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="bons1:ccPayRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ccMakePaymentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="bons1:ccPayResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ccMakeSettlement">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ccMakeSettlementResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ccDoCancel">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="bons1:ccPayCancelRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ccDoCancelResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="bons1:ccPayCancelResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="ccMakePaymentRequestMsg">
+    <wsdl:part element="tns:ccMakePayment" name="ccMakePaymentParameters"/>
+  </wsdl:message>
+    <wsdl:message name="ccMakePaymentResponseMsg">
+    <wsdl:part element="tns:ccMakePaymentResponse" name="ccMakePaymentResult"/>
+  </wsdl:message>
+    <wsdl:message name="ccMakeSettlementRequestMsg">
+    <wsdl:part element="tns:ccMakeSettlement" name="ccMakeSettlementParameters"/>
+  </wsdl:message>
+    <wsdl:message name="ccMakeSettlementResponseMsg">
+    <wsdl:part element="tns:ccMakeSettlementResponse" name="ccMakeSettlementResult"/>
+  </wsdl:message>
+    <wsdl:message name="ccDoCancelRequestMsg">
+    <wsdl:part element="tns:ccDoCancel" name="ccDoCancelParameters"/>
+  </wsdl:message>
+    <wsdl:message name="ccDoCancelResponseMsg">
+    <wsdl:part element="tns:ccDoCancelResponse" name="ccDoCancelResult"/>
+  </wsdl:message>
+    <wsdl:portType name="CardPaymentServices">
+    <wsdl:operation name="ccMakePayment">
+      <wsdl:input message="tns:ccMakePaymentRequestMsg" name="ccMakePaymentRequest"/>
+      <wsdl:output message="tns:ccMakePaymentResponseMsg" name="ccMakePaymentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ccMakeSettlement">
+      <wsdl:input message="tns:ccMakeSettlementRequestMsg" name="ccMakeSettlementRequest"/>
+      <wsdl:output message="tns:ccMakeSettlementResponseMsg" name="ccMakeSettlementResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ccDoCancel">
+      <wsdl:input message="tns:ccDoCancelRequestMsg" name="ccDoCancelRequest"/>
+      <wsdl:output message="tns:ccDoCancelResponseMsg" name="ccDoCancelResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

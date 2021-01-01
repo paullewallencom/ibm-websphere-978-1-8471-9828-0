@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://ProductDomain-v1_0/com/junglesea/bo"
+	xmlns:bons1="http://CommonDomain-v1_0/com/junglesea/bo">
+	<xsd:import schemaLocation="Entity.xsd"
+		namespace="http://CommonDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:import schemaLocation="Party.xsd"
+		namespace="http://CommonDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:import schemaLocation="Product.xsd"
+		namespace="http://ProductDomain-v1_0/com/junglesea/bo">
+	</xsd:import>
+	<xsd:complexType name="Shipment">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="ShipToParty"
+				type="bons1:Party">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ShippedItem"
+				type="bons0:Product">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="FreightCostAmount"
+				type="xsd:double">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="RequiredShipDate"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ExpectedDeliveryDate"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ShippingLabel"
+				type="xsd:base64Binary">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ShipmentTrackingId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="OrderReferenceId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ShipmentStatus"
+				type="bons1:Entity">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

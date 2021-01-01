@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rl:RuleSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EligibilityCheckInterface="http://EligibilityCheckLibrary/com/junglesea/solution/eligibilityCheck/interfaces/EligibilityCheckInterface" xmlns:java="http://com.ibm.wbit.br.cb.core/java/" xmlns:prim="http://com.ibm.wbit.br.cb.core/prim/" xmlns:rl="http://www.ibm.com/xmlns/prod/websphere/wbi/br/6.0.0" xmlns:selt="http://EligibilityCheck/com/junglesea/solution/eligibility/process" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd8="http://EligibilityCheck" displayName="ApproveElgibilty" name="ApproveElgibilty" syncDisplayName="true" targetNamespace="http://EligibilityCheck/com/junglesea/solution/eligibility/process">
+  <rl:interface operation="eligibilityCheck">
+    <rl:porttype>EligibilityCheckInterface:EligibilityCheckInterface</rl:porttype>
+  </rl:interface>
+  <rl:rulegroup>selt:BusinessRule</rl:rulegroup>
+  <rl:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.w3.org/2001/XMLSchema"/>
+  <rl:property name="IBMSystemVersion" type="SystemDefined" value="6.1.0"/>
+  <rl:template displayName="Age Check" name="Age Check" syncDisplayName="true">
+    <rl:id>uid-12528817214842</rl:id>
+    <rl:webPresentation>if age > {0} then reject validation</rl:webPresentation>
+    <rl:parameter dataType="xsd:int" displayName="age" syncDisplayName="true" varName="age">
+      <rl:constraint>
+        <rl:expression value="> 18"/>
+      </rl:constraint>
+    </rl:parameter>
+    <rl:rule xsi:type="rl:IfThenRule">
+      <rl:if>
+        <rl:conditionExpression xsi:type="rl:BooleanExpression">
+          <rl:expString> memberInfo.Age > age</rl:expString>
+        </rl:conditionExpression>
+      </rl:if>
+      <rl:then>
+        <rl:Action value="validateEligibility = &quot;Rejected&quot;"/>
+      </rl:then>
+    </rl:rule>
+  </rl:template>
+  <rl:RuleBlock>
+    <rl:rule xsi:type="rl:AssertionRule" displayName="ValidateEligibility" label="ValidateEligibility" syncDisplayName="true">
+      <rl:assert>
+        <rl:Action value="validateEligibility = &quot;Aprroved&quot;"/>
+      </rl:assert>
+    </rl:rule>
+    <rl:rule xsi:type="rl:TemplateInstanceRule" displayName="AgeCheck" label="AgeCheck" syncDisplayName="true">
+      <rl:templateRef>uid-12528817214842</rl:templateRef>
+      <rl:parameterValue>
+        <rl:name>age</rl:name>
+        <rl:value value="65"/>
+      </rl:parameterValue>
+    </rl:rule>
+    <rl:rule xsi:type="rl:IfThenRule" displayName="CheckEmployemnt" label="CheckEmployemnt" syncDisplayName="true">
+      <rl:if>
+        <rl:conditionExpression xsi:type="rl:BooleanExpression">
+          <rl:expString>memberInfo.EmploymentStatus !=&quot;FullTime&quot;</rl:expString>
+        </rl:conditionExpression>
+      </rl:if>
+      <rl:then>
+        <rl:Action value="validateEligibility = &quot;Rejected&quot;"/>
+      </rl:then>
+    </rl:rule>
+  </rl:RuleBlock>
+</rl:RuleSet>

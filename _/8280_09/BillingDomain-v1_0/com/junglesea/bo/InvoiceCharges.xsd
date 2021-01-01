@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://BillingDomain-Msg/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:complexType name="InvoiceCharges">
+		<xsd:sequence>
+
+			<xsd:element minOccurs="0" name="Taxes" type="xsd:double"></xsd:element>
+			<xsd:element minOccurs="0" name="InvoiceAmount"
+				type="xsd:double">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Currency"
+				type="xsd:anyType">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="GeneratedDate"
+				type="xsd:date">
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="MailingDate"
+				type="xsd:date">
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="PaymentDueDate"
+				type="xsd:date">
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="ReasonCode"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://BizServices-CustomerInfoMgmt/com/junglsea/businessservices/MaintainCustomerInformationArtifacts" xmlns:ns0="http://CustomerDomain-v1_0/com/junglesea/bo" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="MaintainCustomerInformation" suppressJoinFailure="yes" targetNamespace="http://BizServices-CustomerInfoMgmt/com/junglsea/businessservices" wpc:continueOnError="no" wpc:displayName="MaintainCustomerInformation" wpc:executionMode="microflow" wpc:id="1" wpc:validFrom="2010-01-06T17:51:37" wpc:version="IBM_7.0.100">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/MaintainCustomerInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainCustomerInformation"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="MaintainCustomerInformationArtifacts.wsdl" namespace="http://BizServices-CustomerInfoMgmt/com/junglsea/businessservices/MaintainCustomerInformationArtifacts"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/CustomerMSG.xsd" namespace="http://CustomerDomain-v1_0/com/junglesea/bo"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="MaintainCustomerInformation" partnerLinkType="ns:MaintainCustomerInformationPLT" wpc:id="2"/>
+    <bpws:partnerLink name="RetrieveCustomerInformationPartner" partnerLinkType="ns:RetrieveCustomerInformationPLT" partnerRole="Interface" wpc:id="14"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="inputParam" type="ns0:CustomerMSG" wpc:id="10"/>
+    <bpws:variable name="outputParam" type="ns0:CustomerMSG" wpc:id="11"/>
+    <bpws:variable name="inputParam1" type="ns0:CustomerMSG" wpc:id="12"/>
+    <bpws:variable name="outputParam1" type="ns0:CustomerMSG" wpc:id="13"/>
+  </bpws:variables>
+  <bpws:pick createInstance="yes" name="ReceiveChoice" wpc:displayName="Receive Choice" wpc:id="3" wpc:transactionalBehavior="commitAfter">
+    <bpws:onMessage operation="createCustomer" partnerLink="MaintainCustomerInformation" portType="ns1:MaintainCustomerInformation" wpc:id="4">
+      <wpc:output>
+        <wpc:parameter name="inputParam" variable="inputParam"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence" wpc:id="1073741829">
+        <bpws:reply name="Reply_createCustomer" operation="createCustomer" partnerLink="MaintainCustomerInformation" portType="ns1:MaintainCustomerInformation" wpc:displayName="Reply-createCustomer" wpc:id="6">
+          <wpc:input>
+            <wpc:parameter name="outputParam" variable="outputParam"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+    <bpws:onMessage operation="updateCustomer" partnerLink="MaintainCustomerInformation" portType="ns1:MaintainCustomerInformation" wpc:id="7">
+      <wpc:output>
+        <wpc:parameter name="inputParam" variable="inputParam1"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence1" wpc:id="1073741832">
+        <bpws:reply name="Reply_updateCustomer" operation="updateCustomer" partnerLink="MaintainCustomerInformation" portType="ns1:MaintainCustomerInformation" wpc:displayName="Reply-updateCustomer" wpc:id="9">
+          <wpc:input>
+            <wpc:parameter name="outputParam" variable="outputParam1"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+  </bpws:pick>
+</bpws:process>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.btools.bom.model.artifacts="http:///com/ibm/btools/bom/model/artifacts.ecore"
+    xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1193247339695"/>
+  <com.ibm.btools.bom.model.artifacts:PrimitiveType xmi:id="FID-00000000000000000000000000000201"
+      uid="FID-00000000000000000000000000000201" name="PrimitiveType" isAbstract="true">
+    <owningPackage href="RID-00000000000000000000000000000002.xmi#FID-00000000000000000000000000000002"/>
+  </com.ibm.btools.bom.model.artifacts:PrimitiveType>
+</xmi:XMI>

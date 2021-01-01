@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensionmodel:ExtensionMap xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.wiring.ui.ext.model="http:///com/ibm/wbit/wiring/ui/ext/model.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" namespace="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+  <extensions>
+    <extendedObject href="UpdateCustomerProcess.component#//@Component"/>
+    <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" x="27" y="43" unknown="false" visible="true" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0}ProcessImplementation"/>
+  </extensions>
+</extensionmodel:ExtensionMap>

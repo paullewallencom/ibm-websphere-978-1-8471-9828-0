@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="EligibiltyCheck" targetNamespace="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck" xmlns:bons1="http://EligibilityCheckLibrary/com/jungleseainsurance/businessobjects" xmlns:bons2="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces" xmlns:tns="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck">
+            <xsd:import namespace="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces" schemaLocation="ExceptionMessage.xsd"/>
+            <xsd:import namespace="http://EligibilityCheckLibrary/com/jungleseainsurance/businessobjects" schemaLocation="../businessobjects/MemberInfo.xsd"/>
+      <xsd:element name="checkEligibility">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="member" nillable="true" type="bons1:MemberInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkEligibilityResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validateEligibilty" nillable="true" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="checkEligibilityFault1_invalidMemberDataException" nillable="true" type="bons2:ExceptionMessage"/>
+        </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="checkEligibilityRequestMsg">
+    <wsdl:part element="tns:checkEligibility" name="checkEligibilityParameters"/>
+  </wsdl:message>
+    <wsdl:message name="checkEligibilityResponseMsg">
+    <wsdl:part element="tns:checkEligibilityResponse" name="checkEligibilityResult"/>
+  </wsdl:message>
+    <wsdl:message name="checkEligibility_invalidMemberDataExceptionMsg">
+    <wsdl:part element="tns:checkEligibilityFault1_invalidMemberDataException" name="invalidMemberDataException"/>
+  </wsdl:message>
+    <wsdl:portType name="EligibiltyCheck">
+    <wsdl:operation name="checkEligibility">
+      <wsdl:input message="tns:checkEligibilityRequestMsg" name="checkEligibilityRequest"/>
+      <wsdl:output message="tns:checkEligibilityResponseMsg" name="checkEligibilityResponse"/>
+            <wsdl:fault message="tns:checkEligibility_invalidMemberDataExceptionMsg" name="invalidMemberDataException"/>
+        </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

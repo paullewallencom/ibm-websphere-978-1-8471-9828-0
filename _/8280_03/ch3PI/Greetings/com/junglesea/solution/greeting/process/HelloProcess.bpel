@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://Greetings/com/junglesea/solution/greeting/process/HelloProcessArtifacts" xmlns:ns0="http://GreetingLibrary/com/junglesea/solution/greeting/bo" xmlns:ns1="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="HelloProcess" suppressJoinFailure="yes" targetNamespace="http://Greetings/com/junglesea/solution/greeting/process" wpc:continueOnError="no" wpc:displayName="HelloProcess" wpc:executionMode="microflow" wpc:id="1" wpc:validFrom="2010-02-26T03:49:45" wpc:version="IBM_7.0.100">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage.wsdl" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../bo/Party.xsd" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/bo"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../interfaces/HandleGreetingMessage.wsdl" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="HelloProcessArtifacts.wsdl" namespace="http://Greetings/com/junglesea/solution/greeting/process/HelloProcessArtifacts"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="HandleGreetingMessage" partnerLinkType="ns:HandleGreetingMessagePLT" wpc:id="2"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="inputPartyInfo" type="ns0:Party" wpc:id="6"/>
+    <bpws:variable name="outputGreetingMessage" type="xsd:string" wpc:id="7"/>
+  </bpws:variables>
+  <bpws:sequence name="HiddenSequence" wpc:id="1073741827">
+    <bpws:receive createInstance="yes" name="Receive" operation="returnGreeting" partnerLink="HandleGreetingMessage" portType="ns1:HandleGreetingMessage" wpc:displayName="Receive" wpc:id="4" wpc:transactionalBehavior="commitAfter">
+      <wpc:output>
+        <wpc:parameter name="inputPartyInfo" variable="inputPartyInfo"/>
+      </wpc:output>
+    </bpws:receive>
+    <bpws:switch name="CheckPartyAge" wpc:displayName="CheckPartyAge" wpc:id="8">
+      <bpws:case wpc:displayName="LessThan25" wpc:id="9">
+        <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[$inputPartyInfo/Age <= '25']]></bpws:condition>
+        <bpws:invoke name="SayGreeting-WhatsUp" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="SayGreeting-WhatsUp" wpc:id="11">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[java.lang.String __result__2 = inputPartyInfo.getString("FirstName");
+java.lang.String __result__1 = "What's up ";
+java.lang.String __result__3;
+{// append text
+	__result__3 = __result__1.concat(__result__2);
+}
+outputGreetingMessage = __result__3;
+{// print to log
+	System.out.println(outputGreetingMessage);
+}
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;What's up &quot;" assignable="false">
+//    <dataOutputs target="//@executableElements.2/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="inputPartyInfo.FirstName" field="true">
+//    <dataOutputs target="//@executableElements.2/@parameters.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="append text" description="Combine the text of two words into one word" category="text" template="&lt;%return%> &lt;%input1%>.concat(&lt;%input2%>);">
+//    <parameters name="input1" dataInputs="//@executableElements.0/@dataOutputs.0" displayName="input 1">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <parameters name="input2" dataInputs="//@executableElements.1/@dataOutputs.0" displayName="input 2">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <result name="combined text" displayName="combined text">
+//      <dataOutputs target="//@executableElements.3"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </result>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.2/@result/@dataOutputs.0" value="outputGreetingMessage" variable="true">
+//    <dataOutputs target="//@executableElements.4/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="print to log" description="Print a text representation of the input to System.out" category="utility" template="System.out.println(&lt;%object%>);">
+//    <parameters name="object" dataInputs="//@executableElements.3/@dataOutputs.0" displayName="object">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+//    </parameters>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1 //@executableElements.2 //@executableElements.3 //@executableElements.4"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:2,1
+//!SMAP!2:1,1
+//!SMAP!3:3,4
+//!SMAP!4:7,1
+//!SMAP!5:8,3
+//!SMAP!1000000:58,1]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+      </bpws:case>
+      <bpws:case wpc:displayName="MoreThan25LessThan65" wpc:id="10">
+        <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[($inputPartyInfo/Age >= '26') and ($inputPartyInfo/Age <= '65')]]></bpws:condition>
+        <bpws:invoke name="SayGreetingWhatsHappening" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="SayGreetingWhatsHappening" wpc:id="13">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[java.lang.String __result__2 = inputPartyInfo.getString("FirstName");
+java.lang.String __result__1 = "What's happening ";
+java.lang.String __result__3;
+{// append text
+	__result__3 = __result__1.concat(__result__2);
+}
+outputGreetingMessage = __result__3;
+{// print to log
+	System.out.println(outputGreetingMessage);
+}
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;What's happening &quot;" assignable="false">
+//    <dataOutputs target="//@executableElements.2/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="inputPartyInfo.FirstName" field="true">
+//    <dataOutputs target="//@executableElements.2/@parameters.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="append text" description="Combine the text of two words into one word" category="text" template="&lt;%return%> &lt;%input1%>.concat(&lt;%input2%>);">
+//    <parameters name="input1" dataInputs="//@executableElements.0/@dataOutputs.0" displayName="input 1">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <parameters name="input2" dataInputs="//@executableElements.1/@dataOutputs.0" displayName="input 2">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <result name="combined text" displayName="combined text">
+//      <dataOutputs target="//@executableElements.3"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </result>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.2/@result/@dataOutputs.0" value="outputGreetingMessage" variable="true">
+//    <dataOutputs target="//@executableElements.4/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="print to log" description="Print a text representation of the input to System.out" category="utility" template="System.out.println(&lt;%object%>);">
+//    <parameters name="object" dataInputs="//@executableElements.3/@dataOutputs.0" displayName="object">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+//    </parameters>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1 //@executableElements.2 //@executableElements.3 //@executableElements.4"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:2,1
+//!SMAP!2:1,1
+//!SMAP!3:3,4
+//!SMAP!4:7,1
+//!SMAP!5:8,3
+//!SMAP!1000000:58,1]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+      </bpws:case>
+      <bpws:otherwise wpc:id="12">
+        <bpws:invoke name="Snippet" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="SayGreetingGoodDay" wpc:id="14">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[java.lang.String __result__2 = inputPartyInfo.getString("FirstName");
+java.lang.String __result__1 = "Good day to you ";
+java.lang.String __result__3;
+{// append text
+	__result__3 = __result__1.concat(__result__2);
+}
+outputGreetingMessage = __result__3;
+{// print to log
+	System.out.println(outputGreetingMessage);
+}
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;Good day to you &quot;" assignable="false">
+//    <dataOutputs target="//@executableElements.2/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="inputPartyInfo.FirstName" field="true">
+//    <dataOutputs target="//@executableElements.2/@parameters.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="append text" description="Combine the text of two words into one word" category="text" template="&lt;%return%> &lt;%input1%>.concat(&lt;%input2%>);">
+//    <parameters name="input1" dataInputs="//@executableElements.0/@dataOutputs.0" displayName="input 1">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <parameters name="input2" dataInputs="//@executableElements.1/@dataOutputs.0" displayName="input 2">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </parameters>
+//    <result name="combined text" displayName="combined text">
+//      <dataOutputs target="//@executableElements.3"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.String"/>
+//    </result>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.2/@result/@dataOutputs.0" value="outputGreetingMessage" variable="true">
+//    <dataOutputs target="//@executableElements.4/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="print to log" description="Print a text representation of the input to System.out" category="utility" template="System.out.println(&lt;%object%>);">
+//    <parameters name="object" dataInputs="//@executableElements.3/@dataOutputs.0" displayName="object">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+//    </parameters>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1 //@executableElements.2 //@executableElements.3 //@executableElements.4"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:2,1
+//!SMAP!2:1,1
+//!SMAP!3:3,4
+//!SMAP!4:7,1
+//!SMAP!5:8,3
+//!SMAP!1000000:58,1]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+      </bpws:otherwise>
+    </bpws:switch>
+    <bpws:reply name="Reply" operation="returnGreeting" partnerLink="HandleGreetingMessage" portType="ns1:HandleGreetingMessage" wpc:displayName="Reply" wpc:id="5">
+      <wpc:input>
+        <wpc:parameter name="outputGreetingMessage" variable="outputGreetingMessage"/>
+      </wpc:input>
+    </bpws:reply>
+  </bpws:sequence>
+</bpws:process>

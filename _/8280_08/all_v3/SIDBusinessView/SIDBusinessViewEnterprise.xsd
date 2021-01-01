@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  CONFIDENTIAL LICENSED MATERIAL
+      © 2004-2005 Pantero Corporation. All rights reserved.	-->
+<!-- Exporter Configuration Options:
+     All package and sub-packages under - com.sid.EnterpriseDomain
+     Complex Types Only - true			
+     Include Required Rules - false			 
+     Include Reverse Relationships - true	 
+     Export with Weak Typing - false-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ xmlns:SIDBusCm="http://www.tmforum.org/NGOSS/SID/Business/3.1/Common" 
+ xmlns:SIDBusCu="http://www.tmforum.org/NGOSS/SID/Business/3.1/Customer" 
+ xmlns:SIDBusMa="http://www.tmforum.org/NGOSS/SID/Business/3.1/MarketSales" 
+ xmlns:SIDBusPr="http://www.tmforum.org/NGOSS/SID/Business/3.1/Product" 
+ xmlns:SIDBusRe="http://www.tmforum.org/NGOSS/SID/Business/3.1/Resource" 
+ xmlns:SIDBusSe="http://www.tmforum.org/NGOSS/SID/Business/3.1/Service" 
+ xmlns:SIDBusEn="http://www.tmforum.org/NGOSS/SID/Business/3.1/Enterprise" 
+ targetNamespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Enterprise">
+<xs:import schemaLocation="SIDBusinessViewCommon.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Common"/>
+<xs:import schemaLocation="SIDBusinessViewCustomer.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Customer"/>
+<xs:import schemaLocation="SIDBusinessViewMarketSales.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/MarketSales"/>
+<xs:import schemaLocation="SIDBusinessViewProduct.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Product"/>
+<xs:import schemaLocation="SIDBusinessViewResource.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Resource"/>
+<xs:import schemaLocation="SIDBusinessViewService.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Service"/>
+
+<!-- Type name: com.sid.EnterpriseDomain.ProcessABE.Process-->
+   <xs:complexType name="Process">
+      <xs:sequence>
+         <xs:element name="BusinessInteraction" type="SIDBusCm:BusinessInteraction" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.EnterpriseDomain.ProcessDefinitionABE.ProcessDefintion-->
+   <xs:complexType name="ProcessDefintion">
+      <xs:sequence>
+         <xs:element name="BusinessInteraction" type="SIDBusCm:BusinessInteraction" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

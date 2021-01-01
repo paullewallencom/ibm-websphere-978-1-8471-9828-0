@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="gen/|gen/src/|.apt_generated/" kind="src" path=""/>
+	<classpathentry kind="src" path="gen/src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.ibm.ws.ast.st.runtime.runtimeTarget.v70.bi/wps.v70"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/WebSphere Process Server v7.0 JRE"/>
+	<classpathentry exported="true" kind="src" path="/CommonDomain-v1_0"/>
+	<classpathentry exported="true" kind="src" path="/CustomerDomain-v1_0"/>
+	<classpathentry exported="true" kind="src" path="/BillingDomain-v1_0"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

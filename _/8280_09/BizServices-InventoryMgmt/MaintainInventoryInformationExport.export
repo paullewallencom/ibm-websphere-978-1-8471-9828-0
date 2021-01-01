@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="MaintainInventoryInformationExport" name="MaintainInventoryInformationExport" target="MaintainInventoryInformation">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:MaintainInventoryInformation"/>
+  </interfaces>
+</scdl:export>

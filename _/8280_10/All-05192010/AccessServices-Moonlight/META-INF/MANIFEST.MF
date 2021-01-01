@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Class-Path: ProductDomain-v1_0.jar 
+ CustomerDomain-v1_0.jar 
+ MoonlightJDBCAdapter.rar 
+ SupplierPartnerDomain-v1_0.jar
+Created-By: 1.5.0 (IBM Corporation)
+

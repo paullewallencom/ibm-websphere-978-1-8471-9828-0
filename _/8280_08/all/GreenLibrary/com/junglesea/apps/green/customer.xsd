@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://GreenLibrary/com/junglesea/apps/green"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://GreenLibrary/com/junglesea/apps/green">
+	<xsd:include schemaLocation="address.xsd"></xsd:include>
+	<xsd:complexType name="customer">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="id" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="firstName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="lastName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="type" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="billAcctRef"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="status">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Active"></xsd:enumeration>
+						<xsd:enumeration value="Suspended"></xsd:enumeration>
+						<xsd:enumeration value="Inactive"></xsd:enumeration>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="activeSince"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="homeAddress"
+				type="bons0:address">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="billingAddress"
+				type="bons0:address">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.btools.model.filemanager="http:///com/ibm/btools/model/filemanager.ecore">
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Time\Model.xmi"
+      RelativePath="RootInformationModel\Time" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\Documentation\Process\Model.xmi"
+      RelativePath="RootReportModel\Reports\Documentation\Process" ParentRelativePath="RootReportModel\Reports\Documentation"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\Model.xmi"
+      RelativePath="RootClassifierModel" ParentRelativePath=""/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\UnlimitedNatural\Model.xmi"
+      RelativePath="RootInformationModel\UnlimitedNatural" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Byte\Model.xmi"
+      RelativePath="RootInformationModel\Byte" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootQueryModel\Advanced profile\Model.xmi"
+      RelativePath="RootQueryModel\Advanced profile" ParentRelativePath="RootQueryModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\RealNumber\Model.xmi"
+      RelativePath="RootInformationModel\RealNumber" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Machine\Model.xmi"
+      RelativePath="RootResourceModel\Machine" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootQueryModel\Model.xmi"
+      RelativePath="RootQueryModel" ParentRelativePath=""/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\OTV\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\OTV" ParentRelativePath="RootClassifierModel\predefined Classifiers"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Staff_Category\Model.xmi"
+      RelativePath="RootResourceModel\Staff_Category" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootOrganizationModel\predefined org model\Model.xmi"
+      RelativePath="RootOrganizationModel\predefined org model" ParentRelativePath="RootOrganizationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Tool\Model.xmi"
+      RelativePath="RootResourceModel\Tool" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootOrganizationModel\Organization\Model.xmi"
+      RelativePath="RootOrganizationModel\Organization" ParentRelativePath="RootOrganizationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Workflow\Not Workflow\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Workflow\Not Workflow"
+      ParentRelativePath="RootClassifierModel\predefined Classifiers\Workflow"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Model.xmi"
+      RelativePath="RootResourceModel" ParentRelativePath=""/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Long\Model.xmi"
+      RelativePath="RootInformationModel\Long" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\Documentation\Resource\Model.xmi"
+      RelativePath="RootReportModel\Reports\Documentation\Resource" ParentRelativePath="RootReportModel\Reports\Documentation"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Value-Added\Real Value Added\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Value-Added\Real Value Added"
+      ParentRelativePath="RootClassifierModel\predefined Classifiers\Value-Added"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Workflow\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Workflow" ParentRelativePath="RootClassifierModel\predefined Classifiers"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\Static analysis\Model.xmi"
+      RelativePath="RootReportModel\Reports\Static analysis" ParentRelativePath="RootReportModel\Reports"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\PrimitiveType\Model.xmi"
+      RelativePath="RootInformationModel\PrimitiveType" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootOrganizationModel\Organization_Category\Model.xmi"
+      RelativePath="RootOrganizationModel\Organization_Category" ParentRelativePath="RootOrganizationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Integer\Model.xmi"
+      RelativePath="RootInformationModel\Integer" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Short\Model.xmi"
+      RelativePath="RootInformationModel\Short" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\Documentation\Organization\Model.xmi"
+      RelativePath="RootReportModel\Reports\Documentation\Organization" ParentRelativePath="RootReportModel\Reports\Documentation"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\DateTime\Model.xmi"
+      RelativePath="RootInformationModel\DateTime" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Value-Added\No Value Added\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Value-Added\No Value Added"
+      ParentRelativePath="RootClassifierModel\predefined Classifiers\Value-Added"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\Documentation\Model.xmi"
+      RelativePath="RootReportModel\Reports\Documentation" ParentRelativePath="RootReportModel\Reports"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Double\Model.xmi"
+      RelativePath="RootInformationModel\Double" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Quality Control\Quality Control\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Quality Control\Quality Control"
+      ParentRelativePath="RootClassifierModel\predefined Classifiers\Quality Control"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Boolean\Model.xmi"
+      RelativePath="RootInformationModel\Boolean" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Equipment\Model.xmi"
+      RelativePath="RootResourceModel\Equipment" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\IntegerNumber\Model.xmi"
+      RelativePath="RootInformationModel\IntegerNumber" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\Documentation\Classifier\Model.xmi"
+      RelativePath="RootReportModel\Reports\Documentation\Classifier" ParentRelativePath="RootReportModel\Reports\Documentation"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Communication Service\Model.xmi"
+      RelativePath="RootResourceModel\Communication Service" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Number\Model.xmi"
+      RelativePath="RootInformationModel\Number" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Facility\Model.xmi"
+      RelativePath="RootResourceModel\Facility" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Person_Category\Model.xmi"
+      RelativePath="RootResourceModel\Person_Category" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\Dynamic analysis\Model.xmi"
+      RelativePath="RootReportModel\Reports\Dynamic analysis" ParentRelativePath="RootReportModel\Reports"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Float\Model.xmi"
+      RelativePath="RootInformationModel\Float" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootQueryModel\Basic profile\Model.xmi"
+      RelativePath="RootQueryModel\Basic profile" ParentRelativePath="RootQueryModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Person\Model.xmi"
+      RelativePath="RootResourceModel\Person" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Workflow\Potential Current Workflow\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Workflow\Potential Current Workflow"
+      ParentRelativePath="RootClassifierModel\predefined Classifiers\Workflow"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootOrganizationModel\Model.xmi"
+      RelativePath="RootOrganizationModel" ParentRelativePath=""/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\Documentation\Simulation\Model.xmi"
+      RelativePath="RootReportModel\Reports\Documentation\Simulation" ParentRelativePath="RootReportModel\Reports\Documentation"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\History\Model.xmi"
+      RelativePath="RootReportModel\Reports\History" ParentRelativePath="RootReportModel\Reports"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Quality Control\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Quality Control" ParentRelativePath="RootClassifierModel\predefined Classifiers"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootOrganizationModel\predefined org model\Default structure template\View.xmi"
+      RelativePath="RootOrganizationModel\predefined org model\Default structure template"
+      ParentRelativePath="RootOrganizationModel\predefined org model\Default structure template"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Resource_Category\Model.xmi"
+      RelativePath="RootResourceModel\Resource_Category" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Date\Model.xmi"
+      RelativePath="RootInformationModel\Date" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootOrganizationModel\predefined org model\Default structure template\Model.xmi"
+      RelativePath="RootOrganizationModel\predefined org model\Default structure template"
+      ParentRelativePath="RootOrganizationModel\predefined org model"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Quality Control\Not Quality Control\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Quality Control\Not Quality Control"
+      ParentRelativePath="RootClassifierModel\predefined Classifiers\Quality Control"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Model.xmi"
+      RelativePath="RootInformationModel" ParentRelativePath=""/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\Staff\Model.xmi"
+      RelativePath="RootResourceModel\Staff" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootQueryModel\Intermediate profile\Model.xmi"
+      RelativePath="RootQueryModel\Intermediate profile" ParentRelativePath="RootQueryModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootResourceModel\General Service\Model.xmi"
+      RelativePath="RootResourceModel\General Service" ParentRelativePath="RootResourceModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Value-Added\Business Value Added\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Value-Added\Business Value Added"
+      ParentRelativePath="RootClassifierModel\predefined Classifiers\Value-Added"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\Model.xmi"
+      RelativePath="RootReportModel\Reports" ParentRelativePath="RootReportModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Value-Added\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Value-Added" ParentRelativePath="RootClassifierModel\predefined Classifiers"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Workflow\Current Workflow\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers\Workflow\Current Workflow"
+      ParentRelativePath="RootClassifierModel\predefined Classifiers\Workflow"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Model.xmi"
+      RelativePath="RootReportModel" ParentRelativePath=""/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootReportModel\Reports\Documentation\Data\Model.xmi"
+      RelativePath="RootReportModel\Reports\Documentation\Data" ParentRelativePath="RootReportModel\Reports\Documentation"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\Duration\Model.xmi"
+      RelativePath="RootInformationModel\Duration" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootInformationModel\String\Model.xmi"
+      RelativePath="RootInformationModel\String" ParentRelativePath="RootInformationModel"/>
+  <com.ibm.btools.model.filemanager:URIRelativePath URI="RootClassifierModel\predefined Classifiers\Model.xmi"
+      RelativePath="RootClassifierModel\predefined Classifiers" ParentRelativePath="RootClassifierModel"/>
+</xmi:XMI>

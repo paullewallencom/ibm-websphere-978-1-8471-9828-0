@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://EligibilityCheck/com/jungleseainsurance/solution/eligibilityCheck/process/PerformEligibilityCheckArtifacts" xmlns:ns0="http://EligibilityCheckLibrary/com/jungleseainsurance/businessobjects" xmlns:ns1="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck" xmlns:ns2="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="PerformEligibilityCheck" suppressJoinFailure="yes" targetNamespace="http://EligibilityCheck/com/jungleseainsurance/solution/eligibilityCheck/process" wpc:continueOnError="no" wpc:displayName="PerformEligibilityCheck" wpc:executionMode="longRunning" wpc:id="1" wpc:validFrom="2010-03-01T05:01:34" wpc:version="IBM_7.0.100">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck.wsdl" namespace="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../interfaces/EligibiltyCheck.wsdl" namespace="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../businessobjects/MemberInfo.xsd" namespace="http://EligibilityCheckLibrary/com/jungleseainsurance/businessobjects"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="PerformEligibilityCheckArtifacts.wsdl" namespace="http://EligibilityCheck/com/jungleseainsurance/solution/eligibilityCheck/process/PerformEligibilityCheckArtifacts"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../interfaces/ExceptionMessage.xsd" namespace="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="EligibiltyCheck" partnerLinkType="ns:EligibiltyCheckPLT" wpc:id="2"/>
+    <bpws:partnerLink name="ApproveEligibility" partnerLinkType="ns:ApproveEligibilityPLT" partnerRole="Reference" wpc:id="13"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="member" type="ns0:MemberInfo" wpc:id="6"/>
+    <bpws:variable name="validateEligibilty" type="xsd:boolean" wpc:id="7"/>
+    <bpws:variable name="Exception" type="ns2:ExceptionMessage" wpc:id="18"/>
+  </bpws:variables>
+  <bpws:faultHandlers>
+    <bpws:catchAll wpc:id="40">
+      <bpws:sequence name="HiddenSequence2" wpc:id="1073741866">
+        <bpws:assign name="Assign1" wpc:displayName="SpecifyExceptionDetails-SystemException" wpc:id="41">
+          <bpws:copy>
+            <bpws:from><![CDATA[UE-003]]></bpws:from>
+            <bpws:to variable="Exception">
+              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[exceptionId]]></bpws:query>
+            </bpws:to>
+          </bpws:copy>
+          <bpws:copy>
+            <bpws:from><![CDATA[Unknown Exception]]></bpws:from>
+            <bpws:to variable="Exception">
+              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[exceptionName]]></bpws:query>
+            </bpws:to>
+          </bpws:copy>
+          <bpws:copy>
+            <bpws:from><![CDATA[System]]></bpws:from>
+            <bpws:to variable="Exception">
+              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[exceptionCategory]]></bpws:query>
+            </bpws:to>
+          </bpws:copy>
+          <bpws:copy>
+            <bpws:from><![CDATA[System Failure Exception]]></bpws:from>
+            <bpws:to variable="Exception">
+              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[description]]></bpws:query>
+            </bpws:to>
+          </bpws:copy>
+        </bpws:assign>
+        <bpws:reply faultName="ns1:invalidMemberDataException" name="Reply2" operation="checkEligibility" partnerLink="EligibiltyCheck" portType="ns1:EligibiltyCheck" wpc:displayName="ReplyWithGlobalException" wpc:id="44">
+          <wpc:input>
+            <wpc:parameter name="checkEligibilityFault1_invalidMemberDataException" variable="Exception"/>
+          </wpc:input>
+        </bpws:reply>
+        <bpws:terminate name="TerminateWithGlobalException" wpc:displayName="TerminateWithGlobalException" wpc:id="43"/>
+      </bpws:sequence>
+    </bpws:catchAll>
+  </bpws:faultHandlers>
+  <bpws:sequence name="HiddenSequence" wpc:id="1073741827">
+    <bpws:receive createInstance="yes" name="Receive" operation="checkEligibility" partnerLink="EligibiltyCheck" portType="ns1:EligibiltyCheck" wpc:displayName="Receive" wpc:id="4" wpc:transactionalBehavior="commitAfter">
+      <wpc:output>
+        <wpc:parameter name="member" variable="member"/>
+      </wpc:output>
+    </bpws:receive>
+    <bpws:switch name="MemberDataCheck" wpc:displayName="MemberDataCheck" wpc:id="32">
+      <bpws:case wpc:displayName="MemberDataCorrect" wpc:id="33">
+        <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[string-length($member/FirstName > 0 ) and 
+string-length($member/LastName > 0 ) and 
+$member/Age > 0 and 
+not( $member/Age < 0)]]></bpws:condition>
+        <bpws:invoke name="MemberDataValid" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="MemberDataValid" wpc:id="34">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[java.lang.String __result__1 = "Member Input Data Valid";
+{// print to log
+	System.out.println(__result__1);
+}
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="&quot;Member Input Data Valid&quot;" assignable="false">
+//    <dataOutputs target="//@executableElements.1/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="print to log" description="Print a text representation of the input to System.out" category="utility" template="System.out.println(&lt;%object%>);">
+//    <parameters name="object" dataInputs="//@executableElements.0/@dataOutputs.0" displayName="object">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+//    </parameters>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,3
+//!SMAP!1000000:29,1]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+      </bpws:case>
+      <bpws:otherwise wpc:id="35">
+        <bpws:sequence name="HiddenSequence1" wpc:id="1073741861">
+          <bpws:assign name="Assign" wpc:displayName="SpecifyExceptionDetails-InvalidMemberData" wpc:id="22">
+            <bpws:copy>
+              <bpws:from><![CDATA[DE-004]]></bpws:from>
+              <bpws:to variable="Exception">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[exceptionId]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from><![CDATA[Invalid Member Data Exception]]></bpws:from>
+              <bpws:to variable="Exception">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[exceptionName]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from><![CDATA[Data Validation Exception]]></bpws:from>
+              <bpws:to variable="Exception">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[exceptionCategory]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from><![CDATA[Check the value of member age]]></bpws:from>
+              <bpws:to variable="Exception">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[description]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+          </bpws:assign>
+          <bpws:reply faultName="ns1:invalidMemberDataException" name="Reply1" operation="checkEligibility" partnerLink="EligibiltyCheck" portType="ns1:EligibiltyCheck" wpc:displayName="ReplyWithException" wpc:id="39">
+            <wpc:input>
+              <wpc:parameter name="checkEligibilityFault1_invalidMemberDataException" variable="Exception"/>
+            </wpc:input>
+          </bpws:reply>
+          <bpws:terminate name="TerminateWithDataValidationException" wpc:displayName="TerminateWithDataValidationException" wpc:id="38"/>
+        </bpws:sequence>
+      </bpws:otherwise>
+    </bpws:switch>
+    <bpws:scope name="Scope" wpc:displayName="Scope" wpc:id="31">
+      <bpws:switch name="Choice" wpc:displayName="CheckAge" wpc:id="8">
+        <bpws:case wpc:displayName="AutoApproval" wpc:id="9">
+          <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[(($member/Age >0) and ($member/Age <=65))]]></bpws:condition>
+          <bpws:invoke name="SetApprovalofEligibility" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="SetApprovalofEligibility" wpc:id="11">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[boolean __result__1 = true;
+validateEligibilty = new java.lang.Boolean(__result__1);
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="true" assignable="false">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.0/@dataOutputs.0" value="validateEligibilty" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:25,1]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+        </bpws:case>
+        <bpws:case wpc:displayName="ManualApproval" wpc:id="10">
+          <bpws:condition expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[($member/Age >=65)]]></bpws:condition>
+          <bpws:invoke name="ApproveSeniorEligibility" operation="checkEligibility" partnerLink="ApproveEligibility" portType="ns1:EligibiltyCheck" wpc:continueOnError="inherit" wpc:displayName="ApproveSeniorEligibility" wpc:id="12">
+            <wpc:input>
+              <wpc:parameter name="member" variable="member"/>
+            </wpc:input>
+            <wpc:output>
+              <wpc:parameter name="validateEligibilty" variable="validateEligibilty"/>
+            </wpc:output>
+          </bpws:invoke>
+        </bpws:case>
+      </bpws:switch>
+    </bpws:scope>
+    <bpws:reply name="Reply" operation="checkEligibility" partnerLink="EligibiltyCheck" portType="ns1:EligibiltyCheck" wpc:displayName="Reply" wpc:id="5">
+      <wpc:input>
+        <wpc:parameter name="validateEligibilty" variable="validateEligibilty"/>
+      </wpc:input>
+    </bpws:reply>
+  </bpws:sequence>
+</bpws:process>

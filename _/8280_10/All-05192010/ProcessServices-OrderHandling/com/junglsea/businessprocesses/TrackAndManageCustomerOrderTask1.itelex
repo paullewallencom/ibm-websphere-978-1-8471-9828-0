@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensionmodel:ExtensionMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.tel.taskextensionmodel="http://www.ibm.com/xmlns/prod/websphere/human-task-extension/7.0.0/" xmlns:extensionmodel="http:///extensionmodel.ecore" namespace="http://com.ibm.wbit.tel.taskextensionmodel/">
+  <extensions extendedObject="TrackAndManageCustomerOrderTask1.itel#//@task">
+    <extensionObject xsi:type="com.ibm.wbit.tel.taskextensionmodel:TaskExtension" locked="false"/>
+  </extensions>
+</extensionmodel:ExtensionMap>

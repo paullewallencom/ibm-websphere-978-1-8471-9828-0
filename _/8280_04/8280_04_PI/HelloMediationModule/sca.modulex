@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.wbit.wiring.ui.ext.model="http:///com/ibm/wbit/wiring/ui/ext/model.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1266739570497" namespace="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+    <extensions xmi:id="Extension_1266739570497">
+      <extendedObject xmi:type="scdl:Component" href="HelloMediationModule.component#//@Component"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1266739570513" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/mfc/6.0.0}MediationFlowImplementation" unknown="false" visible="true" x="224" y="87"/>
+    </extensions>
+    <extensions xmi:id="Extension_1266739570513">
+      <extendedObject xmi:type="scdl:Module" href="sca.module#//@module"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:ModuleExtension" xmi:id="ModuleExtension_1266739570513" autoLayout="true"/>
+    </extensions>
+    <extensions xmi:id="Extension_1266739570514">
+      <extendedObject xmi:type="scdl:Export" href="customGreetingExport1.export#//@export"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:ExportExtension" xmi:id="ExportExtension_1266739570513" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/jaxws/6.0.0}JaxWsExportBinding" unknown="false" visible="true" x="30" y="98" bound="true"/>
+    </extensions>
+    <extensions xmi:id="Extension_1266739570515">
+      <extendedObject xmi:type="scdl:Component" href="getGreeting1.component#//@Component"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1266739570514" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/java/6.0.0}JavaImplementation" unknown="false" visible="true" x="416" y="30"/>
+    </extensions>
+    <extensions xmi:id="Extension_1266739570516">
+      <extendedObject xmi:type="scdl:Component" href="getGreeting3.component#//@Component"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1266739570515" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/java/6.0.0}JavaImplementation" unknown="false" visible="true" x="416" y="168"/>
+    </extensions>
+    <extensions xmi:id="Extension_1266739570517">
+      <extendedObject xmi:type="scdl:Component" href="getGreeting2.component#//@Component"/>
+      <extensionObject xmi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" xmi:id="NodeExtension_1266739570516" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/java/6.0.0}JavaImplementation" unknown="false" visible="true" x="416" y="99"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap xmi:id="ExtensionMap_1266739570513" namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions xmi:id="Extension_1266739570518">
+      <extendedObject xmi:type="scdl:Module" href="sca.module#//@module"/>
+      <extensionObject xmi:type="sb:StickyDocument" xmi:id="StickyDocument_1266739570513">
+        <stickyBoard xmi:id="StickyBoard_1266739570513" id="default"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

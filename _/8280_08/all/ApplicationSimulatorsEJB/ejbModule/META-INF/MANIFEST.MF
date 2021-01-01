@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: comptestruntime.jar 
+ ApplicationSimulators.jar 
+ ctexecution.jar 
+ junit.jar 

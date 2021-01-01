@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="TrackAndManageCustomerOrder" targetNamespace="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/TrackAndManageCustomerOrderArtifacts" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://ProcessServices-OrderHandling/com/junglsea/businessprocesses/TrackAndManageCustomerOrderArtifacts" xmlns:vprop="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl0="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder" xmlns:wsdl1="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation" xmlns:wsdl2="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments" xmlns:wsdl3="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments" xmlns:wsdl4="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation" xmlns:wsdl5="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders" xmlns:wsdl6="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation" xmlns:wsdl7="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="ProcessCustomerOrderPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:ProcessCustomerOrder"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="RetrieveInventoryInformationPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl1:RetrieveInventoryInformation"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="ProcessCustomerPaymentsPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl2:ProcessCustomerPayments"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="ManageShipmentsPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl3:ManageShipments"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="CustomerCreditInformationPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl4:CustomerCreditInformation"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="ProcessSPOrdersPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl5:ProcessSPOrders"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="CustomerCreditInformationPLT1">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl4:CustomerCreditInformation"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="MaintainInventoryInformationPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl6:MaintainInventoryInformation"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="ProcessCustomerOrderPLT1">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:ProcessCustomerOrder"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="HandleCustomerContactPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl7:HandleCustomerContact"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <vprop:property name="custOrderIdCorrelation" type="xsd:string"/>
+    <vprop:propertyAlias messageType="wsdl0:submitCustomerOrderRequestMsg" part="submitCustomerOrderParameters" propertyName="tns:custOrderIdCorrelation">
+    <vprop:query><![CDATA[/inputParam/CustomerOrder/OrderId]]></vprop:query>
+  </vprop:propertyAlias>
+    <vprop:propertyAlias messageType="wsdl0:cancelCustomerOrderRequestMsg" part="cancelCustomerOrderParameters" propertyName="tns:custOrderIdCorrelation">
+    <vprop:query><![CDATA[/inputParam/CustomerOrder/OrderId]]></vprop:query>
+  </vprop:propertyAlias>
+    <wsdl:import location="../../junglesea/businessservices/interfaces/ProcessCustomerOrder.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder"/>
+    <wsdl:import location="../../junglesea/businessservices/interfaces/RetrieveInventoryInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation"/>
+    <wsdl:import location="../../junglesea/businessservices/interfaces/ProcessCustomerPayments.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments"/>
+    <wsdl:import location="../../junglesea/businessservices/interfaces/ManageShipments.wsdl" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments"/>
+    <wsdl:import location="../../junglesea/businessservices/interfaces/CustomerCreditInformation.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation"/>
+    <wsdl:import location="../../junglesea/businessservices/interfaces/ProcessSPOrders.wsdl" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders"/>
+    <wsdl:import location="../../junglesea/businessservices/interfaces/MaintainInventoryInformation.wsdl" namespace="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation"/>
+    <wsdl:import location="../../junglesea/businessservices/interfaces/HandleCustomerContact.wsdl" namespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact"/>
+</wsdl:definitions>

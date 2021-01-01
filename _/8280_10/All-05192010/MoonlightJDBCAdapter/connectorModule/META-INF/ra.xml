@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ IBM Confidential
+ OCO Source Materials
+ 5724-T73, 5724-L77
+ (c) Copyright IBM Corporation 2004, 2007
+ The source code for this program is not published or otherwise
+ divested of its trade secrets, irrespective of what has been
+ deposited with the U.S. Copyright Office.
+-->
+<connector version="1.5" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee  http://java.sun.com/xml/ns/j2ee/connector_1_5.xsd">
+	<display-name>IBM WebSphere Adapter for JDBC</display-name>
+	<vendor-name>IBM</vendor-name>
+	<eis-type>JDBC</eis-type>
+	<resourceadapter-version>7.0.0.0_IF02</resourceadapter-version>
+	<license>
+		<description/>
+		<license-required>true</license-required>
+	</license>
+	<resourceadapter>
+		<resourceadapter-class>com.ibm.j2ca.jdbc.JDBCResourceAdapter</resourceadapter-class>
+		<config-property>
+			<config-property-name>DatabaseVendor</config-property-name>
+			<config-property-type>java.lang.String</config-property-type>
+			<config-property-value/>
+		</config-property>
+		<config-property>
+			<config-property-name>QueryTimeOut</config-property-name>
+			<config-property-type>java.lang.Integer</config-property-type>
+			<config-property-value/>
+		</config-property>
+		<config-property>
+			<config-property-name>ReturnDummyBOForSP</config-property-name>
+			<config-property-type>java.lang.String</config-property-type>
+			<config-property-value/>
+		</config-property>
+		<config-property>
+			<config-property-name>PingQuery</config-property-name>
+			<config-property-type>java.lang.String</config-property-type>
+			<config-property-value/>
+		</config-property>
+		<outbound-resourceadapter>
+			<connection-definition>
+				<managedconnectionfactory-class>com.ibm.j2ca.jdbc.JDBCManagedConnectionFactory</managedconnectionfactory-class>
+				<!-- ManagedConnectionfactory default configuration properties -->
+				<config-property>
+					<config-property-name>AutoCommit</config-property-name>
+					<config-property-type>java.lang.Boolean</config-property-type>
+					<config-property-value>false</config-property-value>
+				</config-property>
+				<config-property>
+					<config-property-name>UserName</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<config-property-name>Password</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<description>This property is deprecated. Instead use XADataSourceJNDIName or PoolDataSourceJNDIName.</description>
+					<config-property-name>DataSourceJNDIName</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<description>The JNDI name of the XA data source.</description>
+					<config-property-name>XADataSourceJNDIName</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<description>The JNDI name of the connection pool data source.</description>
+					<config-property-name>PoolDataSourceJNDIName</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<description>The JDBC driver-specific URL for creating a connection to the database.</description>
+					<config-property-name>DatabaseURL</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<description>The class name of the JDBC driver that is used to establish the connection to the database.</description>
+					<config-property-name>JdbcDriverClass</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<description>The name of the XA data source to use to establish an connection to the database for XA (distributed) transactions.</description>
+					<config-property-name>XADataSourceName</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<description>The database name used for the XA connection.</description>
+					<config-property-name>XADatabaseName</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<description>The type of database the adapter uses for special processing.</description>
+					<config-property-name>DatabaseVendor</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<config-property-name>QueryTimeOut</config-property-name>
+					<config-property-type>java.lang.Integer</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<config-property-name>ReturnDummyBOForSP</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<config-property>
+					<config-property-name>PingQuery</config-property-name>
+					<config-property-type>java.lang.String</config-property-type>
+					<config-property-value/>
+				</config-property>
+				<connectionfactory-interface>javax.resource.cci.ConnectionFactory</connectionfactory-interface>
+				<connectionfactory-impl-class>com.ibm.j2ca.jdbc.JDBCConnectionFactory</connectionfactory-impl-class>
+				<connection-interface>javax.resource.cci.Connection</connection-interface>
+				<connection-impl-class>com.ibm.j2ca.jdbc.JDBCConnection</connection-impl-class>
+			</connection-definition>
+			<transaction-support>XATransaction</transaction-support>
+			<authentication-mechanism>
+				<authentication-mechanism-type>BasicPassword</authentication-mechanism-type>
+				<credential-interface>javax.resource.spi.security.PasswordCredential</credential-interface>
+			</authentication-mechanism>
+			<reauthentication-support>false</reauthentication-support>
+		</outbound-resourceadapter>
+		<inbound-resourceadapter>
+			<messageadapter>
+				<messagelistener>
+					<messagelistener-type>commonj.connector.runtime.InboundListener</messagelistener-type>
+					<activationspec>
+						<activationspec-class> com.ibm.j2ca.jdbc.inbound.JDBCActivationSpec</activationspec-class>
+						<!-- required config property names for ActivationSpec -->
+						<!--
+						<required-config-property>
+							<config-property-name>Username</config-property-name>
+						</required-config-property>
+						<required-config-property>
+							<config-property-name>Password</config-property-name>
+						</required-config-property>
+						<required-config-property>
+							<config-property-name>DatabaseURL</config-property-name>
+						</required-config-property>
+						<required-config-property>
+							<config-property-name>JDBCDriverClass</config-property-name>
+						</required-config-property>
+						-->
+						<required-config-property>
+							<config-property-name>EventTableName</config-property-name>
+						</required-config-property>
+
+					</activationspec>
+				</messagelistener>
+				<messagelistener>
+					<messagelistener-type>com.ibm.j2ca.base.ExtendedInboundListener</messagelistener-type>
+					<activationspec>
+						<activationspec-class> com.ibm.j2ca.jdbc.inbound.JDBCActivationSpecWithXid</activationspec-class>
+						<!-- required config property names for ActivationSpec -->
+						<!--
+						<required-config-property>
+							<config-property-name>Username</config-property-name>
+						</required-config-property>
+						<required-config-property>
+							<config-property-name>Password</config-property-name>
+						</required-config-property>
+						<required-config-property>
+							<config-property-name>DataSourceJNDIName</config-property-name>
+						</required-config-property>
+						<required-config-property>
+							<config-property-name>DatabaseURL</config-property-name>
+						</required-config-property>
+						<required-config-property>
+							<config-property-name>JDBCDriverClass</config-property-name>
+						</required-config-property>
+						<required-config-property>
+							<config-property-name>EventOrderBy</config-property-name>
+						</required-config-property>
+						-->
+						<required-config-property>
+							<config-property-name>EventTableName</config-property-name>
+						</required-config-property>
+						<!--
+						<required-config-property>
+							<config-property-name>BONamespace</config-property-name>
+						</required-config-property>
+						-->
+					</activationspec>
+				</messagelistener>
+			</messageadapter>
+		</inbound-resourceadapter>
+		<security-permission>
+			<security-permission-spec>
+				grant { permission java.security.AllPermission; };
+			</security-permission-spec>
+		</security-permission>
+	</resourceadapter>
+</connector>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="OutboundRapidFlatFileAdapterImport.wsdl" targetNamespace="http://AccessServices-Rapid/com/junglesea/adapter/OutboundRapidFlatFileAdapterImport" xmlns:bons1="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/shipping_labelwrapper" xmlns:tns="http://AccessServices-Rapid/com/junglesea/adapter/OutboundRapidFlatFileAdapterImport" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://AccessServices-Rapid/com/junglesea/adapter/OutboundRapidFlatFileAdapterImport">
+      <xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/shipping_labelwrapper" schemaLocation="shipping_labelWrapper.xsd"/>
+      <xsd:element name="create">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createInput" type="bons1:shipping_labelWrapper"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createRequestMsg">
+    <wsdl:part element="tns:create" name="createParameters"/>
+  </wsdl:message>
+  <wsdl:portType name="OutboundRapidFlatFileAdapterImport">
+    <wsdl:operation name="create">
+      <wsdl:input message="tns:createRequestMsg" name="createRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

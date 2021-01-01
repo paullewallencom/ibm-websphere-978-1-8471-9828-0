@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="ProcessCustomerPayments" targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments" xmlns:bons0="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments" xmlns:bons2="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments" xmlns:bons3="http://BillingDomain-Msg/com/junglesea/bo" xmlns:tns="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments">
+            <xsd:import namespace="http://BillingDomain-Msg/com/junglesea/bo" schemaLocation="../../bo/Payment.xsd"/>
+            <xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/Acknowledgement.xsd"/>
+      <xsd:element name="processPayment">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons3:Payment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="processPaymentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons2:Acknowledgement"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="refundPayment">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inputParams" nillable="true" type="bons3:Payment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="refundPaymentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outputParams" nillable="true" type="bons2:Acknowledgement"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="processPaymentRequestMsg">
+    <wsdl:part element="bons0:processPayment" name="processPaymentParameters"/>
+  </wsdl:message>
+    <wsdl:message name="processPaymentResponseMsg">
+    <wsdl:part element="bons0:processPaymentResponse" name="processPaymentResult"/>
+  </wsdl:message>
+    <wsdl:message name="refundPaymentRequestMsg">
+    <wsdl:part element="bons0:refundPayment" name="refundPaymentParameters"/>
+  </wsdl:message>
+    <wsdl:message name="refundPaymentResponseMsg">
+    <wsdl:part element="bons0:refundPaymentResponse" name="refundPaymentResult"/>
+  </wsdl:message>
+    <wsdl:portType name="ProcessCustomerPayments">
+    <wsdl:operation name="processPayment">
+      <wsdl:input message="bons0:processPaymentRequestMsg" name="processPaymentRequest"/>
+      <wsdl:output message="bons0:processPaymentResponseMsg" name="processPaymentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="refundPayment">
+      <wsdl:input message="bons0:refundPaymentRequestMsg" name="refundPaymentRequest"/>
+      <wsdl:output message="bons0:refundPaymentResponseMsg" name="refundPaymentResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

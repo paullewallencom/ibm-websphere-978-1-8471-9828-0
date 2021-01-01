@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="WashingtonCreditAgencyService" targetNamespace="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService" xmlns:bons1="http://Ch6Library" xmlns:tns="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService">
+      <xsd:import namespace="http://Ch6Library" schemaLocation="../CustomerCreditApproval.xsd"/>
+      <xsd:element name="requestCreditApproval">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="customerInfo" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestCreditApprovalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="customerCreditApprovalResponse" nillable="true" type="bons1:CustomerCreditApproval"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="requestCreditApprovalRequestMsg">
+    <wsdl:part element="tns:requestCreditApproval" name="requestCreditApprovalParameters"/>
+  </wsdl:message>
+    <wsdl:message name="requestCreditApprovalResponseMsg">
+    <wsdl:part element="tns:requestCreditApprovalResponse" name="requestCreditApprovalResult"/>
+  </wsdl:message>
+    <wsdl:portType name="WashingtonCreditAgencyService">
+    <wsdl:operation name="requestCreditApproval">
+      <wsdl:input message="tns:requestCreditApprovalRequestMsg" name="requestCreditApprovalRequest"/>
+      <wsdl:output message="tns:requestCreditApprovalResponseMsg" name="requestCreditApprovalResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

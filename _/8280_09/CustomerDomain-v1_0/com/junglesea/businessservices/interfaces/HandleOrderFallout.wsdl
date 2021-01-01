@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="HandleOrderFallout" targetNamespace="http://CommonDomain-v1_0/com/junglesea/businessservices/interfaces/HandleOrderFallout" xmlns:bons1="http://CustomerDomain-v1_0/com/junglesea/bo/msg" xmlns:bons2="http://CommonDomain-v1_0/com/junglesea/bo" xmlns:tns="http://CommonDomain-v1_0/com/junglesea/businessservices/interfaces/HandleOrderFallout" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://CommonDomain-v1_0/com/junglesea/businessservices/interfaces/HandleOrderFallout">
+            <xsd:import namespace="http://CommonDomain-v1_0/com/junglesea/bo" schemaLocation="../../bo/BusinessException.xsd"/>
+            <xsd:import namespace="http://CustomerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="../../bo/msg/CustomerOrderMSG.xsd"/>
+            <xsd:element name="handleOrderFault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="bons1:CustomerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="handleOrderFaultResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="bons1:CustomerOrderMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="handleOrderFaultFault1_handleOrderFaultFault" nillable="true" type="bons2:BusinessException"/>
+        </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="handleOrderFaultRequestMsg">
+    <wsdl:part element="tns:handleOrderFault" name="handleOrderFaultParameters"/>
+  </wsdl:message>
+    <wsdl:message name="handleOrderFaultResponseMsg">
+    <wsdl:part element="tns:handleOrderFaultResponse" name="handleOrderFaultResult"/>
+  </wsdl:message>
+    <wsdl:message name="handleOrderFault_handleOrderFaultFaultMsg">
+    <wsdl:part element="tns:handleOrderFaultFault1_handleOrderFaultFault" name="handleOrderFaultFault"/>
+  </wsdl:message>
+    <wsdl:portType name="HandleOrderFallout">
+    <wsdl:operation name="handleOrderFault">
+      <wsdl:input message="tns:handleOrderFaultRequestMsg" name="handleOrderFaultRequest"/>
+      <wsdl:output message="tns:handleOrderFaultResponseMsg" name="handleOrderFaultResponse"/>
+            <wsdl:fault message="tns:handleOrderFault_handleOrderFaultFaultMsg" name="handleOrderFaultFault"/>
+        </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

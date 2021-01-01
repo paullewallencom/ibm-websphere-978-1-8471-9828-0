@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerOrder" xmlns:ns2="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveInventoryInformation" xmlns:ns3="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessCustomerPayments" xmlns:ns4="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments" xmlns:ns5="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/CustomerCreditInformation" xmlns:ns6="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ProcessSPOrders" xmlns:ns7="http://ProductDomain-v1_0/com/junglesea/businessservices/interfaces/MaintainInventoryInformation" xmlns:ns8="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/HandleCustomerContact" xmlns:process="http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="TrackAndManageCustomerOrder" name="TrackAndManageCustomerOrder">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="async" portType="ns1:ProcessCustomerOrder">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="false"/>
+    </interface>
+  </interfaces>
+  <references>
+    <reference name="RetrieveInventoryInformationPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns2:RetrieveInventoryInformation"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="RetrieveInventoryInformation"/>
+    </reference>
+    <reference name="ProcessCustomerPaymentsPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns3:ProcessCustomerPayments"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="ProcessCustomerPayments"/>
+    </reference>
+    <reference name="ManageShipmentsPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns4:ManageShipments"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="ManageShipments"/>
+    </reference>
+    <reference name="CustomerCreditInformationPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns5:CustomerCreditInformation"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="CustomerCreditInformation"/>
+    </reference>
+    <reference name="ProcessSPOrdersPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns6:ProcessSPOrders"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="ProcessSPOrders"/>
+    </reference>
+    <reference name="CustomerCreditInformationPartner1">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns5:CustomerCreditInformation"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="CustomerCreditInformation"/>
+    </reference>
+    <reference name="MaintainInventoryInformationPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns7:MaintainInventoryInformation"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="MaintainInventoryInformation"/>
+    </reference>
+    <reference name="ProcessCustomerOrderPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1:ProcessCustomerOrder"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="OrderManagementRuleGroup"/>
+    </reference>
+    <reference name="HandleCustomerContactPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns8:HandleCustomerContact"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="HandleCustomerContact"/>
+    </reference>
+  </references>
+  <implementation xsi:type="process:ProcessImplementation">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+    <process bpel="/com/junglsea/businessprocesses/TrackAndManageCustomerOrder.bpel"/>
+  </implementation>
+</scdl:component>

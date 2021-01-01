@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body xmlns:httpsca="http://www.ibm.com/xmlns/prod/websphere/http/sca/6.1.0" xmlns:mq="http://www.ibm.com/xmlns/prod/websphere/mq/sca/6.0.0" xmlns:smo="http://www.ibm.com/websphere/sibx/smo/v6.0.1" xmlns:tns="http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder" xmlns:tns1="http://www.w3.org/2005/08/addressing" xmlns:tns2="http://www.w3.org/2003/05/soap-envelope" xmlns:tns_1="wsdl.http://MoonlightLibrary/com/junglesea/apps/moonlight/ProcessPurchaseOrder" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="foo.xsd">
+  <tns:processOrder>
+    <purchaseOrder orderDate="2001-01-01">
+      <shipTo country="US">
+        <name>name</name>
+        <street>street</street>
+        <city>city</city>
+        <state>state</state>
+        <zip>0.0</zip>
+      </shipTo>
+      <billTo country="US">
+        <name>name</name>
+        <street>street</street>
+        <city>city</city>
+        <state>state</state>
+        <zip>0.0</zip>
+      </billTo>
+      <comment>comment</comment>
+      <items>
+        <item partNum="">
+          <productName>productName</productName>
+          <quantity>1</quantity>
+          <USPrice>0.0</USPrice>
+          <comment>comment</comment>
+          <shipDate>2001-01-01</shipDate>
+        </item>
+      </items>
+    </purchaseOrder>
+  </tns:processOrder>
+</body>

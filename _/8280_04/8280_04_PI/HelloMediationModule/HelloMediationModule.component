@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/scdl/mfc/6.0.0" xmlns:ns1="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/customGreeting" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="HelloMediationModule" name="HelloMediationModule">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns1:customGreeting">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <references>
+    <reference name="customGreetingPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1:customGreeting"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="getGreeting1"/>
+    </reference>
+    <reference name="customGreetingPartner1">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1:customGreeting"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="getGreeting2"/>
+    </reference>
+    <reference name="customGreetingPartner2">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns1:customGreeting"/>
+      <scdl:referenceQualifier xsi:type="scdl:SuspendTransaction" value="false"/>
+      <scdl:referenceQualifier xsi:type="scdl:Reliability"/>
+      <scdl:referenceQualifier xsi:type="scdl:DeliverAsyncAt" value="commit"/>
+      <wire target="getGreeting3"/>
+    </reference>
+  </references>
+  <implementation xsi:type="mfc:MediationFlowImplementation" mfcFile="com/junglesea/greeting/mediation/HelloMediationModule.mfc">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+  </implementation>
+</scdl:component>

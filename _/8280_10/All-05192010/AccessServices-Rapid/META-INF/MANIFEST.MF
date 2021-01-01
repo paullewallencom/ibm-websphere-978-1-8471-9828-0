@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: OutboundRapidFlatFileAdapter.rar 
+ SupplierPartnerDomain-v1_0.jar 
+ RapidLibrary.jar
+Created-By: 1.5.0 (IBM Corporation)
+

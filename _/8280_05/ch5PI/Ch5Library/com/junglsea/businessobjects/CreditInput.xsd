@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://Ch5Library/com/junglsea/businessobjects"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://Ch5Library/com/junglsea/businessobjects">
+	<xsd:include schemaLocation="Person.xsd"></xsd:include>
+	<xsd:complexType name="CreditInput">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="person"
+				type="bons0:Person">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="requestIntiateDate"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="vendor"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="additionalInfo"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

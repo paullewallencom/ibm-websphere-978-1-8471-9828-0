@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://RapidLibrary/com/junglesea/apps/rapid"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="shipStatus">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="trackingNumber"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="shipmentStatus"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="shippingDate"
+				type="xsd:date">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

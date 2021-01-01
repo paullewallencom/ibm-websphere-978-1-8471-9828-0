@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://RapidLibrary/com/junglesea/apps/rapid"
+	xmlns:bons0="http://RapidLibrary/com/junglesea/apps/rapid"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="package.xsd" />
+	<xsd:complexType name="label">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="firstName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="lastName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="address1"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="address2"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="zipCode"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="city" type="xsd:string" />
+			<xsd:element minOccurs="0" name="state" type="xsd:string" />
+			<xsd:element minOccurs="0" name="country"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="contactPhone"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="shipmentType"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="shipDate"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="trackingNumber"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="shippingLabel"
+				type="xsd:base64Binary">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="package"
+				type="bons0:package">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

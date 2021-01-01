@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/scdl/mfc/6.0.0" xmlns:ns1="http://CustomerDomain-v1_0/com/junglesea/businessservices/interfaces/RetrieveCustomerInformation" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="Component2" name="Component2">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns1:RetrieveCustomerInformation">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="true"/>
+    </interface>
+  </interfaces>
+  <implementation xsi:type="mfc:MediationFlowImplementation" mfcFile="Component2.mfc">
+    <scdl:implementationQualifier xsi:type="scdl:Transaction" value="global"/>
+  </implementation>
+</scdl:component>

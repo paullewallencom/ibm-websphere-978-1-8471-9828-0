@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Binding4="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/customGreeting/Binding4" xmlns:jaxws="http://www.ibm.com/xmlns/prod/websphere/scdl/jaxws/6.0.0" xmlns:ns1="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/customGreeting" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="customGreetingExport1" name="customGreetingExport1" target="HelloMediationModule">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:customGreeting"/>
+  </interfaces>
+  <esbBinding xsi:type="jaxws:JaxWsExportBinding" port="Binding4:customGreetingExport1_customGreetingHttpPort" service="Binding4:customGreetingExport1_customGreetingHttpService"/>
+</scdl:export>

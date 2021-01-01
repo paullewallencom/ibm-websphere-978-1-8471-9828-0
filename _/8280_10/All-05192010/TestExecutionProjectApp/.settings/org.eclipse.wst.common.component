@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="TestExecutionProjectApp">
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+        <dependent-module archiveName="TestExecutionProject.jar" deploy-path="/" handle="module:/resource/TestExecutionProject/TestExecutionProject">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/TestExecutionProjectWeb/TestExecutionProjectWeb">
+            <dependent-object>WebModule_1169158408425</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CustomerDomain-v1_0.jar" deploy-path="/" handle="module:/resource/CustomerDomain-v1_0/CustomerDomain-v1_0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="SupplierPartnerDomain-v1_0.jar" deploy-path="/" handle="module:/resource/SupplierPartnerDomain-v1_0/SupplierPartnerDomain-v1_0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CommonDomain-v1_0.jar" deploy-path="/" handle="module:/resource/CommonDomain-v1_0/CommonDomain-v1_0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ProductDomain-v1_0.jar" deploy-path="/" handle="module:/resource/ProductDomain-v1_0/ProductDomain-v1_0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/MoonlightJDBCAdapter/MoonlightJDBCAdapter">
+            <dependent-object>ConnectorModule_1272388599703</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="RapidLibrary.jar" deploy-path="/" handle="module:/resource/RapidLibrary/RapidLibrary">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/OutboundRapidFlatFileAdapter/OutboundRapidFlatFileAdapter">
+            <dependent-object>ConnectorModule_1274227080687</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="PayMeLibrary.jar" deploy-path="/" handle="module:/resource/PayMeLibrary/PayMeLibrary">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="BillingDomain-v1_0.jar" deploy-path="/" handle="module:/resource/BillingDomain-v1_0/BillingDomain-v1_0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

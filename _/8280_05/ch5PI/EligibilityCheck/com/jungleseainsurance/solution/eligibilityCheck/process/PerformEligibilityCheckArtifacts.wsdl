@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="PerformEligibilityCheck" targetNamespace="http://EligibilityCheck/com/jungleseainsurance/solution/eligibilityCheck/process/PerformEligibilityCheckArtifacts" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://EligibilityCheck/com/jungleseainsurance/solution/eligibilityCheck/process/PerformEligibilityCheckArtifacts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl0="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="EligibiltyCheckPLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:EligibiltyCheck"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="ApproveEligibilityPLT">
+    <plnk:role name="Reference">
+      <plnk:portType name="wsdl0:EligibiltyCheck"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <wsdl:import location="../../../interfaces/EligibiltyCheck.wsdl" namespace="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck"/>
+</wsdl:definitions>

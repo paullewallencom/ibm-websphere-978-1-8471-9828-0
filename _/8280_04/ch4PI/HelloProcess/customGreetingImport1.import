@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Binding4="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/customGreeting/Binding4" xmlns:jaxws="http://www.ibm.com/xmlns/prod/websphere/scdl/jaxws/6.0.0" xmlns:ns1="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/customGreeting" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="customGreetingImport1" name="customGreetingImport1">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:customGreeting">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="false"/>
+    </interface>
+  </interfaces>
+  <esbBinding xsi:type="jaxws:JaxWsImportBinding" endpoint="http://localhost:9080/HelloMediationModuleWeb/sca/customGreetingExport1" port="Binding4:customGreetingExport1_customGreetingHttpPort" service="Binding4:customGreetingExport1_customGreetingHttpService">
+    <scdl:bindingQualifier xsi:type="scdl:IsTargetSCA" value="true"/>
+  </esbBinding>
+</scdl:import>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="PCSProductSearch" targetNamespace="http://PCSLibrary/PCSProductSearch" xmlns:bons1="http://PCSLibrary/com/junglesea/apps/pcs" xmlns:tns="http://PCSLibrary/PCSProductSearch" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://PCSLibrary/PCSProductSearch">
+      <xsd:import namespace="http://PCSLibrary/com/junglesea/apps/pcs" schemaLocation="com/junglesea/apps/pcs/products.xsd"/>
+      <xsd:element name="productSearch">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="productSearchResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="bons1:products"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="productSearchRequestMsg">
+    <wsdl:part element="tns:productSearch" name="productSearchParameters"/>
+  </wsdl:message>
+    <wsdl:message name="productSearchResponseMsg">
+    <wsdl:part element="tns:productSearchResponse" name="productSearchResult"/>
+  </wsdl:message>
+    <wsdl:portType name="PCSProductCatalog">
+    <wsdl:operation name="productSearch">
+      <wsdl:input message="tns:productSearchRequestMsg" name="productSearchRequest"/>
+      <wsdl:output message="tns:productSearchResponseMsg" name="productSearchResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

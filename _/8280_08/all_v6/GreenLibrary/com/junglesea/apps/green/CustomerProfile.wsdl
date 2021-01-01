@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="CustomerProfile" targetNamespace="http://GreenLibrary/com/junglesea/apps/green/CustomerProfile" xmlns:bons1="http://GreenLibrary/com/junglesea/apps/green" xmlns:tns="http://GreenLibrary/com/junglesea/apps/green/CustomerProfile" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://GreenLibrary/com/junglesea/apps/green/CustomerProfile">
+      <xsd:import namespace="http://GreenLibrary/com/junglesea/apps/green" schemaLocation="customer.xsd"/>
+      <xsd:element name="createCustomerAccount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="bons1:customer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createCustomerAccountResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="modifyCustomerAccount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="bons1:customer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="modifyCustomerAccountResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findCustomer">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findCustomerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCustomerDetails">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCustomerDetailsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="output1" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="createCustomerAccountRequestMsg">
+    <wsdl:part element="tns:createCustomerAccount" name="createCustomerAccountParameters"/>
+  </wsdl:message>
+    <wsdl:message name="createCustomerAccountResponseMsg">
+    <wsdl:part element="tns:createCustomerAccountResponse" name="createCustomerAccountResult"/>
+  </wsdl:message>
+    <wsdl:message name="modifyCustomerAccountRequestMsg">
+    <wsdl:part element="tns:modifyCustomerAccount" name="modifyCustomerAccountParameters"/>
+  </wsdl:message>
+    <wsdl:message name="modifyCustomerAccountResponseMsg">
+    <wsdl:part element="tns:modifyCustomerAccountResponse" name="modifyCustomerAccountResult"/>
+  </wsdl:message>
+    <wsdl:message name="findCustomerRequestMsg">
+    <wsdl:part element="tns:findCustomer" name="findCustomerParameters"/>
+  </wsdl:message>
+    <wsdl:message name="findCustomerResponseMsg">
+    <wsdl:part element="tns:findCustomerResponse" name="findCustomerResult"/>
+  </wsdl:message>
+    <wsdl:message name="getCustomerDetailsRequestMsg">
+    <wsdl:part element="tns:getCustomerDetails" name="getCustomerDetailsParameters"/>
+  </wsdl:message>
+    <wsdl:message name="getCustomerDetailsResponseMsg">
+    <wsdl:part element="tns:getCustomerDetailsResponse" name="getCustomerDetailsResult"/>
+  </wsdl:message>
+    <wsdl:portType name="CustomerProfile">
+    <wsdl:operation name="createCustomerAccount">
+      <wsdl:input message="tns:createCustomerAccountRequestMsg" name="createCustomerAccountRequest"/>
+      <wsdl:output message="tns:createCustomerAccountResponseMsg" name="createCustomerAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="modifyCustomerAccount">
+      <wsdl:input message="tns:modifyCustomerAccountRequestMsg" name="modifyCustomerAccountRequest"/>
+      <wsdl:output message="tns:modifyCustomerAccountResponseMsg" name="modifyCustomerAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="findCustomer">
+      <wsdl:input message="tns:findCustomerRequestMsg" name="findCustomerRequest"/>
+      <wsdl:output message="tns:findCustomerResponseMsg" name="findCustomerResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerDetails">
+      <wsdl:input message="tns:getCustomerDetailsRequestMsg" name="getCustomerDetailsRequest"/>
+      <wsdl:output message="tns:getCustomerDetailsResponseMsg" name="getCustomerDetailsResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

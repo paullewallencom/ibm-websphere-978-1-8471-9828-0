@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://GreetingLibrary/com/junglesea/solution/greeting/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="Party">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="FirstName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LastName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Location"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Age" type="xsd:int"></xsd:element>
+
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

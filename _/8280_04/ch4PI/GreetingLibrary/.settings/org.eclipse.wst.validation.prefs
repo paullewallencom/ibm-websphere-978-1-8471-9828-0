@@ -1,0 +1,6 @@
+#Sat Feb 20 23:22:44 CST 2010
+DELEGATES_PREFERENCE=delegateValidatorList
+USER_MANUAL_PREFERENCE=enabledManualValidatorListcom.ibm.wbit.command.validator.CommandValidator;
+eclipse.preferences.version=1
+USER_BUILD_PREFERENCE=enabledBuildValidatorListcom.ibm.wbit.command.validator.CommandValidator;
+USER_PREFERENCE=overrideGlobalPreferencestruedisableAllValidationfalseversion1.2.12.v200910221700

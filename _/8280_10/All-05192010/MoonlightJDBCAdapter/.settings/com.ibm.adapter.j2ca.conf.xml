@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><configuration xmlns="http://j2ca.adapter.ibm.com">
+<applicationEntry uri="connectorModule/db2jcc_license_cu.jar"/>
+<applicationEntry uri="connectorModule/db2jcc.jar"/>
+</configuration>

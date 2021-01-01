@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.ccl.soa.test.common.models.value="http:///com/ibm/ccl/soa/test/common/models/value.ecore" xmlns:com.ibm.wbit.comptest.common.tc.models.event="http:///com/ibm/wbit/comptest/common/tc/models/event.ecore" xmlns:com.ibm.wbit.comptest.core.tc.models.client="http:///com/ibm/wbit/comptest/core/tc/models/client.ecore" xmlns:com.ibm.wbit.comptest.fgt.model.config="http:///com/ibm/wbit/fgt/common/model/config/finegraintrace.ecore" xmlns:com.ibm.wbit.comptest.fgt.model.event="http:///com/ibm/wbit/fgt/common/model/event/finegraintrace.ecore">
+  <com.ibm.wbit.comptest.core.tc.models.client:EclipseClient name="Ch6_Test" id="1268287850750_19787" eventTrace="/1" clientID="1268287850750_19787">
+    <scopes name="Default Module Test" id="1268287850750_19789" dirty="true" userId="#?#server$.3login#?#">
+      <testModules name="Ch6" id="1268287850750_19790">
+        <monitors name="CreditManagementMediationFlow.CreditManagementPartner->TexasCreditAgency" id="1268287850765_19791" sourceComponent="CreditManagementMediationFlow" sourceReference="CreditManagementPartner" interface="CreditManagement" request="true" response="true" targetComponent="TexasCreditAgency"/>
+        <monitors name="CreditManagementMediationFlow.CreditManagementPartner1->NewYorkCreditAgency" id="1268287850765_19792" sourceComponent="CreditManagementMediationFlow" sourceReference="CreditManagementPartner1" interface="CreditManagement" request="true" response="true" targetComponent="NewYorkCreditAgency"/>
+        <monitors name="CreditManagementMediationFlow.CreditManagementPartner2->CaliforniaCreditAgency" id="1268287850765_19793" sourceComponent="CreditManagementMediationFlow" sourceReference="CreditManagementPartner2" interface="CreditManagement" request="true" response="true" targetComponent="CaliforniaCreditAgency"/>
+        <monitors name="CreditManagementMediationFlow.WashingtonCreditAgencyServicePartner->WashingtonCreditAgency" id="1268287850765_19794" sourceComponent="CreditManagementMediationFlow" sourceReference="WashingtonCreditAgencyServicePartner" interface="WashingtonCreditAgencyService" request="true" response="true" targetComponent="WashingtonCreditAgency"/>
+        <monitors name="CreditManagementMediationFlowExport.&lt;export>->CreditManagementMediationFlow" id="1268287850765_19795" sourceComponent="CreditManagementMediationFlowExport" sourceReference="&lt;export>" interface="CreditManagement" request="true" response="true" targetComponent="CreditManagementMediationFlow"/>
+        <configurationAdditions xsi:type="com.ibm.wbit.comptest.fgt.model.config:FineGrainTraceConfiguration" id="1268287850859_19797">
+          <fineGrainTrace xsi:type="com.ibm.wbit.comptest.fgt.model.config:MFCFineGrainTrace" name="CreditManagementMediationFlow (Mediation Flow:CreditManagementMediationFlow)" id="1268287850859_19796" component="CreditManagementMediationFlow"/>
+        </configurationAdditions>
+      </testModules>
+    </scopes>
+    <mruObjectPoolPaths>/CH6_TestCases/com/junglesea/test/data/CreditManagementTestData.objectpool</mruObjectPoolPaths>
+  </com.ibm.wbit.comptest.core.tc.models.client:EclipseClient>
+  <com.ibm.wbit.comptest.common.tc.models.event:ExecutionEventTrace id="1268287850750_19788" children="/2"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:InteractiveComponentInvocationEvent id="1268287850859_19798" readOnly="true" clientID="1268287850750_19787" timestamp="1268287850859" children="/3 /22" module="Ch6" part="CreditManagementMediationFlowExport" interface="CreditManagement" operation="requestCreditApproval" testScopeID="1268287850750_19789" exportPart="true" targetDeploymentLocationID="1268287865734_19966">
+    <request name="requestCreditApproval_request" id="1268287851015_19799">
+      <properties name="paramlist_context" value="Ch6.CreditManagementMediationFlowExport.requestCreditApproval"/>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="customerCreditRequest" id="1268287857062_19952" value="" defaultValue="" typeURI="xsd:/http://Ch6Library#Customer" baseTypeURI="xsd:/http://Ch6Library#Customer" hasChildren="true">
+        <context>
+          <properties name="project_context" value="Ch6"/>
+        </context>
+        <properties name="paramlist_context" value="Ch6.CreditManagementMediationFlowExport.requestCreditApproval"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287857062_19953" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="address" id="1268287857062_19954" value="" defaultValue="" typeURI="xsd:/http://Ch6Library#Address" baseTypeURI="xsd:/http://Ch6Library#Address" hasChildren="true">
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine1" id="1268287857062_19955" value="Street Car" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine2" id="1268287857062_19956" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="city" id="1268287857062_19957" value="Austin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="zipCode" id="1268287857062_19958" value="78722" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="state" id="1268287857062_19959" value="WA" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="country" id="1268287857062_19960" value="USA" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="firstName" id="1268287857062_19961" value="Joe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="lastName" id="1268287857062_19962" value="Doe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="middleName" id="1268287857062_19963" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="dateOfBirth" id="1268287857062_19964" value="01/01/01" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:InteractiveComponentInvocationEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:StartEvent id="1268287866546_1080" clientID="1268287850750_19787" parentID="1268287850859_19798" timestamp="1268287866546" children="/4 /21"/>
+  <com.ibm.wbit.comptest.common.tc.models.event:ScaBindingRequestEvent id="1268287866562_1081" clientID="1268287850750_19787" parentID="1268287866546_1080" timestamp="1268287866562" testScopeId="1268287850750_19789" module="Ch6" export="CreditManagementMediationFlowExport" children="/5 /6 /7 /13 /14 /15 /19 /20" interface="CreditManagement" operation="requestCreditApproval">
+    <parameterList name="requestCreditApproval_request" id="1268287851015_19799">
+      <properties name="paramlist_context" value="Ch6.CreditManagementMediationFlowExport.requestCreditApproval"/>
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="customerCreditRequest" id="1268287857062_19952" value="" defaultValue="" typeURI="xsd:/http://Ch6Library#Customer" baseTypeURI="xsd:/http://Ch6Library#Customer" hasChildren="true">
+        <context>
+          <properties name="project_context" value="Ch6"/>
+        </context>
+        <properties name="paramlist_context" value="Ch6.CreditManagementMediationFlowExport.requestCreditApproval"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287857062_19953" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="address" id="1268287857062_19954" value="" defaultValue="" typeURI="xsd:/http://Ch6Library#Address" baseTypeURI="xsd:/http://Ch6Library#Address" hasChildren="true">
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine1" id="1268287857062_19955" value="Street Car" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine2" id="1268287857062_19956" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="city" id="1268287857062_19957" value="Austin" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="zipCode" id="1268287857062_19958" value="78722" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="state" id="1268287857062_19959" value="WA" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="country" id="1268287857062_19960" value="USA" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="firstName" id="1268287857062_19961" value="Joe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="lastName" id="1268287857062_19962" value="Doe" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="middleName" id="1268287857062_19963" value="" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="dateOfBirth" id="1268287857062_19964" value="01/01/01" defaultValue="" typeURI="xsd:/http://www.w3.org/2001/XMLSchema#string" baseTypeURI="xsd:/http://www.w3.org/2001/XMLSchema#string"/>
+      </parameters>
+    </parameterList>
+  </com.ibm.wbit.comptest.common.tc.models.event:ScaBindingRequestEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:ComponentInvocationEvent id="1268287866562_1096" clientID="1268287850750_19787" parentID="1268287866562_1081" timestamp="1268287866562" module="Ch6" part="CreditManagementMediationFlowExport" interface="CreditManagement" operation="requestCreditApproval" testScopeID="1268287850750_19789">
+    <request id="1268287866562_1097">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="result" id="1268287866562_1098" value="" typeURI="sdo:/http://Ch6Library#Customer" baseTypeURI="sdo:/http://Ch6Library#Customer">
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;ch6:Customer&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ch6=&quot;http://Ch6Library&quot;>&#xD;&#xA;  &lt;id>&lt;/id>&#xD;&#xA;  &lt;address>&#xD;&#xA;    &lt;addressLine1>Street Car&lt;/addressLine1>&#xD;&#xA;    &lt;addressLine2>&lt;/addressLine2>&#xD;&#xA;    &lt;city>Austin&lt;/city>&#xD;&#xA;    &lt;zipCode>78722&lt;/zipCode>&#xD;&#xA;    &lt;state>WA&lt;/state>&#xD;&#xA;    &lt;country>USA&lt;/country>&#xD;&#xA;  &lt;/address>&#xD;&#xA;  &lt;firstName>Joe&lt;/firstName>&#xD;&#xA;  &lt;lastName>Doe&lt;/lastName>&#xD;&#xA;  &lt;middleName>&lt;/middleName>&#xD;&#xA;  &lt;dateOfBirth>01/01/01&lt;/dateOfBirth>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="firstName" id="1268287866562_1099" value="Joe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="middleName" id="1268287866562_1100" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="address" id="1268287866562_1101" value="" typeURI="sdo:/http://Ch6Library#Address" baseTypeURI="sdo:/http://Ch6Library#Address">
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="zipCode" id="1268287866562_1102" value="78722" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine1" id="1268287866562_1103" value="Street Car" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="country" id="1268287866562_1104" value="USA" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="city" id="1268287866562_1105" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="state" id="1268287866562_1106" value="WA" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine2" id="1268287866562_1107" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="lastName" id="1268287866562_1108" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287866562_1109" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="dateOfBirth" id="1268287866562_1110" value="01/01/01" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:ComponentInvocationEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:MonitorRequestEvent id="1268287866562_1111" readOnly="true" clientID="1268287850750_19787" parentID="1268287866562_1081" timestamp="1268287866562" sourceComponent="CreditManagementMediationFlowExport" targetComponent="CreditManagementMediationFlow" sourceReference="&lt;export>" interface="CreditManagement" operation="requestCreditApproval" module="Ch6">
+    <request id="1268287866562_1112">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="result" id="1268287866578_1113" value="" typeURI="sdo:/http://Ch6Library#Customer" baseTypeURI="sdo:/http://Ch6Library#Customer">
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;ch6:Customer&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ch6=&quot;http://Ch6Library&quot;>&#xD;&#xA;  &lt;id>&lt;/id>&#xD;&#xA;  &lt;address>&#xD;&#xA;    &lt;addressLine1>Street Car&lt;/addressLine1>&#xD;&#xA;    &lt;addressLine2>&lt;/addressLine2>&#xD;&#xA;    &lt;city>Austin&lt;/city>&#xD;&#xA;    &lt;zipCode>78722&lt;/zipCode>&#xD;&#xA;    &lt;state>WA&lt;/state>&#xD;&#xA;    &lt;country>USA&lt;/country>&#xD;&#xA;  &lt;/address>&#xD;&#xA;  &lt;firstName>Joe&lt;/firstName>&#xD;&#xA;  &lt;lastName>Doe&lt;/lastName>&#xD;&#xA;  &lt;middleName>&lt;/middleName>&#xD;&#xA;  &lt;dateOfBirth>01/01/01&lt;/dateOfBirth>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="firstName" id="1268287866578_1114" value="Joe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="middleName" id="1268287866578_1115" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="address" id="1268287866578_1116" value="" typeURI="sdo:/http://Ch6Library#Address" baseTypeURI="sdo:/http://Ch6Library#Address">
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="zipCode" id="1268287866578_1117" value="78722" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine1" id="1268287866578_1118" value="Street Car" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="country" id="1268287866578_1119" value="USA" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="city" id="1268287866578_1120" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="state" id="1268287866578_1121" value="WA" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+          <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine2" id="1268287866578_1122" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        </elements>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="lastName" id="1268287866578_1123" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287866578_1124" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="dateOfBirth" id="1268287866578_1125" value="01/01/01" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:MonitorRequestEvent>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="CreditManagementMediationFlow" id="1268287866859_1126" readOnly="true" clientID="1268287850750_19787" parentID="1268287866562_1081" timestamp="1268287866859" children="/8 /9 /10 /11 /12">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:MFCFineGrainTraceEvent" module="Ch6" component="CreditManagementMediationFlow" operationName="requestCreditApproval" flowType="requestFlow"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="CreditManagement_requestCreditApproval_Input" id="1268287866859_1127" readOnly="true" clientID="1268287850750_19787" parentID="1268287866859_1126" timestamp="1268287866859">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:MFCFineGrainTraceEvent" module="Ch6" component="CreditManagementMediationFlow" operationName="requestCreditApproval" activityName="CreditManagementrequestCreditApprovalInput" flowType="requestFlow">
+      <data name="context">
+        <value id="1268287866859_1128">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="context" id="1268287866859_1129" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:ContextType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;/>&#xD;&#xA;"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="headers">
+        <value id="1268287866859_1130">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="headers" id="1268287866859_1131" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:HeadersType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;>&#xD;&#xA;  &lt;SMOHeader>&#xD;&#xA;    &lt;MessageUUID>4BD906D2-0127-4000-E000-1EF0C0A80167&lt;/MessageUUID>&#xD;&#xA;    &lt;Version>&#xD;&#xA;      &lt;Version>7&lt;/Version>&#xD;&#xA;      &lt;Release>0&lt;/Release>&#xD;&#xA;      &lt;Modification>0&lt;/Modification>&#xD;&#xA;    &lt;/Version>&#xD;&#xA;    &lt;MessageType>Request&lt;/MessageType>&#xD;&#xA;  &lt;/SMOHeader>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="SMOHeader" id="1268287866859_1132" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType">
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Operation" id="1268287866859_1133" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceNode" id="1268287866859_1134" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageUUID" id="1268287866859_1135" value="4BD906D2-0127-4000-E000-1EF0C0A80167" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Interface" id="1268287866859_1136" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageType" id="1268287866859_1137" value="Request" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Action" id="1268287866859_1138" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="AlternateTarget" id="1268287866859_1139" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceBindingType" id="1268287866875_1140" set="false" value="" typeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType" baseTypeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Version" id="1268287866875_1141" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Version" id="1268287866875_1142" value="7" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Release" id="1268287866875_1143" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Modification" id="1268287866875_1144" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+              </elements>
+            </elements>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="SOAPHeader" id="1268287866875_1145" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="properties" id="1268287866875_1146" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="body">
+        <value id="1268287866906_1147">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="body" id="1268287866906_1148" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalRequestMsg" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalRequestMsg">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;ma:requestCreditApprovalRequestMsg&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ma=&quot;wsdl.http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement&quot; xmlns:ma_1=&quot;http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement&quot;>&#xD;&#xA;  &lt;ma_1:requestCreditApproval>&#xD;&#xA;    &lt;customerCreditRequest>&#xD;&#xA;      &lt;id>&lt;/id>&#xD;&#xA;      &lt;address>&#xD;&#xA;        &lt;addressLine1>Street Car&lt;/addressLine1>&#xD;&#xA;        &lt;addressLine2>&lt;/addressLine2>&#xD;&#xA;        &lt;city>Austin&lt;/city>&#xD;&#xA;        &lt;zipCode>78722&lt;/zipCode>&#xD;&#xA;        &lt;state>WA&lt;/state>&#xD;&#xA;        &lt;country>USA&lt;/country>&#xD;&#xA;      &lt;/address>&#xD;&#xA;      &lt;firstName>Joe&lt;/firstName>&#xD;&#xA;      &lt;lastName>Doe&lt;/lastName>&#xD;&#xA;      &lt;middleName>&lt;/middleName>&#xD;&#xA;      &lt;dateOfBirth>01/01/01&lt;/dateOfBirth>&#xD;&#xA;    &lt;/customerCreditRequest>&#xD;&#xA;  &lt;/ma_1:requestCreditApproval>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="requestCreditApproval" id="1268287866906_1149" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApproval_._type" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApproval_._type">
+              <properties name="elementNS" value="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="customerCreditRequest" id="1268287866906_1150" value="" typeURI="sdo:/http://Ch6Library#Customer" baseTypeURI="sdo:/http://Ch6Library#Customer">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="firstName" id="1268287866906_1151" value="Joe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="middleName" id="1268287866906_1152" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="address" id="1268287866906_1153" value="" typeURI="sdo:/http://Ch6Library#Address" baseTypeURI="sdo:/http://Ch6Library#Address">
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="zipCode" id="1268287866906_1154" value="78722" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine1" id="1268287866906_1155" value="Street Car" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="country" id="1268287866906_1156" value="USA" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="city" id="1268287866906_1157" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="state" id="1268287866906_1158" value="WA" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine2" id="1268287866906_1159" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                </elements>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="lastName" id="1268287866906_1160" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287866906_1161" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="dateOfBirth" id="1268287866906_1162" value="01/01/01" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              </elements>
+            </elements>
+          </parameters>
+        </value>
+      </data>
+    </fineGrainTraceEvent>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="checkStateCode" id="1268287866906_1199" readOnly="true" clientID="1268287850750_19787" parentID="1268287866859_1126" timestamp="1268287866906">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:MFCFineGrainTraceEvent" module="Ch6" component="CreditManagementMediationFlow" operationName="requestCreditApproval" activityName="checkStateCode" flowType="requestFlow">
+      <data name="context">
+        <value id="1268287866906_1200">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="context" id="1268287866906_1201" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:ContextType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;/>&#xD;&#xA;"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="headers">
+        <value id="1268287866906_1202">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="headers" id="1268287866906_1203" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:HeadersType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;>&#xD;&#xA;  &lt;SMOHeader>&#xD;&#xA;    &lt;MessageUUID>4BD906D2-0127-4000-E000-1EF0C0A80167&lt;/MessageUUID>&#xD;&#xA;    &lt;Version>&#xD;&#xA;      &lt;Version>7&lt;/Version>&#xD;&#xA;      &lt;Release>0&lt;/Release>&#xD;&#xA;      &lt;Modification>0&lt;/Modification>&#xD;&#xA;    &lt;/Version>&#xD;&#xA;    &lt;MessageType>Request&lt;/MessageType>&#xD;&#xA;  &lt;/SMOHeader>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="SMOHeader" id="1268287866906_1204" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType">
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Operation" id="1268287866906_1205" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceNode" id="1268287866906_1206" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageUUID" id="1268287866921_1207" value="4BD906D2-0127-4000-E000-1EF0C0A80167" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Interface" id="1268287866921_1208" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageType" id="1268287866921_1209" value="Request" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Action" id="1268287866921_1210" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="AlternateTarget" id="1268287866921_1211" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceBindingType" id="1268287866921_1212" set="false" value="" typeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType" baseTypeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Version" id="1268287866921_1213" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Version" id="1268287866921_1214" value="7" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Release" id="1268287866921_1215" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Modification" id="1268287866921_1216" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+              </elements>
+            </elements>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="SOAPHeader" id="1268287866921_1217" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="properties" id="1268287866921_1218" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="body">
+        <value id="1268287866921_1219">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="body" id="1268287866921_1220" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalRequestMsg" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalRequestMsg">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;ma:requestCreditApprovalRequestMsg&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ma=&quot;wsdl.http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement&quot; xmlns:ma_1=&quot;http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement&quot;>&#xD;&#xA;  &lt;ma_1:requestCreditApproval>&#xD;&#xA;    &lt;customerCreditRequest>&#xD;&#xA;      &lt;id>&lt;/id>&#xD;&#xA;      &lt;address>&#xD;&#xA;        &lt;addressLine1>Street Car&lt;/addressLine1>&#xD;&#xA;        &lt;addressLine2>&lt;/addressLine2>&#xD;&#xA;        &lt;city>Austin&lt;/city>&#xD;&#xA;        &lt;zipCode>78722&lt;/zipCode>&#xD;&#xA;        &lt;state>WA&lt;/state>&#xD;&#xA;        &lt;country>USA&lt;/country>&#xD;&#xA;      &lt;/address>&#xD;&#xA;      &lt;firstName>Joe&lt;/firstName>&#xD;&#xA;      &lt;lastName>Doe&lt;/lastName>&#xD;&#xA;      &lt;middleName>&lt;/middleName>&#xD;&#xA;      &lt;dateOfBirth>01/01/01&lt;/dateOfBirth>&#xD;&#xA;    &lt;/customerCreditRequest>&#xD;&#xA;  &lt;/ma_1:requestCreditApproval>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="requestCreditApproval" id="1268287866921_1221" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApproval_._type" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApproval_._type">
+              <properties name="elementNS" value="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="customerCreditRequest" id="1268287866921_1222" value="" typeURI="sdo:/http://Ch6Library#Customer" baseTypeURI="sdo:/http://Ch6Library#Customer">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="firstName" id="1268287866921_1223" value="Joe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="middleName" id="1268287866921_1224" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="address" id="1268287866921_1225" value="" typeURI="sdo:/http://Ch6Library#Address" baseTypeURI="sdo:/http://Ch6Library#Address">
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="zipCode" id="1268287866921_1226" value="78722" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine1" id="1268287866921_1227" value="Street Car" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="country" id="1268287866921_1228" value="USA" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="city" id="1268287866921_1229" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="state" id="1268287866921_1230" value="WA" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine2" id="1268287866921_1231" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                </elements>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="lastName" id="1268287866921_1232" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287866921_1233" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="dateOfBirth" id="1268287866921_1234" value="01/01/01" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              </elements>
+            </elements>
+          </parameters>
+        </value>
+      </data>
+    </fineGrainTraceEvent>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="CreditAgencyFilter" id="1268287866921_1271" readOnly="true" clientID="1268287850750_19787" parentID="1268287866859_1126" timestamp="1268287866921">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:MFCFineGrainTraceEvent" module="Ch6" component="CreditManagementMediationFlow" operationName="requestCreditApproval" activityName="CreditAgencyFilter" flowType="requestFlow">
+      <data name="context">
+        <value id="1268287866921_1272">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="context" id="1268287866921_1273" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:ContextType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;/>&#xD;&#xA;"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="headers">
+        <value id="1268287866921_1274">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="headers" id="1268287866921_1275" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:HeadersType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;>&#xD;&#xA;  &lt;SMOHeader>&#xD;&#xA;    &lt;MessageUUID>4BD906D2-0127-4000-E000-1EF0C0A80167&lt;/MessageUUID>&#xD;&#xA;    &lt;Version>&#xD;&#xA;      &lt;Version>7&lt;/Version>&#xD;&#xA;      &lt;Release>0&lt;/Release>&#xD;&#xA;      &lt;Modification>0&lt;/Modification>&#xD;&#xA;    &lt;/Version>&#xD;&#xA;    &lt;MessageType>Request&lt;/MessageType>&#xD;&#xA;  &lt;/SMOHeader>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="SMOHeader" id="1268287866921_1276" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType">
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Operation" id="1268287866921_1277" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceNode" id="1268287866921_1278" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageUUID" id="1268287866921_1279" value="4BD906D2-0127-4000-E000-1EF0C0A80167" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Interface" id="1268287866921_1280" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageType" id="1268287866921_1281" value="Request" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Action" id="1268287866921_1282" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="AlternateTarget" id="1268287866921_1283" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceBindingType" id="1268287866921_1284" set="false" value="" typeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType" baseTypeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Version" id="1268287866921_1285" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Version" id="1268287866921_1286" value="7" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Release" id="1268287866921_1287" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Modification" id="1268287866921_1288" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+              </elements>
+            </elements>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="SOAPHeader" id="1268287866921_1289" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="properties" id="1268287866921_1290" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="body">
+        <value id="1268287866921_1291">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="body" id="1268287866921_1292" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalRequestMsg" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalRequestMsg">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;ma:requestCreditApprovalRequestMsg&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ma=&quot;wsdl.http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement&quot; xmlns:ma_1=&quot;http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement&quot;>&#xD;&#xA;  &lt;ma_1:requestCreditApproval>&#xD;&#xA;    &lt;customerCreditRequest>&#xD;&#xA;      &lt;id>&lt;/id>&#xD;&#xA;      &lt;address>&#xD;&#xA;        &lt;addressLine1>Street Car&lt;/addressLine1>&#xD;&#xA;        &lt;addressLine2>&lt;/addressLine2>&#xD;&#xA;        &lt;city>Austin&lt;/city>&#xD;&#xA;        &lt;zipCode>78722&lt;/zipCode>&#xD;&#xA;        &lt;state>WA&lt;/state>&#xD;&#xA;        &lt;country>USA&lt;/country>&#xD;&#xA;      &lt;/address>&#xD;&#xA;      &lt;firstName>Joe&lt;/firstName>&#xD;&#xA;      &lt;lastName>Doe&lt;/lastName>&#xD;&#xA;      &lt;middleName>&lt;/middleName>&#xD;&#xA;      &lt;dateOfBirth>01/01/01&lt;/dateOfBirth>&#xD;&#xA;    &lt;/customerCreditRequest>&#xD;&#xA;  &lt;/ma_1:requestCreditApproval>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="requestCreditApproval" id="1268287866921_1293" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApproval_._type" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApproval_._type">
+              <properties name="elementNS" value="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="customerCreditRequest" id="1268287866921_1294" value="" typeURI="sdo:/http://Ch6Library#Customer" baseTypeURI="sdo:/http://Ch6Library#Customer">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="firstName" id="1268287866921_1295" value="Joe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="middleName" id="1268287866921_1296" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="address" id="1268287866921_1297" value="" typeURI="sdo:/http://Ch6Library#Address" baseTypeURI="sdo:/http://Ch6Library#Address">
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="zipCode" id="1268287866921_1298" value="78722" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine1" id="1268287866921_1299" value="Street Car" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="country" id="1268287866921_1300" value="USA" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="city" id="1268287866921_1301" value="Austin" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="state" id="1268287866921_1302" value="WA" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                  <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="addressLine2" id="1268287866921_1303" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                </elements>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="lastName" id="1268287866921_1304" value="Doe" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287866937_1305" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="dateOfBirth" id="1268287866937_1306" value="01/01/01" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              </elements>
+            </elements>
+          </parameters>
+        </value>
+      </data>
+    </fineGrainTraceEvent>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="setCustomerInfo" id="1268287866953_1343" readOnly="true" clientID="1268287850750_19787" parentID="1268287866859_1126" timestamp="1268287866953">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:MFCFineGrainTraceEvent" module="Ch6" component="CreditManagementMediationFlow" operationName="requestCreditApproval" activityName="setCustomerInfo" flowType="requestFlow">
+      <data name="context">
+        <value id="1268287866953_1344">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="context" id="1268287866953_1345" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:ContextType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;/>&#xD;&#xA;"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="headers">
+        <value id="1268287866953_1346">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="headers" id="1268287866953_1347" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:HeadersType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;>&#xD;&#xA;  &lt;SMOHeader>&#xD;&#xA;    &lt;MessageUUID>4BD906D2-0127-4000-E000-1EF0C0A80167&lt;/MessageUUID>&#xD;&#xA;    &lt;Version>&#xD;&#xA;      &lt;Version>7&lt;/Version>&#xD;&#xA;      &lt;Release>0&lt;/Release>&#xD;&#xA;      &lt;Modification>0&lt;/Modification>&#xD;&#xA;    &lt;/Version>&#xD;&#xA;    &lt;MessageType>Request&lt;/MessageType>&#xD;&#xA;  &lt;/SMOHeader>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="SMOHeader" id="1268287866953_1348" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType">
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Operation" id="1268287866953_1349" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceNode" id="1268287866953_1350" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageUUID" id="1268287866953_1351" value="4BD906D2-0127-4000-E000-1EF0C0A80167" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Interface" id="1268287866953_1352" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageType" id="1268287866953_1353" value="Request" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Action" id="1268287866953_1354" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="AlternateTarget" id="1268287866953_1355" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceBindingType" id="1268287866953_1356" set="false" value="" typeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType" baseTypeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Version" id="1268287866953_1357" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Version" id="1268287866953_1358" value="7" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Release" id="1268287866953_1359" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Modification" id="1268287866953_1360" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+              </elements>
+            </elements>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="SOAPHeader" id="1268287866953_1361" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="properties" id="1268287866953_1362" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="body">
+        <value id="1268287866953_1363">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="body" id="1268287866953_1364" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApprovalRequestMsg" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApprovalRequestMsg">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;se:requestCreditApprovalRequestMsg&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:se=&quot;wsdl.http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService&quot; xmlns:se_1=&quot;http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService&quot;>&#xD;&#xA;  &lt;se_1:requestCreditApproval>&#xD;&#xA;    &lt;customerInfo>&lt;/customerInfo>&#xD;&#xA;  &lt;/se_1:requestCreditApproval>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="requestCreditApproval" id="1268287866953_1365" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApproval_._type" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApproval_._type">
+              <properties name="elementNS" value="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="customerInfo" id="1268287866953_1366" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+            </elements>
+          </parameters>
+        </value>
+      </data>
+    </fineGrainTraceEvent>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="WashingtonCreditAgencyServicePartner_requestCreditApproval_Callout" id="1268287866968_1391" readOnly="true" clientID="1268287850750_19787" parentID="1268287866859_1126" timestamp="1268287866968">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:MFCFineGrainTraceEvent" module="Ch6" component="CreditManagementMediationFlow" operationName="requestCreditApproval" activityName="WashingtonCreditAgencyServicePartnerrequestCreditApprovalCallout" flowType="requestFlow">
+      <data name="context">
+        <value id="1268287866968_1392">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="context" id="1268287866968_1393" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:ContextType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;/>&#xD;&#xA;"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="headers">
+        <value id="1268287866968_1394">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="headers" id="1268287866968_1395" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:HeadersType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;>&#xD;&#xA;  &lt;SMOHeader>&#xD;&#xA;    &lt;MessageUUID>4BD906D2-0127-4000-E000-1EF0C0A80167&lt;/MessageUUID>&#xD;&#xA;    &lt;Version>&#xD;&#xA;      &lt;Version>7&lt;/Version>&#xD;&#xA;      &lt;Release>0&lt;/Release>&#xD;&#xA;      &lt;Modification>0&lt;/Modification>&#xD;&#xA;    &lt;/Version>&#xD;&#xA;    &lt;MessageType>Request&lt;/MessageType>&#xD;&#xA;  &lt;/SMOHeader>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="SMOHeader" id="1268287866968_1396" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType">
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Operation" id="1268287866968_1397" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceNode" id="1268287866968_1398" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageUUID" id="1268287866968_1399" value="4BD906D2-0127-4000-E000-1EF0C0A80167" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Interface" id="1268287866968_1400" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageType" id="1268287866968_1401" value="Request" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Action" id="1268287866968_1402" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="AlternateTarget" id="1268287866968_1403" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceBindingType" id="1268287866968_1404" set="false" value="" typeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType" baseTypeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Version" id="1268287866968_1405" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Version" id="1268287866968_1406" value="7" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Release" id="1268287866968_1407" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Modification" id="1268287866968_1408" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+              </elements>
+            </elements>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="SOAPHeader" id="1268287866968_1409" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="properties" id="1268287866968_1410" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="body">
+        <value id="1268287866968_1411">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="body" id="1268287866968_1412" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApprovalRequestMsg" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApprovalRequestMsg">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;se:requestCreditApprovalRequestMsg&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:se=&quot;wsdl.http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService&quot; xmlns:se_1=&quot;http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService&quot;>&#xD;&#xA;  &lt;se_1:requestCreditApproval>&#xD;&#xA;    &lt;customerInfo>&lt;/customerInfo>&#xD;&#xA;  &lt;/se_1:requestCreditApproval>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="requestCreditApproval" id="1268287866968_1413" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApproval_._type" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApproval_._type">
+              <properties name="elementNS" value="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="customerInfo" id="1268287866968_1414" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+            </elements>
+          </parameters>
+        </value>
+      </data>
+    </fineGrainTraceEvent>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.common.tc.models.event:MonitorRequestEvent id="1268287866984_1415" readOnly="true" clientID="1268287850750_19787" parentID="1268287866562_1081" timestamp="1268287866984" sourceComponent="CreditManagementMediationFlow" targetComponent="WashingtonCreditAgency" sourceReference="WashingtonCreditAgencyServicePartner" interface="WashingtonCreditAgencyService" operation="requestCreditApproval" module="Ch6">
+    <request id="1268287866984_1416">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="result" id="1268287866984_1417" value="" defaultValue="" typeURI="java:/java.lang#String" baseTypeURI="java:/java.lang#String"/>
+    </request>
+  </com.ibm.wbit.comptest.common.tc.models.event:MonitorRequestEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:MonitorResponseEvent id="1268287867171_1419" readOnly="true" clientID="1268287850750_19787" parentID="1268287866562_1081" timestamp="1268287867171" sourceComponent="CreditManagementMediationFlow" targetComponent="WashingtonCreditAgency" sourceReference="WashingtonCreditAgencyServicePartner" interface="WashingtonCreditAgencyService" operation="requestCreditApproval" module="Ch6">
+    <response id="1268287867171_1420">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="result" id="1268287867171_1421" value="" typeURI="sdo:/http://Ch6Library#CustomerCreditApproval" baseTypeURI="sdo:/http://Ch6Library#CustomerCreditApproval">
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;ch6:CustomerCreditApproval&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ch6=&quot;http://Ch6Library&quot;>&#xD;&#xA;  &lt;id>&lt;/id>&#xD;&#xA;  &lt;approvalStatus>Approved&lt;/approvalStatus>&#xD;&#xA;  &lt;approvalCode>0000&lt;/approvalCode>&#xD;&#xA;  &lt;approvalDescription>Credit has been approved&lt;/approvalDescription>&#xD;&#xA;  &lt;creditScore>740&lt;/creditScore>&#xD;&#xA;  &lt;ratingAgency>Washington Rating Agency&lt;/ratingAgency>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="creditScore" id="1268287867171_1422" value="740" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalStatus" id="1268287867171_1423" value="Approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalDescription" id="1268287867171_1424" value="Credit has been approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287867171_1425" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="ratingAgency" id="1268287867171_1426" value="Washington Rating Agency" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalCode" id="1268287867171_1427" value="0000" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </response>
+  </com.ibm.wbit.comptest.common.tc.models.event:MonitorResponseEvent>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="CreditManagementMediationFlow" id="1268287867250_1428" readOnly="true" clientID="1268287850750_19787" parentID="1268287866562_1081" timestamp="1268287867250" children="/16 /17 /18">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:MFCFineGrainTraceEvent" module="Ch6" component="CreditManagementMediationFlow" operationName="requestCreditApproval" flowType="responseFlow"/>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="WashingtonCreditAgencyServicePartner_requestCreditApproval_CalloutResponse" id="1268287867250_1429" readOnly="true" clientID="1268287850750_19787" parentID="1268287867250_1428" timestamp="1268287867250">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:MFCFineGrainTraceEvent" module="Ch6" component="CreditManagementMediationFlow" operationName="requestCreditApproval" activityName="WashingtonCreditAgencyServicePartnerrequestCreditApprovalCalloutResponse" flowType="responseFlow">
+      <data name="context">
+        <value id="1268287867250_1430">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="context" id="1268287867250_1431" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:ContextType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;/>&#xD;&#xA;"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="headers">
+        <value id="1268287867250_1432">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="headers" id="1268287867250_1433" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:HeadersType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;>&#xD;&#xA;  &lt;SMOHeader>&#xD;&#xA;    &lt;MessageUUID>4BD90923-0127-4000-E000-1EF0C0A80167&lt;/MessageUUID>&#xD;&#xA;    &lt;Version>&#xD;&#xA;      &lt;Version>7&lt;/Version>&#xD;&#xA;      &lt;Release>0&lt;/Release>&#xD;&#xA;      &lt;Modification>0&lt;/Modification>&#xD;&#xA;    &lt;/Version>&#xD;&#xA;    &lt;MessageType>Response&lt;/MessageType>&#xD;&#xA;  &lt;/SMOHeader>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="SMOHeader" id="1268287867250_1434" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType">
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Operation" id="1268287867250_1435" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceNode" id="1268287867250_1436" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageUUID" id="1268287867250_1437" value="4BD90923-0127-4000-E000-1EF0C0A80167" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Interface" id="1268287867250_1438" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageType" id="1268287867250_1439" value="Response" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Action" id="1268287867250_1440" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="AlternateTarget" id="1268287867250_1441" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceBindingType" id="1268287867265_1442" set="false" value="" typeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType" baseTypeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Version" id="1268287867265_1443" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Version" id="1268287867265_1444" value="7" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Release" id="1268287867265_1445" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Modification" id="1268287867265_1446" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+              </elements>
+            </elements>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="SOAPHeader" id="1268287867265_1447" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="properties" id="1268287867265_1448" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="body">
+        <value id="1268287867265_1449">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="body" id="1268287867265_1450" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApprovalResponseMsg" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApprovalResponseMsg">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;se:requestCreditApprovalResponseMsg&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:se=&quot;wsdl.http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService&quot; xmlns:se_1=&quot;http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService&quot;>&#xD;&#xA;  &lt;se_1:requestCreditApprovalResponse>&#xD;&#xA;    &lt;customerCreditApprovalResponse>&#xD;&#xA;      &lt;id>&lt;/id>&#xD;&#xA;      &lt;approvalStatus>Approved&lt;/approvalStatus>&#xD;&#xA;      &lt;approvalCode>0000&lt;/approvalCode>&#xD;&#xA;      &lt;approvalDescription>Credit has been approved&lt;/approvalDescription>&#xD;&#xA;      &lt;creditScore>740&lt;/creditScore>&#xD;&#xA;      &lt;ratingAgency>Washington Rating Agency&lt;/ratingAgency>&#xD;&#xA;    &lt;/customerCreditApprovalResponse>&#xD;&#xA;  &lt;/se_1:requestCreditApprovalResponse>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="requestCreditApprovalResponse" id="1268287867265_1451" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApprovalResponse_._type" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService#requestCreditApprovalResponse_._type">
+              <properties name="elementNS" value="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/WashingtonCreditAgencyService"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="customerCreditApprovalResponse" id="1268287867265_1452" value="" typeURI="sdo:/http://Ch6Library#CustomerCreditApproval" baseTypeURI="sdo:/http://Ch6Library#CustomerCreditApproval">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="creditScore" id="1268287867265_1453" value="740" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalStatus" id="1268287867265_1454" value="Approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalDescription" id="1268287867265_1455" value="Credit has been approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287867265_1456" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="ratingAgency" id="1268287867265_1457" value="Washington Rating Agency" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalCode" id="1268287867265_1458" value="0000" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              </elements>
+            </elements>
+          </parameters>
+        </value>
+      </data>
+    </fineGrainTraceEvent>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="setResponse" id="1268287867281_1489" readOnly="true" clientID="1268287850750_19787" parentID="1268287867250_1428" timestamp="1268287867281">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:MFCFineGrainTraceEvent" module="Ch6" component="CreditManagementMediationFlow" operationName="requestCreditApproval" activityName="setResponse" flowType="responseFlow">
+      <data name="context">
+        <value id="1268287867281_1490">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="context" id="1268287867281_1491" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:ContextType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;/>&#xD;&#xA;"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="headers">
+        <value id="1268287867281_1492">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="headers" id="1268287867281_1493" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:HeadersType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;>&#xD;&#xA;  &lt;SMOHeader>&#xD;&#xA;    &lt;MessageUUID>4BD90923-0127-4000-E000-1EF0C0A80167&lt;/MessageUUID>&#xD;&#xA;    &lt;Version>&#xD;&#xA;      &lt;Version>7&lt;/Version>&#xD;&#xA;      &lt;Release>0&lt;/Release>&#xD;&#xA;      &lt;Modification>0&lt;/Modification>&#xD;&#xA;    &lt;/Version>&#xD;&#xA;    &lt;MessageType>Response&lt;/MessageType>&#xD;&#xA;  &lt;/SMOHeader>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="SMOHeader" id="1268287867281_1494" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType">
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Operation" id="1268287867281_1495" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceNode" id="1268287867281_1496" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageUUID" id="1268287867281_1497" value="4BD90923-0127-4000-E000-1EF0C0A80167" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Interface" id="1268287867281_1498" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageType" id="1268287867281_1499" value="Response" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Action" id="1268287867281_1500" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="AlternateTarget" id="1268287867281_1501" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceBindingType" id="1268287867281_1502" set="false" value="" typeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType" baseTypeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Version" id="1268287867281_1503" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Version" id="1268287867281_1504" value="7" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Release" id="1268287867281_1505" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Modification" id="1268287867281_1506" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+              </elements>
+            </elements>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="SOAPHeader" id="1268287867281_1507" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="properties" id="1268287867281_1508" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="body">
+        <value id="1268287867281_1509">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="body" id="1268287867281_1510" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalResponseMsg" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalResponseMsg">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;ma:requestCreditApprovalResponseMsg&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ma=&quot;wsdl.http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement&quot; xmlns:ma_1=&quot;http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement&quot;>&#xD;&#xA;  &lt;ma_1:requestCreditApprovalResponse>&#xD;&#xA;    &lt;customerCreditApprovalResponse>&#xD;&#xA;      &lt;id>&lt;/id>&#xD;&#xA;      &lt;approvalStatus>Approved&lt;/approvalStatus>&#xD;&#xA;      &lt;approvalCode>0000&lt;/approvalCode>&#xD;&#xA;      &lt;approvalDescription>Credit has been approved&lt;/approvalDescription>&#xD;&#xA;      &lt;creditScore>740&lt;/creditScore>&#xD;&#xA;      &lt;ratingAgency>Washington Rating Agency&lt;/ratingAgency>&#xD;&#xA;    &lt;/customerCreditApprovalResponse>&#xD;&#xA;  &lt;/ma_1:requestCreditApprovalResponse>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="requestCreditApprovalResponse" id="1268287867281_1511" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalResponse_._type" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalResponse_._type">
+              <properties name="elementNS" value="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="customerCreditApprovalResponse" id="1268287867281_1512" value="" typeURI="sdo:/http://Ch6Library#CustomerCreditApproval" baseTypeURI="sdo:/http://Ch6Library#CustomerCreditApproval">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="creditScore" id="1268287867281_1513" value="740" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalStatus" id="1268287867281_1514" value="Approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalDescription" id="1268287867281_1515" value="Credit has been approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287867281_1516" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="ratingAgency" id="1268287867281_1517" value="Washington Rating Agency" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalCode" id="1268287867281_1518" value="0000" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              </elements>
+            </elements>
+          </parameters>
+        </value>
+      </data>
+    </fineGrainTraceEvent>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper name="CreditManagement_requestCreditApproval_InputResponse" id="1268287867296_1549" readOnly="true" clientID="1268287850750_19787" parentID="1268287867250_1428" timestamp="1268287867296">
+    <fineGrainTraceEvent xsi:type="com.ibm.wbit.comptest.fgt.model.event:MFCFineGrainTraceEvent" module="Ch6" component="CreditManagementMediationFlow" operationName="requestCreditApproval" activityName="CreditManagementrequestCreditApprovalInputResponse" flowType="responseFlow">
+      <data name="context">
+        <value id="1268287867296_1550">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="context" id="1268287867296_1551" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#ContextType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:ContextType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;/>&#xD;&#xA;"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="headers">
+        <value id="1268287867296_1552">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="headers" id="1268287867296_1553" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#HeadersType">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;Se:HeadersType&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:Se=&quot;http://www.ibm.com/websphere/sibx/smo/v6.0.1&quot;>&#xD;&#xA;  &lt;SMOHeader>&#xD;&#xA;    &lt;MessageUUID>4BD90923-0127-4000-E000-1EF0C0A80167&lt;/MessageUUID>&#xD;&#xA;    &lt;Version>&#xD;&#xA;      &lt;Version>7&lt;/Version>&#xD;&#xA;      &lt;Release>0&lt;/Release>&#xD;&#xA;      &lt;Modification>0&lt;/Modification>&#xD;&#xA;    &lt;/Version>&#xD;&#xA;    &lt;MessageType>Response&lt;/MessageType>&#xD;&#xA;  &lt;/SMOHeader>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="SMOHeader" id="1268287867296_1554" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SMOHeaderType">
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Operation" id="1268287867296_1555" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceNode" id="1268287867296_1556" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageUUID" id="1268287867296_1557" value="4BD90923-0127-4000-E000-1EF0C0A80167" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Interface" id="1268287867296_1558" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="MessageType" id="1268287867296_1559" value="Response" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Action" id="1268287867296_1560" set="false" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="AlternateTarget" id="1268287867296_1561" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#TargetAddressType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="SourceBindingType" id="1268287867296_1562" set="false" value="" typeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType" baseTypeURI="sdo:/com.ibm.websphere.sibx.smobo#BindingTypeType"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="Version" id="1268287867296_1563" value="" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#VersionType">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Version" id="1268287867296_1564" value="7" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Release" id="1268287867296_1565" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="Modification" id="1268287867296_1566" value="0" typeURI="sdo:/java.math#BigInteger" baseTypeURI="sdo:/java.math#BigInteger"/>
+              </elements>
+            </elements>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="SOAPHeader" id="1268287867296_1567" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#SOAPHeaderType"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueSequence" name="properties" id="1268287867296_1568" set="false" typeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" baseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType[]" elementTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType" elementBaseTypeURI="sdo:/http://www.ibm.com/websphere/sibx/smo/v6.0.1#PropertyType"/>
+          </parameters>
+        </value>
+      </data>
+      <data name="body">
+        <value id="1268287867296_1569">
+          <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="body" id="1268287867296_1570" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalResponseMsg" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalResponseMsg">
+            <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;ma:requestCreditApprovalResponseMsg&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ma=&quot;wsdl.http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement&quot; xmlns:ma_1=&quot;http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement&quot;>&#xD;&#xA;  &lt;ma_1:requestCreditApprovalResponse>&#xD;&#xA;    &lt;customerCreditApprovalResponse>&#xD;&#xA;      &lt;id>&lt;/id>&#xD;&#xA;      &lt;approvalStatus>Approved&lt;/approvalStatus>&#xD;&#xA;      &lt;approvalCode>0000&lt;/approvalCode>&#xD;&#xA;      &lt;approvalDescription>Credit has been approved&lt;/approvalDescription>&#xD;&#xA;      &lt;creditScore>740&lt;/creditScore>&#xD;&#xA;      &lt;ratingAgency>Washington Rating Agency&lt;/ratingAgency>&#xD;&#xA;    &lt;/customerCreditApprovalResponse>&#xD;&#xA;  &lt;/ma_1:requestCreditApprovalResponse>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+            <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="requestCreditApprovalResponse" id="1268287867296_1571" value="" typeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalResponse_._type" baseTypeURI="sdo:/http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement#requestCreditApprovalResponse_._type">
+              <properties name="elementNS" value="http://Ch6Library/com/junglesea/ch6/mediations/interfaces/CreditManagement"/>
+              <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="customerCreditApprovalResponse" id="1268287867296_1572" value="" typeURI="sdo:/http://Ch6Library#CustomerCreditApproval" baseTypeURI="sdo:/http://Ch6Library#CustomerCreditApproval">
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="creditScore" id="1268287867296_1573" value="740" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalStatus" id="1268287867296_1574" value="Approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalDescription" id="1268287867296_1575" value="Credit has been approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287867296_1576" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="ratingAgency" id="1268287867296_1577" value="Washington Rating Agency" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+                <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalCode" id="1268287867296_1578" value="0000" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+              </elements>
+            </elements>
+          </parameters>
+        </value>
+      </data>
+    </fineGrainTraceEvent>
+  </com.ibm.wbit.comptest.fgt.model.event:FineGrainTraceEventWrapper>
+  <com.ibm.wbit.comptest.common.tc.models.event:MonitorResponseEvent id="1268287867296_1581" readOnly="true" clientID="1268287850750_19787" parentID="1268287866562_1081" timestamp="1268287867296" sourceComponent="CreditManagementMediationFlowExport" targetComponent="CreditManagementMediationFlow" sourceReference="&lt;export>" interface="CreditManagement" operation="requestCreditApproval" module="Ch6">
+    <response id="1268287867296_1582">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="result" id="1268287867296_1583" value="" typeURI="sdo:/http://Ch6Library#CustomerCreditApproval" baseTypeURI="sdo:/http://Ch6Library#CustomerCreditApproval">
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;ch6:CustomerCreditApproval&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ch6=&quot;http://Ch6Library&quot;>&#xD;&#xA;  &lt;id>&lt;/id>&#xD;&#xA;  &lt;approvalStatus>Approved&lt;/approvalStatus>&#xD;&#xA;  &lt;approvalCode>0000&lt;/approvalCode>&#xD;&#xA;  &lt;approvalDescription>Credit has been approved&lt;/approvalDescription>&#xD;&#xA;  &lt;creditScore>740&lt;/creditScore>&#xD;&#xA;  &lt;ratingAgency>Washington Rating Agency&lt;/ratingAgency>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="creditScore" id="1268287867296_1584" value="740" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalStatus" id="1268287867296_1585" value="Approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalDescription" id="1268287867296_1586" value="Credit has been approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287867296_1587" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="ratingAgency" id="1268287867296_1588" value="Washington Rating Agency" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalCode" id="1268287867296_1589" value="0000" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </response>
+  </com.ibm.wbit.comptest.common.tc.models.event:MonitorResponseEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:InvocationResponseEvent id="1268287867312_1590" clientID="1268287850750_19787" parentID="1268287866562_1081" timestamp="1268287867312" testScopeID="1268287850750_19789" module="Ch6" component="CreditManagementMediationFlowExport" interface="CreditManagement" operation="requestCreditApproval">
+    <response id="1268287867312_1591">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="customerCreditApprovalResponse" id="1268287867312_1592" value="" typeURI="sdo:/http://Ch6Library#CustomerCreditApproval" baseTypeURI="sdo:/http://Ch6Library#CustomerCreditApproval">
+        <context>
+          <properties name="project_context" value="Ch6"/>
+        </context>
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;customerCreditApprovalResponse xsi:type=&quot;ch6:CustomerCreditApproval&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ch6=&quot;http://Ch6Library&quot;>&#xD;&#xA;  &lt;id>&lt;/id>&#xD;&#xA;  &lt;approvalStatus>Approved&lt;/approvalStatus>&#xD;&#xA;  &lt;approvalCode>0000&lt;/approvalCode>&#xD;&#xA;  &lt;approvalDescription>Credit has been approved&lt;/approvalDescription>&#xD;&#xA;  &lt;creditScore>740&lt;/creditScore>&#xD;&#xA;  &lt;ratingAgency>Washington Rating Agency&lt;/ratingAgency>&#xD;&#xA;&lt;/customerCreditApprovalResponse>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="creditScore" id="1268287867312_1593" value="740" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalStatus" id="1268287867312_1594" value="Approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalDescription" id="1268287867312_1595" value="Credit has been approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287867312_1596" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="ratingAgency" id="1268287867312_1597" value="Washington Rating Agency" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalCode" id="1268287867312_1598" value="0000" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </response>
+  </com.ibm.wbit.comptest.common.tc.models.event:InvocationResponseEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:ScaBindingResponseEvent id="1268287867312_1607" clientID="1268287850750_19787" parentID="1268287866546_1080" timestamp="1268287867312" testScopeId="1268287850750_19789" module="Ch6" export="CreditManagementMediationFlowExport" interface="CreditManagement" operation="requestCreditApproval">
+    <parameterList id="1268287867312_1599">
+      <parameters xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueStructure" name="result" id="1268287867312_1600" value="" typeURI="sdo:/http://Ch6Library#CustomerCreditApproval" baseTypeURI="sdo:/http://Ch6Library#CustomerCreditApproval">
+        <properties name="sdoxml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;result xsi:type=&quot;ch6:CustomerCreditApproval&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ch6=&quot;http://Ch6Library&quot;>&#xD;&#xA;  &lt;id>&lt;/id>&#xD;&#xA;  &lt;approvalStatus>Approved&lt;/approvalStatus>&#xD;&#xA;  &lt;approvalCode>0000&lt;/approvalCode>&#xD;&#xA;  &lt;approvalDescription>Credit has been approved&lt;/approvalDescription>&#xD;&#xA;  &lt;creditScore>740&lt;/creditScore>&#xD;&#xA;  &lt;ratingAgency>Washington Rating Agency&lt;/ratingAgency>&#xD;&#xA;&lt;/result>&#xD;&#xA;"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="creditScore" id="1268287867312_1601" value="740" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalStatus" id="1268287867312_1602" value="Approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalDescription" id="1268287867312_1603" value="Credit has been approved" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="id" id="1268287867312_1604" value="" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="ratingAgency" id="1268287867312_1605" value="Washington Rating Agency" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+        <elements xsi:type="com.ibm.ccl.soa.test.common.models.value:ValueField" name="approvalCode" id="1268287867312_1606" value="0000" typeURI="sdo:/java.lang#String" baseTypeURI="sdo:/java.lang#String"/>
+      </parameters>
+    </parameterList>
+  </com.ibm.wbit.comptest.common.tc.models.event:ScaBindingResponseEvent>
+  <com.ibm.wbit.comptest.common.tc.models.event:EndEvent id="1268287867312_1608" clientID="1268287850750_19787" parentID="1268287850859_19798" timestamp="1268287867312"/>
+</xmi:XMI>

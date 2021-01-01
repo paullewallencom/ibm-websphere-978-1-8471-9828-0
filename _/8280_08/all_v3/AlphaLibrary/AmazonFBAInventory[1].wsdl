@@ -1,0 +1,611 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************
+*
+* Copyright (c) 2009 Alpha.com, Inc. All rights reserved.
+* AMAZON.COM CONFIDENTIAL
+* 
+* DISCLAIMER:
+* All strings returned by get and list operations have not been scrubbed for
+* potential SQL, HTML or log injection vulnerabilities.
+* 
+**************************************************************************** -->
+
+<wsdl:definitions
+  targetNamespace="http://fba-inventory.alphaaws.com/doc/2009-07-31/"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:wsa="http://www.w3.org/2005/08/addressing"
+  xmlns:tns="http://fba-inventory.alphaaws.com/doc/2009-07-31/">
+
+  <!-- *************************************************************************
+   * Service Types
+   ************************************************************************* -->
+
+  <wsdl:types>
+    <xs:schema
+      targetNamespace="http://fba-inventory.alphaaws.com/doc/2009-07-31/"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:tns="http://fba-inventory.alphaaws.com/doc/2009-07-31/"
+      elementFormDefault="qualified">
+
+      <!-- *********************************************************************
+       * Request and Response Types
+       ********************************************************************* -->
+
+      <xs:element name="GetServiceStatus">
+        <xs:annotation>
+          <xs:documentation>
+            Request to poll the system for availability.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="GetServiceStatusResponse">
+        <xs:annotation>
+          <xs:documentation>
+            Response to GetServiceStatus request.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="tns:GetServiceStatusResult" />
+            <xs:element ref="tns:ResponseMetadata" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="GetInventorySupply">
+        <xs:annotation>
+          <xs:documentation>
+            Request for information about merchant-owned inventory in Alpha's
+            fulfillment network available for use to fulfill Multi-Channel
+            orders.
+            
+            The service will only accept up to 50 merchantSkus in a single request.
+            An error will be returned if a request with more than 50 it sent.
+                        
+            If no ResponseGroup is specified, the "Basic" response group will
+            be assumed.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MerchantSKU" type="xs:string" maxOccurs="unbounded" />
+            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      
+      <xs:element name="GetInventorySupplyResponse">
+        <xs:annotation>
+          <xs:documentation>
+            Response to the GetInventorySupply request.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="tns:GetInventorySupplyResult" />
+            <xs:element ref="tns:ResponseMetadata" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="ListUpdatedInventorySupply">
+        <xs:annotation>
+          <xs:documentation>
+            Request for information about merchant-owned inventory in Alpha's
+            fulfillment network, for inventory items that may have had recent
+            changes in inventory status.
+            
+            The QueryStartDateTime will cause the results to include all changes
+            to inventory from that date and time up through the current date. 
+            The format must be based on the RFC3339 profile of ISO8610 as follows:
+                [YYYY]-[MM]-[DD]T[HH]:[MM]:[SS][TZ]
+            
+            If no ResponseGroup is specified, the "Basic" response group will
+            be assumed.
+            
+            NumberOfResultsRequested should be 50 or less. If more are requested,
+            the default of 50 will be used.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="NumberOfResultsRequested" type="xs:int" />
+            <xs:element name="QueryStartDateTime" type="xs:string" />
+            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      
+      <xs:element name="ListUpdatedInventorySupplyResponse">
+        <xs:annotation>
+          <xs:documentation>
+            Response to the ListUpdatedInventorySupply request.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="tns:ListUpdatedInventorySupplyResult" />
+            <xs:element ref="tns:ResponseMetadata" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="ListUpdatedInventorySupplyByNextToken">
+        <xs:annotation>
+          <xs:documentation>
+            Request for information about merchant-owned inventory in Alpha's
+            fulfillment network, for inventory items that may have had recent
+            changes in inventory status.
+            
+            This operation continues pagination through the resultset initiated
+            by the call to ListUpdatedInventorySupply.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="NextToken" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      
+      <xs:element name="ListUpdatedInventorySupplyByNextTokenResponse">
+        <xs:annotation>
+          <xs:documentation>
+            Response to the ListUpdatedInventorySupplyByNextToken request.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="tns:ListUpdatedInventorySupplyByNextTokenResult" />
+            <xs:element ref="tns:ResponseMetadata" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <!-- *********************************************************************
+       * Shared Types
+       ********************************************************************* -->
+
+      <xs:element name="GetServiceStatusResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Status" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="GetInventorySupplyResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MerchantSKUSupply" type="tns:MerchantSKUSupply" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      
+      <xs:element name="ListUpdatedInventorySupplyResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="NextToken" type="xs:string" />
+            <xs:element name="HasNext" type="xs:boolean" />
+            <xs:element name="MerchantSKUSupply" type="tns:MerchantSKUSupply" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      
+      <xs:element name="ListUpdatedInventorySupplyByNextTokenResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="NextToken" type="xs:string" />
+            <xs:element name="HasNext" type="xs:boolean" />
+            <xs:element name="MerchantSKUSupply" type="tns:MerchantSKUSupply" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:complexType name="MerchantSKUSupply">
+        <xs:annotation>
+          <xs:documentation>
+            Represents merchant-owned inventory for a single SKU -- either in
+            Alpha's fulfillment network, or in a shipment inbound to an Alpha
+            fulfillment center -- that is or will be available to fulfill
+            Multi-Channel orders.
+            
+            TotalSupplyQuantity is the total number of units available,
+            including in-stock quantities, quantities on inbound shipments, and
+            quantities being transferred between FCs in Alpha's network.
+            
+            InStockSupplyQuantity is the total number of units actually in-stock
+            in Alpha's network.
+            
+            EarliestAvailability is a Timepoint representing the soonest
+            date/time that inventory is expected to be available for picking.
+            If TotalSupplyQuantity is zero, EarliestAvailability will not
+            be present.
+            
+            SupplyDetail is an optional list detailing what specific inventory
+            quantities will be available for picking, when, and their logical
+            location in the supply chain (in-stock in a fulfillment center,
+            on an inbound shipment, or being transferred between FCs).
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="MerchantSKU" type="xs:string" />
+          <xs:element name="FulfillmentNetworkSKU" type="xs:string" minOccurs="0" />
+          <xs:element name="ASIN" type="xs:string" minOccurs="0" />
+          <xs:element name="Condition" type="xs:string" minOccurs="0" />
+          <xs:element name="TotalSupplyQuantity" type="xs:int" />
+          <xs:element name="InStockSupplyQuantity" type="xs:int" />
+          <xs:element name="EarliestAvailability" type="tns:Timepoint" minOccurs="0" />
+          <xs:element name="SupplyDetail" type="tns:SupplyDetail" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:complexType>
+
+      <xs:complexType name="SupplyDetail">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a quantity of merchant-owned inventory for a single SKU
+            -- either in Alpha's fulfillment network, or in a shipment inbound
+            to an Alpha fulfillment center -- that is or will be available to
+            fulfill Multi-Channel orders, and the date/time when the inventory
+            is expected to be available for picking.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Quantity" type="xs:int" />
+          <xs:element name="SupplyType" type="xs:string" />
+          <xs:element name="EarliestAvailableToPickDateTime" type="tns:Timepoint" />
+          <xs:element name="LatestAvailableToPickDateTime" type="tns:Timepoint" />
+        </xs:sequence>
+      </xs:complexType>
+
+      <xs:complexType name="Timepoint">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a point in time. A time point is either a specific date
+            and time, or a logical value (e.g., "Immediately").
+            
+            If TimepointType is "Immediately" or "Unknown", the DateTime may
+            not be specified and should be ignored. "Immediately" means
+            inventory is available for picking immediately and will continue
+            to be so until in-stock quantities are exhausted. "Unknown" means
+            inventory is expected to be available for picking at some point
+            in the future, but it's not known with confidence when that might
+            be.
+            
+            Otherwise, if TimepointType is "DateTime", the DateTime element
+            represents the latest date and time by which inventory is
+            confidently expected to be available for picking.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="TimepointType" type="xs:string" />
+          <xs:element name="DateTime" type="xs:string" minOccurs="0" /> 
+        </xs:sequence>
+      </xs:complexType>
+
+
+      <!-- *********************************************************************
+       * Enumerated Types
+       ********************************************************************* -->
+
+      <xs:simpleType name="ResponseGroup">
+        <xs:annotation>
+          <xs:documentation>
+            Enumerates the names of ResponseGroups that can be requested via
+            the GetInventorySupply operation.
+            
+            Basic - Only the required elements are populated in returned
+                    MerchantSKUSupply elements. The SupplyDetail list will
+                    be empty.
+            
+            Detailed - All elements are populated in returned MerchantSKUSupply
+                    elements, including the SupplyDetail list. The Detailed
+                    ResponseGroup includes all elements in the Basic
+                    ResponseGroup.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic" />
+          <xs:enumeration value="Detailed" />
+        </xs:restriction>
+      </xs:simpleType>
+
+      <xs:simpleType name="InventorySupplyType">
+        <xs:annotation>
+          <xs:documentation>
+            Indicates the source (in a supply chain) of a quantity of inventory.
+            
+            InStock - Inventory is in an Alpha fulfillment center. Note that
+                      InStock inventory may not be immediately pickable. For
+                      example, inventory in "reserve" locations may take up to
+                      12 hours to become pickable.
+                      
+            Inbound - Inventory is in an inbound shipment to an Alpha
+                      fulfillment center.
+                      
+            Transfer - Inventory is being transferred from one Alpha
+                       fulfillment center to another.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="InStock" />
+          <xs:enumeration value="Inbound" />
+          <xs:enumeration value="Transfer" />
+        </xs:restriction>
+      </xs:simpleType>
+
+      <xs:simpleType name="TimepointType">
+        <xs:annotation>
+          <xs:documentation>
+            Indicates how to interpret a Timepoint value.
+
+            Immediately - Timepoint represents "now".
+            
+            DateTime - Timepoint represents the specified point in time.
+            
+            Unknown - Timepoint represents an unknown point in time in the
+                      future.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Immediately" />
+          <xs:enumeration value="DateTime" />
+          <xs:enumeration value="Unknown" />
+        </xs:restriction>
+      </xs:simpleType>
+
+      <xs:simpleType name="ItemCondition">
+        <xs:annotation>
+          <xs:documentation>
+            The item condition is the concatenation of condition type and 
+            subtype.  The exceptions are NewNew becomes NewItem and
+            RefurbishedRefurbished becomes Refurbished.
+            
+            Unknown indicates that the item condition wasn't read correctly
+            or was unavailable.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" >
+          <xs:enumeration value="NewItem" />
+          <xs:enumeration value="NewWithWarranty" />
+          <xs:enumeration value="UsedLikeNew" />
+          <xs:enumeration value="UsedVeryGood" />
+          <xs:enumeration value="UsedGood" />
+          <xs:enumeration value="UsedAcceptable" />
+          <xs:enumeration value="UsedPoor" />
+          <xs:enumeration value="UsedRefurbished" />
+          <xs:enumeration value="CollectibleLikeNew" />
+          <xs:enumeration value="CollectibleVeryGood" />
+          <xs:enumeration value="CollectibleGood" />
+          <xs:enumeration value="CollectibleAcceptable" />
+          <xs:enumeration value="CollectiblePoor" />
+          <xs:enumeration value="RefurbishedWithWarranty" />
+          <xs:enumeration value="Refurbished" />
+          <xs:enumeration value="Club" />
+          <xs:enumeration value="Unknown" />
+        </xs:restriction>
+      </xs:simpleType>
+
+      <!-- *********************************************************************
+       * AWS Standard Types
+       ********************************************************************* -->
+
+      <xs:element name="ResponseMetadata">
+        <xs:annotation>
+          <xs:documentation>
+            Response metadata contains the unique request ID.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestId" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="ErrorResponse">
+        <xs:annotation>
+          <xs:documentation>
+            Error response used for REST.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="tns:Error" maxOccurs="unbounded" />
+            <xs:element name="RequestId" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="Error">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Type">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="Receiver" />
+                  <xs:enumeration value="Sender" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="Code" type="xs:string" />
+            <xs:element name="Message" type="xs:string" />
+            <xs:element name="Detail">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+                </xs:sequence>
+                <xs:anyAttribute namespace="##other" processContents="lax" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+    </xs:schema>
+  </wsdl:types>
+
+  <!-- *************************************************************************
+   * Service Messages
+   ************************************************************************* -->
+
+  <wsdl:message name="GetServiceStatusRequestMsg">
+    <wsdl:part name="body" element="tns:GetServiceStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceStatusResponseMsg">
+    <wsdl:part name="body" element="tns:GetServiceStatusResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="GetInventorySupplyRequestMsg">
+    <wsdl:part name="body" element="tns:GetInventorySupply" />
+  </wsdl:message>
+  <wsdl:message name="GetInventorySupplyResponseMsg">
+    <wsdl:part name="body" element="tns:GetInventorySupplyResponse" />
+  </wsdl:message>
+  
+  <wsdl:message name="ListUpdatedInventorySupplyRequestMsg">
+    <wsdl:part name="body" element="tns:ListUpdatedInventorySupply" />
+  </wsdl:message>
+  <wsdl:message name="ListUpdatedInventorySupplyResponseMsg">
+    <wsdl:part name="body" element="tns:ListUpdatedInventorySupplyResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="ListUpdatedInventorySupplyByNextTokenRequestMsg">
+    <wsdl:part name="body" element="tns:ListUpdatedInventorySupplyByNextToken" />
+  </wsdl:message>
+  <wsdl:message name="ListUpdatedInventorySupplyByNextTokenResponseMsg">
+    <wsdl:part name="body" element="tns:ListUpdatedInventorySupplyByNextTokenResponse" />
+  </wsdl:message>
+
+  <!-- *************************************************************************
+   * Service Ports and Operations
+   ************************************************************************* -->
+
+  <wsdl:portType name="AlphaFBAInventoryPortType">
+
+    <wsdl:operation name="GetServiceStatus">
+      <wsdl:documentation>
+        Gets a brief status message from the service.
+      </wsdl:documentation>
+      <wsdl:input message="tns:GetServiceStatusRequestMsg" wsa:Action="urn:GetServiceStatus" />
+      <wsdl:output message="tns:GetServiceStatusResponseMsg" wsa:Action="urn:GetServiceStatus:Response" />
+    </wsdl:operation>
+
+    <wsdl:operation name="GetInventorySupply">
+      <wsdl:documentation>
+        Get information about the supply of merchant-owned inventory in
+        Alpha's fulfillment network. "Supply" is inventory that is available
+        for fulfilling (a.k.a. Multi-Channel Fulfillment) orders. In general
+        this includes all sellable inventory that has been received by Alpha,
+        that is not reserved for existing orders or for internal FC processes,
+        and also inventory expected to be received from inbound shipments.
+      </wsdl:documentation>
+      <wsdl:input message="tns:GetInventorySupplyRequestMsg" wsa:Action="urn:GetInventorySupply" />
+      <wsdl:output message="tns:GetInventorySupplyResponseMsg" wsa:Action="urn:GetInventorySupply:Response" />
+    </wsdl:operation>
+
+    <wsdl:operation name="ListUpdatedInventorySupply">
+      <wsdl:documentation>
+        Get information about the supply of merchant-owned inventory in
+        Alpha's fulfillment network, for inventory items that may have had
+        recent changes in inventory levels. The type of inventory data returned
+        by this operation is the same as that returned by GetInventorySupply.
+        This operation provides the most efficient mechanism for clients to
+        maintain local copies of inventory supply data.
+        
+        This operation is used with ListUpdatedInventorySupplyByNextToken
+        to paginate over the resultset. Begin pagination by invoking the
+        ListUpdatedInventorySupply operation, and retrieve the first set of
+        results. If the HasNext flag indicates more results are available,
+        continuing iteratively requesting further pages results by invoking the
+        ListUpdatedInventorySupplyByNextToken operation (each time passing in the
+        NextToken value from the previous result), until the returned HasNext
+        flag is false, indicating no further results are available.
+      </wsdl:documentation>
+      <wsdl:input message="tns:ListUpdatedInventorySupplyRequestMsg" wsa:Action="urn:ListUpdatedInventorySupply" />
+      <wsdl:output message="tns:ListUpdatedInventorySupplyResponseMsg" wsa:Action="urn:ListUpdatedInventorySupply:Response" />
+    </wsdl:operation>
+
+    <wsdl:operation name="ListUpdatedInventorySupplyByNextToken">
+      <wsdl:documentation>
+        Continues pagination over a resultset of inventory data for inventory
+        items that may have had recent changes in inventory levels.
+        
+        This operation is used in conjunction with ListUpdatedInventorySupply.
+        Please refer to documentation for that operation for further details.
+      </wsdl:documentation>
+      <wsdl:input message="tns:ListUpdatedInventorySupplyByNextTokenRequestMsg" wsa:Action="urn:ListUpdatedInventorySupplyByNextToken" />
+      <wsdl:output message="tns:ListUpdatedInventorySupplyByNextTokenResponseMsg" wsa:Action="urn:ListUpdatedInventorySupplyByNextToken:Response" />
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+  <!-- *************************************************************************
+   * Service Bindings
+   ************************************************************************* -->
+
+  <wsdl:binding name="AlphaFBAInventoryBinding" type="tns:AlphaFBAInventoryPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+
+    <wsdl:operation name="GetServiceStatus">
+      <soap:operation soapAction="GetServiceStatus" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetInventorySupply">
+      <soap:operation soapAction="GetInventorySupply" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="ListUpdatedInventorySupply">
+      <soap:operation soapAction="ListUpdatedInventorySupply" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="ListUpdatedInventorySupplyByNextToken">
+      <soap:operation soapAction="ListUpdatedInventorySupplyByNextToken" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  
+  <!-- *************************************************************************
+   * Service Definition
+   ************************************************************************* -->
+
+  <wsdl:service name="AlphaFBAInventory">
+    <wsdl:documentation>
+      Alpha Web Service used to retrieve inventory and fulfillability data
+      based on merchant-owned inventory in Alpha's fulfillment network.
+    </wsdl:documentation>
+    <wsdl:port name="AlphaFBAInventoryPort" binding="tns:AlphaFBAInventoryBinding">
+      <soap:address location="https://fba-inventory.alphaaws.com" />
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>

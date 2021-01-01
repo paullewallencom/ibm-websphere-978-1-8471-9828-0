@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="HelloProcess" targetNamespace="http://Greetings/com/junglesea/solution/greeting/process/HelloProcessArtifacts" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://Greetings/com/junglesea/solution/greeting/process/HelloProcessArtifacts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl0="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="HandleGreetingMessagePLT">
+    <plnk:role name="Interface">
+      <plnk:portType name="wsdl0:HandleGreetingMessage"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:import location="../interfaces/HandleGreetingMessage.wsdl" namespace="http://GreetingLibrary/com/junglesea/solution/greeting/interfaces/HandleGreetingMessage"/>
+</wsdl:definitions>

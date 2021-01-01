@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://TestBed/xslt/XSLTransformation1_req_1" domainID="com.ibm.msl.mapping.xml" targetNamespace="http://TestBed/xslt/XSLTransformation1_req_1">
+   <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FCustomerDomain-v1_0%252Fcom%252Fjunglesea%252Fbusinessservices%252Finterfaces%252FCustomerCreditInformation%257DgetCustomerCreditRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+   <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FPayMeLibrary%252Fcom%252Fjunglesea%252Fapps%252Fpayme%252FCardPaymentServices%257DccMakePaymentRequestMsg/xpath%3D%252Fbody/smo.xsd"/>
+   <mappingDeclaration name="XSLTransformation1_req_1">
+       <input path="body"/>
+       <output path="body"/>
+   </mappingDeclaration>
+</mappingRoot>

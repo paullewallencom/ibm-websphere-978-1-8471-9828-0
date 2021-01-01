@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="GeographicAddress">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="SiteId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LineOne"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LineTwo"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LineThree"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="BuildingNumber"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="BuildingName"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="PostOfficeBoxNumber"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Unit" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="Floor" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="City" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="County"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="StateOrProvince"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="PostalCode"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Country"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Latitude"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Longitude"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Status"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

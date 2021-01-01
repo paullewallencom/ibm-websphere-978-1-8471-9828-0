@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigation:NavigationProjectNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:navigation="http://navigation" id="Predefined Types" label="Predefined elements (WebSphere Business Modeler)" overridingImageKey="" uid="BLMNAV-5d36ad75fad62969bc228606745810e9">
+  <libraryNode label="Library" uid="BLMNAV-8e74a4202fdcd914f07a86f6d1e15ab8">
+    <dataCatalogsNode id="Data catalogs" label="Data catalogs" uid="BLMNAV-337f696eb07a540f29c5b273cc9d693f" bomUID="FID-00000000000000000000000000000002" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+      <navigationURINode uri="RID-00000000000000000000000000000002"/>
+      <dataCatalogNodes id="Predefined Types" label="Predefined types" uid="BLMNAV-a8451b8787f0a0a65b48816b46efd3ab" bomUID="FID-00000000000000000000000000000002" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+        <navigationURINode uri="RID-00000000000000000000000000000002"/>
+        <businessEntitiesNode id="DEFAULT_CATALOG" label="Business items" uid="BLMNAV-346c99e1e50cd40bb1c366e62818d1bd" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <businessEntityNodes id="PrimitiveType" label="PrimitiveType" bomUID="FID-00000000000000000000000000000201" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000201"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Boolean" label="Boolean" bomUID="FID-00000000000000000000000000000202" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000202"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Number" label="Number" bomUID="FID-00000000000000000000000000000208" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000208"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="IntegerNumber" label="IntegerNumber" bomUID="FID-00000000000000000000000000000209" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000209"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Long" label="Integer (long)" bomUID="FID-00000000000000000000000000000210" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000210"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Integer" label="Integer" bomUID="FID-00000000000000000000000000000211" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000211"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="RealNumber" label="RealNumber" bomUID="FID-00000000000000000000000000000214" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000214"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Double" label="Decimal (double-precision)" bomUID="FID-00000000000000000000000000000215" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000215"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Date" label="Date" bomUID="FID-00000000000000000000000000000204" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000204"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="String" label="Text" bomUID="FID-00000000000000000000000000000203" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000203"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Time" label="Time" bomUID="FID-00000000000000000000000000000205" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000205"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="DateTime" label="DateTime" bomUID="FID-00000000000000000000000000000206" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000206"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Duration" label="Duration" bomUID="FID-00000000000000000000000000000207" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000207"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Short" label="Integer (short)" bomUID="FID-00000000000000000000000000000212" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000212"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Byte" label="Integer (byte)" bomUID="FID-00000000000000000000000000000213" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000213"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="Float" label="Decimal (single-precision)" bomUID="FID-00000000000000000000000000000216" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000216"/>
+          </businessEntityNodes>
+          <businessEntityNodes id="UnlimitedNatural" label="UnlimitedNatural" bomUID="FID-00000000000000000000000000000222" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000222"/>
+          </businessEntityNodes>
+        </businessEntitiesNode>
+      </dataCatalogNodes>
+    </dataCatalogsNode>
+    <resourceCatalogsNode id="Resource catalogs" label="Resource catalogs" uid="BLMNAV-344988fecf9cba77ee71bb9f42b124a7" bomUID="FID-00000000000000000000000000000004" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+      <navigationURINode uri="RID-00000000000000000000000000000004"/>
+      <resourceCatalogNodes id="Predefined Types" label="Predefined resources" uid="BLMNAV-9263e7bd8931baf7b837a2c3f375f265" bomUID="FID-00000000000000000000000000000004" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+        <navigationURINode uri="RID-00000000000000000000000000000004"/>
+        <resourceDefinitionsNode label="Resource definitions" uid="BLMNAV-f966e8fa8fa88a499b3b1e164f812c95" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <resourceDefinitionNodes id="I-Person" label="Person" uid="BLMNAV-ad4152fa1a29ef09aa1f77ad9f43efe0" bomUID="FID-00000000000000000000000000000101" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000101"/>
+          </resourceDefinitionNodes>
+          <resourceDefinitionNodes id="I-Staff" label="Staff" uid="BLMNAV-077ad60b4b4063e1ba2b297ce17352e3" bomUID="FID-00000000000000000000000000000103" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000103"/>
+          </resourceDefinitionNodes>
+          <resourceDefinitionNodes id="B-Equipment" label="Equipment" uid="BLMNAV-35bf4a0c32244b44962f077aa8a371ee" bomUID="FID-00000000000000000000000000000107" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000107"/>
+          </resourceDefinitionNodes>
+          <resourceDefinitionNodes id="B-Facility" label="Facility" uid="BLMNAV-719cb43350039a17b91fda18f114c6d2" bomUID="FID-00000000000000000000000000000108" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000108"/>
+          </resourceDefinitionNodes>
+          <resourceDefinitionNodes id="B-Machine" label="Machine" uid="BLMNAV-750e595638e5672b138b947569a9b4fb" bomUID="FID-00000000000000000000000000000109" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000109"/>
+          </resourceDefinitionNodes>
+          <resourceDefinitionNodes id="B-Tool" label="Tool" uid="BLMNAV-129483ad63d25f1bb6f23cc6663842ca" bomUID="FID-00000000000000000000000000000110" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000110"/>
+          </resourceDefinitionNodes>
+          <resourceDefinitionNodes id="B-General Service" label="General Service" uid="BLMNAV-aae83af3e1a87340b647366cc4a52512" bomUID="FID-00000000000000000000000000000111" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000111"/>
+          </resourceDefinitionNodes>
+          <resourceDefinitionNodes id="B-Communication Service" label="Communication Service" uid="BLMNAV-6a70df21d0955d8937bc638f95f770d9" bomUID="FID-00000000000000000000000000000112" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000112"/>
+          </resourceDefinitionNodes>
+        </resourceDefinitionsNode>
+        <resourceDefinitionCategoriesNode label="Resource definition templates" uid="BLMNAV-4ea4d05a6a7a8b45652d8f8fd2d527d2" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <resourceDefinitionCategoryNodes id="I-Person_Category" label="Person template" uid="BLMNAV-005db746c13e9d9b19493536cf94579e" bomUID="FID-00000000000000000000000000000100" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000100"/>
+          </resourceDefinitionCategoryNodes>
+          <resourceDefinitionCategoryNodes id="I-Staff_Category" label="Staff template" uid="BLMNAV-16908150fcb2561ba20a46d50178b8c0" bomUID="FID-00000000000000000000000000000102" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000102"/>
+          </resourceDefinitionCategoryNodes>
+          <resourceDefinitionCategoryNodes id="B-Resource_Category" label="Resource template" uid="BLMNAV-c9282ab7cb8034b580719e88836efd3a" bomUID="FID-00000000000000000000000000000106" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000106"/>
+          </resourceDefinitionCategoryNodes>
+        </resourceDefinitionCategoriesNode>
+      </resourceCatalogNodes>
+    </resourceCatalogsNode>
+    <organizationCatalogsNode id="Organization catalogs" label="Organization catalogs" uid="BLMNAV-b9bc64f0e6cc9a576c34a1d62f65e570" bomUID="FID-00000000000000000000000000000003" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+      <navigationURINode uri="RID-00000000000000000000000000000003"/>
+      <organizationCatalogNodes id="Predefined Types" label="Predefined organizations" uid="BLMNAV-674403c9757f597d72639be4ffd1161f" bomUID="FID-00000000000000000000000000000003" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+        <navigationURINode uri="RID-00000000000000000000000000000003"/>
+        <organizationDefinitionsNode label="Organization definitions" uid="BLMNAV-0b4e8867f2050e209ff4fc1beaab650c" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <organizationDefinitionNodes id="Organization" label="Organization" uid="BLMNAV-8466725dc1be275817ee0992c7063fca" bomUID="FID-00000000000000000000000000000105" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000105"/>
+          </organizationDefinitionNodes>
+        </organizationDefinitionsNode>
+        <organizationDefinitionCategoriesNode label="Organization definition templates" uid="BLMNAV-ffc399f5b05c334d27b4c8ed8971c23c" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <organizationDefinitionCategoryNodes id="Organization_Category" label="Organization template" uid="BLMNAV-919f38084bfc1623c32aad228a6ecc6b" bomUID="FID-00000000000000000000000000000104" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000104"/>
+          </organizationDefinitionCategoryNodes>
+        </organizationDefinitionCategoriesNode>
+        <hierarchyStructureDefinitionsNode label="Structure definitions" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <hierarchyStructureDefinitionNodes id="Default structure template" label="Default structure template" uid="GID-00000000000000000000000000000113" bomUID="FID-00000000000000000000000000000113" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000113"/>
+            <navigationURINodes uri="CEF-00000000000000000000000000000113"/>
+          </hierarchyStructureDefinitionNodes>
+        </hierarchyStructureDefinitionsNode>
+      </organizationCatalogNodes>
+    </organizationCatalogsNode>
+    <reportsNode id="Report catalogs" label="Report catalogs" uid="BLMNAV-dc547e196152e23fe772e32b17f15ddd" bomUID="RootReportModelID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+      <navigationURINode uri="RootReportModelResourceID"/>
+      <reportModelNodes id="DEFAULT_CATALOG" label="Reports" uid="BLMNAV-ec1177933a5e8f6299abf5ea12e4f388" bomUID="" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+        <navigationURINode uri="Reports_Catalog_Resource_ID"/>
+        <reportModelNodeChildren id="Predefined Types" label="Static analysis" uid="BLMNAV-65b2af6f04a5e6cdd9d9d109af14ce17" bomUID="" attribute1="Static_Catalog_ID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <navigationURINode uri="Static_Catalog_Resource_ID"/>
+          <reportTemplateNodes id="Resource roles" label="Resource roles" uid="BLMNAV-88f29d6250098ea87e84f67420c25d9c" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ResourceRoles"/>
+            <navigationURINodes uri="config/ResourceRoles"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Qualified resources for role" label="Qualified resources for role" uid="BLMNAV-88e4b31e6cfeaf59f4e1f6d3a010ff5d" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/RoleQualifiedResources"/>
+            <navigationURINodes uri="config/RoleQualifiedResources"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Resource availability" label="Resource availability" uid="BLMNAV-80bf010a3b416f0d7791cdb62fad8ad4" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ResourceAvailability"/>
+            <navigationURINodes uri="config/ResourceAvailability"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Role availability" label="Role availability" uid="BLMNAV-9db51c8cbe2845032c37820a44f93d95" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/RoleAvailability"/>
+            <navigationURINodes uri="config/RoleAvailability"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Resource availability for duration" label="Resource availability for duration" uid="BLMNAV-7f0f0adbb09d28224901fea012cd3b51" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ResourceAvailabilityForDuration"/>
+            <navigationURINodes uri="config/ResourceAvailabilityForDuration"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Role availability for duration" label="Role availability for duration" uid="BLMNAV-1ade94e96cdbcbd21f34e7cf31538d92" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/RoleAvailabilityDuration"/>
+            <navigationURINodes uri="config/RoleAvailabilityDuration"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Resource cost" label="Resource cost" uid="BLMNAV-24aef648537a72c6c51ec21587a4872c" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ResourceCost"/>
+            <navigationURINodes uri="config/ResourceCost"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Role cost" label="Role cost" uid="BLMNAV-0c6cc62f231de7dc4828e1b7fcd7b57e" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/RoleCost"/>
+            <navigationURINodes uri="config/RoleCost"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Resources costs summary" label="Resources costs summary" uid="BLMNAV-1a5dccb9e809ae4592e607202d37cbf9" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ResourcesCosts"/>
+            <navigationURINodes uri="config/ResourcesCosts"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Roles costs summary" label="Roles costs summary" uid="BLMNAV-8ff8b8e5e00597fb5e891610d1707e76" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/RolesCosts"/>
+            <navigationURINodes uri="config/RolesCosts"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Qualified resource availability" label="Qualified resource availability" uid="BLMNAV-f41f5bd8dce8c43bf388e8bacca7c648" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/QualifiedResourcesAvailability"/>
+            <navigationURINodes uri="config/QualifiedResourcesAvailability"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Qualified resource availability for duration" label="Qualified resource availability for duration" uid="BLMNAV-56d90d3b13b50b2a2c3a64ee072967b7" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/QualifiedResourcesAvailabilityForDuration"/>
+            <navigationURINodes uri="config/QualifiedResourcesAvailabilityForDuration"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Qualified resource cost" label="Qualified resource cost" uid="BLMNAV-884e97d88cbeb80bb692c1525bf96d8d" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/QualifiedResourceCost"/>
+            <navigationURINodes uri="config/QualifiedResourceCost"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Qualified resources costs summary" label="Qualified resources costs summary" uid="BLMNAV-10cb1fbdb916393eae99643d3522e217" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/QualifiedResourcesCosts"/>
+            <navigationURINodes uri="config/QualifiedResourcesCosts"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Type structure" label="Type structure" uid="BLMNAV-4617aa1ea560f91c116b58ed34180a52" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/TypeHierarchy"/>
+            <navigationURINodes uri="config/TypeHierarchy"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Entity structure" label="Entity structure" uid="BLMNAV-34b62b87ca2d984688aeb3aff42ef65e" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/EntityHierarchy"/>
+            <navigationURINodes uri="config/EntityHierarchy"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Type instance matching" label="Type instance matching" uid="BLMNAV-2f587b64be531c538af1ad851903ea9a" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/TypeInstanceMatching"/>
+            <navigationURINodes uri="config/TypeInstanceMatching"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activities by location " label="Activities by location " uid="BLMNAV-82c8401950190c421dc1b72ffddc3e12" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/LocationActions"/>
+            <navigationURINodes uri="config/LocationActions"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activities by organization unit" label="Activities by organization unit" uid="BLMNAV-ca407a5c3c47ac49c5829338b578b33b" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/OrganizationActions"/>
+            <navigationURINodes uri="config/OrganizationActions"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activity throughput" label="Activity throughput" uid="BLMNAV-e7ec4e153374f80f7760727cddd6cb01" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ActionThroughput"/>
+            <navigationURINodes uri="config/ActionThroughput"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activity resource and role leveling" label="Activity resource and role leveling" uid="BLMNAV-3fcdb8d3b2a1b52a23baa00d62b619b1" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ActionResourcesAndRolesLeveling"/>
+            <navigationURINodes uri="config/ActionResourcesAndRolesLeveling"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Path cycles" label="Path cycles" uid="BLMNAV-191eb677c854b5e21aabb90a6e236574" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/PathCycles"/>
+            <navigationURINodes uri="config/PathCycles"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Input and output paths" label="Input and output paths" uid="BLMNAV-49460373703bb9716c617e735fd8884b" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/PinPaths"/>
+            <navigationURINodes uri="config/PinPaths"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activities unable to start" label="Activities unable to start" uid="BLMNAV-2d0daa00987839856ebc18d1b56f2430" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/UndoableActions"/>
+            <navigationURINodes uri="config/UndoableActions"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Paths unable to be followed" label="Paths unable to be followed" uid="BLMNAV-1e74312006f95c7ff4cbbe213e9a36e4" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/UndoablePaths"/>
+            <navigationURINodes uri="config/UndoablePaths"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activity cost and duration" label="Activity cost and duration" uid="BLMNAV-ddf456314b8395ae4542dd9f2f006efb" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ActionCostAndDuration"/>
+            <navigationURINodes uri="config/ActionCostAndDuration"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activities by Classifier" label="Activities by Classifier" uid="BLMNAV-578fc5539055348de8b8d07ce85a2b4c" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ActivityByCategory"/>
+            <navigationURINodes uri="config/ActivityByCategory"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.bom.analysis.statical"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+        </reportModelNodeChildren>
+        <reportModelNodeChildren id="Predefined Types" label="Dynamic analysis" uid="BLMNAV-bd1a049da2cbc5272d355cc6ac8806d0" bomUID="" attribute1="Dynamic_Catalog_ID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <navigationURINode uri="Dynamic_Catalog_Resource_ID"/>
+          <reportTemplateNodes id="Activity Cost" label="Activity Cost" uid="BLMNAV-823b830f16edf86b51ac806b49666326" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ActivityCost"/>
+            <navigationURINodes uri="config/ActivityCost"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activity Cost Per Time Unit" label="Activity Cost Per Time Unit" uid="BLMNAV-008bcb068132e71b47b013a6fe4c7b86" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ActivityCostPerTimeUnit"/>
+            <navigationURINodes uri="config/ActivityCostPerTimeUnit"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activity Duration" label="Activity Duration" uid="BLMNAV-df88d77be6067f9c0652c70ed9466028" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ActivityDuration"/>
+            <navigationURINodes uri="config/ActivityDuration"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activity Resource Allocation" label="Activity Resource Allocation" uid="BLMNAV-ee8f1ba70178a4c85841c494ca16b62b" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ActivityResourceAllocation"/>
+            <navigationURINodes uri="config/ActivityResourceAllocation"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Activity Statistics" label="Activity Statistics" uid="BLMNAV-5830fc69da97a2c2d43640591cc346f8" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ActivityStatistics"/>
+            <navigationURINodes uri="config/ActivityStatistics"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Resource Usage" label="Resource Usage" uid="BLMNAV-ee33301c36d05964d10152070c690ae0" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ResourceUsage"/>
+            <navigationURINodes uri="config/ResourceUsage"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Resource Usage Summary" label="Resource Usage Summary" uid="BLMNAV-e3cbbffacac9030873de769f9b7b4d3b" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ResourceUsageSummary"/>
+            <navigationURINodes uri="config/ResourceUsageSummary"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Resource Allocation Summary" label="Resource Allocation Summary" uid="BLMNAV-a6cbf89ae437523ec061201a5451aa1c" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ResourceAllocationSummary"/>
+            <navigationURINodes uri="config/ResourceAllocationSummary"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Cases Summary" label="Process Cases Summary" uid="BLMNAV-208bdcd0998e6799b8f5d9a0a7283109" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessCasesSummary"/>
+            <navigationURINodes uri="config/ProcessCasesSummary"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Activities Total Time" label="Process Activities Total Time" uid="BLMNAV-3e3764334a26ba6f3a8fa2898b13bdb4" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessActivitiesTotalTime"/>
+            <navigationURINodes uri="config/ProcessActivitiesTotalTime"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Break Even" label="Process Break Even" uid="BLMNAV-527a2997e419c51e3efda90e9993aae1" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessBreakEven"/>
+            <navigationURINodes uri="config/ProcessBreakEven"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Cost" label="Process Cost" uid="BLMNAV-59f7ffde2e116f386690936bbae3b5fa" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessCost"/>
+            <navigationURINodes uri="config/ProcessCost"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Duration" label="Process Duration" uid="BLMNAV-b5ee1456b32c65f8bd4d4891907e6f01" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessDuration"/>
+            <navigationURINodes uri="config/ProcessDuration"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process NPV/IRR" label="Process NPV/IRR" uid="BLMNAV-f7025bb4f32dffcebb22348fbb546522" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessNPV_IRR"/>
+            <navigationURINodes uri="config/ProcessNPV_IRR"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Resource" label="Process Resource" uid="BLMNAV-6c2dd8c838b8d5ef0645d79b9faeaf31" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessResource"/>
+            <navigationURINodes uri="config/ProcessResource"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Resource Allocation" label="Process Resource Allocation" uid="BLMNAV-b547355f9b8c822871c4f446dc0dc111" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessResourceAllocation"/>
+            <navigationURINodes uri="config/ProcessResourceAllocation"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Classifier Cost And Duration" label="Process Classifier Cost And Duration" uid="BLMNAV-11dfb855f69acba7b9d3ba426c5cbd17" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessClassifierCostAndDuration"/>
+            <navigationURINodes uri="config/ProcessClassifierCostAndDuration"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Classifier Cost And Duration" label="Classifier Cost And Duration" uid="BLMNAV-a80337c308ae9b31f0600a6f4cb8679b" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ClassifierCostAndDuration"/>
+            <navigationURINodes uri="config/ClassifierCostAndDuration"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Processes Classifier Cost Comparison" label="Processes Classifier Cost Comparison" uid="BLMNAV-556ac1ebcc2bca3bcbdef790b74a5700" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessesClassifierCostComparison"/>
+            <navigationURINodes uri="config/ProcessesClassifierCostComparison"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Processes Classifier Duration Comparison" label="Processes Classifier Duration Comparison" uid="BLMNAV-ccae5b4231a42ec63db1f7e15e7cdec8" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessesClassifierDurationComparison"/>
+            <navigationURINodes uri="config/ProcessesClassifierDurationComparison"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Instance Cost" label="Process Instance Cost" uid="BLMNAV-d0386687681927999b00288a1a33b27d" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessInstanceCost"/>
+            <navigationURINodes uri="config/ProcessInstanceCost"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Instance Critical Path" label="Process Instance Critical Path" uid="BLMNAV-4af6be7f82e36d007fb07e8ae313ee84" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessInstanceCriticalPath"/>
+            <navigationURINodes uri="config/ProcessInstanceCriticalPath"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Instance Resource Allocation" label="Process Instance Resource Allocation" uid="BLMNAV-7f321fbef44502ba6d25773a9826e7d8" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessInstanceResourceAllocation"/>
+            <navigationURINodes uri="config/ProcessInstanceResourceAllocation"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Instance Shortest Path" label="Process Instance Shortest Path" uid="BLMNAV-ac2f497a966be2a3a287d2552058a267" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessInstanceShortestPath"/>
+            <navigationURINodes uri="config/ProcessInstanceShortestPath"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Instance Time" label="Process Instance Time" uid="BLMNAV-4b1b8cf93575559b87facd02633f7d5b" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessInstanceTime"/>
+            <navigationURINodes uri="config/ProcessInstanceTime"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Instances Summary" label="Process Instances Summary" uid="BLMNAV-dd1d32a467ae82fd939d9774b26ca912" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessInstancesSummary"/>
+            <navigationURINodes uri="config/ProcessInstancesSummary"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Process Instance Activities Free Float" label="Process Instance Activities Free Float" uid="BLMNAV-1bf08a14db90ba147c25b5fe0bc4f69a" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessInstanceActivitiesFreeFloat"/>
+            <navigationURINodes uri="config/ProcessInstanceActivitiesFreeFloat"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Processes Activities Total Time Comparison" label="Processes Activities Total Time Comparison" uid="BLMNAV-66aab0caebb9a4d5973351510eab5267" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessesActivitiesTotalTimeComparison"/>
+            <navigationURINodes uri="config/ProcessesActivitiesTotalTimeComparison"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Processes Break Even Comparison" label="Processes Break Even Comparison" uid="BLMNAV-e1f7c7044c0d115ff39e2d2d72b107be" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessesBreakEvenComparison"/>
+            <navigationURINodes uri="config/ProcessesBreakEvenComparison"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Processes Cost Comparison" label="Processes Cost Comparison" uid="BLMNAV-b9450a902886a7ba2e5ec521b29a5b94" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessesCostComparison"/>
+            <navigationURINodes uri="config/ProcessesCostComparison"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Processes Duration Comparison" label="Processes Duration Comparison" uid="BLMNAV-c24b9ce7200c480d49c5373429715b34" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessesDurationComparison"/>
+            <navigationURINodes uri="config/ProcessesDurationComparison"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Processes NPV/IRR Comparison" label="Processes NPV/IRR Comparison" uid="BLMNAV-d9f99ec4929a1d8d21eecdeeac6dbbf1" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessesNPV_IRRComparison"/>
+            <navigationURINodes uri="config/ProcessesNPV_IRRComparison"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Processes Resources Cost Comparison" label="Processes Resources Cost Comparison" uid="BLMNAV-4c8183ac4e76bf4b4e546c111974c03a" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessesResourcesCostComparison"/>
+            <navigationURINodes uri="config/ProcessesResourcesCostComparison"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Processes Resources Time Comparison" label="Processes Resources Time Comparison" uid="BLMNAV-fd6b8984b6366b222fdacd439fbe3e41" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProcessesResourcesTimeComparison"/>
+            <navigationURINodes uri="config/ProcessesResourcesTimeComparison"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Profile Specification" label="Profile Specification" uid="BLMNAV-25c7ec298b46d585badb183d6e4cf2e1" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/ProfileSpecification"/>
+            <navigationURINodes uri="config/ProfileSpecification"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+          <reportTemplateNodes id="Static Process Cases Summary" label="Static Process Cases Summary" uid="BLMNAV-c2a21d5f58f580c71f08bd257a4ae958" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/StaticProcessCasesSummary"/>
+            <navigationURINodes uri="config/StaticProcessCasesSummary"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.da"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+        </reportModelNodeChildren>
+        <reportModelNodeChildren id="Predefined Types" label="History" uid="BLMNAV-a0e64ba6e0684db9d47ebe8c68c83985" bomUID="" attribute1="History_Profile_Catalog_ID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <navigationURINode uri="History_Catalog_Resource_ID"/>
+          <reportTemplateNodes id="History report" label="History report" uid="BLMNAV-2a4793adc0b471987779c669108a8cc6" attribute2="NO_GEN" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="config/HistoryReport"/>
+            <navigationURINodes uri="config/HistoryReport"/>
+            <navigationURINodes uri="NULL"/>
+            <navigationURINodes uri="com.ibm.btools.team"/>
+            <navigationURINodes/>
+            <navigationURINodes/>
+          </reportTemplateNodes>
+        </reportModelNodeChildren>
+        <reportModelNodeChildren id="Predefined Types" label="Documentation" uid="BLMNAV-c91e6b6adf3a26a72d01657dc3bdac10" bomUID="" attribute1="Documentation_Catalog_ID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <navigationURINode uri="Documentation_Catalog_Resource_ID"/>
+          <reportModelNodeChildren id="Predefined Types" label="Process" uid="BLMNAV-be67f56cc6d90f88acebc4399ae6ea8c" bomUID="" attribute1="Process_Catalog_ID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINode uri="Process_Catalog_Resource_ID"/>
+            <reportTemplateNodes id="Repository specification" label="Repository specification" uid="BLMNAV-66f53391cf452a30b216abe1f9d4e4da" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Repositoryspecification"/>
+              <navigationURINodes uri="config\basicreport\Repositoryspecification"/>
+              <navigationURINodes uri="config\queries\repositoryspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationDatastoreNode"/>
+              <navigationURINodes uri="Repository specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Process annotation" label="Process annotation" uid="BLMNAV-e2305c67c3fbc5c2f3184ea86c3aac40" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Processannotation"/>
+              <navigationURINodes uri="config\basicreport\Processannotation"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationProcessNode"/>
+              <navigationURINodes uri="Project annnotation datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Process procedure" label="Process procedure" uid="BLMNAV-e29fd9146aa1550123c168cc62b3de3b" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Processprocedure"/>
+              <navigationURINodes uri="config\basicreport\Processprocedure"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessNode"/>
+              <navigationURINodes uri="Process procedure datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Process level details" label="Process level details" uid="BLMNAV-15039e0c9ab59a00841045ba26c5c7e8" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Processleveldetails"/>
+              <navigationURINodes uri="config\basicreport\Processleveldetails"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationProcessNode"/>
+              <navigationURINodes uri="Process level details datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Tasks by role" label="Tasks by role" uid="BLMNAV-763f04983e15681ecece2d5ba2c35c1e" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Tasksbyrole"/>
+              <navigationURINodes uri="config\basicreport\Tasksbyrole"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationProcessNode"/>
+              <navigationURINodes uri="Process role details datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Process summary" label="Process summary" uid="BLMNAV-f899827de2a2f7a891b585c093f6d76b" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\processsummary"/>
+              <navigationURINodes uri="config\basicreport\processsummary"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessNode"/>
+              <navigationURINodes uri="Process Specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Process details" label="Process details" uid="BLMNAV-21657fb4b1fd9e08275f62b8ad49bab6" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Processdetails"/>
+              <navigationURINodes uri="config\basicreport\Processdetails"/>
+              <navigationURINodes uri="NULL"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationProcessNode"/>
+              <navigationURINodes uri="Process specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Process specification" label="Process specification" uid="BLMNAV-55eb5ec0b3ffc6ce3ae2331c6ef0afe7" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Processspecification"/>
+              <navigationURINodes uri="config\basicreport\Processspecification"/>
+              <navigationURINodes uri="config\queries\processspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationProcessNode"/>
+              <navigationURINodes uri="Process specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Process statistics" label="Process statistics" uid="BLMNAV-1dd1b1d5140e7472e7588acc20818c59" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Processstatistics"/>
+              <navigationURINodes uri="config\basicreport\Processstatistics"/>
+              <navigationURINodes uri="config\queries\processstatisticsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationProcessNode"/>
+              <navigationURINodes uri="Process statistics datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Service details" label="Service details" uid="BLMNAV-47120108f6dbc02bd1d15d28211ba5c1" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\ServiceDetails"/>
+              <navigationURINodes uri="config\basicreport\ServiceDetails"/>
+              <navigationURINodes uri="config\queries\Servicedetailsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationServiceNode"/>
+              <navigationURINodes uri="Service details datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Service specification" label="Service specification" uid="BLMNAV-f692ab8370dd6c392251d13dfed879f3" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\ServiceSpecification"/>
+              <navigationURINodes uri="config\basicreport\ServiceSpecification"/>
+              <navigationURINodes uri="config\queries\Servicespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationServiceNode"/>
+              <navigationURINodes uri="Service specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Service statistics" label="Service statistics" uid="BLMNAV-b185e73f87f6ced1392dfda1cfe0357c" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Servicestatistics"/>
+              <navigationURINodes uri="config\basicreport\Servicestatistics"/>
+              <navigationURINodes uri="config\queries\Servicestatisticsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationServiceNode"/>
+              <navigationURINodes uri="Service statistics datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Task details" label="Task details" uid="BLMNAV-371373d7a37a74eacf754453ba22141f" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Taskdetails"/>
+              <navigationURINodes uri="config\basicreport\Taskdetails"/>
+              <navigationURINodes uri="config\queries\taskdetailsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationTaskNode"/>
+              <navigationURINodes uri="Task details datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Task specification" label="Task specification" uid="BLMNAV-da9bc2bd542791ca20cdc9aa06cee6b5" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Taskspecification"/>
+              <navigationURINodes uri="config\basicreport\Taskspecification"/>
+              <navigationURINodes uri="config\queries\taskspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationTaskNode"/>
+              <navigationURINodes uri="Task specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Task statistics" label="Task statistics" uid="BLMNAV-a12dbb6e4337c0b32636e3abad4beec8" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Taskstatistics"/>
+              <navigationURINodes uri="config\basicreport\Taskstatistics"/>
+              <navigationURINodes uri="config\queries\taskstatisticsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationTaskNode"/>
+              <navigationURINodes uri="Task statistics datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Human task details" label="Human task details" uid="BLMNAV-1eae2b4354ab6efd39eb43bbf082073d" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Humantaskdetails"/>
+              <navigationURINodes uri="config\basicreport\Humantaskdetails"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationHumanTaskNode"/>
+              <navigationURINodes uri="Human task specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Human task specification" label="Human task specification" uid="BLMNAV-447fb0a9739b3114b48f672e1f9f90ac" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Humantaskspecification"/>
+              <navigationURINodes uri="config\basicreport\Humantaskspecification"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationHumanTaskNode"/>
+              <navigationURINodes uri="Human task specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Business rules task details" label="Business rules task details" uid="BLMNAV-05d0d458706a7ca13cc4071fc1e84a3e" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Businessrulestaskdetails"/>
+              <navigationURINodes uri="config\basicreport\Businessrulestaskdetails"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationBusinessRuleTaskNode"/>
+              <navigationURINodes uri="Business rules task specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Business rules task specification" label="Business rules task specification" uid="BLMNAV-926c94d363365deb007511e7bb6269d9" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Businessrulestaskspecification"/>
+              <navigationURINodes uri="config\basicreport\Businessrulestaskspecification"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProcessCatalogNode, NavigationBusinessRuleTaskNode"/>
+              <navigationURINodes uri="Business rules task specification datasource"/>
+            </reportTemplateNodes>
+          </reportModelNodeChildren>
+          <reportModelNodeChildren id="Predefined Types" label="Data" uid="BLMNAV-2cfc86a93117924c61cf59787f40be63" bomUID="" attribute1="Information_Catalog_ID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINode uri="Information_Catalog_Resource_ID"/>
+            <reportTemplateNodes id="Business item specification" label="Business item specification" uid="BLMNAV-788c4718e4e9b2195fd398a7a2298d8e" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Businessitemspecification"/>
+              <navigationURINodes uri="config\basicreport\Businessitemspecification"/>
+              <navigationURINodes uri="config\queries\businessitemspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationDataCatalogNode, NavigationBusinessEntityNode"/>
+              <navigationURINodes uri="Business item specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Business item utilization" label="Business item utilization" uid="BLMNAV-f39dc85cfdbcafb0e155a58f33f33ea2" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Businessitemutilization"/>
+              <navigationURINodes uri="config\basicreport\Businessitemutilization"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationProjectNode"/>
+              <navigationURINodes uri="Business item utilization datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Business item instance specification" label="Business item instance specification" uid="BLMNAV-55647105cb79b75feeaebf7c5552282c" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Businessiteminstancespecification"/>
+              <navigationURINodes uri="config\basicreport\Businessiteminstancespecification"/>
+              <navigationURINodes uri="config\queries\businessiteminstancespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationDataCatalogNode, NavigationBusinessEntitySampleNode"/>
+              <navigationURINodes uri="Business item instance specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Business item template specification" label="Business item template specification" uid="BLMNAV-0fea70202728e601bf2e964a8a3cb610" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Businessitemtemplatespecification"/>
+              <navigationURINodes uri="config\basicreport\Businessitemtemplatespecification"/>
+              <navigationURINodes uri="config\queries\businessitemtemplatespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationDataCatalogNode, NavigationCategoryNodes"/>
+              <navigationURINodes uri="Business item template specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Notification specification" label="Notification specification" uid="BLMNAV-38e0cdf4e9ddd69671de97a9e6f2113a" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Signalspecification"/>
+              <navigationURINodes uri="config\basicreport\Signalspecification"/>
+              <navigationURINodes uri="config\queries\signalspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationDataCatalogNode, NavigationSignalNode"/>
+              <navigationURINodes uri="Signal specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Data catalog statistics" label="Data catalog statistics" uid="BLMNAV-7cc2b4d2ff60db6e92648b1632e508a0" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Datacatalogstatistics"/>
+              <navigationURINodes uri="config\basicreport\Datacatalogstatistics"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationDataCatalogNode"/>
+              <navigationURINodes uri="Data Catalog Datasource"/>
+            </reportTemplateNodes>
+          </reportModelNodeChildren>
+          <reportModelNodeChildren id="Predefined Types" label="Resource" uid="BLMNAV-e239cab61fb10cde8da45032a27a8509" bomUID="" attribute1="Resource_Catalog_ID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINode uri="Resource_Catalog_Resource_ID"/>
+            <reportTemplateNodes id="Resource specification" label="Resource specification" uid="BLMNAV-d41edbacc2c86d1ce4044acd0d540a15" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Resourcespecification"/>
+              <navigationURINodes uri="config\basicreport\Resourcespecification"/>
+              <navigationURINodes uri="config\queries\resourcespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationResourceCatalogNode, NavigationResourceNode"/>
+              <navigationURINodes uri="Resource specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Resource definition specification" label="Resource definition specification" uid="BLMNAV-3acb042064d12bdc8832119e1f73062a" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Resourcedefinitionspecification"/>
+              <navigationURINodes uri="config\basicreport\Resourcedefinitionspecification"/>
+              <navigationURINodes uri="config\queries\resourcedefinitionspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationResourceCatalogNode, NavigationResourceDefinitionNode"/>
+              <navigationURINodes uri="Resource definition specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Resource definition template specification" label="Resource definition template specification" uid="BLMNAV-c22c9c773c03f25557d465270b073ad1" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Resourcedefinitiontemplatespecification"/>
+              <navigationURINodes uri="config\basicreport\Resourcedefinitiontemplatespecification"/>
+              <navigationURINodes uri="config\queries\resourcedefinitiontemplatespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationResourceCatalogNode, NavigationResourceDefinitionCategoryNode"/>
+              <navigationURINodes uri="Resource definition template specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Role specification" label="Role specification" uid="BLMNAV-8f793a4e4069d39d1755ea39b98ecbf6" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Rolespecification"/>
+              <navigationURINodes uri="config\basicreport\Rolespecification"/>
+              <navigationURINodes uri="config\queries\rolespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationResourceCatalogNode, NavigationRoleNode"/>
+              <navigationURINodes uri="Role specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Timetable specification" label="Timetable specification" uid="BLMNAV-f2ae9ba4edb1e6b68ff6bdb3c523d16c" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Timetablespecification"/>
+              <navigationURINodes uri="config\basicreport\Timetablespecification"/>
+              <navigationURINodes uri="config\queries\timetablespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationResourceCatalogNode, NavigationCalendarNode"/>
+              <navigationURINodes uri="Timetable specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Resource catalog statistics" label="Resource catalog statistics" uid="BLMNAV-53ec27495ee438aade3c2a25cf94b9c1" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Resourcecatalogstatistics"/>
+              <navigationURINodes uri="config\basicreport\Resourcecatalogstatistics"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationResourceCatalogNode"/>
+              <navigationURINodes uri="Resource Catalog Datasource"/>
+            </reportTemplateNodes>
+          </reportModelNodeChildren>
+          <reportModelNodeChildren id="Predefined Types" label="Organization" uid="BLMNAV-32799ff5ad718b6d5130e71c5d0a0156" bomUID="" attribute1="Classifier_Catalog_ID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINode uri="Classifier_Catalog_Resource_ID"/>
+            <reportTemplateNodes id="Location specification" label="Location specification" uid="BLMNAV-963816e22e9501cb26844ad0bfaa6332" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Locationspecification"/>
+              <navigationURINodes uri="config\basicreport\Locationspecification"/>
+              <navigationURINodes uri="config\queries\locationspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationOrganizationCatalogNode, NavigationLocationNode"/>
+              <navigationURINodes uri="Location specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Location definition specification" label="Location definition specification" uid="BLMNAV-053a2757f7b0a147e1345974ccef7768" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Locationdefinitionspecification"/>
+              <navigationURINodes uri="config\basicreport\Locationdefinitionspecification"/>
+              <navigationURINodes uri="config\queries\locationdefinitionspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationOrganizationCatalogNode, NavigationLocationDefinitionNode"/>
+              <navigationURINodes uri="Location definition specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Location definition template specification" label="Location definition template specification" uid="BLMNAV-2be22bc423707e33928f41485b062964" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Locationdefinitiontemplatespecification"/>
+              <navigationURINodes uri="config\basicreport\Locationdefinitiontemplatespecification"/>
+              <navigationURINodes uri="config\queries\locationdefinitiontemplatespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationOrganizationCatalogNode, NavigationLocationDefinitionCategoryNode"/>
+              <navigationURINodes uri="Location definition template specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Organization unit specification" label="Organization unit specification" uid="BLMNAV-27355051ef6858042c8ab8df1d7049cd" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Organizationunitspecification"/>
+              <navigationURINodes uri="config\basicreport\Organizationunitspecification"/>
+              <navigationURINodes uri="config\queries\organizationunitspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationOrganizationCatalogNode, NavigationOrganizationUnitNode"/>
+              <navigationURINodes uri="Organization specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Organization definition specification" label="Organization definition specification" uid="BLMNAV-962830fba807d61527097329cc0c1e2a" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Organizationdefinitionspecification"/>
+              <navigationURINodes uri="config\basicreport\Organizationdefinitionspecification"/>
+              <navigationURINodes uri="config\queries\Organizationdefinitionspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationOrganizationCatalogNode, NavigationOrganizationDefinitionNode"/>
+              <navigationURINodes uri="Organization definition specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Organization definition template specification" label="Organization definition template specification" uid="BLMNAV-a40f1153d514db0207917680ccab08ef" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Organizationdefinitiontemplatespecification"/>
+              <navigationURINodes uri="config\basicreport\Organizationdefinitiontemplatespecification"/>
+              <navigationURINodes uri="config\queries\organizationdefinitiontemplatespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationOrganizationCatalogNode, NavigationOrganizationDefinitionCategoryNode"/>
+              <navigationURINodes uri="Organization definition template specification datasource"/>
+            </reportTemplateNodes>
+            <reportTemplateNodes id="Organization catalog statistics" label="Organization catalog statistics" uid="BLMNAV-ddaf987fd993e3caeb95ca1ff463b770" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Organizationcatalogstatistics"/>
+              <navigationURINodes uri="config\basicreport\Organizationcatalogstatistics"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+              <navigationURINodes uri="NavigationOrganizationCatalogNode"/>
+              <navigationURINodes uri="Organization Catalog Datasource"/>
+            </reportTemplateNodes>
+          </reportModelNodeChildren>
+          <reportModelNodeChildren id="Predefined Types" label="Simulation" uid="BLMNAV-fc225e002845b00e200cb916e8aafe1d" bomUID="" attribute1="Simulation_Catalog_ID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINode uri="Simulation_Catalog_Resource_ID"/>
+            <reportTemplateNodes id="Simulation profile" label="Simulation profile" uid="BLMNAV-15573c46301ab3a076d8673c68672385" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\basicreport\Simulationprofile"/>
+              <navigationURINodes uri="config\basicreport\Simulationprofile"/>
+              <navigationURINodes/>
+              <navigationURINodes uri="com.ibm.btools.sim.docreport"/>
+              <navigationURINodes uri="NavigationSimulationProfileNode"/>
+              <navigationURINodes uri="Simulation profile datasource"/>
+            </reportTemplateNodes>
+          </reportModelNodeChildren>
+        </reportModelNodeChildren>
+      </reportModelNodes>
+      <queriesNode label="Queries" bomUID="RootQueryModelID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+        <navigationURINode uri="QRY-RootQueryModelResourceID"/>
+        <queriesAdvancedNode label="Advanced profile" bomUID="QRY-AdvancedID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <navigationURINode uri="QRY-AdvancedResourceID"/>
+          <queriesAdvancedStdNode id="Predefined Types" label="Standard" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9"/>
+        </queriesAdvancedNode>
+        <queriesIntermediateNode label="Intermediate profile" bomUID="QRY-IntermediateID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <navigationURINode uri="QRY-IntermediateResourceID"/>
+          <queriesIntermediateStdNode id="Predefined Types" label="Standard" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <queryStandardNode id="Business item specification_ID" label="Business item specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\businessitemspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Business item instance specification_ID" label="Business item instance specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\businessiteminstancespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Business item template specification_ID" label="Business item template specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\businessitemtemplatespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Repository specification_ID" label="Repository specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\datastorespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Location specification_ID" label="Location specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\locationspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Location definition specification_ID" label="Location definition specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\locationdefinitionspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Location definition template specification_ID" label="Location definition template specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\locationdefinitiontemplatespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Organization unit specification_ID" label="Organization unit specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\organizationunitspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Organization definition specification_ID" label="Organization definition specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\Organizationdefinitionspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Organization definition template specification_ID" label="Organization definition template specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\organizationdefinitiontemplatespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Resource specification_ID" label="Resource specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\resourcespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Resource definition specification_ID" label="Resource definition specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\resourcedefinitionspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Resource definition template specification_ID" label="Resource definition template specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\resourcedefinitiontemplatespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Role specification_ID" label="Role specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\rolespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Notification specification_ID" label="Notification specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\signalspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Timetable specification_ID" label="Timetable specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\timetablespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Process details_ID" label="Process details" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\processdetailsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Process specification_ID" label="Process specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\processspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Process statistics_ID" label="Process statistics" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\processstatisticsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Service details_ID" label="Service details" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\Servicedetailsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Service specification_ID" label="Service specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\Servicespecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Service statistics_ID" label="Service statistics" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\Servicestatisticsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Task details_ID" label="Task details" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\taskdetailsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Task specification_ID" label="Task specification" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\taskspecificationquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+            <queryStandardNode id="Task statistics_ID" label="Task statistics" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+              <navigationURINodes uri="config\queries\taskstatisticsquery.xmi"/>
+              <navigationURINodes uri="com.ibm.btools.blm.docreport"/>
+            </queryStandardNode>
+          </queriesIntermediateStdNode>
+        </queriesIntermediateNode>
+        <queriesBasicNode label="Basic profile" bomUID="QRY-BasicID" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <navigationURINode uri="QRY-BasicResourceID"/>
+          <queriesBasicStdNode id="Predefined Types" label="Standard" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9"/>
+        </queriesBasicNode>
+      </queriesNode>
+    </reportsNode>
+    <navigationCategoryCatalogs id="Classifier catalogs" label="Classifier catalogs" uid="BLMNAV-2e87e0d08aad1f60d77f447526ba0340" bomUID="FID-00000000000000000000000000000013" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+      <navigationURINode uri="RID-00000000000000000000000000000013"/>
+      <navigationCategoryCatalog id="Predefined Types" label="Predefined classifiers" bomUID="FID-00000000000000000000000000000015" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+        <navigationURINode uri="RID-00000000000000000000000000000015"/>
+        <navigationCategoryInstance id="Value-Added" label="Value added" bomUID="FID-00000000000000000000000000000016" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <navigationURINode uri="RID-00000000000000000000000000000016"/>
+          <navigationCategoryValueInstance id="Real Value Added" label="Real value added" bomUID="FID-00000000000000000000000000000119" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000119"/>
+          </navigationCategoryValueInstance>
+          <navigationCategoryValueInstance id="Business Value Added" label="Business value added" bomUID="FID-00000000000000000000000000000117" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000117"/>
+          </navigationCategoryValueInstance>
+          <navigationCategoryValueInstance id="No Value Added" label="No value added" bomUID="FID-00000000000000000000000000000118" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000118"/>
+          </navigationCategoryValueInstance>
+        </navigationCategoryInstance>
+        <navigationCategoryInstance id="Quality Control" label="Quality control" bomUID="FID-00000000000000000000000000000017" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <navigationURINode uri="RID-00000000000000000000000000000017"/>
+          <navigationCategoryValueInstance id="Not Quality Control" label="Not quality control" bomUID="FID-00000000000000000000000000000120" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000120"/>
+          </navigationCategoryValueInstance>
+          <navigationCategoryValueInstance id="Quality Control" label="Quality control" bomUID="FID-00000000000000000000000000000129" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000129"/>
+          </navigationCategoryValueInstance>
+        </navigationCategoryInstance>
+        <navigationCategoryInstance id="Workflow" label="Workflow" bomUID="FID-00000000000000000000000000000018" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+          <navigationURINode uri="RID-00000000000000000000000000000018"/>
+          <navigationCategoryValueInstance id="Current Workflow" label="Current workflow" bomUID="FID-00000000000000000000000000000121" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000121"/>
+          </navigationCategoryValueInstance>
+          <navigationCategoryValueInstance id="Not Workflow" label="Not workflow" bomUID="FID-00000000000000000000000000000122" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000122"/>
+          </navigationCategoryValueInstance>
+          <navigationCategoryValueInstance id="Potential Current Workflow" label="Potential workflow" bomUID="FID-00000000000000000000000000000123" projectNode="BLMNAV-5d36ad75fad62969bc228606745810e9">
+            <navigationURINodes uri="RID-00000000000000000000000000000123"/>
+          </navigationCategoryValueInstance>
+        </navigationCategoryInstance>
+      </navigationCategoryCatalog>
+    </navigationCategoryCatalogs>
+  </libraryNode>
+  <businessGroupsNode label="Business groups" uid="BLMNAV-d1c29914868c06268f283902e38f83d4"/>
+</navigation:NavigationProjectNode>

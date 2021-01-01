@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mfc:interfaceMediationFlow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mfc="http://www.ibm.com/xmlns/prod/websphere/wbiserver/mfc/6.0.0" xmlns:ns1="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/ManageShipments" xmlns:ns4="http://AccessServices-Rapid/com/junglesea/adapter/InboundRapidFileAdapterExport" xmlns:ns5="http://AccessServices-Rapid/com/junglesea/adapter/OutboundRapidFlatFileAdapterImport" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" name="Med-LabelsAndShipments-prepareShipLabel" targetNamespace="http://AccessServices-Rapid/com/junglesea/accessservices/Med-LabelsAndShipments-prepareShipLabel">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" portType="ns1:ManageShipments"/>
+  </interfaces>
+  <references>
+    <reference name="OutboundRapidFlatFileAdapterImportPartner">
+      <interface xsi:type="wsdl:WSDLPortType" portType="ns5:OutboundRapidFlatFileAdapterImport"/>
+    </reference>
+  </references>
+  <extendedOperationBinding source="createShippingLabel" target="create" sourcePortType="ns1:ManageShipments" targetReference="OutboundRapidFlatFileAdapterImportPartner"/>
+  <operationFlow medflow="Med-LabelsAndShipments-prepareShipLabel.medflow"/>
+</mfc:interfaceMediationFlow>

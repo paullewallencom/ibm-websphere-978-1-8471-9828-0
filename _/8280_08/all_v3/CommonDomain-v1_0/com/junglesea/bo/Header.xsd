@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://CommonDomain-v1_0/com/junglesea/bo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://CommonDomain-v1_0/com/junglesea/bo">
+	<xsd:include schemaLocation="BusinessException.xsd"></xsd:include>
+	<xsd:complexType name="Header">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="MessageId"
+				type="xsd:int">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="FromPartyId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ResponseStatus">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="SUCCESS"></xsd:enumeration>
+						<xsd:enumeration value="FAILURE"></xsd:enumeration>
+						<xsd:enumeration value="WARNING"></xsd:enumeration>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Duplicate"
+				type="xsd:boolean">
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="MessageType">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="REQUEST"></xsd:enumeration>
+						<xsd:enumeration value="RESPONSE"></xsd:enumeration>
+						<xsd:enumeration value="NOTIFICATION"></xsd:enumeration>
+						<xsd:enumeration value="ERROR"></xsd:enumeration>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="SenderURI"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Priority" type="xsd:int"></xsd:element>
+
+			<xsd:element name="MsgSpecificProperties" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<p>Conditionally required for request, response, and
+							notification messages as identified by the documentation for a
+							specific interface message. The communications infrastructure or
+							the receiving application can use this value for routing or
+							filtering messages.</p>
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="property" minOccurs="0"
+							maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="propName"
+										type="xsd:string" />
+									<xsd:element name="propValue"
+										type="xsd:string" />
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="OriginateTimestamp"
+				type="xsd:dateTime">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="BusinessException"
+				type="bons0:BusinessException" maxOccurs="unbounded">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

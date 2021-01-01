@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.btools.model.modelmanager.dependencymanager="http:///com/ibm/btools/model/modelmanager/dependencymanager.ecore"
+    xmlns:com.ibm.btools.model.resourcemanager.resourceproperties="http:///com/ibm/btools/model/resourcemanager/resourceproperties.ecore">
+  <com.ibm.btools.model.resourcemanager.resourceproperties:ResourceProperties versionID="7.0.0.0"
+      lastModified="1194640111723"/>
+  <com.ibm.btools.model.modelmanager.dependencymanager:DependencyModel>
+    <eObjectDescriptors eObjectID="Reports_Catalog_ID" eObjectName="Reports" dependenciesWhereSource="/1/@dependencies.0 /1/@dependencies.1 /1/@dependencies.2 /1/@dependencies.3">
+      <eObject href="Reports_Catalog_Resource_ID.xmi#Reports_Catalog_ID"/>
+    </eObjectDescriptors>
+    <eObjectDescriptors eObjectID="Static_Catalog_ID" eObjectName="Static analysis">
+      <eObject href="Static_Catalog_Resource_ID.xmi#Static_Catalog_ID"/>
+    </eObjectDescriptors>
+    <eObjectDescriptors eObjectID="Dynamic_Catalog_ID" eObjectName="Dynamic analysis">
+      <eObject href="Dynamic_Catalog_Resource_ID.xmi#Dynamic_Catalog_ID"/>
+    </eObjectDescriptors>
+    <eObjectDescriptors eObjectID="History_Profile_Catalog_ID" eObjectName="History">
+      <eObject href="History_Catalog_Resource_ID.xmi#History_Profile_Catalog_ID"/>
+    </eObjectDescriptors>
+    <eObjectDescriptors eObjectID="Documentation_Catalog_ID" eObjectName="Documentation"
+        dependenciesWhereSource="/1/@dependencies.4 /1/@dependencies.5 /1/@dependencies.6 /1/@dependencies.7 /1/@dependencies.8 /1/@dependencies.9">
+      <eObject href="Documentation_Catalog_Resource_ID.xmi#Documentation_Catalog_ID"/>
+    </eObjectDescriptors>
+    <eObjectDescriptors eObjectID="Process_Catalog_ID" eObjectName="Process">
+      <eObject href="Process_Catalog_Resource_ID.xmi#Process_Catalog_ID"/>
+    </eObjectDescriptors>
+    <eObjectDescriptors eObjectID="Information_Catalog_ID" eObjectName="Data">
+      <eObject href="Information_Catalog_Resource_ID.xmi#Information_Catalog_ID"/>
+    </eObjectDescriptors>
+    <eObjectDescriptors eObjectID="Resource_Catalog_ID" eObjectName="Resource">
+      <eObject href="Resource_Catalog_Resource_ID.xmi#Resource_Catalog_ID"/>
+    </eObjectDescriptors>
+    <eObjectDescriptors eObjectID="Classifier_Catalog_ID" eObjectName="Organization">
+      <eObject href="Classifier_Catalog_Resource_ID.xmi#Classifier_Catalog_ID"/>
+    </eObjectDescriptors>
+    <eObjectDescriptors eObjectID="Organization_Catalog_ID" eObjectName="Classifier">
+      <eObject href="Organization_Catalog_Resource_ID.xmi#Organization_Catalog_ID"/>
+    </eObjectDescriptors>
+    <eObjectDescriptors eObjectID="Simulation_Catalog_ID" eObjectName="Simulation">
+      <eObject href="Simulation_Catalog_Resource_ID.xmi#Simulation_Catalog_ID"/>
+    </eObjectDescriptors>
+    <dependencies name="children" indirect="false" source="/1/@eObjectDescriptors.0"
+        target="/1/@eObjectDescriptors.1"/>
+    <dependencies name="children" indirect="false" source="/1/@eObjectDescriptors.0"
+        target="/1/@eObjectDescriptors.2"/>
+    <dependencies name="children" indirect="false" source="/1/@eObjectDescriptors.0"
+        target="/1/@eObjectDescriptors.3"/>
+    <dependencies name="children" indirect="false" source="/1/@eObjectDescriptors.0"
+        target="/1/@eObjectDescriptors.4"/>
+    <dependencies name="children" indirect="false" source="/1/@eObjectDescriptors.4"
+        target="/1/@eObjectDescriptors.5"/>
+    <dependencies name="children" indirect="false" source="/1/@eObjectDescriptors.4"
+        target="/1/@eObjectDescriptors.6"/>
+    <dependencies name="children" indirect="false" source="/1/@eObjectDescriptors.4"
+        target="/1/@eObjectDescriptors.7"/>
+    <dependencies name="children" indirect="false" source="/1/@eObjectDescriptors.4"
+        target="/1/@eObjectDescriptors.8"/>
+    <dependencies name="children" indirect="false" source="/1/@eObjectDescriptors.4"
+        target="/1/@eObjectDescriptors.9"/>
+    <dependencies name="children" indirect="false" source="/1/@eObjectDescriptors.4"
+        target="/1/@eObjectDescriptors.10"/>
+  </com.ibm.btools.model.modelmanager.dependencymanager:DependencyModel>
+</xmi:XMI>

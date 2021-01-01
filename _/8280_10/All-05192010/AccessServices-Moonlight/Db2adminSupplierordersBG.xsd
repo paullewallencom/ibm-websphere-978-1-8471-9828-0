@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/db2adminsupplierordersbg" xmlns:db2adminsupplierorders="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/db2adminsupplierorders" xmlns:bo="http://www.ibm.com/xmlns/prod/websphere/bo/6.0.0">
+<xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/jdbc/db2adminsupplierorders" schemaLocation="Db2adminSupplierorders.xsd"/>
+<xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/bo/6.0.0" schemaLocation="BusinessGraph.xsd"/>
+
+<xsd:annotation xml:space="preserve">
+<xsd:appinfo source="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability">
+<info:resourceAdapter xmlns:info="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability" version="6.2.0.0"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:complexType name="Db2adminSupplierordersBG">
+<xsd:complexContent>
+<xsd:extension base="bo:BusinessGraph">
+<xsd:sequence>
+<xsd:element name="verb" minOccurs="0" maxOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="Create"/>
+<xsd:enumeration value="Update"/>
+<xsd:enumeration value="Delete"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Db2adminSupplierorders" type="db2adminsupplierorders:Db2adminSupplierorders"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

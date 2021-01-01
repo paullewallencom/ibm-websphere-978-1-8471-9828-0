@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: CustomerDomain-v1_0.jar 
+ CommonDomain-v1_0.jar
+Created-By: 1.5.0 (IBM Corporation)
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://com/ibm/j2ca/fault/afcfault" xmlns:basefault="http://com/ibm/j2ca/fault">
+<xsd:import namespace="http://com/ibm/j2ca/fault" schemaLocation="WBIFault.xsd"/>
+
+<xsd:annotation xml:space="preserve">
+<xsd:appinfo source="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability">
+<info:resourceAdapter xmlns:info="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability" version="7.0.0.0"/>
+</xsd:appinfo>
+</xsd:annotation>
+
+<xsd:annotation xml:space="preserve">
+<xsd:appinfo source="commonj.connector.asi">
+<asi:annotationSet xmlns:asi="commonj.connector.asi" asiNSURI=""/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:complexType name="RecordNotFoundFault">
+<xsd:annotation xml:space="preserve">
+
+
+</xsd:annotation>
+<xsd:complexContent>
+<xsd:extension base="basefault:WBIFault">
+<xsd:sequence minOccurs="1" maxOccurs="1">
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+
+</xsd:schema>

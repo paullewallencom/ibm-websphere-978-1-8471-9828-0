@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="BizServices-InventoryMgmtApp">
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+        <dependent-module archiveName="BizServices-InventoryMgmt.jar" deploy-path="/" handle="module:/resource/BizServices-InventoryMgmt/BizServices-InventoryMgmt">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/BizServices-InventoryMgmtEJB/BizServices-InventoryMgmtEJB">
+            <dependent-object>EjbModule_1169158408425</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

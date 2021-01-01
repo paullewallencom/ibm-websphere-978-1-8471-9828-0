@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="FlatFileImport.wsdl" targetNamespace="http://Test/FlatFileImport" xmlns:bons1="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" xmlns:bons2="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/createresponse" xmlns:bons3="http://com/ibm/j2ca/fault/afcfault" xmlns:tns="http://Test/FlatFileImport" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://com/ibm/j2ca/fault/afcfault" xmlns:tns="http://com/ibm/j2ca/fault/afcfault">
+      <xsd:include schemaLocation="CommonSchemas/DuplicateRecordFault.xsd"/>
+      <xsd:include schemaLocation="CommonSchemas/RecordNotFoundFault.xsd"/>
+      <xsd:include schemaLocation="CommonSchemas/MissingDataFault.xsd"/>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://Test/FlatFileImport" xmlns:bons5="http://com/ibm/j2ca/fault/afcfault">
+      <xsd:import namespace="http://com/ibm/j2ca/fault/afcfault"/>
+      <xsd:import namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" schemaLocation="com/junglesea/bo/msg/ShipmentMSG.xsd"/>
+      <xsd:import namespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/flatfile/createresponse" schemaLocation="CommonSchemas/CreateResponse.xsd"/>
+      <xsd:element name="create">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createInput" type="bons1:ShipmentMSG"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createOutput" type="bons2:CreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MissingDataFault_element" nillable="true" type="bons5:MissingDataFault"/>
+      <xsd:element name="DuplicateRecordFault_element" nillable="true" type="bons5:DuplicateRecordFault"/>
+      <xsd:element name="RecordNotFoundFault_element" nillable="true" type="bons5:RecordNotFoundFault"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createRequestMsg">
+    <wsdl:part element="tns:create" name="createParameters"/>
+  </wsdl:message>
+  <wsdl:message name="createResponseMsg">
+    <wsdl:part element="tns:createResponse" name="createResult"/>
+  </wsdl:message>
+  <wsdl:message name="createMissingDataFaultMsg">
+    <wsdl:part element="tns:MissingDataFault_element" name="MissingDataFault"/>
+  </wsdl:message>
+  <wsdl:message name="createDuplicateRecordFaultMsg">
+    <wsdl:part element="tns:DuplicateRecordFault_element" name="DuplicateRecordFault"/>
+  </wsdl:message>
+  <wsdl:message name="createRecordNotFoundFaultMsg">
+    <wsdl:part element="tns:RecordNotFoundFault_element" name="RecordNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:portType name="FlatFileImport">
+    <wsdl:operation name="create">
+      <wsdl:input message="tns:createRequestMsg" name="createRequest"/>
+      <wsdl:output message="tns:createResponseMsg" name="createResponse"/>
+      <wsdl:fault message="tns:createMissingDataFaultMsg" name="MISSING_DATA"/>
+      <wsdl:fault message="tns:createDuplicateRecordFaultMsg" name="DUPLICATE_RECORD"/>
+      <wsdl:fault message="tns:createRecordNotFoundFaultMsg" name="RECORD_NOT_FOUND"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

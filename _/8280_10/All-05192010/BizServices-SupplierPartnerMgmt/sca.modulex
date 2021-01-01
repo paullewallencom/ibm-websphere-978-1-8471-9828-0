@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.wiring.ui.ext.model="http:///com/ibm/wbit/wiring/ui/ext/model.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap namespace="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+    <extensions>
+      <extendedObject href="ProcessSPOrders.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0}ProcessImplementation" unknown="false" visible="true" x="225" y="30"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="sca.module#//@module"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:ModuleExtension" autoLayout="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessSPOrdersExport.export#//@export"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:ExportExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}ExportBinding" unknown="false" visible="true" x="30" y="30" bound="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="Med-ProcessPurchaseOrders-processOrderImport.import#//@import"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}SCAImportBinding" unknown="false" visible="true" x="391" y="31"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions>
+      <extendedObject href="sca.module#//@module"/>
+      <extensionObject xsi:type="sb:StickyDocument">
+        <stickyBoard id="default">
+          <stickyNote body="Purpose of this business service is to accept and process supplier partner orders&#xD;&#xA;Implmeneted as a BPEL component of type Microflow. Will invoke the MFC component in the Access Services layer, that wraps the call to the Moonlight application." id="3c2cdc02-1c33-497f-82ec-e41fef95c9f8">
+            <bounds x="239" y="256"/>
+            <association>
+              <target href="ProcessSPOrders.component#//@Component"/>
+            </association>
+          </stickyNote>
+          <stickyNote body="SCA Import to the MFC component in the Access Services layer, that wraps the call to the Moonlight application." id="3da7ae44-50fa-4c03-b831-078a1765699b">
+            <bounds x="749" y="154"/>
+            <association>
+              <target href="Med-ProcessPurchaseOrders-processOrderImport.import#//@import"/>
+            </association>
+          </stickyNote>
+          <stickyNote body="SCA export exposed to the Process Services layer." id="b579dc87-0cc7-4982-a70d-5441e5508dc2">
+            <bounds x="2" y="179"/>
+            <association>
+              <target href="ProcessSPOrdersExport.export#//@export"/>
+            </association>
+          </stickyNote>
+        </stickyBoard>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

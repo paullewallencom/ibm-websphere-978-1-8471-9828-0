@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://BizServices-ShippingMgmt/com/junglsea/businessservices/TrackShipmentsArtifacts" xmlns:ns0="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg" xmlns:ns1="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/TrackShipments" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="TrackShipments" suppressJoinFailure="yes" targetNamespace="http://BizServices-ShippingMgmt/com/junglsea/businessservices" wpc:continueOnError="no" wpc:displayName="TrackShipments" wpc:executionMode="longRunning" wpc:id="1" wpc:validFrom="2010-01-06T18:37:08" wpc:version="IBM_7.0.100">
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/TrackShipments.wsdl" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/TrackShipments"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="TrackShipmentsArtifacts.wsdl" namespace="http://BizServices-ShippingMgmt/com/junglsea/businessservices/TrackShipmentsArtifacts"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../junglesea/bo/msg/ShipmentMSG.xsd" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/bo/msg"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../junglesea/businessservices/interfaces/TrackShipments.wsdl" namespace="http://SupplierPartnerDomain-v1_0/com/junglesea/businessservices/interfaces/TrackShipments"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="Interface" name="TrackShipments" partnerLinkType="ns:TrackShipmentsPLT" wpc:id="2"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="inputParams" type="ns0:ShipmentMSG" wpc:id="6"/>
+    <bpws:variable name="outputParams" type="ns0:ShipmentMSG" wpc:id="7"/>
+  </bpws:variables>
+  <bpws:sequence name="HiddenSequence" wpc:id="1073741827">
+    <bpws:receive createInstance="yes" name="Receive" operation="packageMovementInfo" partnerLink="TrackShipments" portType="ns1:TrackShipments" wpc:displayName="Receive" wpc:id="4" wpc:transactionalBehavior="commitAfter">
+      <wpc:output>
+        <wpc:parameter name="inputParams" variable="inputParams"/>
+      </wpc:output>
+    </bpws:receive>
+    <bpws:reply name="Reply" operation="packageMovementInfo" partnerLink="TrackShipments" portType="ns1:TrackShipments" wpc:displayName="Reply" wpc:id="5">
+      <wpc:input>
+        <wpc:parameter name="outputParams" variable="outputParams"/>
+      </wpc:input>
+    </bpws:reply>
+  </bpws:sequence>
+</bpws:process>

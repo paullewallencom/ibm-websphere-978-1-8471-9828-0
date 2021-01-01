@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://PayMeLibrary/com/junglesea/apps/payme"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://PayMeLibrary/com/junglesea/apps/payme">
+	<xsd:include schemaLocation="CardExpiry.xsd"></xsd:include>
+	<xsd:complexType name="Card">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="cardNumber"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="expiryDate"
+				type="bons0:CardExpiry">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="cardType"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="securityCode"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

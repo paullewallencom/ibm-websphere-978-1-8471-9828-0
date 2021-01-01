@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tel:task xmlns:tel="http://www.ibm.com/xmlns/prod/websphere/human-task/6.0.0/" xmlns:wsdl="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck" allowClaimWhenSuspended="no" autoClaim="yes" businessRelevance="no" calendarName="Simple" contextAuthorizationForOwner="none" defaultLocale="en-US" durationUntilDeleted="DURATION_ZERO" jndiNameStaffPluginProvider="bpe/staff/samplevmmconfiguration" kind="pTask" name="ApproveEligibility" priorityDefinition="5" supportsDelegation="yes" supportsFollowOnTask="yes" supportsSubTask="yes" targetNamespace="http://EligibilityCheck/com/jungleseainsurance/solution/eligibilityCheck/process/ht">
+  <tel:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../interfaces/EligibiltyCheck.wsdl" namespace="http://EligibilityCheckLibrary/com/jungleseainsurance/interfaces/EligibiltyCheck"/>
+  <tel:interface kind="inbound" operation="checkEligibility" portType="wsdl:EligibiltyCheck"/>
+  <tel:staffSettings>
+    <tel:potentialOwner>
+      <tel:verb>
+        <tel:name>Everybody</tel:name>
+      </tel:verb>
+    </tel:potentialOwner>
+    <tel:potentialInstanceCreator>
+      <tel:verb>
+        <tel:name>Everybody</tel:name>
+      </tel:verb>
+    </tel:potentialInstanceCreator>
+  </tel:staffSettings>
+  <tel:uiSettings>
+    <tel:webClientSettings clientType="Web Client V6"/>
+  </tel:uiSettings>
+  <tel:escalationSettings/>
+  <tel:displayName locale="en-US">ApproveEligibility</tel:displayName>
+</tel:task>

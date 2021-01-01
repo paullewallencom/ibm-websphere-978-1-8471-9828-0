@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.wiring.ui.ext.model="http:///com/ibm/wbit/wiring/ui/ext/model.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap namespace="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0">
+    <extensions>
+      <extendedObject href="ProcessCustomerOrder.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0}ProcessImplementation" unknown="false" visible="true" x="254" y="30"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="sca.module#//@module"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:ModuleExtension" autoLayout="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HandleOrderFallout.component#//@Component"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:NodeExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0}ProcessImplementation" unknown="false" visible="true" x="254" y="99"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="HandleOrderFalloutExport.export#//@export"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:ExportExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}ExportBinding" unknown="false" visible="true" x="30" y="99" bound="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="ProcessCustomerOrderExport.export#//@export"/>
+      <extensionObject xsi:type="com.ibm.wbit.wiring.ui.ext.model:ExportExtension" type="{http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0}ExportBinding" unknown="false" visible="true" x="30" y="30" bound="true"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions>
+      <extendedObject href="sca.module#//@module"/>
+      <extensionObject xsi:type="sb:StickyDocument">
+        <stickyBoard id="default"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

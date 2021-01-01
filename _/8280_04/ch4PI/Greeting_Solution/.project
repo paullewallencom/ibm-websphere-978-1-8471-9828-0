@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Greeting_Solution</name>
+	<comment></comment>
+	<projects>
+		<project>GreetingLibrary</project>
+		<project>HelloMediatioModule</project>
+		<project>HelloMediationModule</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.ibm.wbit.project.solutioncommandbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.ibm.wbit.ui.solutionprojectsetfilebuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.ibm.wbit.project.solutionValidator</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ibm.wbit.project.wbisolutionnature</nature>
+	</natures>
+</projectDescription>

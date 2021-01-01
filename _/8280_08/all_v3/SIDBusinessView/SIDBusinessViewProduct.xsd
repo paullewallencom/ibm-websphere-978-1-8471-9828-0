@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  CONFIDENTIAL LICENSED MATERIAL
+      © 2004-2005 Pantero Corporation. All rights reserved.	-->
+<!-- Exporter Configuration Options:
+     All package and sub-packages under - com.sid.ProductDomain
+     Complex Types Only - true			
+     Include Required Rules - false			 
+     Include Reverse Relationships - true	 
+     Export with Weak Typing - false-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ xmlns:SIDBusCm="http://www.tmforum.org/NGOSS/SID/Business/3.1/Common" 
+ xmlns:SIDBusCu="http://www.tmforum.org/NGOSS/SID/Business/3.1/Customer" 
+ xmlns:SIDBusEn="http://www.tmforum.org/NGOSS/SID/Business/3.1/Enterprise" 
+ xmlns:SIDBusMa="http://www.tmforum.org/NGOSS/SID/Business/3.1/MarketSales" 
+ xmlns:SIDBusRe="http://www.tmforum.org/NGOSS/SID/Business/3.1/Resource" 
+ xmlns:SIDBusSe="http://www.tmforum.org/NGOSS/SID/Business/3.1/Service" 
+ xmlns:SIDBusPr="http://www.tmforum.org/NGOSS/SID/Business/3.1/Product" 
+ targetNamespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Product">
+<xs:import schemaLocation="SIDBusinessViewCommon.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Common"/>
+<xs:import schemaLocation="SIDBusinessViewCustomer.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Customer"/>
+<xs:import schemaLocation="SIDBusinessViewEnterprise.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Enterprise"/>
+<xs:import schemaLocation="SIDBusinessViewMarketSales.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/MarketSales"/>
+<xs:import schemaLocation="SIDBusinessViewResource.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Resource"/>
+<xs:import schemaLocation="SIDBusinessViewService.xsd" namespace="http://www.tmforum.org/NGOSS/SID/Business/3.1/Service"/>
+
+<!-- Type name: com.sid.ProductDomain.ProductABE.CustomerAccountProductInvovlement-->
+   <xs:complexType name="CustomerAccountProductInvovlement">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductInvolvementRole">
+            <xs:sequence>
+               <xs:element name="CustomerAccount" type="SIDBusCu:CustomerAccount" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.PartyRoleProductInvolvement-->
+   <xs:complexType name="PartyRoleProductInvolvement">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductInvolvementRole">
+            <xs:sequence>
+               <xs:element name="PartyRole" type="SIDBusCm:PartyRole" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.Product-->
+   <xs:complexType name="Product" abstract="true">
+      <xs:sequence>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="productStatus" minOccurs="0" type="xs:string"/>
+         <xs:element name="productSerialNumber" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="CustomerBillingProductChargeSum" type="SIDBusCu:CustomerBillingProductChargeSum" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductPrice" type="SIDBusPr:ProductPrice" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductHas" type="SIDBusPr:Product" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="Resource" type="SIDBusRe:Resource" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CustomerFacingService" type="SIDBusSe:CustomerFacingService" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="Place" type="SIDBusCm:Place" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductInvolvementRole" type="SIDBusPr:ProductInvolvementRole" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductUsage" type="SIDBusPr:ProductUsage" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="BusinessInteractionItem" type="SIDBusCm:BusinessInteractionItem" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0"/>
+         <xs:element name="ProductFor" type="SIDBusPr:Product" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductBundle" type="SIDBusPr:ProductBundle" minOccurs="0"/>
+         <xs:element name="ProductCharacteristicValue" type="SIDBusPr:ProductCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOfferingPrice" type="SIDBusPr:ProductOfferingPrice" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductBundle-->
+   <xs:complexType name="ProductBundle">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:Product">
+            <xs:sequence>
+               <xs:element name="Product" type="SIDBusPr:Product" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ProductBundleUsage" type="SIDBusPr:ProductBundleUsage" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductCharacteristicValue-->
+   <xs:complexType name="ProductCharacteristicValue">
+      <xs:sequence>
+         <xs:element name="productCharacteristicValue" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="Product" type="SIDBusPr:Product" minOccurs="0"/>
+         <xs:element name="ProductSpecCharacteristic" type="SIDBusPr:ProductSpecCharacteristic" minOccurs="0"/>
+         <xs:element name="ProductSpecCharacteristicValue" type="SIDBusPr:ProductSpecCharacteristicValue" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductComponent-->
+   <xs:complexType name="ProductComponent">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:Product">
+            <xs:sequence>
+               <xs:element name="ProductComponentUsage" type="SIDBusPr:ProductComponentUsage" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductInvolvementRole-->
+   <xs:complexType name="ProductInvolvementRole" abstract="true">
+      <xs:sequence>
+         <xs:element name="productInvolvementRole" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="Product" type="SIDBusPr:Product" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductPriceABE.AllowanceProdPriceAlteration-->
+   <xs:complexType name="AllowanceProdPriceAlteration">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProdPriceAlteration">
+            <xs:sequence>
+               <xs:element name="AvailableCustomerAllowance" type="SIDBusCu:AvailableCustomerAllowance" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductPriceABE.ComponentProdPrice-->
+   <xs:complexType name="ComponentProdPrice">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductPrice">
+            <xs:sequence>
+               <xs:element name="priceType" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+               <xs:element name="currencyType" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+               <xs:element name="quantity" type="SIDBusCm:Quantity" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductPriceABE.CompositeProdPrice-->
+   <xs:complexType name="CompositeProdPrice">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductPrice">
+            <xs:sequence>
+               <xs:element name="ProductPrice" type="SIDBusPr:ProductPrice" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductPriceABE.DiscountProdPriceAlteration-->
+   <xs:complexType name="DiscountProdPriceAlteration">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProdPriceAlteration">
+            <xs:sequence>
+               <xs:element name="AvaliableCustomerDiscount" type="SIDBusCu:AvaliableCustomerDiscount" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductPriceABE.ProdPriceAlteration-->
+   <xs:complexType name="ProdPriceAlteration">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ComponentProdPrice">
+            <xs:sequence>
+               <xs:element name="AppliedCustomerBillingProductAlteration" type="SIDBusCu:AppliedCustomerBillingProductAlteration" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ProdPriceCharge" type="SIDBusPr:ProdPriceCharge" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductPriceABE.ProdPriceCharge-->
+   <xs:complexType name="ProdPriceCharge">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ComponentProdPrice">
+            <xs:sequence>
+               <xs:element name="ProdPriceAlteration" type="SIDBusPr:ProdPriceAlteration" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="AppliedCustomerBillingProductCharge" type="SIDBusCu:AppliedCustomerBillingProductCharge" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ProductPriceABE.ProductPrice-->
+   <xs:complexType name="ProductPrice">
+      <xs:sequence>
+         <xs:element name="name" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="description" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ProductOfferingPrice" type="SIDBusPr:ProductOfferingPrice" minOccurs="0"/>
+         <xs:element name="Product" type="SIDBusPr:Product" minOccurs="0"/>
+         <xs:element name="CompositeProdPrice" type="SIDBusPr:CompositeProdPrice" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductABE.ResourceRoleProductInvolvement-->
+   <xs:complexType name="ResourceRoleProductInvolvement">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductInvolvementRole">
+            <xs:sequence>
+               <xs:element name="ResourceRole" type="SIDBusRe:ResourceRole" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.BundledProductOffering-->
+   <xs:complexType name="BundledProductOffering">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductOffering">
+            <xs:sequence>
+               <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductCatalog-->
+   <xs:complexType name="ProductCatalog">
+      <xs:sequence>
+         <xs:element name="id" minOccurs="0" type="xs:string"/>
+         <xs:element name="type" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="SalesChannel" type="SIDBusMa:SalesChannel" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProdCatalogProdOfferForProductCatalog" type="SIDBusPr:ProdCatalogProdOffer" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOffering-->
+   <xs:complexType name="ProductOffering" abstract="true">
+      <xs:sequence>
+         <xs:element name="id" minOccurs="0" type="xs:string"/>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="status" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="PartyProfileTypeCharacteristic" type="SIDBusMa:PartyProfileTypeCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketStatistic" type="SIDBusMa:MarketStatistic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PolicySet" type="SIDBusCm:PolicySet" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOfferingTerm" type="SIDBusPr:ProductOfferingTerm" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="Product" type="SIDBusPr:Product" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="Place" type="SIDBusCm:Place" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketStrategy" type="SIDBusMa:MarketStrategy" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOfferingPrice" type="SIDBusPr:ProductOfferingPrice" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompetitorProductCorrelationHas" type="SIDBusMa:CompetitorProductCorrelation" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProdCatalogProdOffer" type="SIDBusPr:ProdCatalogProdOffer" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyDemographic" type="SIDBusMa:PartyDemographic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyProfileType" type="SIDBusMa:PartyProfileType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegmentCharacteristic" type="SIDBusMa:MarketSegmentCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompetitorIntelligence" type="SIDBusMa:CompetitorIntelligence" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PartyRole" type="SIDBusCm:PartyRole" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProdOfferPricePolicyVariable" type="SIDBusPr:ProdOfferPricePolicyVariable" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="BundledProductOffering" type="SIDBusPr:BundledProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="BusinessInteractionItem" type="SIDBusCm:BusinessInteractionItem" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="SalesChannel" type="SIDBusMa:SalesChannel" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="MarketSegment" type="SIDBusMa:MarketSegment" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecification" type="SIDBusPr:ProductSpecification" minOccurs="0"/>
+         <xs:element name="BusinessInteractionItemPriceForProductOffering" type="SIDBusCm:BusinessInteractionItemPrice" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompetitorProductCorrelationFor" type="SIDBusMa:CompetitorProductCorrelation" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.AllowanceProdOfferiPriceAlteration-->
+   <xs:complexType name="AllowanceProdOfferiPriceAlteration">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProdOfferPriceAlteration">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.AlternateProdOfferPriceCharge-->
+   <xs:complexType name="AlternateProdOfferPriceCharge">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProdOfferPriceCharge">
+            <xs:sequence>
+               <xs:element name="ProdOfferPriceCharge" type="SIDBusPr:ProdOfferPriceCharge" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.ComponentProdOfferPrice-->
+   <xs:complexType name="ComponentProdOfferPrice" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductOfferingPrice">
+            <xs:sequence>
+               <xs:element name="priceType" minOccurs="0" type="xs:string"/>
+               <xs:element name="currencyType" minOccurs="0" type="xs:string"/>
+               <xs:element name="quantity" type="SIDBusCm:Quantity" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.CompositeProdOfferPrice-->
+   <xs:complexType name="CompositeProdOfferPrice">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductOfferingPrice">
+            <xs:sequence>
+               <xs:element name="ProductOfferingPrice" type="SIDBusPr:ProductOfferingPrice" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.DiscountProdOfferPriceAlteration-->
+   <xs:complexType name="DiscountProdOfferPriceAlteration">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProdOfferPriceAlteration">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.FeeProdOfferingPrice-->
+   <xs:complexType name="FeeProdOfferingPrice">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:OneTimeChargeProdOfferPriceCharge">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.OneTimeChargeProdOfferPriceCharge-->
+   <xs:complexType name="OneTimeChargeProdOfferPriceCharge">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProdOfferPriceCharge">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.PriceEvent-->
+   <xs:complexType name="PriceEvent">
+      <xs:sequence>
+         <xs:element name="ProductOfferingPrice" type="SIDBusPr:ProductOfferingPrice" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.ProdCatalogProdOffer-->
+   <xs:complexType name="ProdCatalogProdOffer">
+      <xs:sequence>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ProductCatalog" type="SIDBusPr:ProductCatalog" minOccurs="0"/>
+         <xs:element name="ProductOfferingForProdCatalogProdOffer" type="SIDBusPr:ProductOffering" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.ProdOfferPriceAlteration-->
+   <xs:complexType name="ProdOfferPriceAlteration" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ComponentProdOfferPrice">
+            <xs:sequence>
+               <xs:element name="ProdOfferPriceCharge" type="SIDBusPr:ProdOfferPriceCharge" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.ProdOfferPriceCharge-->
+   <xs:complexType name="ProdOfferPriceCharge" abstract="true">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ComponentProdOfferPrice">
+            <xs:sequence>
+               <xs:element name="ProdOfferPriceAlteration" type="SIDBusPr:ProdOfferPriceAlteration" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="AlternateProdOfferPriceCharge" type="SIDBusPr:AlternateProdOfferPriceCharge" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.ProductOfferingPrice-->
+   <xs:complexType name="ProductOfferingPrice" abstract="true">
+      <xs:sequence>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="SalesChannel" type="SIDBusMa:SalesChannel" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="GeographicArea" type="SIDBusCm:GeographicArea" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProdOfferPricePolicyValue" type="SIDBusPr:ProdOfferPricePolicyValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductPrice" type="SIDBusPr:ProductPrice" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="Product" type="SIDBusPr:Product" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="AgreementItem" type="SIDBusCm:AgreementItem" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecificationType" type="SIDBusPr:ProductSpecificationType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompositeProdOfferPrice" type="SIDBusPr:CompositeProdOfferPrice" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PriceEvent" type="SIDBusPr:PriceEvent" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProdOfferPricePolicyVariable" type="SIDBusPr:ProdOfferPricePolicyVariable" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProdOfferPriceAction" type="SIDBusPr:ProdOfferPriceAction" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.RecurringChargeProdOfferPriceCharge-->
+   <xs:complexType name="RecurringChargeProdOfferPriceCharge">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProdOfferPriceCharge">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.SimpleUsageProdOfferPriceCharge-->
+   <xs:complexType name="SimpleUsageProdOfferPriceCharge">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProdOfferPriceCharge">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceABE.TariffUsageProdOfferPriceCharge-->
+   <xs:complexType name="TariffUsageProdOfferPriceCharge">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProdOfferPriceCharge">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceRuleABE.ProdOfferPriceAction-->
+   <xs:complexType name="ProdOfferPriceAction">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:PolicyActionAtomic">
+            <xs:sequence>
+               <xs:element name="ProductOfferingPrice" type="SIDBusPr:ProductOfferingPrice" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceRuleABE.ProdOfferPriceCondition-->
+   <xs:complexType name="ProdOfferPriceCondition">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:PolicyConditionAtomic">
+            <xs:sequence>
+               <xs:element name="priceRuleConditionType" minOccurs="0" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceRuleABE.ProdOfferPricePolicyValue-->
+   <xs:complexType name="ProdOfferPricePolicyValue">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:PolicyValue">
+            <xs:sequence>
+               <xs:element name="ProductOfferingPrice" type="SIDBusPr:ProductOfferingPrice" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingPriceRuleABE.ProdOfferPricePolicyVariable-->
+   <xs:complexType name="ProdOfferPricePolicyVariable">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:PolicyVariable">
+            <xs:sequence>
+               <xs:element name="derivationAlgorithm" minOccurs="0" type="xs:string"/>
+               <xs:element name="ProductOfferingPrice" type="SIDBusPr:ProductOfferingPrice" minOccurs="0"/>
+               <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0"/>
+               <xs:element name="ProductSpecificationType" type="SIDBusPr:ProductSpecificationType" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductOfferingTerm-->
+   <xs:complexType name="ProductOfferingTerm">
+      <xs:sequence>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.ProductPlacementABE.ProductPlacement-->
+   <xs:complexType name="ProductPlacement">
+      <xs:sequence>
+         <xs:element name="Media" type="SIDBusMa:Media" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductOfferingABE.SimpleProductOffering-->
+   <xs:complexType name="SimpleProductOffering">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductOffering">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.AtomicProductSpecification-->
+   <xs:complexType name="AtomicProductSpecification">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductSpecification">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.CompositeProductSpecification-->
+   <xs:complexType name="CompositeProductSpecification">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductSpecification">
+            <xs:sequence>
+               <xs:element name="ProductSpecification" type="SIDBusPr:ProductSpecification" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CompositeProductUsageSpec" type="SIDBusPr:CompositeProductUsageSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.ConfigurableProductSpecCharacteristic-->
+   <xs:complexType name="ConfigurableProductSpecCharacteristic">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductSpecCharacteristic">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.ProductServiceSpecification-->
+   <xs:complexType name="ProductServiceSpecification">
+      <xs:sequence/>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.ProductSpecCharacteristic-->
+   <xs:complexType name="ProductSpecCharacteristic">
+      <xs:sequence>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="ProductSpecification" type="SIDBusPr:ProductSpecification" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecCharacteristicHas" type="SIDBusPr:ProductSpecCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductCharacteristicValue" type="SIDBusPr:ProductCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecCharacteristicValue" type="SIDBusPr:ProductSpecCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecCharacteristicFor" type="SIDBusPr:ProductSpecCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.ProductSpecCharacteristicValue-->
+   <xs:complexType name="ProductSpecCharacteristicValue">
+      <xs:sequence>
+         <xs:element name="valueType" minOccurs="0" type="xs:string"/>
+         <xs:element name="value" minOccurs="0" type="xs:string"/>
+         <xs:element name="valueFrom" minOccurs="0" type="xs:string"/>
+         <xs:element name="valueTo" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="ProductSpecCharacteristic" type="SIDBusPr:ProductSpecCharacteristic" minOccurs="0"/>
+         <xs:element name="ProductCharacteristicValue" type="SIDBusPr:ProductCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecification" type="SIDBusPr:ProductSpecification" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.ProductSpecification-->
+   <xs:complexType name="ProductSpecification" abstract="true">
+      <xs:sequence>
+         <xs:element name="name" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="productNumber" minOccurs="0" type="xs:string"/>
+         <xs:element name="brand" minOccurs="0" type="xs:string"/>
+         <xs:element name="lifecycleStatus" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="CustomerBillingProductChargeSumSpec" type="SIDBusCu:CustomerBillingProductChargeSumSpec" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecificationVersion" type="SIDBusPr:ProductSpecificationVersion" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecCharacteristicValue" type="SIDBusPr:ProductSpecCharacteristicValue" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CustomerFacingServiceSpec" type="SIDBusSe:CustomerFacingServiceSpec" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ResourceSpecification" type="SIDBusRe:ResourceSpecification" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOffering" type="SIDBusPr:ProductOffering" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductUsageSpec" type="SIDBusPr:ProductUsageSpec" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecificationRelationshipHas" type="SIDBusPr:ProductSpecificationRelationship" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="BusinessInteractionItem" type="SIDBusCm:BusinessInteractionItem" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="CompositeProductSpecification" type="SIDBusPr:CompositeProductSpecification" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecificationCost" type="SIDBusPr:ProductSpecificationCost" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecificationType" type="SIDBusPr:ProductSpecificationType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecCharacteristic" type="SIDBusPr:ProductSpecCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductSpecificationRelationshipFor" type="SIDBusPr:ProductSpecificationRelationship" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.ProductSpecificationCost-->
+   <xs:complexType name="ProductSpecificationCost">
+      <xs:sequence>
+         <xs:element name="costToBusiness" type="SIDBusCm:Money" minOccurs="0"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ProductSpecification" type="SIDBusPr:ProductSpecification" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.ProductSpecificationRelationship-->
+   <xs:complexType name="ProductSpecificationRelationship">
+      <xs:sequence>
+         <xs:element name="type" minOccurs="0" type="xs:string"/>
+         <xs:element name="validFor" type="SIDBusCm:TimePeriod" minOccurs="0"/>
+         <xs:element name="ProductSpecificationHas" type="SIDBusPr:ProductSpecification" minOccurs="0"/>
+         <xs:element name="ProductSpecificationFor" type="SIDBusPr:ProductSpecification" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.ProductSpecificationType-->
+   <xs:complexType name="ProductSpecificationType" abstract="true">
+      <xs:sequence>
+         <xs:element name="type" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="ProductSpecification" type="SIDBusPr:ProductSpecification" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProductOfferingPrice" type="SIDBusPr:ProductOfferingPrice" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="ProdOfferPricePolicyVariable" type="SIDBusPr:ProdOfferPricePolicyVariable" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductSpecificationABE.ProductSpecificationVersion-->
+   <xs:complexType name="ProductSpecificationVersion">
+      <xs:sequence>
+         <xs:element name="prodSpecRevisionType" minOccurs="0" type="xs:string"/>
+         <xs:element name="prodSpecRevisionNumber" minOccurs="0" type="xs:string"/>
+         <xs:element name="description" minOccurs="0" type="xs:string"/>
+         <xs:element name="prodSpecRevisionDate" minOccurs="0" type="xs:date"/>
+         <xs:element name="validFor" minOccurs="0" type="xs:anyType"/><!--Original Type: <undefined>-->
+         <xs:element name="ProductSpecification" type="SIDBusPr:ProductSpecification" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductTroubleABE.TroubleReport-->
+   <xs:complexType name="TroubleReport">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:BusinessInteraction">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductUsageABE.CompositeProductUsageSpec-->
+   <xs:complexType name="CompositeProductUsageSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductUsageSpec">
+            <xs:sequence>
+               <xs:element name="ProductUsageSpec" type="SIDBusPr:ProductUsageSpec" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CompositeProductSpecification" type="SIDBusPr:CompositeProductSpecification" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductUsageABE.ProductBundleUsage-->
+   <xs:complexType name="ProductBundleUsage">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductUsage">
+            <xs:sequence>
+               <xs:element name="ProductUsage" type="SIDBusPr:ProductUsage" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ProductBundle" type="SIDBusPr:ProductBundle" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductUsageABE.ProductComponentUsage-->
+   <xs:complexType name="ProductComponentUsage">
+      <xs:complexContent>
+         <xs:extension base="SIDBusPr:ProductUsage">
+            <xs:sequence>
+               <xs:element name="ResourceUsage" type="SIDBusRe:ResourceUsage" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ServiceUsage" type="SIDBusSe:ServiceUsage" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ProductComponent" type="SIDBusPr:ProductComponent" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductUsageABE.ProductUsage-->
+   <xs:complexType name="ProductUsage">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:Usage">
+            <xs:sequence>
+               <xs:element name="AppliedCustomerBillingProductUsageRate" type="SIDBusCu:AppliedCustomerBillingProductUsageRate" minOccurs="0"/>
+               <xs:element name="Product" type="SIDBusPr:Product" minOccurs="0"/>
+               <xs:element name="ProductUsageSpec" type="SIDBusPr:ProductUsageSpec" minOccurs="0"/>
+               <xs:element name="ProductBundleUsage" type="SIDBusPr:ProductBundleUsage" minOccurs="0"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.ProductUsageABE.ProductUsageSpec-->
+   <xs:complexType name="ProductUsageSpec">
+      <xs:complexContent>
+         <xs:extension base="SIDBusCm:UsageSpecification">
+            <xs:sequence>
+               <xs:element name="ProductUsage" type="SIDBusPr:ProductUsage" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="ProductSpecification" type="SIDBusPr:ProductSpecification" minOccurs="0"/>
+               <xs:element name="CompositeProductUsageSpec" type="SIDBusPr:CompositeProductUsageSpec" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+<!-- Type name: com.sid.ProductDomain.StrategicProductPortfolioPlanABE.ProductOfferingStrategy-->
+   <xs:complexType name="ProductOfferingStrategy">
+      <xs:sequence>
+         <xs:element name="MarketingCampaign" type="SIDBusMa:MarketingCampaign" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

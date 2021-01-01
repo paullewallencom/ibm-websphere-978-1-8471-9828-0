@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" targetNamespace="http://TestBed/xslt/XSLTransformation1_res_1" version="7.0.101" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://TestBed/xslt/XSLTransformation1_res_1">
+    <input path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FGreenLibrary%252Fcom%252Fjunglesea%252Fapps%252Fgreen%252FCustomerProfile%257DcreateCustomerAccountResponseMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <output path="smo://smo/name%3Dwsdl-primary/message%3D%257Bhttp%253A%252F%252FCustomerDomain-v1_0%252Fcom%252Fjunglesea%252Fbusinessservices%252Finterfaces%252FMaintainCustomerInformation%257DcreateCustomerResponseMsg/xpath%3D%252Fbody/smo.xsd"/>
+    <mappingDeclaration name="XSLTransformation1_res_1">
+        <input path="body"/>
+        <output path="body"/>
+        <assign value="123456">
+            <output path="createCustomerResponse/outputParam/Customer/CustomerId"/>
+        </assign>
+    </mappingDeclaration>
+</mappingRoot>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<brgt:BusinessRuleGroupTable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:brgt="http://www.ibm.com/xmlns/prod/websphere/wbi/BusinessRuleGroupTables/6.0.0" xmlns:selt="http://EligibilityCheck/com/junglesea/solution/eligibility/process" targetNamespace="http://EligibilityCheck/com/junglesea/solution/eligibility/process" name="BusinessRule">
+  <OperationSelectionTable name="eligibilityCheck">
+    <DefaultSelectionData xsi:type="brgt:DecisionTreeSelectionData" businessRuleName="selt:approveEligbilityDecisionTable"/>
+    <AvailableTarget xsi:type="brgt:RuleSetSelectionData" businessRuleName="selt:ApproveElgibilty"/>
+    <AvailableTarget xsi:type="brgt:DecisionTreeSelectionData" businessRuleName="selt:approveEligbilityDecisionTable"/>
+  </OperationSelectionTable>
+</brgt:BusinessRuleGroupTable>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scdl:import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EIS="http://www.ibm.com/xmlns/prod/websphere/scdl/eis/6.0.0" xmlns:configuration_6.1.0="http://www.ibm.com/xmlns/prod/websphere/j2ca/configuration/6.1.0" xmlns:ns1="http://AccessServices-Rapid/com/junglesea/adapter/OutboundRapidFlatFileAdapterImport" xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" displayName="OutboundRapidFlatFileAdapterImport" name="com/junglesea/adapter/OutboundRapidFlatFileAdapterImport">
+  <interfaces>
+    <interface xsi:type="wsdl:WSDLPortType" preferredInteractionStyle="sync" portType="ns1:OutboundRapidFlatFileAdapterImport">
+      <scdl:interfaceQualifier xsi:type="scdl:JoinTransaction" value="false"/>
+    </interface>
+  </interfaces>
+  <esbBinding xsi:type="EIS:EISImportBinding" dataBindingReferenceName="configuration_6.1.0:FlatFileXMLDataBinding">
+    <resourceAdapter name="AccessServices-RapidApp.IBM WebSphere Adapter for Flat Files" type="com.ibm.j2ca.flatfile.FlatFileResourceAdapter" version="7.0.0.0_IF02">
+      <properties>
+        <adapterID>001</adapterID>
+      </properties>
+    </resourceAdapter>
+    <connection type="com.ibm.j2ca.flatfile.FlatFileManagedConnectionFactory" interactionType="com.ibm.j2ca.flatfile.FlatFileInteractionSpec">
+      <properties>
+        <adapterID>001</adapterID>
+        <outputDirectory>C:\tmp\outbound\rapid</outputDirectory>
+      </properties>
+    </connection>
+    <methodBinding method="create">
+      <interaction>
+        <properties>
+          <fileContentEncoding>UTF-8</fileContentEncoding>
+          <functionName>Create</functionName>
+        </properties>
+      </interaction>
+    </methodBinding>
+  </esbBinding>
+</scdl:import>
